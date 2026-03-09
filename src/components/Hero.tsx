@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-end bg-navy overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-end bg-navy overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <Image
@@ -19,48 +19,47 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-24 md:pb-32 pt-40 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 md:px-12 pb-16 sm:pb-24 md:pb-32 pt-32 sm:pt-40 w-full">
         {/* Eyebrow */}
-        <div className="flex items-center gap-4 mb-10">
-          <div className="w-12 h-px bg-gold" />
-          <span className="text-[13px] font-medium tracking-wide-custom uppercase text-gold">
+        <div className="flex items-center gap-3 mb-6 sm:mb-10">
+          <div className="w-8 sm:w-12 h-px bg-gold" />
+          <span className="text-[11px] sm:text-[13px] font-medium tracking-wide-custom uppercase text-gold">
             Colliers Multifamily — Ontario
           </span>
         </div>
 
         {/* Headline */}
-        <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] text-white leading-[0.95] mb-8 max-w-4xl">
-          Institutional advisory<br />
-          for multifamily owners
+        <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-7xl lg:text-[5.5rem] text-white leading-[0.95] mb-6 sm:mb-8 max-w-4xl">
+          Institutional advisory for multifamily owners
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg md:text-xl text-white/60 max-w-2xl mb-16 leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-white/60 max-w-2xl mb-10 sm:mb-16 leading-relaxed">
           We advise apartment building owners and investors across Ontario on acquisitions, 
           dispositions, and portfolio strategy. Over $1.12 billion in completed transactions.
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-24">
-          <a href="#listings" className="border border-white/30 text-white text-[13px] font-medium tracking-wide-custom uppercase px-10 py-4 hover:bg-white/10 transition-all duration-300 text-center">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-16 sm:mb-24">
+          <a href="#listings" className="border border-white/30 text-white text-[12px] sm:text-[13px] font-medium tracking-wide-custom uppercase px-8 sm:px-10 py-3.5 sm:py-4 hover:bg-white/10 transition-all duration-300 text-center">
             Current Offerings
           </a>
-          <a href="#newsletter" className="border border-white/30 text-white text-[13px] font-medium tracking-wide-custom uppercase px-10 py-4 hover:bg-white/10 transition-all duration-300 text-center">
+          <a href="#newsletter" className="border border-white/30 text-white text-[12px] sm:text-[13px] font-medium tracking-wide-custom uppercase px-8 sm:px-10 py-3.5 sm:py-4 hover:bg-white/10 transition-all duration-300 text-center">
             Subscribe
           </a>
         </div>
 
         {/* Stats */}
-        <div className="border-t border-white/15 pt-10 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16">
+        <div className="border-t border-white/15 pt-8 sm:pt-10 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-16">
           {[
-            { number: '$1.12B+', label: 'Completed Transactions' },
+            { number: '$1.12B+', label: 'Transactions' },
             { number: '81%', label: 'Close Rate' },
             { number: '3,000+', label: 'Units Sold' },
-            { number: '14,000+', label: 'Newsletter Subscribers' },
+            { number: '14,000+', label: 'Subscribers' },
           ].map(stat => (
             <div key={stat.label}>
-              <div className="font-serif text-3xl md:text-4xl text-white mb-1">{stat.number}</div>
-              <div className="text-[12px] tracking-wide-custom uppercase text-white/40">{stat.label}</div>
+              <div className="font-serif text-2xl sm:text-3xl md:text-4xl text-white mb-1">{stat.number}</div>
+              <div className="text-[10px] sm:text-[12px] tracking-wide-custom uppercase text-white/40">{stat.label}</div>
             </div>
           ))}
         </div>

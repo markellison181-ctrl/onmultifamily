@@ -17,23 +17,23 @@ export default function Listings() {
     n >= 1000000 ? `$${(n / 1000000).toFixed(1)}M` : `$${(n / 1000).toFixed(0)}K`
 
   return (
-    <section id="listings" className="py-28 md:py-40 bg-navy">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section id="listings" className="py-20 sm:py-28 md:py-40 bg-navy">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12">
         {/* Header */}
-        <div className="flex items-center gap-4 mb-6">
-          <div className="w-12 h-px bg-gold" />
-          <span className="text-[12px] tracking-wide-custom uppercase text-gold font-medium">
+        <div className="flex items-center gap-3 mb-4 sm:mb-6">
+          <div className="w-8 sm:w-12 h-px bg-gold" />
+          <span className="text-[11px] sm:text-[12px] tracking-wide-custom uppercase text-gold font-medium">
             Current Offerings
           </span>
         </div>
 
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-6 md:mb-0">
+        <div className="flex flex-col gap-6 mb-10 sm:mb-16">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
             Featured Properties
           </h2>
 
           {/* Tabs */}
-          <div className="flex gap-1 bg-white/5 p-1">
+          <div className="flex gap-1 bg-white/5 p-1 self-start">
             {[
               { id: 'all' as const, label: 'All' },
               { id: 'active' as const, label: 'Active' },
@@ -42,7 +42,7 @@ export default function Listings() {
               <button
                 key={t.id}
                 onClick={() => setTab(t.id)}
-                className={`text-[13px] tracking-wide-custom uppercase font-medium px-6 py-2.5 transition-all duration-300 ${
+                className={`text-[11px] sm:text-[13px] tracking-wide-custom uppercase font-medium px-4 sm:px-6 py-2 sm:py-2.5 transition-all duration-300 ${
                   tab === t.id ? 'bg-white text-navy' : 'text-white/50 hover:text-white'
                 }`}
               >
@@ -53,34 +53,33 @@ export default function Listings() {
         </div>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filtered.map(listing => (
             <a key={listing.id} href={`/listings/${listing.id}/`} className="group block">
               {/* Image */}
-              <div className="relative aspect-[4/3] overflow-hidden mb-5">
+              <div className="relative aspect-[4/3] overflow-hidden mb-4 sm:mb-5">
                 <Image
                   src={listing.image}
                   alt={listing.name}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                {/* Status Badge */}
                 {listing.status !== 'Active' && (
-                  <div className="absolute top-4 left-4 bg-white text-navy text-[11px] tracking-wide-custom uppercase font-semibold px-3 py-1">
+                  <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-white text-navy text-[10px] sm:text-[11px] tracking-wide-custom uppercase font-semibold px-2.5 sm:px-3 py-1">
                     {listing.status}
                   </div>
                 )}
               </div>
 
               {/* Info */}
-              <h3 className="text-white font-medium text-lg mb-1 group-hover:text-gold transition-colors duration-300">
+              <h3 className="text-white font-medium text-base sm:text-lg mb-1 group-hover:text-gold transition-colors duration-300">
                 {listing.name}
               </h3>
-              <p className="text-white/40 text-sm mb-3">{listing.city}, Ontario</p>
-              <p className="text-white/60 text-[14px] mb-3">
+              <p className="text-white/40 text-xs sm:text-sm mb-2 sm:mb-3">{listing.city}, Ontario</p>
+              <p className="text-white/60 text-[13px] sm:text-[14px] mb-2 sm:mb-3">
                 {listing.suites} suites · {fmt(listing.price)} · {listing.capRate}% cap
               </p>
-              <span className="text-[12px] tracking-wide-custom uppercase text-white/25 group-hover:text-gold transition-colors duration-300">
+              <span className="text-[11px] sm:text-[12px] tracking-wide-custom uppercase text-white/25 group-hover:text-gold transition-colors duration-300">
                 View Details →
               </span>
             </a>
@@ -88,12 +87,12 @@ export default function Listings() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 pt-12 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div className="mt-12 sm:mt-16 pt-10 sm:pt-12 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
           <div>
-            <p className="text-white/60 text-[15px] mb-1">Looking for off-market opportunities?</p>
-            <p className="text-white/30 text-sm">We see deals before they hit the market.</p>
+            <p className="text-white/60 text-[14px] sm:text-[15px] mb-1">Looking for off-market opportunities?</p>
+            <p className="text-white/30 text-xs sm:text-sm">We see deals before they hit the market.</p>
           </div>
-          <a href="#contact" className="border border-white/30 text-white text-[13px] tracking-wide-custom uppercase font-medium px-10 py-4 hover:bg-white/10 transition-all duration-300 text-center whitespace-nowrap">
+          <a href="#contact" className="border border-white/30 text-white text-[12px] sm:text-[13px] tracking-wide-custom uppercase font-medium px-8 sm:px-10 py-3.5 sm:py-4 hover:bg-white/10 transition-all duration-300 text-center whitespace-nowrap self-start sm:self-auto">
             Contact Us
           </a>
         </div>
