@@ -108,21 +108,21 @@ export default function Footer() {
 
           {/* Bottom Bar */}
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between pt-8 border-t border-white/5">
-            <div className="flex items-center gap-3 sm:gap-4">
+            <div className="flex items-center gap-4 sm:gap-5">
               <Image
                 src="/images/logos/logo.svg"
                 alt="OnMultifamily"
                 width={140}
                 height={32}
-                className="h-5 sm:h-6 w-auto opacity-40"
+                className="h-5 sm:h-6 w-auto opacity-50"
               />
-              <span className="text-white/10 text-[10px]">|</span>
+              <div className="w-px h-5 bg-white/15" />
               <Image
                 src="/images/logos/colliers.png"
                 alt="Colliers"
-                width={80}
-                height={20}
-                className="h-3.5 sm:h-4 w-auto brightness-0 invert opacity-25"
+                width={100}
+                height={28}
+                className="h-6 sm:h-7 w-auto brightness-0 invert opacity-50"
               />
             </div>
             <div className="flex gap-5 sm:gap-6 text-[10px] sm:text-[11px] text-white/20 tracking-wide">

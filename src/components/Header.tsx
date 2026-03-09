@@ -34,7 +34,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-20 sm:h-24">
           {/* Logo */}
-          <a href="/" className="relative z-10 flex items-center gap-3 sm:gap-4">
+          <a href="/" className="relative z-10 flex items-center gap-3 sm:gap-5">
             <Image
               src={scrolled ? '/images/logos/logo-dark.svg' : '/images/logos/logo.svg'}
               alt="OnMultifamily"
@@ -42,14 +42,14 @@ export default function Header() {
               height={40}
               className="h-7 sm:h-8 w-auto"
             />
-            <span className={`hidden sm:block text-[10px] ${scrolled ? 'text-navy/15' : 'text-white/15'}`}>|</span>
+            <div className={`w-px h-6 sm:h-7 ${scrolled ? 'bg-navy/15' : 'bg-white/20'}`} />
             <Image
               src="/images/logos/colliers.png"
               alt="Colliers"
-              width={100}
-              height={24}
-              className={`hidden sm:block h-4 sm:h-5 w-auto transition-all duration-500 ${
-                scrolled ? 'opacity-60' : 'brightness-0 invert opacity-40'
+              width={140}
+              height={36}
+              className={`h-7 sm:h-9 w-auto transition-all duration-500 ${
+                scrolled ? 'opacity-80' : 'brightness-0 invert opacity-70'
               }`}
             />
           </a>
