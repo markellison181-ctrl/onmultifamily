@@ -55,7 +55,7 @@ export default function Listings() {
         {/* Grid */}
         <div className="grid md:grid-cols-3 gap-8">
           {filtered.map(listing => (
-            <div key={listing.id} className="group cursor-pointer">
+            <a key={listing.id} href={`/listings/${listing.id}/`} className="group block">
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden mb-5">
                 <Image
@@ -77,10 +77,13 @@ export default function Listings() {
                 {listing.name}
               </h3>
               <p className="text-white/40 text-sm mb-3">{listing.city}, Ontario</p>
-              <p className="text-white/60 text-[14px]">
+              <p className="text-white/60 text-[14px] mb-3">
                 {listing.suites} suites · {fmt(listing.price)} · {listing.capRate}% cap
               </p>
-            </div>
+              <span className="text-[12px] tracking-wide-custom uppercase text-white/25 group-hover:text-gold transition-colors duration-300">
+                View Details →
+              </span>
+            </a>
           ))}
         </div>
 
