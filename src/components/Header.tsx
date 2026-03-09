@@ -85,10 +85,10 @@ export default function Header() {
             className="md:hidden relative z-10 w-8 h-8 flex flex-col justify-center gap-1.5"
           >
             <span className={`block h-px w-full transition-all duration-300 ${
-              menuOpen ? 'rotate-45 translate-y-[3px] bg-navy' : (scrolled ? 'bg-navy' : 'bg-white')
+              menuOpen ? 'rotate-45 translate-y-[3px] bg-white' : (scrolled ? 'bg-navy' : 'bg-white')
             }`} />
             <span className={`block h-px w-full transition-all duration-300 ${
-              menuOpen ? '-rotate-45 -translate-y-[3px] bg-navy' : (scrolled ? 'bg-navy' : 'bg-white')
+              menuOpen ? '-rotate-45 -translate-y-[3px] bg-white' : (scrolled ? 'bg-navy' : 'bg-white')
             }`} />
           </button>
         </div>
@@ -96,14 +96,14 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden fixed inset-0 bg-white z-40 pt-28 px-8">
+        <div className="md:hidden fixed inset-0 bg-navy-deep z-40 pt-28 px-8">
           <nav className="flex flex-col gap-6">
             {links.map(link => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-2xl font-serif text-navy"
+                className="text-2xl font-serif text-white"
               >
                 {link.label}
               </a>
@@ -111,7 +111,7 @@ export default function Header() {
             <a
               href="#valuation"
               onClick={() => setMenuOpen(false)}
-              className="text-[13px] font-bold tracking-[0.15em] uppercase bg-gradient-to-r from-gold to-gold-light text-navy px-6 py-4 text-center mt-4"
+              className="text-[13px] font-bold tracking-[0.15em] uppercase bg-gradient-to-r from-gold to-gold-light text-navy px-6 py-4 text-center mt-6"
             >
               Free Valuation
             </a>
