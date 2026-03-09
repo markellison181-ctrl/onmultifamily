@@ -1,0 +1,41 @@
+[
+  {
+    "id": "294-saulsbury-strathroy",
+    "name": "294 Saulsbury Street",
+    "address": "294 Saulsbury Street, Strathroy, ON",
+    "city": "Strathroy",
+    "lat": 42.9561,
+    "lng": -81.6201,
+    "price": 8750000,
+    "suites": 64,
+    "capRate": 5.2,
+    "status": "Active",
+    "image": "/images/listings/294-saulsbury.jpeg"
+  },
+  {
+    "id": "75-emma-street",
+    "name": "75 Emma Street",
+    "address": "75 Emma Street, Toronto, ON",
+    "city": "Toronto",
+    "lat": 43.6700,
+    "lng": -79.3500,
+    "price": 12500000,
+    "suites": 48,
+    "capRate": 4.8,
+    "status": "Under Contract",
+    "image": "/images/listings/75-emma.jpeg"
+  },
+  {
+    "id": "17-19-collier-st-catharines",
+    "name": "17–19 Collier Street",
+    "address": "17-19 Collier Street, St. Catharines, ON",
+    "city": "St. Catharines",
+    "lat": 43.1594,
+    "lng": -79.2469,
+    "price": 9850000,
+    "suites": 72,
+    "capRate": 5.1,
+    "status": "Sold",
+    "image": "/images/listings/17-19-collier.jpeg"
+  }
+]

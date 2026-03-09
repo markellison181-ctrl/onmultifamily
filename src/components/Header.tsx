@@ -15,6 +15,7 @@ export default function Header() {
 
   const links = [
     { label: 'Listings', href: '#listings' },
+    { label: 'Map', href: '/map/' },
     { label: 'Insights', href: '/insights/' },
     { label: 'Team', href: '#team' },
     { label: 'Contact', href: '#contact' },
