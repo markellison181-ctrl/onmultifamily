@@ -103,7 +103,14 @@ export default function Footer() {
               height={32}
               className="h-5 sm:h-6 w-auto opacity-50"
             />
-            <span className="text-white/20 text-[11px] sm:text-[12px]">A Colliers Multifamily Team</span>
+            <span className="text-white/10 text-[11px]">|</span>
+            <Image
+              src="/images/logos/colliers-logo.png"
+              alt="Colliers"
+              width={80}
+              height={20}
+              className="h-4 w-auto brightness-0 invert opacity-40"
+            />
           </div>
           <div className="flex gap-4 sm:gap-6 text-[11px] sm:text-[12px] text-white/20">
             <a href="/insights/" className="hover:text-white/50 transition-colors">Insights</a>

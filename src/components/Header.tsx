@@ -29,13 +29,21 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="relative z-10">
+          <a href="/" className="relative z-10 flex items-center gap-3">
             <Image
               src={scrolled ? '/images/logos/logo-dark.svg' : '/images/logos/logo.svg'}
               alt="OnMultifamily"
               width={180}
               height={40}
               className="h-8 w-auto"
+            />
+            <span className={`hidden sm:block text-[11px] ${scrolled ? 'text-navy/20' : 'text-white/20'}`}>|</span>
+            <Image
+              src="/images/logos/colliers-logo.png"
+              alt="Colliers"
+              width={100}
+              height={24}
+              className={`hidden sm:block h-5 w-auto ${scrolled ? '' : 'brightness-0 invert opacity-60'}`}
             />
           </a>
 
