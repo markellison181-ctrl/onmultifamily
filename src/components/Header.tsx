@@ -48,8 +48,8 @@ export default function Header() {
               alt="Colliers"
               width={140}
               height={36}
-              className={`h-7 sm:h-9 w-auto transition-all duration-500 ${
-                scrolled ? 'opacity-80' : 'brightness-0 invert opacity-70'
+              className={`h-8 sm:h-10 w-auto rounded-sm transition-all duration-500 ${
+                scrolled ? 'opacity-90' : 'opacity-90'
               }`}
             />
           </a>

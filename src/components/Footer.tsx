@@ -122,7 +122,7 @@ export default function Footer() {
                 alt="Colliers"
                 width={100}
                 height={28}
-                className="h-6 sm:h-7 w-auto brightness-0 invert opacity-50"
+                className="h-7 sm:h-8 w-auto rounded-sm opacity-70"
               />
             </div>
             <div className="flex gap-5 sm:gap-6 text-[10px] sm:text-[11px] text-white/20 tracking-wide">
