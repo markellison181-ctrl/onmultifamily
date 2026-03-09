@@ -11,6 +11,7 @@ module.exports = {
         // Colliers Primary Colors
         'colliers-blue-dark': '#002B49',
         'colliers-blue': '#0072CE',
+        'colliers-gold': '#C9A84C',
         
         // Colliers Secondary Colors
         'colliers-gray-80': '#4B4B4B',
@@ -19,36 +20,38 @@ module.exports = {
         'colliers-light-blue': '#6CBFE6',
         'colliers-pale-blue': '#DFEFF9',
         'colliers-red': '#B32317',
-        
-        // Custom variations
-        'colliers-card': '#003459', // Slightly lighter than blue-dark for cards
-        'colliers-card-hover': '#004166',
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+        sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui'],
+        serif: ['var(--font-playfair)', 'ui-serif', 'Georgia'],
+      },
+      fontSize: {
+        'display': ['8rem', { lineHeight: '0.9' }],
+        'hero': ['6rem', { lineHeight: '0.95' }],
+      },
+      spacing: {
+        '18': '4.5rem',
+        '28': '7rem',
+        '32': '8rem',
+        '36': '9rem',
+        '40': '10rem',
+        '44': '11rem',
+        '48': '12rem',
+        '52': '13rem',
+        '56': '14rem',
+        '64': '16rem',
+        '72': '18rem',
+        '80': '20rem',
+        '96': '24rem',
       },
       animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
-        'fade-in-up': 'fadeInUp 0.6s ease-out',
-        'slide-up': 'slideUp 0.8s ease-out',
-        'counter': 'counter 2s ease-out',
+        'fade-in': 'fadeIn 1s ease-out',
+        'fade-in-slow': 'fadeIn 1.5s ease-out',
       },
       keyframes: {
         fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        fadeInUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '0%': { opacity: '0', transform: 'translateY(2rem)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        slideUp: {
-          '0%': { opacity: '0', transform: 'translateY(60px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        counter: {
-          '0%': { transform: 'translateY(100%)' },
-          '100%': { transform: 'translateY(0)' },
         },
       },
     },

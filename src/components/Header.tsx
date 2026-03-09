@@ -19,9 +19,8 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
   const navigation = [
-    { name: 'Home', href: '#home' },
     { name: 'Listings', href: '#listings' },
-    { name: 'Insights', href: '#insights' },
+    { name: 'Insights', href: '/insights' },
     { name: 'Team', href: '#team' },
     { name: 'Contact', href: '#contact' },
   ]
