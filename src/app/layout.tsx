@@ -6,11 +6,11 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
 
 export const metadata: Metadata = {
-  title: 'OnMultifamily — Ontario\'s Premier Multifamily Advisory Team | Colliers',
+  title: 'Colliers Multifamily Advisory — Ontario\'s Premier Multifamily Team',
   description: 'Led by Dayma Itamunoala, SVP at Colliers. Over $1.12B in completed multifamily transactions across Ontario. Institutional-grade advisory for apartment building owners and investors.',
   keywords: 'multifamily advisory ontario, apartment building broker toronto, sell apartment building ontario, multifamily investment sales colliers, cap rates ontario',
   authors: [{ name: 'Dayma Itamunoala' }],
-  icons: { icon: '/images/logos/favicon.jpg' },
+  icons: { icon: '/favicon.png' },
   openGraph: {
     title: 'OnMultifamily — Ontario\'s Premier Multifamily Advisory Team',
     description: 'Over $1.12B in completed multifamily sales. 81% closing rate. Led by Dayma Itamunoala at Colliers.',
