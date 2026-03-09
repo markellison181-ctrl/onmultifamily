@@ -39,7 +39,7 @@ export default function Header() {
             />
             <span className={`hidden sm:block text-[11px] ${scrolled ? 'text-navy/20' : 'text-white/20'}`}>|</span>
             <Image
-              src="/images/logos/colliers-logo.png"
+              src="/images/logos/colliers.png"
               alt="Colliers"
               width={100}
               height={24}

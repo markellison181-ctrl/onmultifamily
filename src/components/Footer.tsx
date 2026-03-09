@@ -105,7 +105,7 @@ export default function Footer() {
             />
             <span className="text-white/10 text-[11px]">|</span>
             <Image
-              src="/images/logos/colliers-logo.png"
+              src="/images/logos/colliers.png"
               alt="Colliers"
               width={80}
               height={20}
