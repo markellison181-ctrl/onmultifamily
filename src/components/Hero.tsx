@@ -3,82 +3,68 @@
 import React from 'react'
 import Image from 'next/image'
 
-const Hero = () => {
+export default function Hero() {
   return (
-    <section className="section-dark min-h-screen flex items-center relative overflow-hidden">
-      {/* Background Image with Dark Overlay */}
+    <section className="relative min-h-screen flex items-end bg-navy overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0">
         <Image
           src="/images/hero-img.png"
-          alt="Ontario Multifamily"
+          alt=""
           fill
-          className="object-cover opacity-20"
+          className="object-cover opacity-25"
           priority
         />
-        <div className="absolute inset-0 bg-colliers-blue-dark/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/80 to-navy/40" />
       </div>
 
       {/* Content */}
-      <div className="container-full relative z-10">
-        <div className="max-w-6xl">
-          {/* Small Intro Line */}
-          <div className="mb-12">
-            <div className="gold-line mb-4"></div>
-            <p className="body-lg text-gray-300 tracking-wide">
-              A Colliers Multifamily Team
-            </p>
-          </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-24 md:pb-32 pt-40 w-full">
+        {/* Eyebrow */}
+        <div className="flex items-center gap-4 mb-10">
+          <div className="w-12 h-px bg-gold" />
+          <span className="text-[13px] font-medium tracking-wide-custom uppercase text-gold">
+            Colliers Multifamily — Ontario
+          </span>
+        </div>
 
-          {/* Main Headline */}
-          <h1 className="heading-xl text-white mb-12 max-w-5xl">
-            Ontario's Premier
-            <br />
-            Multifamily Advisory
-            <br />
-            Team
-          </h1>
+        {/* Headline */}
+        <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] text-white leading-[0.95] mb-8 max-w-4xl">
+          Institutional advisory<br />
+          for multifamily owners
+        </h1>
 
-          {/* Subheading */}
-          <p className="body-xl text-gray-200 max-w-3xl mb-20">
-            Institutional-grade advisory for apartment building owners and investors. 
-            Led by Dayma Itamunoala at Colliers.
-          </p>
+        {/* Subheadline */}
+        <p className="text-lg md:text-xl text-white/60 max-w-2xl mb-16 leading-relaxed">
+          We advise apartment building owners and investors across Ontario on acquisitions, 
+          dispositions, and portfolio strategy. Over $1.12 billion in completed transactions.
+        </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 mb-28">
-            <a href="#listings" className="btn-primary text-lg">
-              Our Listings
-            </a>
-            <a href="/insights" className="btn-primary text-lg">
-              Subscribe
-            </a>
-          </div>
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row gap-4 mb-24">
+          <a href="#listings" className="border border-white/30 text-white text-[13px] font-medium tracking-wide-custom uppercase px-10 py-4 hover:bg-white/10 transition-all duration-300 text-center">
+            Current Offerings
+          </a>
+          <a href="#newsletter" className="border border-white/30 text-white text-[13px] font-medium tracking-wide-custom uppercase px-10 py-4 hover:bg-white/10 transition-all duration-300 text-center">
+            Subscribe
+          </a>
+        </div>
 
-          {/* Stats Strip */}
-          <div className="border-t border-white/20 pt-16">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-16">
-              <div className="text-center lg:text-left">
-                <div className="stat-number text-white mb-2">$1.12B+</div>
-                <div className="stat-label text-gray-400">Transactions</div>
-              </div>
-              <div className="text-center lg:text-left">
-                <div className="stat-number text-white mb-2">81%</div>
-                <div className="stat-label text-gray-400">Close Rate</div>
-              </div>
-              <div className="text-center lg:text-left">
-                <div className="stat-number text-white mb-2">3,000+</div>
-                <div className="stat-label text-gray-400">Units Sold</div>
-              </div>
-              <div className="text-center lg:text-left">
-                <div className="stat-number text-white mb-2">14,000+</div>
-                <div className="stat-label text-gray-400">Subscribers</div>
-              </div>
+        {/* Stats */}
+        <div className="border-t border-white/15 pt-10 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16">
+          {[
+            { number: '$1.12B+', label: 'Completed Transactions' },
+            { number: '81%', label: 'Close Rate' },
+            { number: '3,000+', label: 'Units Sold' },
+            { number: '14,000+', label: 'Newsletter Subscribers' },
+          ].map(stat => (
+            <div key={stat.label}>
+              <div className="font-serif text-3xl md:text-4xl text-white mb-1">{stat.number}</div>
+              <div className="text-[12px] tracking-wide-custom uppercase text-white/40">{stat.label}</div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
   )
 }
-
-export default Hero

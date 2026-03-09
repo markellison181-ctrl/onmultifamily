@@ -3,72 +3,67 @@
 import React from 'react'
 import Image from 'next/image'
 
-const About = () => {
+export default function About() {
   return (
-    <section className="section-light">
-      <div className="container-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
-          {/* Team Photo */}
-          <div className="order-2 lg:order-1">
-            <div className="relative">
-              <Image
-                src="/images/team/team-group.jpg"
-                alt="Ontario Multifamily Advisory Team"
-                width={800}
-                height={1000}
-                className="photo-editorial rounded-none shadow-2xl"
-                priority
-              />
-              <div className="absolute -bottom-8 -right-8 bg-white p-8 shadow-xl max-w-xs">
-                <div className="text-4xl font-serif text-colliers-blue-dark mb-2">$1.12B+</div>
-                <div className="text-sm text-colliers-gray-80 uppercase tracking-wide">
-                  Completed Transactions
-                </div>
-              </div>
-            </div>
+    <section className="py-28 md:py-40 bg-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+          {/* Photo */}
+          <div className="relative">
+            <Image
+              src="/images/team/team-group.jpg"
+              alt="OnMultifamily Team"
+              width={800}
+              height={1000}
+              className="w-full aspect-[4/5] object-cover"
+            />
+            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-navy/20 to-transparent" />
           </div>
 
-          {/* Content */}
-          <div className="order-1 lg:order-2">
-            <div className="gold-line mb-8"></div>
-            
-            <h2 className="heading-lg text-colliers-blue-dark mb-12">
-              Institutional rigour meets deep market intelligence
+          {/* Copy */}
+          <div>
+            <div className="flex items-center gap-4 mb-10">
+              <div className="w-12 h-px bg-gold" />
+              <span className="text-[12px] tracking-wide-custom uppercase text-navy/40 font-medium">
+                About
+              </span>
+            </div>
+
+            <h2 className="font-serif text-4xl md:text-5xl text-navy leading-tight mb-8">
+              The fastest-growing multifamily team in Ontario
             </h2>
 
-            <div className="space-y-8 mb-16">
-              <p className="body-xl text-colliers-gray-80 leading-relaxed">
-                We are a specialist advisory team within Colliers, focused exclusively on multifamily investment sales across Ontario. Our approach combines institutional rigour with deep market intelligence to deliver exceptional outcomes for apartment building owners.
+            <div className="space-y-6 text-navy/60 text-lg leading-relaxed">
+              <p>
+                We are a specialist advisory team within Colliers, focused exclusively on 
+                multifamily investment sales across Ontario. Our approach combines institutional 
+                rigour with deep market intelligence developed over hundreds of transactions.
               </p>
-
-              <p className="body-lg text-colliers-gray-80 leading-relaxed">
-                Since 2018, our team has completed over $1.12 billion in multifamily transactions across 47 Ontario municipalities. We maintain an 81% closing rate by focusing on sophisticated marketing, comprehensive market analysis, and strategic buyer cultivation.
-              </p>
-
-              <p className="body-lg text-colliers-gray-80 leading-relaxed">
-                Our weekly newsletter reaches 14,000+ multifamily professionals, providing market intelligence that drives informed investment decisions across the province.
+              <p>
+                From 11-unit walk-ups to 1,200+ suite portfolios, we advise private owners, 
+                family offices, REITs, and institutional capital on acquisitions, dispositions, 
+                and portfolio strategy.
               </p>
             </div>
 
-            {/* Dayma Quote Card */}
-            <div className="bg-gray-50 p-12 border-l-4 border-colliers-gold">
+            {/* Dayma Quote */}
+            <div className="mt-12 pt-10 border-t border-soft-gray">
               <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/team/dayma.png"
-                    alt="Dayma Itamunoala"
-                    width={80}
-                    height={80}
-                    className="rounded-full grayscale"
-                  />
-                </div>
+                <Image
+                  src="/images/team/dayma.png"
+                  alt="Dayma Itamunoala"
+                  width={72}
+                  height={72}
+                  className="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                />
                 <div>
-                  <blockquote className="body-lg text-colliers-blue-dark italic mb-4 leading-relaxed">
-                    "Every building has a story. Our job is to understand that story deeply enough to present it to the right buyer at the right time. That's how we consistently exceed market expectations."
-                  </blockquote>
-                  <div className="text-sm text-colliers-gray-80">
-                    <div className="font-semibold">Dayma Itamunoala</div>
-                    <div>Vice President, Team Leader</div>
+                  <p className="text-navy/70 text-base italic leading-relaxed mb-3">
+                    &ldquo;Every building tells a story. Our job is to understand that story and 
+                    position it for the capital markets in a way that maximizes value.&rdquo;
+                  </p>
+                  <div className="text-[13px]">
+                    <span className="font-semibold text-navy">Dayma Itamunoala</span>
+                    <span className="text-navy/40 ml-2">SVP, Head of Multifamily — Colliers</span>
                   </div>
                 </div>
               </div>
@@ -79,5 +74,3 @@ const About = () => {
     </section>
   )
 }
-
-export default About

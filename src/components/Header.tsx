@@ -1,118 +1,106 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import Image from 'next/image'
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+export default function Header() {
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setScrolled(window.scrollY > 60)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
-
-  const navigation = [
-    { name: 'Listings', href: '#listings' },
-    { name: 'Insights', href: '/insights' },
-    { name: 'Team', href: '#team' },
-    { name: 'Contact', href: '#contact' },
+  const links = [
+    { label: 'Listings', href: '#listings' },
+    { label: 'Insights', href: '/insights/' },
+    { label: 'Team', href: '#team' },
+    { label: 'Contact', href: '#contact' },
   ]
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-colliers-blue-dark/95 backdrop-blur-md shadow-lg' 
-        : 'bg-transparent'
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
     }`}>
-      <nav className="container-width">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <a href="#home" className="flex items-center space-x-3">
-              <img 
-                src="/images/logos/logo.svg" 
-                alt="OnMultifamily Logo" 
-                className="w-8 h-8 md:w-10 md:h-10"
-              />
-              <div>
-                <div className="text-white font-bold text-lg md:text-xl">OnMultifamily</div>
-                <div className="text-colliers-gray-40 text-xs hidden sm:block">by Colliers</div>
-              </div>
-            </a>
-          </div>
+          <a href="/" className="relative z-10">
+            <Image
+              src={scrolled ? '/images/logos/logo-dark.svg' : '/images/logos/logo.svg'}
+              alt="OnMultifamily"
+              width={180}
+              height={40}
+              className="h-8 w-auto"
+            />
+          </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-white hover:text-colliers-light-blue px-3 py-2 text-sm font-medium transition-colors duration-200"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Newsletter CTA */}
-          <div className="hidden lg:block">
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-10">
+            {links.map(link => (
+              <a
+                key={link.label}
+                href={link.href}
+                className={`text-[13px] font-medium tracking-wide-custom uppercase transition-colors duration-300 ${
+                  scrolled ? 'text-navy/70 hover:text-navy' : 'text-white/70 hover:text-white'
+                }`}
+              >
+                {link.label}
+              </a>
+            ))}
             <a
-              href="#newsletter"
-              className="btn-primary text-sm"
+              href="#valuation"
+              className={`text-[13px] font-medium tracking-wide-custom uppercase px-6 py-2.5 border transition-all duration-300 ${
+                scrolled
+                  ? 'border-navy text-navy hover:bg-navy hover:text-white'
+                  : 'border-white/40 text-white hover:bg-white/10'
+              }`}
             >
-              Subscribe
+              Free Valuation
             </a>
-          </div>
+          </nav>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="text-white hover:text-colliers-light-blue p-2"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden relative z-10 w-8 h-8 flex flex-col justify-center gap-1.5"
+          >
+            <span className={`block h-px w-full transition-all duration-300 ${
+              menuOpen ? 'rotate-45 translate-y-[3px] bg-navy' : (scrolled ? 'bg-navy' : 'bg-white')
+            }`} />
+            <span className={`block h-px w-full transition-all duration-300 ${
+              menuOpen ? '-rotate-45 -translate-y-[3px] bg-navy' : (scrolled ? 'bg-navy' : 'bg-white')
+            }`} />
+          </button>
         </div>
+      </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-colliers-blue-dark/95 backdrop-blur-md rounded-lg mt-2">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-white hover:text-colliers-light-blue block px-3 py-2 text-base font-medium transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
-              <div className="px-3 py-2">
-                <a
-                  href="#newsletter"
-                  className="btn-primary w-full text-center inline-block"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Subscribe
-                </a>
-              </div>
-            </div>
-          </div>
-        )}
-      </nav>
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden fixed inset-0 bg-white z-40 pt-24 px-8">
+          <nav className="flex flex-col gap-8">
+            {links.map(link => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="text-2xl font-serif text-navy"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="#valuation"
+              onClick={() => setMenuOpen(false)}
+              className="text-lg font-medium text-navy border border-navy px-6 py-3 text-center mt-4"
+            >
+              Free Valuation
+            </a>
+          </nav>
+        </div>
+      )}
     </header>
   )
 }
-
-export default Header
