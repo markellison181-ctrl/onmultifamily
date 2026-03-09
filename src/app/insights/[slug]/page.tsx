@@ -1,187 +1,140 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { Calendar, Clock, ArrowLeft, ArrowRight } from 'lucide-react'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import articlesData from '@/data/articles.json'
 import { readFileSync } from 'fs'
 import { join } from 'path'
 
-// Simple markdown-to-HTML converter
-function markdownToHtml(markdown: string): string {
-  return markdown
-    // Headers
-    .replace(/^# (.+$)/gm, '<h1 class="heading-lg text-colliers-blue-dark mb-8 mt-12 first:mt-0">$1</h1>')
-    .replace(/^## (.+$)/gm, '<h2 class="heading-md text-colliers-blue-dark mb-6 mt-12">$1</h2>')
-    .replace(/^### (.+$)/gm, '<h3 class="heading-sm text-colliers-blue-dark mb-4 mt-8">$1</h3>')
-    
-    // Bold and italic
-    .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-colliers-blue-dark">$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em class="italic">$1</em>')
-    
-    // Lists
-    .replace(/^- (.+$)/gm, '<li class="mb-2">$1</li>')
-    .replace(/(<li[\s\S]*<\/li>)/, '<ul class="list-disc list-inside mb-6 space-y-2 text-colliers-gray-80">$1</ul>')
-    
-    // Tables (basic support)
-    .replace(/^\|(.+)\|$/gm, (match, content) => {
-      const cells = content.split('|').map((cell: string) => cell.trim()).filter((cell: string) => cell)
-      return `<tr>${cells.map((cell: string) => `<td class="border border-gray-300 px-4 py-2">${cell}</td>`).join('')}</tr>`
-    })
-    .replace(/(<tr>[\s\S]*<\/tr>)/, '<table class="w-full mb-6 border-collapse border border-gray-300">$1</table>')
-    
-    // Paragraphs
-    .replace(/^(?!<[h|u|l|t])(.+$)/gm, '<p class="body-md text-colliers-gray-80 mb-6 leading-relaxed">$1</p>')
-    
-    // Clean up multiple newlines
-    .replace(/\n\n+/g, '\n')
+function markdownToHtml(md: string): string {
+  return md
+    .replace(/^# (.+$)/gm, '<h1 class="font-serif text-3xl md:text-4xl text-navy mb-6 mt-14 first:mt-0">$1</h1>')
+    .replace(/^## (.+$)/gm, '<h2 class="font-serif text-2xl md:text-3xl text-navy mb-5 mt-12">$1</h2>')
+    .replace(/^### (.+$)/gm, '<h3 class="font-serif text-xl text-navy mb-4 mt-10">$1</h3>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-navy">$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/^- (.+$)/gm, '<li class="text-navy/60 leading-relaxed mb-1.5 ml-5 list-disc">$1</li>')
+    .replace(/^---$/gm, '<hr class="border-t border-soft-gray my-10" />')
+    .replace(/^(?!<[hluoite])(?!$)(.+)$/gm, '<p class="text-navy/60 text-[17px] leading-[1.8] mb-5">$1</p>')
+    .replace(/\n{2,}/g, '\n')
 }
 
 export async function generateStaticParams() {
-  return articlesData.map((article) => ({
-    slug: article.id,
-  }))
+  return articlesData.map(a => ({ slug: a.id }))
 }
 
 export default function ArticlePage({ params }: { params: { slug: string } }) {
   const article = articlesData.find(a => a.id === params.slug)
-  
-  if (!article) {
-    notFound()
-  }
+  if (!article) notFound()
 
-  // Read markdown content
   let content = ''
   try {
-    const filePath = join(process.cwd(), 'src', 'content', `${article.id}.md`)
-    content = readFileSync(filePath, 'utf8')
-  } catch (error) {
-    content = `# ${article.title}\n\nContent coming soon...`
+    content = readFileSync(join(process.cwd(), 'src', 'content', `${article.id}.md`), 'utf8')
+  } catch {
+    content = `# ${article.title}\n\nContent coming soon.`
   }
 
-  // Convert markdown to HTML
-  const htmlContent = markdownToHtml(content)
+  const html = markdownToHtml(content)
 
-  // Find related articles
-  const relatedArticles = articlesData
-    .filter(a => a.id !== article.id && a.category === article.category)
-    .slice(0, 2)
+  // Get related articles
+  const related = articlesData.filter(a => a.id !== article.id).slice(0, 3)
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* Header */}
-      <section className="section-light border-b border-gray-100">
-        <div className="container-narrow">
-          <Link 
-            href="/insights" 
-            className="inline-flex items-center gap-2 text-colliers-blue-dark hover:text-colliers-blue transition-colors duration-300 mb-8"
+    <main>
+      <Header />
+
+      {/* Article Header */}
+      <section className="bg-navy pt-36 pb-16 md:pt-44 md:pb-20">
+        <div className="max-w-3xl mx-auto px-6 md:px-12">
+          <Link
+            href="/insights/"
+            className="text-[12px] tracking-wide-custom uppercase text-white/30 hover:text-white/60 transition-colors mb-10 inline-block"
           >
-            <ArrowLeft className="w-4 h-4" />
-            <span>Back to Insights</span>
+            ← Back to Insights
           </Link>
 
-          <div className="max-w-4xl">
-            <div className="mb-6">
-              <span className="inline-block bg-colliers-pale-blue text-colliers-blue-dark text-sm font-medium px-4 py-2 rounded-full">
-                {article.category}
-              </span>
-            </div>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-[11px] tracking-wide-custom uppercase font-semibold text-gold">
+              {article.category}
+            </span>
+            <span className="text-white/20">·</span>
+            <span className="text-[12px] text-white/40">{article.readTime}</span>
+          </div>
 
-            <h1 className="heading-lg text-colliers-blue-dark mb-8">
-              {article.title}
-            </h1>
+          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-8">
+            {article.title}
+          </h1>
 
-            <div className="flex items-center gap-8 text-colliers-gray-80 mb-8">
-              <div className="flex items-center gap-2">
-                <Calendar className="w-5 h-5" />
-                <span>{new Date(article.date).toLocaleDateString('en-US', { 
-                  month: 'long', 
-                  day: 'numeric', 
-                  year: 'numeric' 
-                })}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5" />
-                <span>{article.readTime}</span>
-              </div>
-              <div>
-                <span>By {article.author}</span>
+          <div className="flex items-center gap-4">
+            <Image
+              src="/images/team/dayma.png"
+              alt="Dayma Itamunoala"
+              width={40}
+              height={40}
+              className="w-10 h-10 rounded-full object-cover"
+            />
+            <div>
+              <div className="text-white text-sm font-medium">{article.author}</div>
+              <div className="text-white/40 text-[12px]">
+                {new Date(article.date).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })}
               </div>
             </div>
-
-            <div className="gold-line mb-16"></div>
           </div>
         </div>
       </section>
 
-      {/* Article Content */}
-      <section className="section-light">
-        <div className="container-narrow">
-          <div className="max-w-4xl prose prose-lg">
-            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-          </div>
-
-          {/* Newsletter CTA */}
-          <div className="border-t border-gray-200 pt-16 mt-16">
-            <div className="bg-colliers-blue-dark text-white rounded-lg p-12 text-center">
-              <h3 className="heading-sm text-white mb-4">
-                Subscribe for Weekly Market Intelligence
-              </h3>
-              <p className="body-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-                Get analysis like this delivered every week. Join 14,000+ multifamily professionals staying ahead of Ontario market trends.
-              </p>
-              <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-                <input 
-                  type="email" 
-                  placeholder="Your email address" 
-                  className="flex-1 px-6 py-4 rounded-none bg-white text-colliers-blue-dark focus:outline-none"
-                />
-                <button 
-                  type="submit"
-                  className="btn-primary whitespace-nowrap"
-                >
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-
-          {/* Related Articles */}
-          {relatedArticles.length > 0 && (
-            <div className="mt-20">
-              <h3 className="heading-sm text-colliers-blue-dark mb-12 text-center">
-                Related Insights
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                {relatedArticles.map((relatedArticle) => (
-                  <article key={relatedArticle.id} className="group">
-                    <div className="mb-4">
-                      <span className="inline-block bg-gray-100 text-colliers-blue-dark text-xs font-medium px-3 py-1 rounded-full">
-                        {relatedArticle.category}
-                      </span>
-                    </div>
-                    
-                    <h4 className="text-xl font-serif text-colliers-blue-dark mb-4 leading-tight group-hover:text-colliers-blue transition-colors duration-300">
-                      {relatedArticle.title}
-                    </h4>
-                    
-                    <p className="text-colliers-gray-80 mb-6 leading-relaxed">
-                      {relatedArticle.excerpt}
-                    </p>
-                    
-                    <Link 
-                      href={`/insights/${relatedArticle.id}`}
-                      className="inline-flex items-center gap-2 text-colliers-blue-dark font-medium hover:text-colliers-blue transition-colors duration-300 group"
-                    >
-                      <span>Read More</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                    </Link>
-                  </article>
-                ))}
-              </div>
-            </div>
-          )}
+      {/* Article Body */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-3xl mx-auto px-6 md:px-12">
+          <div dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </section>
+
+      {/* Subscribe CTA */}
+      <section className="py-16 bg-cream">
+        <div className="max-w-2xl mx-auto px-6 md:px-12 text-center">
+          <p className="text-navy/50 text-lg mb-2">
+            Get analysis like this delivered every week.
+          </p>
+          <p className="text-navy/30 text-sm mb-8">
+            Join 14,000+ multifamily professionals staying ahead of Ontario market trends.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="you@email.com"
+              className="flex-1 bg-white border border-soft-gray px-5 py-3.5 text-sm text-navy placeholder:text-navy/30 focus:border-navy transition-colors"
+            />
+            <button className="bg-navy text-white text-[12px] tracking-wide-custom uppercase font-medium px-8 py-3.5 hover:bg-navy-light transition-colors whitespace-nowrap">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Related */}
+      <section className="py-20 md:py-28 bg-white border-t border-soft-gray">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <h2 className="font-serif text-2xl text-navy mb-10">More Insights</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {related.map(a => (
+              <Link key={a.id} href={`/insights/${a.id}/`} className="group block">
+                <span className="text-[11px] tracking-wide-custom uppercase font-semibold text-blue block mb-2">
+                  {a.category}
+                </span>
+                <h3 className="font-serif text-lg text-navy leading-snug mb-2 group-hover:text-blue transition-colors duration-300">
+                  {a.title}
+                </h3>
+                <p className="text-navy/40 text-[13px]">{a.readTime}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </main>
   )
 }

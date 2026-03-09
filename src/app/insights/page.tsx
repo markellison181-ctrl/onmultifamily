@@ -1,167 +1,130 @@
 import React from 'react'
 import Link from 'next/link'
-import { Calendar, Clock, ArrowRight } from 'lucide-react'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import articlesData from '@/data/articles.json'
 
 export default function InsightsPage() {
-  const featuredArticles = articlesData.filter(article => article.featured)
-  const recentArticles = articlesData.filter(article => !article.featured)
+  const featured = articlesData.filter(a => a.featured)
+  const recent = articlesData.filter(a => !a.featured)
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* Header Section */}
-      <section className="section-light border-b border-gray-100">
-        <div className="container-narrow text-center">
-          <div className="gold-line mx-auto mb-8"></div>
-          <h1 className="heading-lg text-colliers-blue-dark mb-6">
-            Market Intelligence
+    <main>
+      <Header />
+      
+      {/* Hero */}
+      <section className="bg-navy pt-36 pb-20 md:pt-44 md:pb-28">
+        <div className="max-w-3xl mx-auto px-6 md:px-12 text-center">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="w-12 h-px bg-gold" />
+            <span className="text-[12px] tracking-wide-custom uppercase text-gold font-medium">
+              Market Intelligence
+            </span>
+            <div className="w-12 h-px bg-gold" />
+          </div>
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
+            Insights & Analysis
           </h1>
-          <p className="body-xl text-colliers-gray-80 max-w-3xl mx-auto mb-12">
-            Weekly analysis on Ontario multifamily markets. Cap rates, deal flow, policy updates, and actionable insights for apartment building owners and investors.
+          <p className="text-lg text-white/50 leading-relaxed max-w-xl mx-auto">
+            Weekly analysis on Ontario multifamily markets. Cap rates, deal flow, 
+            CMHC updates, and actionable guidance.
           </p>
-          
-          {/* Newsletter CTA */}
-          <div className="bg-gray-50 rounded-lg p-12 max-w-2xl mx-auto">
-            <h3 className="heading-sm text-colliers-blue-dark mb-4">
-              Never miss an insight
-            </h3>
-            <p className="body-md text-colliers-gray-80 mb-6">
-              Join 14,000+ multifamily professionals receiving weekly market intelligence.
+        </div>
+      </section>
+
+      {/* Subscribe Bar */}
+      <section className="bg-cream py-10">
+        <div className="max-w-2xl mx-auto px-6 md:px-12">
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <p className="text-navy/50 text-sm whitespace-nowrap">
+              Join 14,000+ professionals
             </p>
-            <form className="flex flex-col sm:flex-row gap-4">
-              <input 
-                type="email" 
-                placeholder="Your email address" 
-                className="flex-1 px-6 py-4 border border-gray-300 rounded-none focus:border-colliers-blue-dark focus:outline-none"
+            <div className="flex gap-3 flex-1 w-full sm:w-auto">
+              <input
+                type="email"
+                placeholder="you@email.com"
+                className="flex-1 bg-white border border-soft-gray px-5 py-3 text-sm text-navy placeholder:text-navy/30 focus:border-navy transition-colors"
               />
-              <button 
-                type="submit"
-                className="btn-secondary whitespace-nowrap"
-              >
+              <button className="bg-navy text-white text-[12px] tracking-wide-custom uppercase font-medium px-6 py-3 hover:bg-navy-light transition-colors whitespace-nowrap">
                 Subscribe
               </button>
-            </form>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Featured Articles */}
-      <section className="section-light">
-        <div className="container-wide">
-          <div className="text-center mb-20">
-            <h2 className="heading-md text-colliers-blue-dark mb-4">
-              Featured Analysis
-            </h2>
-            <p className="body-lg text-colliers-gray-80">
-              In-depth market research and actionable investment guidance
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {featuredArticles.map((article, index) => (
-              <article key={article.id} className="group">
-                <div className="mb-6">
-                  <div className="flex items-center gap-4 text-sm text-colliers-gray-80 mb-4">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4" />
-                      {new Date(article.date).toLocaleDateString('en-US', { 
-                        month: 'long', 
-                        day: 'numeric', 
-                        year: 'numeric' 
-                      })}
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4" />
-                      {article.readTime}
-                    </div>
-                  </div>
-                  
-                  <div className="mb-3">
-                    <span className="inline-block bg-colliers-pale-blue text-colliers-blue-dark text-xs font-medium px-3 py-1 rounded-full">
-                      {article.category}
-                    </span>
-                  </div>
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <div className="space-y-16">
+            {featured.map(article => (
+              <Link
+                key={article.id}
+                href={`/insights/${article.id}/`}
+                className="group block border-b border-soft-gray pb-16 last:border-0"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-[11px] tracking-wide-custom uppercase font-semibold text-blue">
+                    {article.category}
+                  </span>
+                  <span className="text-navy/20">·</span>
+                  <span className="text-[12px] text-navy/40">
+                    {new Date(article.date).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })}
+                  </span>
+                  <span className="text-navy/20">·</span>
+                  <span className="text-[12px] text-navy/40">{article.readTime}</span>
                 </div>
 
-                <h3 className="heading-sm text-colliers-blue-dark mb-6 group-hover:text-colliers-blue transition-colors duration-300">
+                <h2 className="font-serif text-2xl md:text-3xl text-navy leading-snug mb-4 group-hover:text-blue transition-colors duration-300">
                   {article.title}
-                </h3>
-                
-                <p className="body-md text-colliers-gray-80 mb-8 leading-relaxed">
+                </h2>
+
+                <p className="text-navy/50 text-[16px] leading-relaxed mb-6 max-w-3xl">
                   {article.excerpt}
                 </p>
-                
-                <Link 
-                  href={`/insights/${article.id}`}
-                  className="inline-flex items-center gap-2 text-colliers-blue-dark font-medium hover:text-colliers-blue transition-colors duration-300 group"
-                >
-                  <span>Read Full Analysis</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </Link>
-              </article>
+
+                <span className="text-[13px] tracking-wide-custom uppercase font-medium text-navy/30 group-hover:text-navy transition-colors duration-300">
+                  Read Full Analysis →
+                </span>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Recent Articles */}
-      {recentArticles.length > 0 && (
-        <section className="section-light bg-gray-50">
-          <div className="container-wide">
-            <div className="text-center mb-20">
-              <h2 className="heading-md text-colliers-blue-dark mb-4">
-                Recent Insights
-              </h2>
-              <p className="body-lg text-colliers-gray-80">
-                Stay current with the latest market developments
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {recentArticles.map((article) => (
-                <article key={article.id} className="group">
-                  <div className="flex items-center gap-4 text-sm text-colliers-gray-80 mb-4">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4" />
-                      {new Date(article.date).toLocaleDateString('en-US', { 
-                        month: 'long', 
-                        day: 'numeric', 
-                        year: 'numeric' 
-                      })}
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4" />
-                      {article.readTime}
-                    </div>
-                  </div>
-                  
-                  <div className="mb-4">
-                    <span className="inline-block bg-white text-colliers-blue-dark text-xs font-medium px-3 py-1 rounded-full border border-gray-200">
+      {/* Recent */}
+      {recent.length > 0 && (
+        <section className="py-20 md:py-28 bg-warm-gray">
+          <div className="max-w-5xl mx-auto px-6 md:px-12">
+            <h2 className="font-serif text-3xl text-navy mb-12">Recent Insights</h2>
+            <div className="grid md:grid-cols-2 gap-12">
+              {recent.map(article => (
+                <Link
+                  key={article.id}
+                  href={`/insights/${article.id}/`}
+                  className="group block"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-[11px] tracking-wide-custom uppercase font-semibold text-blue">
                       {article.category}
                     </span>
+                    <span className="text-navy/20">·</span>
+                    <span className="text-[12px] text-navy/40">{article.readTime}</span>
                   </div>
-
-                  <h3 className="text-2xl font-serif text-colliers-blue-dark mb-4 leading-tight group-hover:text-colliers-blue transition-colors duration-300">
+                  <h3 className="font-serif text-xl text-navy leading-snug mb-3 group-hover:text-blue transition-colors duration-300">
                     {article.title}
                   </h3>
-                  
-                  <p className="body-md text-colliers-gray-80 mb-6 leading-relaxed">
+                  <p className="text-navy/40 text-[14px] leading-relaxed">
                     {article.excerpt}
                   </p>
-                  
-                  <Link 
-                    href={`/insights/${article.id}`}
-                    className="inline-flex items-center gap-2 text-colliers-blue-dark font-medium hover:text-colliers-blue transition-colors duration-300 group"
-                  >
-                    <span>Read More</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Link>
-                </article>
+                </Link>
               ))}
             </div>
           </div>
         </section>
       )}
+
+      <Footer />
     </main>
   )
 }
