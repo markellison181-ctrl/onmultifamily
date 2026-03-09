@@ -13,11 +13,14 @@ function markdownToHtml(md: string): string {
     .replace(/^# (.+$)/gm, '<h1 class="font-serif text-3xl md:text-4xl text-navy mb-6 mt-14 first:mt-0">$1</h1>')
     .replace(/^## (.+$)/gm, '<h2 class="font-serif text-2xl md:text-3xl text-navy mb-5 mt-12">$1</h2>')
     .replace(/^### (.+$)/gm, '<h3 class="font-serif text-xl text-navy mb-4 mt-10">$1</h3>')
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<figure class="my-10"><img src="$2" alt="$1" class="w-full" /><figcaption class="text-center text-navy/30 text-[13px] mt-3">$1</figcaption></figure>')
     .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-navy">$1</strong>')
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
     .replace(/^- (.+$)/gm, '<li class="text-navy/60 leading-relaxed mb-1.5 ml-5 list-disc">$1</li>')
+    .replace(/^(\d+)\. (.+$)/gm, '<li class="text-navy/60 leading-relaxed mb-1.5 ml-5 list-decimal"><strong class="text-navy">$2</strong></li>')
     .replace(/^---$/gm, '<hr class="border-t border-soft-gray my-10" />')
-    .replace(/^(?!<[hluoite])(?!$)(.+)$/gm, '<p class="text-navy/60 text-[17px] leading-[1.8] mb-5">$1</p>')
+    .replace(/^> (.+$)/gm, '<blockquote class="border-l-2 border-gold pl-6 my-8 text-navy/50 italic text-lg leading-relaxed">$1</blockquote>')
+    .replace(/^(?!<[hluoitfb])(?!$)(.+)$/gm, '<p class="text-navy/60 text-[17px] leading-[1.8] mb-5">$1</p>')
     .replace(/\n{2,}/g, '\n')
 }
 
@@ -37,8 +40,6 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   }
 
   const html = markdownToHtml(content)
-
-  // Get related articles
   const related = articlesData.filter(a => a.id !== article.id).slice(0, 3)
 
   return (
@@ -85,6 +86,22 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
+      {/* Hero Image */}
+      {article.image && (
+        <section className="bg-white">
+          <div className="max-w-4xl mx-auto px-6 md:px-12 -mt-2">
+            <div className="relative aspect-[16/9] overflow-hidden shadow-lg">
+              <Image
+                src={article.image}
+                alt={article.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Article Body */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-6 md:px-12">
@@ -121,6 +138,11 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           <div className="grid md:grid-cols-3 gap-8">
             {related.map(a => (
               <Link key={a.id} href={`/insights/${a.id}/`} className="group block">
+                {a.image && (
+                  <div className="relative aspect-[16/9] overflow-hidden mb-4">
+                    <Image src={a.image} alt={a.title} fill className="object-cover group-hover:scale-[1.02] transition-transform duration-700" />
+                  </div>
+                )}
                 <span className="text-[11px] tracking-wide-custom uppercase font-semibold text-blue block mb-2">
                   {a.category}
                 </span>

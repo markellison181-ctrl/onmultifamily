@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import articlesData from '@/data/articles.json'
@@ -53,39 +54,81 @@ export default function InsightsPage() {
         </div>
       </section>
 
-      {/* Featured Articles */}
+      {/* Featured Articles - with images */}
       <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-5xl mx-auto px-6 md:px-12">
-          <div className="space-y-16">
-            {featured.map(article => (
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          {/* Lead article - full width with image */}
+          {featured[0] && (
+            <Link
+              href={`/insights/${featured[0].id}/`}
+              className="group block mb-20"
+            >
+              <div className="grid md:grid-cols-2 gap-10 items-center">
+                {featured[0].image && (
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <Image
+                      src={featured[0].image}
+                      alt={featured[0].title}
+                      fill
+                      className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                    />
+                  </div>
+                )}
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-[11px] tracking-wide-custom uppercase font-semibold text-blue">
+                      {featured[0].category}
+                    </span>
+                    <span className="text-navy/20">·</span>
+                    <span className="text-[12px] text-navy/40">
+                      {new Date(featured[0].date).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })}
+                    </span>
+                  </div>
+                  <h2 className="font-serif text-3xl md:text-4xl text-navy leading-snug mb-4 group-hover:text-blue transition-colors duration-300">
+                    {featured[0].title}
+                  </h2>
+                  <p className="text-navy/50 text-[16px] leading-relaxed mb-6">
+                    {featured[0].excerpt}
+                  </p>
+                  <span className="text-[13px] tracking-wide-custom uppercase font-medium text-navy/30 group-hover:text-navy transition-colors duration-300">
+                    Read Full Analysis →
+                  </span>
+                </div>
+              </div>
+            </Link>
+          )}
+
+          {/* Rest of featured - grid with images */}
+          <div className="grid md:grid-cols-3 gap-10">
+            {featured.slice(1).map(article => (
               <Link
                 key={article.id}
                 href={`/insights/${article.id}/`}
-                className="group block border-b border-soft-gray pb-16 last:border-0"
+                className="group block"
               >
-                <div className="flex items-center gap-3 mb-4">
+                {article.image && (
+                  <div className="relative aspect-[16/9] overflow-hidden mb-5">
+                    <Image
+                      src={article.image}
+                      alt={article.title}
+                      fill
+                      className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                    />
+                  </div>
+                )}
+                <div className="flex items-center gap-3 mb-3">
                   <span className="text-[11px] tracking-wide-custom uppercase font-semibold text-blue">
                     {article.category}
                   </span>
                   <span className="text-navy/20">·</span>
-                  <span className="text-[12px] text-navy/40">
-                    {new Date(article.date).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })}
-                  </span>
-                  <span className="text-navy/20">·</span>
                   <span className="text-[12px] text-navy/40">{article.readTime}</span>
                 </div>
-
-                <h2 className="font-serif text-2xl md:text-3xl text-navy leading-snug mb-4 group-hover:text-blue transition-colors duration-300">
+                <h3 className="font-serif text-xl text-navy leading-snug mb-3 group-hover:text-blue transition-colors duration-300">
                   {article.title}
-                </h2>
-
-                <p className="text-navy/50 text-[16px] leading-relaxed mb-6 max-w-3xl">
+                </h3>
+                <p className="text-navy/40 text-[14px] leading-relaxed">
                   {article.excerpt}
                 </p>
-
-                <span className="text-[13px] tracking-wide-custom uppercase font-medium text-navy/30 group-hover:text-navy transition-colors duration-300">
-                  Read Full Analysis →
-                </span>
               </Link>
             ))}
           </div>

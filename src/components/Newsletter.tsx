@@ -1,16 +1,17 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import articles from '@/data/articles.json'
 
 export default function Newsletter() {
-  const featured = articles.slice(0, 3)
+  const featured = articles.filter(a => a.image).slice(0, 3)
 
   return (
     <section id="newsletter" className="py-28 md:py-40 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
-        <div className="max-w-3xl mb-20">
+        <div className="max-w-3xl mb-16">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-px bg-gold" />
             <span className="text-[12px] tracking-wide-custom uppercase text-navy/40 font-medium">
@@ -48,16 +49,28 @@ export default function Newsletter() {
           </div>
         </div>
 
-        {/* Latest Articles */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Latest Articles with Images */}
+        <div className="grid md:grid-cols-3 gap-10">
           {featured.map(article => (
             <a
               key={article.id}
               href={`/insights/${article.id}/`}
               className="group block"
             >
+              {/* Article Image */}
+              {article.image && (
+                <div className="relative aspect-[16/9] overflow-hidden mb-5">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                  />
+                </div>
+              )}
+
               {/* Category + Date */}
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-3">
                 <span className="text-[11px] tracking-wide-custom uppercase font-semibold text-blue">
                   {article.category}
                 </span>
@@ -86,7 +99,7 @@ export default function Newsletter() {
         </div>
 
         {/* View all */}
-        <div className="mt-12 text-center">
+        <div className="mt-14 text-center">
           <a href="/insights/" className="text-[13px] tracking-wide-custom uppercase font-medium text-navy border-b border-navy/20 pb-1 hover:border-navy transition-colors duration-300">
             View All Insights
           </a>

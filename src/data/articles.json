@@ -8,6 +8,7 @@
     "readTime": "5 min read",
     "category": "Market Analysis",
     "tags": ["cap rates", "market analysis", "toronto", "hamilton", "ottawa", "london"],
+    "image": "/images/articles/cap-rate-report.png",
     "featured": true
   },
   {
@@ -19,6 +20,7 @@
     "readTime": "8 min read",
     "category": "Financing",
     "tags": ["CMHC", "financing", "MLI Select", "government programs"],
+    "image": "/images/articles/cmhc-mli-select.png",
     "featured": true
   },
   {
@@ -26,10 +28,11 @@
     "title": "Why Small-Town Ontario Multifamily Is the Smartest Play in 2026",
     "date": "2026-02-15",
     "excerpt": "Migration trends and rent growth in secondary markets creating unprecedented opportunities. Strathroy, St. Catharines, Belleville analysis.",
-    "author": "Dayma Itamunoala", 
+    "author": "Dayma Itamunoala",
     "readTime": "6 min read",
     "category": "Investment Strategy",
     "tags": ["small towns", "secondary markets", "investment strategy", "rent growth"],
+    "image": "/images/articles/small-town-ontario.png",
     "featured": true
   },
   {
@@ -38,9 +41,10 @@
     "date": "2026-02-08",
     "excerpt": "Market timing, preparation strategies, and the institutional marketing approach that maximizes value for multifamily property owners.",
     "author": "Dayma Itamunoala",
-    "readTime": "7 min read", 
+    "readTime": "7 min read",
     "category": "Selling Strategy",
     "tags": ["selling", "market timing", "valuation", "exit strategy"],
+    "image": "/images/articles/sellers-playbook.png",
     "featured": true
   },
   {
@@ -51,16 +55,18 @@
     "author": "Dayma Itamunoala",
     "readTime": "4 min read",
     "category": "Policy Update",
-    "tags": ["rent increases", "policy", "cash flow", "regulation"]
+    "tags": ["rent increases", "policy", "cash flow", "regulation"],
+    "image": null
   },
   {
     "id": "interest-rate-outlook-multifamily",
     "title": "Interest Rate Outlook: Impact on Ontario Multifamily Values",
     "date": "2026-01-18",
     "excerpt": "Bank of Canada signals and how changing rates affect cap rate compression, refinancing strategies, and acquisition opportunities.",
-    "author": "Dayma Itamunoala", 
+    "author": "Dayma Itamunoala",
     "readTime": "5 min read",
     "category": "Market Outlook",
-    "tags": ["interest rates", "valuations", "refinancing", "bank of canada"]
+    "tags": ["interest rates", "valuations", "refinancing", "bank of canada"],
+    "image": null
   }
 ]

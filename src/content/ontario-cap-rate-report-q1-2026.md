@@ -6,6 +6,8 @@ The Ontario multifamily market continues to show resilience in Q1 2026, with cap
 
 Provincial average cap rates remain compressed at 4.6%, down 15 basis points from Q4 2025. However, this headline number masks significant regional variation and asset class differentiation that savvy investors can capitalize on.
 
+![Ontario Multifamily Cap Rates by Market — Q1 2026](/images/articles/cap-rate-chart.png)
+
 **Key Findings:**
 - Toronto: 3.8-4.2% (Class A), 4.5-5.1% (Class B/C)
 - Hamilton: 4.2-4.8% (institutional quality)
