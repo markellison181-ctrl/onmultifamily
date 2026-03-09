@@ -107,6 +107,7 @@ export default function Footer() {
           </div>
           <div className="flex gap-4 sm:gap-6 text-[11px] sm:text-[12px] text-white/20">
             <a href="/insights/" className="hover:text-white/50 transition-colors">Insights</a>
+            <a href="/resources/" className="hover:text-white/50 transition-colors">Resources</a>
             <a href="#listings" className="hover:text-white/50 transition-colors">Listings</a>
             <a href="/map/" className="hover:text-white/50 transition-colors">Map</a>
             <a href="#team" className="hover:text-white/50 transition-colors">Team</a>

@@ -17,6 +17,7 @@ export default function Header() {
     { label: 'Listings', href: '#listings' },
     { label: 'Map', href: '/map/' },
     { label: 'Insights', href: '/insights/' },
+    { label: 'Resources', href: '/resources/' },
     { label: 'Team', href: '#team' },
     { label: 'Contact', href: '#contact' },
   ]
