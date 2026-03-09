@@ -12,13 +12,17 @@ const clients = [
 
 export default function TrustedBy() {
   return (
-    <section className="py-12 md:py-16 bg-warm-gray border-b border-soft-gray">
+    <section className="relative py-14 md:py-16 bg-charcoal overflow-hidden">
+      {/* Subtle gradient line at top */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+      
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-          <span className="text-[12px] tracking-wide-custom uppercase text-navy/40 font-medium whitespace-nowrap">
-            Trusted by
+          <span className="text-[11px] tracking-[0.2em] uppercase text-white/25 font-medium whitespace-nowrap">
+            Trusted by leading institutions
           </span>
-          <div className="flex items-center gap-10 md:gap-14 flex-wrap justify-center">
+          <div className="w-px h-6 bg-white/10 hidden md:block" />
+          <div className="flex items-center gap-12 md:gap-16 flex-wrap justify-center">
             {clients.map(c => (
               <Image
                 key={c.name}
@@ -26,12 +30,15 @@ export default function TrustedBy() {
                 alt={c.name}
                 width={120}
                 height={48}
-                className="h-10 w-auto object-contain opacity-50 hover:opacity-80 transition-opacity duration-500 grayscale"
+                className="h-9 w-auto object-contain opacity-30 hover:opacity-60 transition-all duration-700 grayscale hover:grayscale-0"
               />
             ))}
           </div>
         </div>
       </div>
+
+      {/* Subtle gradient line at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
     </section>
   )
 }

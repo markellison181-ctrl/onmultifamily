@@ -209,16 +209,22 @@ export default function CMHCCalculator() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy pt-32 sm:pt-40 pb-16 sm:pb-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <a href="/resources/" className="text-[12px] tracking-wide-custom uppercase text-white/30 hover:text-white/50 transition-colors mb-6 block">
+      <section className="relative bg-navy-deep pt-32 sm:pt-40 pb-16 sm:pb-20 overflow-hidden noise">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-deep via-navy to-navy-deep" />
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-[150px]" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+          <a href="/resources/" className="text-[11px] tracking-[0.2em] uppercase text-white/25 hover:text-white/40 transition-colors mb-6 block">
             ← Resources
           </a>
-          <p className="text-[12px] tracking-wide-custom uppercase text-gold mb-4">Underwriting Tool</p>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white leading-[1.1] mb-6">
-            CMHC Debt Calculator
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-[2px] bg-gradient-to-r from-gold to-gold-light" />
+            <span className="text-[11px] tracking-[0.2em] uppercase text-gold-light font-medium">Underwriting Tool</span>
+          </div>
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white leading-[0.95] mb-6">
+            CMHC Debt<br /><span className="text-gradient-gold">Calculator</span>
           </h1>
-          <p className="text-white/50 text-lg max-w-2xl leading-relaxed">
+          <p className="text-white/40 text-[16px] max-w-2xl leading-relaxed">
             Size your CMHC-insured mortgage in seconds. Input your property financials and get 
             instant debt sizing with DSCR, LTV, and MLI Select credit scenarios.
           </p>

@@ -17,23 +17,27 @@ export default function Listings() {
     n >= 1000000 ? `$${(n / 1000000).toFixed(1)}M` : `$${(n / 1000).toFixed(0)}K`
 
   return (
-    <section id="listings" className="py-20 sm:py-28 md:py-40 bg-navy">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12">
+    <section id="listings" className="relative py-24 sm:py-32 md:py-44 bg-navy-deep overflow-hidden noise">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      <div className="absolute top-1/3 right-0 w-96 h-96 bg-gold/3 rounded-full blur-[150px]" />
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 md:px-12">
         {/* Header */}
         <div className="flex items-center gap-3 mb-4 sm:mb-6">
-          <div className="w-8 sm:w-12 h-px bg-gold" />
-          <span className="text-[11px] sm:text-[12px] tracking-wide-custom uppercase text-gold font-medium">
+          <div className="w-10 sm:w-14 h-[2px] bg-gradient-to-r from-gold to-gold-light" />
+          <span className="text-[11px] sm:text-[12px] tracking-[0.2em] uppercase text-gold-light font-medium">
             Current Offerings
           </span>
         </div>
 
-        <div className="flex flex-col gap-6 mb-10 sm:mb-16">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
-            Featured Properties
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12 sm:mb-20">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-[3.25rem] text-white leading-[1.05]">
+            Featured<br />Properties
           </h2>
 
           {/* Tabs */}
-          <div className="flex gap-1 bg-white/5 p-1 self-start">
+          <div className="flex gap-1 p-1 glass self-start sm:self-auto">
             {[
               { id: 'all' as const, label: 'All' },
               { id: 'active' as const, label: 'Active' },
@@ -42,8 +46,10 @@ export default function Listings() {
               <button
                 key={t.id}
                 onClick={() => setTab(t.id)}
-                className={`text-[11px] sm:text-[13px] tracking-wide-custom uppercase font-medium px-4 sm:px-6 py-2 sm:py-2.5 transition-all duration-300 ${
-                  tab === t.id ? 'bg-white text-navy' : 'text-white/50 hover:text-white'
+                className={`text-[11px] sm:text-[12px] tracking-[0.15em] uppercase font-medium px-5 sm:px-7 py-2.5 transition-all duration-500 ${
+                  tab === t.id 
+                    ? 'bg-gradient-to-r from-gold to-gold-light text-navy' 
+                    : 'text-white/40 hover:text-white/70'
                 }`}
               >
                 {t.label}
@@ -55,46 +61,56 @@ export default function Listings() {
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filtered.map(listing => (
-            <a key={listing.id} href={`/listings/${listing.id}/`} className="group block">
+            <a key={listing.id} href={`/listings/${listing.id}/`} className="group block hover-lift">
               {/* Image */}
-              <div className="relative aspect-[4/3] overflow-hidden mb-4 sm:mb-5">
+              <div className="relative aspect-[4/3] overflow-hidden mb-5 sm:mb-6">
                 <Image
                   src={listing.image}
                   alt={listing.name}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover group-hover:scale-105 transition-transform duration-[1.2s] ease-out"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 via-transparent to-transparent" />
                 {listing.status !== 'Active' && (
-                  <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-white text-navy text-[10px] sm:text-[11px] tracking-wide-custom uppercase font-semibold px-2.5 sm:px-3 py-1">
+                  <div className="absolute top-4 left-4 bg-gold text-navy text-[10px] sm:text-[11px] tracking-[0.15em] uppercase font-bold px-3 py-1.5">
                     {listing.status}
                   </div>
                 )}
+                {/* Price overlay */}
+                <div className="absolute bottom-4 left-4">
+                  <p className="font-serif text-2xl text-white drop-shadow-lg">{fmt(listing.price)}</p>
+                </div>
               </div>
 
               {/* Info */}
-              <h3 className="text-white font-medium text-base sm:text-lg mb-1 group-hover:text-gold transition-colors duration-300">
+              <h3 className="text-white font-medium text-[15px] sm:text-lg mb-1.5 group-hover:text-gold transition-colors duration-500">
                 {listing.name}
               </h3>
-              <p className="text-white/40 text-xs sm:text-sm mb-2 sm:mb-3">{listing.city}, Ontario</p>
-              <p className="text-white/60 text-[13px] sm:text-[14px] mb-2 sm:mb-3">
-                {listing.suites} suites · {fmt(listing.price)} · {listing.capRate}% cap
-              </p>
-              <span className="text-[11px] sm:text-[12px] tracking-wide-custom uppercase text-white/25 group-hover:text-gold transition-colors duration-300">
-                View Details →
-              </span>
+              <p className="text-white/30 text-[13px] mb-3">{listing.city}, Ontario</p>
+              
+              <div className="flex items-center gap-4 text-[13px] text-white/45">
+                <span>{listing.suites} suites</span>
+                <span className="w-1 h-1 rounded-full bg-white/20" />
+                <span>{listing.capRate}% cap</span>
+              </div>
             </a>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="mt-12 sm:mt-16 pt-10 sm:pt-12 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
-          <div>
-            <p className="text-white/60 text-[14px] sm:text-[15px] mb-1">Looking for off-market opportunities?</p>
-            <p className="text-white/30 text-xs sm:text-sm">We see deals before they hit the market.</p>
+        <div className="mt-16 sm:mt-24 pt-10 sm:pt-12 border-t border-white/8">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+            <div>
+              <p className="text-white/50 text-[15px] mb-1">Looking for off-market opportunities?</p>
+              <p className="text-white/25 text-[13px]">We see deals before they hit the market.</p>
+            </div>
+            <a href="#contact" className="group flex items-center gap-3 border border-white/15 text-white text-[12px] tracking-[0.15em] uppercase font-medium px-8 py-4 hover:border-gold/50 hover:bg-gold/5 transition-all duration-500 self-start sm:self-auto">
+              Contact Us
+              <svg className="w-4 h-4 text-gold group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           </div>
-          <a href="#contact" className="border border-white/30 text-white text-[12px] sm:text-[13px] tracking-wide-custom uppercase font-medium px-8 sm:px-10 py-3.5 sm:py-4 hover:bg-white/10 transition-all duration-300 text-center whitespace-nowrap self-start sm:self-auto">
-            Contact Us
-          </a>
         </div>
       </div>
     </section>

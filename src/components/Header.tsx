@@ -23,38 +23,45 @@ export default function Header() {
   ]
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+      scrolled 
+        ? 'bg-white/95 backdrop-blur-xl shadow-[0_1px_0_rgba(0,0,0,0.05)]' 
+        : 'bg-transparent'
     }`}>
+      {/* Top accent line */}
+      <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-gold via-gold-light to-gold transition-opacity duration-700 ${scrolled ? 'opacity-100' : 'opacity-0'}`} />
+      
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 sm:h-24">
           {/* Logo */}
-          <a href="/" className="relative z-10 flex items-center gap-3">
+          <a href="/" className="relative z-10 flex items-center gap-3 sm:gap-4">
             <Image
               src={scrolled ? '/images/logos/logo-dark.svg' : '/images/logos/logo.svg'}
               alt="OnMultifamily"
               width={180}
               height={40}
-              className="h-8 w-auto"
+              className="h-7 sm:h-8 w-auto"
             />
-            <span className={`hidden sm:block text-[11px] ${scrolled ? 'text-navy/20' : 'text-white/20'}`}>|</span>
+            <span className={`hidden sm:block text-[10px] ${scrolled ? 'text-navy/15' : 'text-white/15'}`}>|</span>
             <Image
               src="/images/logos/colliers.png"
               alt="Colliers"
               width={100}
               height={24}
-              className={`hidden sm:block h-5 w-auto ${scrolled ? '' : 'brightness-0 invert opacity-60'}`}
+              className={`hidden sm:block h-4 sm:h-5 w-auto transition-all duration-500 ${
+                scrolled ? 'opacity-60' : 'brightness-0 invert opacity-40'
+              }`}
             />
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-10">
+          <nav className="hidden md:flex items-center gap-8 lg:gap-10">
             {links.map(link => (
               <a
                 key={link.label}
                 href={link.href}
-                className={`text-[13px] font-medium tracking-wide-custom uppercase transition-colors duration-300 ${
-                  scrolled ? 'text-navy/70 hover:text-navy' : 'text-white/70 hover:text-white'
+                className={`text-[11px] font-medium tracking-[0.15em] uppercase transition-colors duration-500 ${
+                  scrolled ? 'text-navy/45 hover:text-navy' : 'text-white/50 hover:text-white'
                 }`}
               >
                 {link.label}
@@ -62,10 +69,10 @@ export default function Header() {
             ))}
             <a
               href="#valuation"
-              className={`text-[13px] font-medium tracking-wide-custom uppercase px-6 py-2.5 border transition-all duration-300 ${
+              className={`text-[11px] font-semibold tracking-[0.15em] uppercase px-6 py-2.5 transition-all duration-500 ${
                 scrolled
-                  ? 'border-navy text-navy hover:bg-navy hover:text-white'
-                  : 'border-white/40 text-white hover:bg-white/10'
+                  ? 'bg-gradient-to-r from-gold to-gold-light text-navy hover:shadow-[0_0_20px_rgba(201,168,76,0.2)]'
+                  : 'border border-gold/40 text-gold hover:bg-gold/10'
               }`}
             >
               Free Valuation
@@ -89,8 +96,8 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden fixed inset-0 bg-white z-40 pt-24 px-8">
-          <nav className="flex flex-col gap-8">
+        <div className="md:hidden fixed inset-0 bg-white z-40 pt-28 px-8">
+          <nav className="flex flex-col gap-6">
             {links.map(link => (
               <a
                 key={link.label}
@@ -104,7 +111,7 @@ export default function Header() {
             <a
               href="#valuation"
               onClick={() => setMenuOpen(false)}
-              className="text-lg font-medium text-navy border border-navy px-6 py-3 text-center mt-4"
+              className="text-[13px] font-bold tracking-[0.15em] uppercase bg-gradient-to-r from-gold to-gold-light text-navy px-6 py-4 text-center mt-4"
             >
               Free Valuation
             </a>
