@@ -5,6 +5,7 @@ import ValuationCTA from '@/components/ValuationCTA'
 import Listings from '@/components/Listings'
 import ResourceHub from '@/components/ResourceHub'
 import Newsletter from '@/components/Newsletter'
+import TrustedBy from '@/components/TrustedBy'
 import FAQ from '@/components/FAQ'
 import Insights from '@/components/Insights'
 import Team from '@/components/Team'
@@ -59,6 +60,9 @@ export default function Home() {
 
       {/* Newsletter Section */}
       <Newsletter />
+
+      {/* Trusted By Section */}
+      <TrustedBy />
 
       {/* Subtle CTA Section 2 */}
       <section className="py-16 bg-colliers-pale-blue">

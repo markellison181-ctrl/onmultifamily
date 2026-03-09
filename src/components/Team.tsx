@@ -73,6 +73,20 @@ const Team = () => {
           </div>
         </div>
 
+        {/* Team Group Photo */}
+        <div className="text-center mb-16">
+          <div className="inline-block rounded-2xl overflow-hidden shadow-lg">
+            <img 
+              src="/images/team/team-group.jpg" 
+              alt="OnMultifamily Team at Colliers" 
+              className="w-full h-auto max-w-2xl mx-auto"
+            />
+          </div>
+          <div className="text-colliers-gray-80 text-sm mt-4">
+            The OnMultifamily team at Colliers Ontario
+          </div>
+        </div>
+
         {/* Team Members Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {teamMembers.map((member, index) => {
@@ -86,9 +100,23 @@ const Team = () => {
                 {/* Member Header */}
                 <div className="p-8 pb-6">
                   <div className="flex flex-col items-center text-center">
-                    {/* Avatar */}
-                    <div className={`w-24 h-24 rounded-full ${avatar.colorClass} flex items-center justify-center mb-6`}>
-                      <span className="text-white text-2xl font-bold">{avatar.initials}</span>
+                    {/* Profile Photo */}
+                    <div className="w-24 h-24 rounded-full overflow-hidden mb-6 bg-colliers-gray-10">
+                      <img 
+                        src={member.image} 
+                        alt={`${member.name} - ${member.title}`}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          // Fallback to avatar if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                      <div className={`w-full h-full ${avatar.colorClass} items-center justify-center hidden`}>
+                        <span className="text-white text-2xl font-bold">{avatar.initials}</span>
+                      </div>
                     </div>
                     
                     {/* Name and Title */}

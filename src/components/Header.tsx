@@ -37,9 +37,11 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="#home" className="flex items-center space-x-3">
-              <div className="w-8 h-8 md:w-10 md:h-10 bg-colliers-blue rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm md:text-base">OM</span>
-              </div>
+              <img 
+                src="/images/logos/logo.svg" 
+                alt="OnMultifamily Logo" 
+                className="w-8 h-8 md:w-10 md:h-10"
+              />
               <div>
                 <div className="text-white font-bold text-lg md:text-xl">OnMultifamily</div>
                 <div className="text-colliers-gray-40 text-xs hidden sm:block">by Colliers</div>

@@ -85,6 +85,13 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center gradient-bg overflow-hidden">
+      {/* Hero Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        style={{
+          backgroundImage: 'url(/images/hero-img.png)'
+        }}
+      ></div>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-colliers-blue rounded-full blur-3xl animate-pulse"></div>
