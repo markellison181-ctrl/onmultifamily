@@ -64,6 +64,26 @@ const yields: YieldData[] = [
     yearAgo: 5.00,
     description: 'Bank of Canada\'s policy rate. Directly influences variable-rate mortgages and the cost of floating-rate bridge and construction debt.',
   },
+  {
+    label: '5-Year CMB',
+    ticker: 'CMB 5YR',
+    current: 3.40,
+    prevClose: 3.33,
+    weekAgo: 3.29,
+    monthAgo: 3.27,
+    yearAgo: 3.01,
+    description: 'Canada Mortgage Bond 5-year yield (GoC 5Y + ~38bps spread). The direct benchmark for CMHC-insured 5-year fixed multifamily mortgage pricing.',
+  },
+  {
+    label: '10-Year CMB',
+    ticker: 'CMB 10YR',
+    current: 3.70,
+    prevClose: 3.65,
+    weekAgo: 3.62,
+    monthAgo: 3.58,
+    yearAgo: 3.33,
+    description: 'Canada Mortgage Bond 10-year yield (GoC 10Y + ~48bps spread). The benchmark for CMHC MLI Select and long-term insured mortgage rates.',
+  },
 ]
 
 const cmbSpreads = [
@@ -121,7 +141,7 @@ export default function BondYieldTracker() {
       <section className="bg-cream py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           {/* Summary Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
             {yields.map((y) => (
               <div key={y.ticker} className="bg-white border border-soft-gray p-5 sm:p-6">
                 <p className="text-[11px] tracking-wide-custom uppercase text-navy/30 mb-2">{y.label}</p>

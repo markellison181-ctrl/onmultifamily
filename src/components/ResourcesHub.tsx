@@ -2,20 +2,48 @@
 
 import React from 'react'
 
+const CalculatorIcon = () => (
+  <svg className="w-10 h-10 text-navy/25 group-hover:text-gold transition-colors duration-500" fill="none" viewBox="0 0 40 40" stroke="currentColor" strokeWidth={1.2}>
+    <rect x="8" y="4" width="24" height="32" rx="2" />
+    <rect x="12" y="8" width="16" height="6" rx="1" fill="currentColor" opacity="0.15" />
+    <circle cx="15" cy="20" r="1.5" fill="currentColor" />
+    <circle cx="20" cy="20" r="1.5" fill="currentColor" />
+    <circle cx="25" cy="20" r="1.5" fill="currentColor" />
+    <circle cx="15" cy="26" r="1.5" fill="currentColor" />
+    <circle cx="20" cy="26" r="1.5" fill="currentColor" />
+    <circle cx="25" cy="26" r="1.5" fill="currentColor" />
+    <rect x="15" y="31" width="10" height="2" rx="0.5" fill="currentColor" opacity="0.3" />
+  </svg>
+)
+
+const ChartIcon = () => (
+  <svg className="w-10 h-10 text-navy/25 group-hover:text-gold transition-colors duration-500" fill="none" viewBox="0 0 40 40" stroke="currentColor" strokeWidth={1.2}>
+    <path d="M6 34h28" />
+    <path d="M6 6v28" />
+    <path d="M10 28l6-8 5 4 5-10 4-2 4 6" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="10" cy="28" r="1.5" fill="currentColor" opacity="0.3" />
+    <circle cx="16" cy="20" r="1.5" fill="currentColor" opacity="0.3" />
+    <circle cx="21" cy="24" r="1.5" fill="currentColor" opacity="0.3" />
+    <circle cx="26" cy="14" r="1.5" fill="currentColor" opacity="0.3" />
+    <circle cx="30" cy="12" r="1.5" fill="currentColor" opacity="0.3" />
+    <circle cx="34" cy="18" r="1.5" fill="currentColor" opacity="0.3" />
+  </svg>
+)
+
 const primaryTools = [
   {
     title: 'CMHC Debt Calculator',
     description: 'Size your insured mortgage instantly. DSCR and LTV constraints, MLI Select credit scenarios, insurance premiums, and amortization modeling.',
     href: '/resources/cmhc-calculator/',
     tag: 'Calculator',
-    icon: '📊',
+    Icon: CalculatorIcon,
   },
   {
     title: 'Bond Yield Tracker',
     description: 'Live Government of Canada benchmark yields — the rates that drive every multifamily mortgage in the country. Updated regularly with CMB spreads.',
     href: '/resources/bond-yields/',
     tag: 'Live Data',
-    icon: '📈',
+    Icon: ChartIcon,
   },
 ]
 
@@ -87,7 +115,7 @@ export default function ResourcesHub() {
                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-gold/5 to-transparent" />
                 
                 <div className="flex items-start justify-between mb-6 sm:mb-8">
-                  <span className="text-4xl">{tool.icon}</span>
+                  <tool.Icon />
                   <span className="text-[10px] tracking-[0.2em] uppercase text-navy/25 border border-navy/10 px-3 py-1 font-medium">
                     {tool.tag}
                   </span>
