@@ -1,18 +1,12 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import listingsData from '@/data/listings.json'
 
 export default function Listings() {
-  const [tab, setTab] = useState<'all' | 'active' | 'sold'>('all')
-
-  const filtered = tab === 'all'
-    ? listingsData
-    : tab === 'active'
-    ? listingsData.filter(l => l.status === 'For Sale')
-    : listingsData.filter(l => l.status === 'Sold')
+  const filtered = listingsData
 
   const fmt = (n: number | null) => {
     if (!n) return null
@@ -39,32 +33,9 @@ export default function Listings() {
           </span>
         </div>
 
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12 sm:mb-20">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-[3.25rem] text-white leading-[1.05]">
-            Featured<br />Properties
-          </h2>
-
-          {/* Tabs */}
-          <div className="flex gap-1 p-1 glass self-start sm:self-auto">
-            {[
-              { id: 'all' as const, label: 'All' },
-              { id: 'active' as const, label: 'Active' },
-              { id: 'sold' as const, label: 'Sold' },
-            ].map(t => (
-              <button
-                key={t.id}
-                onClick={() => setTab(t.id)}
-                className={`text-[11px] sm:text-[12px] tracking-[0.15em] uppercase font-medium px-5 sm:px-7 py-2.5 transition-all duration-500 ${
-                  tab === t.id 
-                    ? 'bg-gradient-to-r from-gold to-gold-light text-navy' 
-                    : 'text-white/40 hover:text-white/70'
-                }`}
-              >
-                {t.label}
-              </button>
-            ))}
-          </div>
-        </div>
+        <h2 className="font-serif text-3xl sm:text-4xl md:text-[3.25rem] text-white leading-[1.05] mb-12 sm:mb-20">
+          Current<br />Offerings
+        </h2>
 
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
