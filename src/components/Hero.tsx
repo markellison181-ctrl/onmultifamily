@@ -63,6 +63,18 @@ export default function Hero() {
           dispositions, and portfolio strategy. Over $1.12 billion in completed transactions.
         </p>
 
+        {/* Sector Tags */}
+        <div className={`flex flex-wrap gap-3 sm:gap-4 mb-12 sm:mb-16 opacity-0 ${loaded ? 'animate-fade-in-up stagger-2' : ''}`} style={{ animationDelay: '0.5s' }}>
+          {['Apartments', 'Seniors Housing', 'Student Housing', 'Land'].map((sector) => (
+            <span
+              key={sector}
+              className="text-[11px] sm:text-[12px] tracking-[0.15em] uppercase text-white/40 border border-white/10 px-4 sm:px-5 py-2 sm:py-2.5 hover:border-gold/30 hover:text-gold-light/60 transition-all duration-500"
+            >
+              {sector}
+            </span>
+          ))}
+        </div>
+
         {/* CTAs */}
         <div className={`flex flex-col sm:flex-row gap-4 mb-20 sm:mb-28 opacity-0 ${loaded ? 'animate-fade-in-up stagger-3' : ''}`}>
           <a href="#listings" className="group relative bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] font-semibold tracking-[0.15em] uppercase px-10 sm:px-12 py-4 sm:py-5 transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] text-center">
