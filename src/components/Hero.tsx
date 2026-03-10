@@ -1,10 +1,10 @@
 'use client'
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false)
-  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 100)
@@ -12,26 +12,20 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-[100svh] flex items-end bg-navy-deep overflow-hidden">
-      {/* Background Video */}
+    <section className="relative min-h-[100svh] flex items-end bg-navy-deep overflow-hidden noise">
+      {/* Background Image */}
       <div className="absolute inset-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className={`absolute inset-0 w-full h-full object-cover transition-all duration-[3s] ${loaded ? 'scale-100 opacity-60' : 'scale-110 opacity-0'}`}
-        >
-          <source src="/images/hero-bg.mp4" type="video/mp4" />
-        </video>
-        {/* Heavy overlay layers to dim + cinematic feel */}
-        <div className="absolute inset-0 bg-navy-deep/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/60 via-transparent to-navy-deep/30" />
+        <Image
+          src="/images/hero-img.png"
+          alt=""
+          fill
+          className={`object-cover transition-all duration-[2s] ${loaded ? 'scale-100 opacity-20' : 'scale-110 opacity-0'}`}
+          priority
+        />
+        {/* Multi-layer gradient for depth */}
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/90 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/80 via-transparent to-navy-deep/40" />
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-navy-deep to-transparent" />
-        {/* Noise texture overlay */}
-        <div className="absolute inset-0 noise opacity-30" />
       </div>
 
       {/* Decorative Elements */}
