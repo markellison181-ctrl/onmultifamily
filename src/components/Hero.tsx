@@ -21,17 +21,17 @@ export default function Hero() {
           muted
           loop
           playsInline
-          className={`absolute inset-0 w-full h-full object-cover transition-all duration-[3s] ${loaded ? 'scale-100 opacity-30' : 'scale-110 opacity-0'}`}
+          className={`absolute inset-0 w-full h-full object-cover transition-all duration-[3s] ${loaded ? 'scale-100 opacity-60' : 'scale-110 opacity-0'}`}
         >
           <source src="/images/hero-bg.mp4" type="video/mp4" />
         </video>
         {/* Heavy overlay layers to dim + cinematic feel */}
-        <div className="absolute inset-0 bg-navy-deep/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/85 to-navy-deep/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/80 via-transparent to-navy-deep/50" />
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-navy-deep to-transparent" />
+        <div className="absolute inset-0 bg-navy-deep/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/60 via-transparent to-navy-deep/30" />
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-navy-deep to-transparent" />
         {/* Noise texture overlay */}
-        <div className="absolute inset-0 noise opacity-50" />
+        <div className="absolute inset-0 noise opacity-30" />
       </div>
 
       {/* Decorative Elements */}
