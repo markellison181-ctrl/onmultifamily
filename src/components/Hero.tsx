@@ -65,7 +65,7 @@ export default function Hero() {
 
         {/* Sector Tags */}
         <div className={`flex flex-wrap gap-3 sm:gap-4 mb-12 sm:mb-16 opacity-0 ${loaded ? 'animate-fade-in-up stagger-2' : ''}`} style={{ animationDelay: '0.5s' }}>
-          {['Apartments', 'Seniors Housing', 'Student Housing', 'Land'].map((sector) => (
+          {['Apartments', 'Seniors Housing', 'Student Housing'].map((sector) => (
             <span
               key={sector}
               className="text-[11px] sm:text-[12px] tracking-[0.15em] uppercase text-white/40 border border-white/10 px-4 sm:px-5 py-2 sm:py-2.5 hover:border-gold/30 hover:text-gold-light/60 transition-all duration-500"
