@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import listingsData from '@/data/listings.json'
 
 export default function Listings() {
@@ -10,11 +11,18 @@ export default function Listings() {
   const filtered = tab === 'all'
     ? listingsData
     : tab === 'active'
-    ? listingsData.filter(l => l.status === 'Active' || l.status === 'Under Contract')
+    ? listingsData.filter(l => l.status === 'For Sale')
     : listingsData.filter(l => l.status === 'Sold')
 
-  const fmt = (n: number) =>
-    n >= 1000000 ? `$${(n / 1000000).toFixed(1)}M` : `$${(n / 1000).toFixed(0)}K`
+  const fmt = (n: number | null) => {
+    if (!n) return null
+    return n >= 1000000 ? `$${(n / 1000000).toFixed(1)}M` : `$${(n / 1000).toFixed(0)}K`
+  }
+
+  const fmtPerUnit = (n: number | null) => {
+    if (!n) return null
+    return n >= 1000 ? `$${(n / 1000).toFixed(0)}K/unit` : `$${n.toLocaleString()}/unit`
+  }
 
   return (
     <section id="listings" className="relative py-24 sm:py-32 md:py-44 bg-navy-deep overflow-hidden noise">
@@ -61,39 +69,61 @@ export default function Listings() {
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filtered.map(listing => (
-            <a key={listing.id} href={`/listings/${listing.id}/`} className="group block hover-lift">
+            <Link key={listing.id} href={`/listings/${listing.id}/`} className="group block hover-lift">
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden mb-5 sm:mb-6">
-                <Image
-                  src={listing.image}
-                  alt={listing.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-[1.2s] ease-out"
-                />
+                {listing.image ? (
+                  <Image
+                    src={listing.image}
+                    alt={listing.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-[1.2s] ease-out"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-navy-deep to-navy/80 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="text-gold text-2xl font-serif mb-2">{listing.type}</div>
+                      <div className="text-white/30 text-sm">{listing.units} Units</div>
+                    </div>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 via-transparent to-transparent" />
-                {listing.status !== 'Active' && (
+                {listing.status !== 'For Sale' && (
                   <div className="absolute top-4 left-4 bg-gold text-navy text-[10px] sm:text-[11px] tracking-[0.15em] uppercase font-bold px-3 py-1.5">
                     {listing.status}
                   </div>
                 )}
                 {/* Price overlay */}
                 <div className="absolute bottom-4 left-4">
-                  <p className="font-serif text-2xl text-white drop-shadow-lg">{fmt(listing.price)}</p>
+                  {listing.price ? (
+                    <p className="font-serif text-2xl text-white drop-shadow-lg">{fmt(listing.price)}</p>
+                  ) : (
+                    <p className="font-serif text-lg text-white drop-shadow-lg">Price Upon Request</p>
+                  )}
                 </div>
               </div>
 
               {/* Info */}
               <h3 className="text-white font-medium text-[15px] sm:text-lg mb-1.5 group-hover:text-gold transition-colors duration-500">
-                {listing.name}
+                {listing.title}
               </h3>
-              <p className="text-white/30 text-[13px] mb-3">{listing.city}, Ontario</p>
+              <p className="text-white/30 text-[13px] mb-3">{listing.location}</p>
               
               <div className="flex items-center gap-4 text-[13px] text-white/45">
-                <span>{listing.suites} suites</span>
+                <span>{listing.units} units</span>
                 <span className="w-1 h-1 rounded-full bg-white/20" />
-                <span>{listing.capRate}% cap</span>
+                <span>
+                  {listing.pricePerUnit ? fmtPerUnit(listing.pricePerUnit) : 'Contact for pricing'}
+                </span>
               </div>
-            </a>
+
+              {/* View Details button */}
+              <div className="mt-4 pt-4 border-t border-white/8">
+                <span className="text-gold text-[12px] tracking-[0.15em] uppercase font-medium group-hover:text-gold-light transition-colors duration-300">
+                  View Details
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
 
