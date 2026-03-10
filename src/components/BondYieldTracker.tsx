@@ -57,7 +57,7 @@ const yields: YieldData[] = [
   {
     label: 'Overnight Rate',
     ticker: 'BoC Target',
-    current: 2.75,
+    current: 2.25,
     prevClose: 2.75,
     weekAgo: 2.75,
     monthAgo: 3.00,
@@ -67,31 +67,31 @@ const yields: YieldData[] = [
   {
     label: '5-Year CMB',
     ticker: 'CMB 5YR',
-    current: 3.40,
-    prevClose: 3.33,
-    weekAgo: 3.29,
-    monthAgo: 3.27,
+    current: 3.16,
+    prevClose: 3.11,
+    weekAgo: 3.11,
+    monthAgo: 3.10,
     yearAgo: 3.01,
-    description: 'Canada Mortgage Bond 5-year yield (GoC 5Y + ~38bps spread). The direct benchmark for CMHC-insured 5-year fixed multifamily mortgage pricing.',
+    description: 'Canada Mortgage Bond 5-year yield (GoC 5Y + ~14bps spread). The direct benchmark for CMHC-insured 5-year fixed multifamily mortgage pricing. Source: First National.',
   },
   {
     label: '10-Year CMB',
     ticker: 'CMB 10YR',
-    current: 3.70,
-    prevClose: 3.65,
-    weekAgo: 3.62,
+    current: 3.71,
+    prevClose: 3.66,
+    weekAgo: 3.66,
     monthAgo: 3.58,
     yearAgo: 3.33,
-    description: 'Canada Mortgage Bond 10-year yield (GoC 10Y + ~48bps spread). The benchmark for CMHC MLI Select and long-term insured mortgage rates.',
+    description: 'Canada Mortgage Bond 10-year yield (GoC 10Y + ~49bps spread). The benchmark for CMHC MLI Select and long-term insured mortgage rates. Source: First National.',
   },
 ]
 
 const cmbSpreads = [
-  { term: '5-Year CMB', spread: 38, note: 'Over 5-Year GoC — typical insured mortgage benchmark' },
-  { term: '10-Year CMB', spread: 48, note: 'Over 10-Year GoC — MLI Select and long-term CMHC' },
+  { term: '5-Year CMB', spread: 14, note: 'Over 5-Year GoC — insured mortgage benchmark (Source: First National)' },
+  { term: '10-Year CMB', spread: 49, note: 'Over 10-Year GoC — MLI Select and long-term CMHC (Source: First National)' },
 ]
 
-const lastUpdated = 'March 9, 2026'
+const lastUpdated = 'March 10, 2026'
 
 function formatChange(current: number, prev: number) {
   const diff = current - prev
