@@ -30,7 +30,7 @@ export default function TrustedBy() {
                 alt={c.name}
                 width={120}
                 height={48}
-                className="h-9 w-auto object-contain opacity-30 hover:opacity-60 transition-all duration-700 grayscale hover:grayscale-0"
+                className="h-9 w-auto object-contain opacity-60 hover:opacity-90 transition-all duration-700 brightness-200 hover:brightness-100 hover:grayscale-0"
               />
             ))}
           </div>
