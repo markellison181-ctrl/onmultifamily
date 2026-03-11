@@ -167,6 +167,58 @@ export default function ResourcesHub() {
             ))}
           </div>
 
+          {/* Quarterly Market Reports */}
+          <div className="mb-16 sm:mb-20">
+            <div className="flex items-center gap-3 mb-6 sm:mb-8">
+              <div className="w-10 sm:w-14 h-[2px] bg-gradient-to-r from-gold to-gold-light" />
+              <span className="text-[11px] tracking-[0.2em] uppercase text-navy/35 font-medium">
+                GTA Multifamily Market Reports
+              </span>
+            </div>
+            <p className="text-navy/40 text-[14px] sm:text-[15px] leading-relaxed mb-8 max-w-2xl">
+              Our quarterly GTA multifamily market reports — authored by Dayma Itamunoala, Kyle Lindsay, Zoe Prachter, and Matthew Bruchkowsky. 
+              Published by Colliers.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+              {[
+                { title: '2025 Year-End Report', date: 'Feb 2026', href: 'https://www.collierscanada.com/en-ca/research/gta-multifamily-market-report-2024-year-in-review', highlight: true, pdf: 'https://mcusercontent.com/87232bcc93f1dd394870ffcbd/files/8f70d7ff-2bf6-34e2-e41d-8ff32d362a2e/Dayma_Itamunoala_Colliers_GTA_2025_Year_end_Report.pdf' },
+                { title: 'Q3 2025 Report', date: 'Oct 2025', href: 'https://www.collierscanada.com/en-ca/research/gta-multifamily-market-report-2025-q3' },
+                { title: 'Q2 2025 Report', date: 'Jul 2025', href: 'https://www.collierscanada.com/en-ca/research/gta-multifamily-market-report-2025-q2' },
+                { title: 'Q1 2025 Report', date: 'Apr 2025', href: 'https://www.collierscanada.com/en-ca/research/gta-multifamily-market-report-2025-q1' },
+                { title: '2024 Year in Review', date: 'Feb 2025', href: 'https://www.collierscanada.com/en-ca/research/gta-multifamily-market-report-2024-year-in-review' },
+                { title: 'Q3 2024 Report', date: 'Oct 2024', href: 'https://www.collierscanada.com/en-ca/research/gta-multifamily-market-report-2024-q3' },
+                { title: 'Q2 2024 Report', date: 'Jul 2024', href: 'https://www.collierscanada.com/en-ca/research/toronto-multifamily-market-report-2024-q2' },
+                { title: 'Q1 2024 Report', date: 'Apr 2024', href: 'https://www.collierscanada.com/en-ca/research/gta-multifamily-market-report-2024-q1' },
+              ].map((report) => (
+                <a
+                  key={report.title}
+                  href={report.pdf || report.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group bg-white p-5 sm:p-6 border transition-all duration-500 hover-lift ${
+                    report.highlight ? 'border-gold/30 ring-1 ring-gold/10' : 'border-soft-gray hover:border-gold/30'
+                  }`}
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[10px] tracking-[0.15em] uppercase text-navy/30 font-medium">{report.date}</span>
+                    {report.highlight && (
+                      <span className="text-[9px] tracking-[0.2em] uppercase font-bold bg-gold/10 text-gold-dark px-2 py-0.5">Latest</span>
+                    )}
+                  </div>
+                  <h4 className="font-serif text-[15px] sm:text-base text-navy group-hover:text-gold-dark transition-colors duration-500 mb-2">
+                    {report.title}
+                  </h4>
+                  <span className="inline-flex items-center gap-1 text-[10px] tracking-[0.15em] uppercase text-navy/25 group-hover:text-gold font-medium transition-colors">
+                    {report.pdf ? 'Download PDF' : 'View on Colliers'}
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
           {/* Newsletter CTA */}
           <div className="relative bg-navy-deep p-10 sm:p-16 overflow-hidden noise">
             <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-[100px]" />
