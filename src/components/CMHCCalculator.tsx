@@ -47,7 +47,7 @@ const defaultInputs: Inputs = {
   operatingExpenses: 180000,
   propertyTaxes: 45000,
   purchasePrice: 5000000,
-  interestRate: 3.90,
+  interestRate: 3.59,
   qualificationRate: 5.25,
   amortizationYears: 35,
   mliSelect: false,

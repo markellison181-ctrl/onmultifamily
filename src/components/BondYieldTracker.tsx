@@ -27,9 +27,9 @@ const yields: YieldData[] = [
   {
     label: '5-Year GoC',
     ticker: 'GCAN5YR',
-    current: 3.02,
-    prevClose: 2.95,
-    weekAgo: 2.91,
+    current: 2.95,
+    prevClose: 2.91,
+    weekAgo: 2.81,
     monthAgo: 2.89,
     yearAgo: 2.63,
     description: 'The benchmark for most conventional and CMHC-insured 5-year fixed mortgage rates. This is the single most important rate for multifamily financing in Canada.',
@@ -37,9 +37,9 @@ const yields: YieldData[] = [
   {
     label: '10-Year GoC',
     ticker: 'GCAN10YR',
-    current: 3.22,
-    prevClose: 3.17,
-    weekAgo: 3.14,
+    current: 3.39,
+    prevClose: 3.36,
+    weekAgo: 3.26,
     monthAgo: 3.10,
     yearAgo: 2.85,
     description: 'Drives 10-year fixed mortgage pricing. Increasingly relevant for CMHC MLI Select borrowers locking in longer terms for rental construction.',
@@ -47,9 +47,9 @@ const yields: YieldData[] = [
   {
     label: '2-Year GoC',
     ticker: 'GCAN2YR',
-    current: 2.78,
-    prevClose: 2.73,
-    weekAgo: 2.70,
+    current: 2.65,
+    prevClose: 2.63,
+    weekAgo: 2.52,
     monthAgo: 2.65,
     yearAgo: 2.45,
     description: 'Short-term rate reflecting near-term Bank of Canada rate expectations. Relevant for variable-rate and shorter-term mortgage pricing.',
@@ -58,30 +58,30 @@ const yields: YieldData[] = [
     label: 'Overnight Rate',
     ticker: 'BoC Target',
     current: 2.25,
-    prevClose: 2.75,
-    weekAgo: 2.75,
-    monthAgo: 3.00,
-    yearAgo: 5.00,
+    prevClose: 2.25,
+    weekAgo: 2.25,
+    monthAgo: 2.25,
+    yearAgo: 2.75,
     description: 'Bank of Canada\'s policy rate. Directly influences variable-rate mortgages and the cost of floating-rate bridge and construction debt.',
   },
   {
     label: '5-Year CMB',
     ticker: 'CMB 5YR',
-    current: 3.16,
-    prevClose: 3.11,
-    weekAgo: 3.11,
-    monthAgo: 3.10,
-    yearAgo: 3.01,
+    current: 3.09,
+    prevClose: 3.05,
+    weekAgo: 2.95,
+    monthAgo: 3.03,
+    yearAgo: 2.77,
     description: 'Canada Mortgage Bond 5-year yield (GoC 5Y + ~14bps spread). The direct benchmark for CMHC-insured 5-year fixed multifamily mortgage pricing. Source: First National.',
   },
   {
     label: '10-Year CMB',
     ticker: 'CMB 10YR',
-    current: 3.71,
-    prevClose: 3.66,
-    weekAgo: 3.66,
-    monthAgo: 3.58,
-    yearAgo: 3.33,
+    current: 3.88,
+    prevClose: 3.85,
+    weekAgo: 3.75,
+    monthAgo: 3.59,
+    yearAgo: 3.34,
     description: 'Canada Mortgage Bond 10-year yield (GoC 10Y + ~49bps spread). The benchmark for CMHC MLI Select and long-term insured mortgage rates. Source: First National.',
   },
 ]
@@ -91,7 +91,7 @@ const cmbSpreads = [
   { term: '10-Year CMB', spread: 49, note: 'Over 10-Year GoC — MLI Select and long-term CMHC (Source: First National)' },
 ]
 
-const lastUpdated = 'March 10, 2026'
+const lastUpdated = 'March 11, 2026'
 
 function formatChange(current: number, prev: number) {
   const diff = current - prev
