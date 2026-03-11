@@ -46,5 +46,41 @@
     "tags": ["selling", "market timing", "valuation", "exit strategy"],
     "image": "/images/articles/sellers-playbook.png",
     "featured": true
+  },
+  {
+    "id": "cmhc-premiums-july-2025",
+    "title": "CMHC Premiums Go Up July 14th + Deal Announcements",
+    "date": "2025-07-04",
+    "excerpt": "Time-sensitive: CMHC premium increases take effect July 14th. Plus, a look at the 6 deals our team closed in June alone.",
+    "author": "Dayma Itamunoala",
+    "readTime": "2 min read",
+    "category": "Policy Update",
+    "tags": ["CMHC", "premiums", "deal activity", "closings"],
+    "image": "/images/articles/cmhc-premiums.png",
+    "featured": false
+  },
+  {
+    "id": "june-deal-activity-2025",
+    "title": "June Deal Activity: $397M Under Contract",
+    "date": "2025-06-06",
+    "excerpt": "$397M under contract, $347M listed or coming to market. Our team is averaging 14 days from launch to accepted offer.",
+    "author": "Dayma Itamunoala",
+    "readTime": "2 min read",
+    "category": "Deal Update",
+    "tags": ["deal activity", "pipeline", "listings", "closings"],
+    "image": "/images/articles/june-deal-activity.png",
+    "featured": false
+  },
+  {
+    "id": "post-election-multifamily-impact",
+    "title": "Post-Election: What This Means For Multifamily Owners",
+    "date": "2025-04-29",
+    "excerpt": "The fog is lifting. With the election over, buyers and sellers are poised to get back to business. Here's what we expect.",
+    "author": "Dayma Itamunoala",
+    "readTime": "1 min read",
+    "category": "Market Outlook",
+    "tags": ["election", "market outlook", "transaction volume", "policy"],
+    "image": "/images/articles/post-election.png",
+    "featured": false
   }
 ]
