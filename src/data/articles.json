@@ -46,27 +46,5 @@
     "tags": ["selling", "market timing", "valuation", "exit strategy"],
     "image": "/images/articles/sellers-playbook.png",
     "featured": true
-  },
-  {
-    "id": "ontario-rental-increases-2026",
-    "title": "Ontario Rental Increase Guidelines 2026: What Landlords Need to Know",
-    "date": "2026-01-25",
-    "excerpt": "The new guideline is 2.5% for 2026. Here's how to implement increases, exemptions for buildings after 2018, and cash flow impact analysis.",
-    "author": "Dayma Itamunoala",
-    "readTime": "4 min read",
-    "category": "Policy Update",
-    "tags": ["rent increases", "policy", "cash flow", "regulation"],
-    "image": null
-  },
-  {
-    "id": "interest-rate-outlook-multifamily",
-    "title": "Interest Rate Outlook: Impact on Ontario Multifamily Values",
-    "date": "2026-01-18",
-    "excerpt": "Bank of Canada signals and how changing rates affect cap rate compression, refinancing strategies, and acquisition opportunities.",
-    "author": "Dayma Itamunoala",
-    "readTime": "5 min read",
-    "category": "Market Outlook",
-    "tags": ["interest rates", "valuations", "refinancing", "bank of canada"],
-    "image": null
   }
 ]
