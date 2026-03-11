@@ -12,6 +12,18 @@
     "featured": true
   },
   {
+    "id": "seniors-housing-update-2026",
+    "title": "Seniors Housing Market Update + New Team Member",
+    "date": "2026-02-27",
+    "excerpt": "For the first time since pre-COVID, seniors housing fundamentals are all moving in the right direction. Occupancies above 90%, supply constrained, capital returning.",
+    "author": "Dayma Itamunoala",
+    "readTime": "3 min read",
+    "category": "Seniors Housing",
+    "tags": ["seniors housing", "demographics", "occupancy", "team announcement"],
+    "image": "/images/articles/seniors-housing.png",
+    "featured": true
+  },
+  {
     "id": "cmhc-mli-select-complete-guide",
     "title": "CMHC MLI Select: The Complete Guide for Ontario Landlords",
     "date": "2026-02-22",
@@ -22,6 +34,18 @@
     "tags": ["CMHC", "financing", "MLI Select", "government programs"],
     "image": "/images/articles/cmhc-mli-select.png",
     "featured": true
+  },
+  {
+    "id": "2025-year-in-review",
+    "title": "GTA Multifamily 2025 Year-End Report",
+    "date": "2026-02-20",
+    "excerpt": "$1.99B in sales volume, 6,300 suites traded, transaction count up 33%. Download our comprehensive year-end analysis.",
+    "author": "Dayma Itamunoala",
+    "readTime": "2 min read",
+    "category": "Market Report",
+    "tags": ["year in review", "GTA", "transaction volume", "cap rates", "market data"],
+    "image": "/images/articles/2025-year-end.png",
+    "featured": false
   },
   {
     "id": "small-town-ontario-multifamily-opportunity",
@@ -36,6 +60,18 @@
     "featured": true
   },
   {
+    "id": "multifamily-2026-predictions",
+    "title": "Multifamily in 2026: Trends, Challenges & Predictions",
+    "date": "2026-02-11",
+    "excerpt": "$990M in Q4 deal volume. 29 distinct purchasers across 39 deals. Our outlook for where the market is heading.",
+    "author": "Dayma Itamunoala",
+    "readTime": "4 min read",
+    "category": "Market Outlook",
+    "tags": ["predictions", "2026", "transaction volume", "cap rates", "institutional capital"],
+    "image": "/images/articles/2026-predictions.png",
+    "featured": false
+  },
+  {
     "id": "sellers-playbook-maximize-apartment-exit",
     "title": "Seller's Playbook: How to Maximize Your Apartment Building Exit",
     "date": "2026-02-08",
@@ -45,7 +81,19 @@
     "category": "Selling Strategy",
     "tags": ["selling", "market timing", "valuation", "exit strategy"],
     "image": "/images/articles/sellers-playbook.png",
-    "featured": true
+    "featured": false
+  },
+  {
+    "id": "rate-cut-september-2025",
+    "title": "Tomorrow's Rate Cut, Explained",
+    "date": "2025-09-16",
+    "excerpt": "The BoC is expected to cut to 2.50%. What it means for floating debt, fixed financing, and multifamily owners on both sides of the rate curve.",
+    "author": "Dayma Itamunoala",
+    "readTime": "3 min read",
+    "category": "Interest Rates",
+    "tags": ["bank of canada", "interest rates", "CMHC", "financing", "GoC yields"],
+    "image": "/images/articles/rate-cut-sept.png",
+    "featured": false
   },
   {
     "id": "cmhc-premiums-july-2025",

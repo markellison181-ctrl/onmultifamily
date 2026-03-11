@@ -29,47 +29,24 @@ export default function Team() {
           sales and advisory across Ontario.
         </p>
 
-        {/* Dayma Large + Team Grid */}
-        <div className="grid md:grid-cols-12 gap-8 sm:gap-10">
-          {/* Dayma - Large */}
-          <div className="md:col-span-5 group">
-            <div className="relative overflow-hidden mb-5 sm:mb-6">
-              <div className="relative aspect-[3/4]">
+        {/* Team Grid — All Same Size */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 sm:gap-8">
+          {teamData.map(member => (
+            <div key={member.id} className="group text-center">
+              <div className="relative w-full aspect-square overflow-hidden rounded-sm mb-4 sm:mb-5 bg-navy/5">
                 <Image
-                  src={teamData[0].image}
-                  alt={teamData[0].name}
+                  src={member.image}
+                  alt={member.name}
                   fill
-                  className="object-cover group-hover:scale-[1.02] transition-transform duration-[1.2s]"
+                  className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/40 via-transparent to-transparent" />
+                {/* Consistent navy overlay for cohesion */}
+                <div className="absolute inset-0 bg-navy/10 mix-blend-multiply group-hover:bg-transparent transition-all duration-700" />
               </div>
-              {/* Name overlay on image */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                <h3 className="font-serif text-2xl sm:text-3xl text-white mb-1 drop-shadow-lg">{teamData[0].name}</h3>
-                <p className="text-[12px] text-gold tracking-[0.15em] uppercase font-medium drop-shadow-lg">{teamData[0].title}</p>
-              </div>
+              <h3 className="font-medium text-navy text-[14px] sm:text-[15px] mb-0.5">{member.name}</h3>
+              <p className="text-[11px] sm:text-[12px] text-navy/35 tracking-wide leading-snug">{member.title}</p>
             </div>
-            <p className="text-[14px] sm:text-[15px] text-navy/45 leading-relaxed">{teamData[0].bio}</p>
-          </div>
-
-          {/* Rest of team - 2x2 grid */}
-          <div className="md:col-span-7 grid grid-cols-2 gap-5 sm:gap-6">
-            {teamData.slice(1).map(member => (
-              <div key={member.id} className="group">
-                <div className="relative aspect-[3/4] overflow-hidden mb-3 sm:mb-4">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover group-hover:scale-[1.02] transition-transform duration-[1.2s]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/30 via-transparent to-transparent" />
-                </div>
-                <h3 className="font-medium text-navy text-[14px] sm:text-[15px] mb-0.5">{member.name}</h3>
-                <p className="text-[11px] sm:text-[12px] text-navy/35 tracking-wide">{member.title}</p>
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     </section>
