@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 
 export default function ValuationCTA() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', address: '' })
@@ -51,10 +52,26 @@ export default function ValuationCTA() {
               complimentary opinions of value for apartment buildings across Ontario.
             </p>
 
-            <p className="text-[13px] sm:text-[15px] text-white/25 max-w-md">
+            <p className="text-[13px] sm:text-[15px] text-white/25 max-w-md mb-10">
               We have closed 81% of every listing we have ever taken on. 
               When you&apos;re ready, we are the team you want in your corner.
             </p>
+
+            {/* Dayma headshot + credentials */}
+            <div className="flex items-center gap-4">
+              <Image
+                src="/images/team/dayma-square.png"
+                alt="Dayma Itamunoala"
+                width={56}
+                height={56}
+                className="w-14 h-14 rounded-full object-cover ring-2 ring-gold/20"
+              />
+              <div>
+                <div className="text-white text-[14px] font-medium">Dayma Itamunoala</div>
+                <div className="text-white/30 text-[12px]">Senior Vice President, Colliers</div>
+                <div className="text-gold/60 text-[12px]">647-915-3193</div>
+              </div>
+            </div>
           </div>
 
           {/* Right — Form */}
