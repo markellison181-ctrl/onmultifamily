@@ -1,20 +1,12 @@
 'use client'
 
 import React, { useState } from 'react'
-
-/* 
-  Bond yield data — in production this would pull from Bank of Canada API.
-  For now, static data updated periodically. The site is statically exported,
-  so we use build-time data with a "last updated" timestamp.
-  
-  To update: edit the yields array below and redeploy.
-  Future: Add a serverless function or edge function to fetch daily from
-  https://www.bankofcanada.ca/rates/interest-rates/canadian-bonds/
-*/
+import ratesData from '@/data/rates.json'
 
 interface YieldData {
   label: string
   ticker: string
+  key: string
   current: number
   prevClose: number
   weekAgo: number
@@ -23,94 +15,73 @@ interface YieldData {
   description: string
 }
 
-const yields: YieldData[] = [
-  {
-    label: '5-Year GoC',
-    ticker: 'GCAN5YR',
-    current: 2.95,
-    prevClose: 2.91,
-    weekAgo: 2.81,
-    monthAgo: 2.89,
-    yearAgo: 2.63,
-    description: 'The benchmark for most conventional and CMHC-insured 5-year fixed mortgage rates. This is the single most important rate for multifamily financing in Canada.',
-  },
-  {
-    label: '10-Year GoC',
-    ticker: 'GCAN10YR',
-    current: 3.39,
-    prevClose: 3.36,
-    weekAgo: 3.26,
-    monthAgo: 3.10,
-    yearAgo: 2.85,
-    description: 'Drives 10-year fixed mortgage pricing. Increasingly relevant for CMHC MLI Select borrowers locking in longer terms for rental construction.',
-  },
-  {
-    label: '2-Year GoC',
-    ticker: 'GCAN2YR',
-    current: 2.65,
-    prevClose: 2.63,
-    weekAgo: 2.52,
-    monthAgo: 2.65,
-    yearAgo: 2.45,
-    description: 'Short-term rate reflecting near-term Bank of Canada rate expectations. Relevant for variable-rate and shorter-term mortgage pricing.',
-  },
-  {
-    label: 'Overnight Rate',
-    ticker: 'BoC Target',
-    current: 2.25,
-    prevClose: 2.25,
-    weekAgo: 2.25,
-    monthAgo: 2.25,
-    yearAgo: 2.75,
-    description: 'Bank of Canada\'s policy rate. Directly influences variable-rate mortgages and the cost of floating-rate bridge and construction debt.',
-  },
-  {
-    label: '5-Year CMB',
-    ticker: 'CMB 5YR',
-    current: 3.09,
-    prevClose: 3.05,
-    weekAgo: 2.95,
-    monthAgo: 3.03,
-    yearAgo: 2.77,
-    description: 'Canada Mortgage Bond 5-year yield (GoC 5Y + ~14bps spread). The direct benchmark for CMHC-insured 5-year fixed multifamily mortgage pricing. Source: First National.',
-  },
-  {
-    label: '10-Year CMB',
-    ticker: 'CMB 10YR',
-    current: 3.88,
-    prevClose: 3.85,
-    weekAgo: 3.75,
-    monthAgo: 3.59,
-    yearAgo: 3.34,
-    description: 'Canada Mortgage Bond 10-year yield (GoC 10Y + ~49bps spread). The benchmark for CMHC MLI Select and long-term insured mortgage rates. Source: First National.',
-  },
-]
+function buildYields(): YieldData[] {
+  const r = ratesData.rates
+  const h = ratesData.history
+  return [
+    {
+      label: '5-Year GoC', ticker: 'GCAN5YR', key: 'goc5y',
+      current: r.goc5y, prevClose: h.goc5y?.prevClose ?? r.goc5y,
+      weekAgo: h.goc5y?.weekAgo ?? r.goc5y, monthAgo: h.goc5y?.monthAgo ?? r.goc5y,
+      yearAgo: h.goc5y?.yearAgo ?? r.goc5y,
+      description: 'The benchmark for most conventional and CMHC-insured 5-year fixed mortgage rates. The single most important rate for multifamily financing in Canada.',
+    },
+    {
+      label: '10-Year GoC', ticker: 'GCAN10YR', key: 'goc10y',
+      current: r.goc10y, prevClose: h.goc10y?.prevClose ?? r.goc10y,
+      weekAgo: h.goc10y?.weekAgo ?? r.goc10y, monthAgo: h.goc10y?.monthAgo ?? r.goc10y,
+      yearAgo: h.goc10y?.yearAgo ?? r.goc10y,
+      description: 'Drives 10-year fixed mortgage pricing. Increasingly relevant for CMHC MLI Select borrowers locking in longer terms for rental construction.',
+    },
+    {
+      label: 'Bank Rate', ticker: 'BoC Target', key: 'bankRate',
+      current: r.bankRate, prevClose: h.bankRate?.prevClose ?? r.bankRate,
+      weekAgo: h.bankRate?.weekAgo ?? r.bankRate, monthAgo: h.bankRate?.monthAgo ?? r.bankRate,
+      yearAgo: h.bankRate?.yearAgo ?? r.bankRate,
+      description: 'Bank of Canada\'s policy rate. Directly influences variable-rate mortgages and the cost of floating-rate bridge and construction debt.',
+    },
+    {
+      label: '5-Year CMB', ticker: 'CMB 5YR', key: 'cmb5y',
+      current: r.cmb5y, prevClose: h.cmb5y?.prevClose ?? r.cmb5y,
+      weekAgo: h.cmb5y?.weekAgo ?? r.cmb5y, monthAgo: h.cmb5y?.monthAgo ?? r.cmb5y,
+      yearAgo: h.cmb5y?.yearAgo ?? r.cmb5y,
+      description: 'Canada Mortgage Bond 5-year yield. The direct benchmark for CMHC-insured 5-year fixed multifamily mortgage pricing. Lenders price at CMB + spread.',
+    },
+    {
+      label: '10-Year CMB', ticker: 'CMB 10YR', key: 'cmb10y',
+      current: r.cmb10y, prevClose: h.cmb10y?.prevClose ?? r.cmb10y,
+      weekAgo: h.cmb10y?.weekAgo ?? r.cmb10y, monthAgo: h.cmb10y?.monthAgo ?? r.cmb10y,
+      yearAgo: h.cmb10y?.yearAgo ?? r.cmb10y,
+      description: 'Canada Mortgage Bond 10-year yield. The benchmark for CMHC MLI Select and long-term insured mortgage rates.',
+    },
+  ]
+}
 
 const cmbSpreads = [
-  { term: '5-Year CMB', spread: 14, note: 'Over 5-Year GoC — insured mortgage benchmark (Source: First National)' },
-  { term: '10-Year CMB', spread: 49, note: 'Over 10-Year GoC — MLI Select and long-term CMHC (Source: First National)' },
+  { term: '5-Year CMB', spread: Math.round((ratesData.rates.cmb5y - ratesData.rates.goc5y) * 100), note: 'Over 5-Year GoC' },
+  { term: '10-Year CMB', spread: Math.round((ratesData.rates.cmb10y - ratesData.rates.goc10y) * 100), note: 'Over 10-Year GoC' },
 ]
 
-const lastUpdated = 'March 11, 2026'
-
-function formatChange(current: number, prev: number) {
-  const diff = current - prev
-  const sign = diff > 0 ? '+' : ''
-  return { text: `${sign}${diff.toFixed(2)}%`, positive: diff > 0, zero: diff === 0 }
+function formatDate(dateStr: string) {
+  const d = new Date(dateStr + 'T12:00:00')
+  return d.toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })
 }
 
 function ChangeIndicator({ current, prev }: { current: number; prev: number }) {
-  const { text, positive, zero } = formatChange(current, prev)
-  if (zero) return <span className="text-navy/30 text-sm">—</span>
+  const diff = current - prev
+  if (Math.abs(diff) < 0.005) return <span className="text-navy/30 text-sm">&mdash;</span>
+  const sign = diff > 0 ? '+' : ''
+  const text = `${sign}${diff.toFixed(2)}%`
   return (
-    <span className={`text-sm font-medium ${positive ? 'text-red-600' : 'text-emerald-600'}`}>
-      {positive ? '↑' : '↓'} {text}
+    <span className={`text-sm font-medium ${diff > 0 ? 'text-red-600' : 'text-emerald-600'}`}>
+      {diff > 0 ? '↑' : '↓'} {text}
     </span>
   )
 }
 
 export default function BondYieldTracker() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+  const yields = buildYields()
 
   return (
     <>
@@ -125,14 +96,17 @@ export default function BondYieldTracker() {
           </a>
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-[2px] bg-gradient-to-r from-gold to-gold-light" />
-            <span className="text-[11px] tracking-[0.2em] uppercase text-gold-light font-medium">Live Market Data</span>
+            <span className="text-[11px] tracking-[0.2em] uppercase text-gold-light font-medium">Daily Market Data</span>
           </div>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white leading-[0.95] mb-6">
             Bond Yield<br /><span className="text-gradient-gold">Tracker</span>
           </h1>
           <p className="text-white/40 text-[16px] max-w-2xl leading-relaxed">
-            Government of Canada benchmark yields — the rates that drive every 
-            multifamily mortgage in the country. Updated regularly.
+            Government of Canada and Canada Mortgage Bond yields updated daily. 
+            The rates that drive every multifamily mortgage in the country.
+          </p>
+          <p className="text-white/20 text-[12px] mt-4">
+            Source: {ratesData.source} · Updated {formatDate(ratesData.lastUpdated)}
           </p>
         </div>
       </section>
@@ -155,7 +129,7 @@ export default function BondYieldTracker() {
           <div className="bg-white border border-soft-gray overflow-hidden mb-12 sm:mb-16">
             <div className="px-6 sm:px-8 py-5 border-b border-soft-gray flex items-center justify-between">
               <h2 className="font-serif text-xl sm:text-2xl text-navy">Benchmark Yields</h2>
-              <span className="text-[11px] tracking-wide-custom uppercase text-navy/30">Updated {lastUpdated}</span>
+              <span className="text-[11px] tracking-wide-custom uppercase text-navy/30">Updated {formatDate(ratesData.lastUpdated)}</span>
             </div>
             
             {/* Desktop Table */}
@@ -236,7 +210,7 @@ export default function BondYieldTracker() {
           <div className="bg-white border border-soft-gray overflow-hidden mb-12 sm:mb-16">
             <div className="px-6 sm:px-8 py-5 border-b border-soft-gray">
               <h2 className="font-serif text-xl sm:text-2xl text-navy">CMB Spreads</h2>
-              <p className="text-navy/40 text-[14px] mt-1">Canada Mortgage Bond spreads over GoC — the markup lenders add for CMHC-insured mortgages</p>
+              <p className="text-navy/40 text-[14px] mt-1">Canada Mortgage Bond spreads over GoC benchmarks</p>
             </div>
             <div className="divide-y divide-soft-gray/50">
               {cmbSpreads.map((s) => (
@@ -256,23 +230,23 @@ export default function BondYieldTracker() {
             <h3 className="font-serif text-2xl sm:text-3xl text-white mb-6">What this means for your mortgage</h3>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <p className="text-[12px] tracking-wide-custom uppercase text-gold mb-3">Conventional Insured (5-Year Fixed)</p>
+                <p className="text-[12px] tracking-wide-custom uppercase text-gold mb-3">CMHC Insured (5-Year Fixed)</p>
                 <p className="font-serif text-3xl text-white mb-2">
-                  ~{(yields[0].current + cmbSpreads[0].spread / 100 + 0.50).toFixed(2)}%
+                  ~{(ratesData.rates.cmb5y + 0.60).toFixed(2)}%
                 </p>
                 <p className="text-white/40 text-[14px] leading-relaxed">
-                  5-Year GoC ({yields[0].current.toFixed(2)}%) + CMB spread ({cmbSpreads[0].spread}bps) + lender margin (~50bps). 
-                  Typical CMHC-insured 5-year fixed rate for stabilized multifamily.
+                  CMB 5-Year ({ratesData.rates.cmb5y.toFixed(2)}%) + typical lender spread (~60bps). 
+                  Indicative CMHC-insured 5-year fixed rate for stabilized multifamily.
                 </p>
               </div>
               <div>
                 <p className="text-[12px] tracking-wide-custom uppercase text-gold mb-3">10-Year Fixed (MLI Select)</p>
                 <p className="font-serif text-3xl text-white mb-2">
-                  ~{(yields[1].current + cmbSpreads[1].spread / 100 + 0.55).toFixed(2)}%
+                  ~{(ratesData.rates.cmb10y + 0.60).toFixed(2)}%
                 </p>
                 <p className="text-white/40 text-[14px] leading-relaxed">
-                  10-Year GoC ({yields[1].current.toFixed(2)}%) + CMB spread ({cmbSpreads[1].spread}bps) + lender margin (~55bps). 
-                  Typical rate for CMHC MLI Select 10-year terms on purpose-built rental.
+                  CMB 10-Year ({ratesData.rates.cmb10y.toFixed(2)}%) + typical lender spread (~60bps). 
+                  Indicative rate for CMHC MLI Select 10-year terms on purpose-built rental.
                 </p>
               </div>
             </div>

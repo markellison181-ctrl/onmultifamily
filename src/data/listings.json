@@ -107,33 +107,5 @@
     "yearBuilt": 1951,
     "yearRenovated": "2022\u20132023",
     "unitMix": "15 one-bedroom, 17 two-bedroom"
-  },
-  {
-    "id": "133-143-main-street-lucan",
-    "title": "133\u2013143 Main Street",
-    "location": "Lucan, Ontario",
-    "address": "133-143 Main Street, Lucan, Ontario",
-    "type": "Seniors Housing / Retirement Residence",
-    "units": 55,
-    "price": null,
-    "pricePerUnit": null,
-    "lotSize": "1.40 ac",
-    "status": "For Sale",
-    "image": "/images/listings/133-main-lucan.jpeg",
-    "brochure": "/images/brochures/133-143-main-street-lucan.pdf",
-    "ndaLink": null,
-    "headline": "Vacant 55-Unit Retirement Building \u2014 1.40 Acre Main Street Assemblage",
-    "description": "On behalf of TDB Restructuring Limited in its capacity as Court-Appointed Receiver, Colliers is pleased to offer for sale 133\u2013143 Main Street \u2014 a 1.40-acre Main Street assemblage with approximately 350 ft of frontage, currently improved with a 3-storey, vacant 55-suite retirement residence and three adjacent single-family lots.",
-    "fullDescription": "The Retirement Residence totals 36,156 SF of GFA, with potential to add another 29,844 SF of gross floor area and bring total unit count to 108 units.\n\nThe property was previously licensed under the Retirement Homes Regulatory Authority (RHRA), supporting its former use as a specialized supportive housing facility. Under its prior license, the home was approved to offer a full spectrum of care services, including memory care, assisted living, independent living with support services, special needs and complex care, palliative care, and respite or short-term stays.\n\nThe company is available for acquisition alongside the property, offering the potential to utilize existing operating tax losses to create significant tax savings for purchasers.\n\nSituated approximately 20 km north of London (Masonville Mall) on Highway 4, the site anchors the walkable core of Lucan and is steps away from community amenities.",
-    "features": [
-      "Vacant 55-suite retirement residence with 36,156 SF GFA",
-      "Potential to expand to 108 units with additional 29,844 SF",
-      "1.40-acre assemblage with ~350 ft of Main Street frontage",
-      "Previously RHRA-licensed for full spectrum of care services",
-      "Company available for acquisition \u2014 operating tax losses for significant tax savings",
-      "Receiver sale \u2014 court-appointed process"
-    ],
-    "gfa": 36156,
-    "unitMix": "55 suites (vacant), expandable to 108"
   }
 ]
