@@ -48,7 +48,8 @@ export default function TransactionMap({ transactions }: { transactions: Transac
     Sold: transactions.filter(t => t.status === 'Sold').length,
   }
 
-  const totalValue = transactions.reduce((sum, t) => sum + t.price, 0)
+  const totalValue = transactions.reduce((sum, t) => sum + (t.price || 0), 0)
+  const totalSuites = transactions.reduce((sum, t) => sum + t.suites, 0)
 
   // Dynamic import leaflet (client only)
   useEffect(() => {
@@ -69,6 +70,10 @@ export default function TransactionMap({ transactions }: { transactions: Transac
               <div>
                 <div className="font-serif text-2xl text-white">{transactions.length}</div>
                 <div className="text-[11px] tracking-wide-custom uppercase text-white/40">Properties</div>
+              </div>
+              <div>
+                <div className="font-serif text-2xl text-white">{totalSuites.toLocaleString()}</div>
+                <div className="text-[11px] tracking-wide-custom uppercase text-white/40">Total Suites</div>
               </div>
             </div>
 
@@ -135,7 +140,7 @@ export default function TransactionMap({ transactions }: { transactions: Transac
               <p className="text-navy/40 text-sm mb-4">{selected.city}, Ontario</p>
               <div className="flex gap-6 text-[14px]">
                 <div>
-                  <div className="text-navy font-medium">{fmt(selected.price)}</div>
+                  <div className="text-navy font-medium">{selected.price ? fmt(selected.price) : 'Confidential'}</div>
                   <div className="text-navy/30 text-[11px] uppercase">Price</div>
                 </div>
                 <div>

@@ -41,3 +41,16 @@ The labour market is also flashing warning signs. Canada shed roughly 66,000 job
 ## TL;DR
 
 The BoC is expected to cut tomorrow, balancing two forces: inflation that's easing but still sticky, and growth/employment that are weakening fast. Developers and bridge borrowers win immediately from lower prime-based debt, while fixed-rate owners see little change until the 5-year GoC yield moves. Expect a shallow easing path toward 2.25–2.50% through 2026.
+
+
+---
+
+👋 P.S. I've helped my clients sell $1.2Bn in multifamily since 2018 ([see recent deals](https://www.collierscanada.com/en-ca/experts/dayma-itamunoala)).
+
+**When you're ready, there are 3 ways I can help you:**
+
+**1.** Receive a valuation and listing proposal ([free winter valuation](mailto:dayma.itamunoala@colliers.com?subject=RE%3A%20Request%20Free%20Valuation)).
+
+**2.** Receive a qualified offer on your property (delivered within 48 hours) [here](mailto:dayma.itamunoala@colliers.com?subject=Request%20for%20an%20Offer).
+
+**3.** Read daily multifamily insights by [following me on LinkedIn](https://ca.linkedin.com/in/dayma) and [X](https://x.com/daymaitam).

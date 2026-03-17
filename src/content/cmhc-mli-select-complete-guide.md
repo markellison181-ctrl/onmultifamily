@@ -187,3 +187,15 @@ The key to success lies in early integration of CMHC requirements into project p
 ---
 
 *For specific MLI Select application assistance and market-rate verification, contact Dayma Itamunoala at Colliers. Our team has successfully navigated dozens of MLI Select applications across Ontario.*
+
+---
+
+👋 P.S. I've helped my clients sell $1.2Bn in multifamily since 2018 ([see recent deals](https://www.collierscanada.com/en-ca/experts/dayma-itamunoala)).
+
+**When you're ready, there are 3 ways I can help you:**
+
+**1.** Receive a valuation and listing proposal ([free winter valuation](mailto:dayma.itamunoala@colliers.com?subject=RE%3A%20Request%20Free%20Valuation)).
+
+**2.** Receive a qualified offer on your property (delivered within 48 hours) [here](mailto:dayma.itamunoala@colliers.com?subject=Request%20for%20an%20Offer).
+
+**3.** Read daily multifamily insights by [following me on LinkedIn](https://ca.linkedin.com/in/dayma) and [X](https://x.com/daymaitam).

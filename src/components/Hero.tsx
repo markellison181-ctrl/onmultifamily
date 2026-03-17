@@ -69,13 +69,30 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* CTAs */}
-        <div className={`flex flex-col sm:flex-row gap-4 mb-20 sm:mb-28 opacity-0 ${loaded ? 'animate-fade-in-up stagger-3' : ''}`}>
-          <a href="#listings" className="group relative bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] font-semibold tracking-[0.15em] uppercase px-10 sm:px-12 py-4 sm:py-5 transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] text-center">
+        {/* Newsletter Signup - Primary CTA */}
+        <div className={`mb-8 sm:mb-12 opacity-0 ${loaded ? 'animate-fade-in-up stagger-3' : ''}`}>
+          <p className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-white/30 font-medium mb-3">
+            Join 14,000+ apartment investors. Free weekly brief.
+          </p>
+          <form className="flex flex-col sm:flex-row gap-3 max-w-xl">
+            <input
+              type="email"
+              placeholder="you@email.com"
+              className="flex-1 bg-white/5 border border-white/15 px-5 py-4 text-sm text-white placeholder:text-white/25 focus:border-gold/50 focus:bg-white/8 transition-all duration-300 outline-none"
+            />
+            <button
+              type="submit"
+              className="bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] font-semibold tracking-[0.15em] uppercase px-8 sm:px-10 py-4 transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] whitespace-nowrap"
+            >
+              Subscribe Free
+            </button>
+          </form>
+        </div>
+
+        {/* Secondary CTA */}
+        <div className={`flex flex-col sm:flex-row gap-4 mb-20 sm:mb-28 opacity-0 ${loaded ? 'animate-fade-in-up stagger-3' : ''}`} style={{ animationDelay: '0.7s' }}>
+          <a href="#listings" className="border border-white/20 text-white text-[12px] sm:text-[13px] font-medium tracking-[0.15em] uppercase px-10 sm:px-12 py-4 sm:py-5 hover:bg-white/5 hover:border-white/30 transition-all duration-500 text-center">
             Current Offerings
-          </a>
-          <a href="#newsletter" className="border border-white/20 text-white text-[12px] sm:text-[13px] font-medium tracking-[0.15em] uppercase px-10 sm:px-12 py-4 sm:py-5 hover:bg-white/5 hover:border-white/30 transition-all duration-500 text-center">
-            Subscribe
           </a>
         </div>
 

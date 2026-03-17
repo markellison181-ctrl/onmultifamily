@@ -264,3 +264,15 @@ The Ontario multifamily market rewards preparation and punishes improvisation. S
 ---
 
 *Dayma Itamunoala leads Ontario's most active multifamily brokerage team at Colliers. For confidential exit planning discussions, contact our team directly.*
+
+---
+
+👋 P.S. I've helped my clients sell $1.2Bn in multifamily since 2018 ([see recent deals](https://www.collierscanada.com/en-ca/experts/dayma-itamunoala)).
+
+**When you're ready, there are 3 ways I can help you:**
+
+**1.** Receive a valuation and listing proposal ([free winter valuation](mailto:dayma.itamunoala@colliers.com?subject=RE%3A%20Request%20Free%20Valuation)).
+
+**2.** Receive a qualified offer on your property (delivered within 48 hours) [here](mailto:dayma.itamunoala@colliers.com?subject=Request%20for%20an%20Offer).
+
+**3.** Read daily multifamily insights by [following me on LinkedIn](https://ca.linkedin.com/in/dayma) and [X](https://x.com/daymaitam).
