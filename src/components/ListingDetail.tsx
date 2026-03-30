@@ -42,7 +42,7 @@ export default function ListingDetail({ listing, otherListings }: { listing: Lis
       <Header />
 
       {/* Navy Hero Section */}
-      <section className="relative bg-navy-deep pt-20 pb-16 sm:pb-20 md:pb-24 overflow-hidden noise">
+      <section className="relative bg-navy-deep pt-32 sm:pt-36 pb-16 sm:pb-20 md:pb-24 overflow-hidden noise">
         {/* Background Image */}
         {listing.image && (
           <div className="absolute inset-0">
@@ -163,7 +163,7 @@ export default function ListingDetail({ listing, otherListings }: { listing: Lis
               {(listing.yearBuilt || listing.yearRenovated || listing.noi || listing.unitMix) && (
                 <div>
                   <h3 className="font-serif text-xl sm:text-2xl text-navy mb-6 sm:mb-8">Property Details</h3>
-                  <div className="glass p-6 sm:p-8">
+                  <div className="bg-cream border border-soft-gray p-6 sm:p-8">
                     <div className="grid sm:grid-cols-2 gap-6">
                       {listing.yearBuilt && (
                         <div>
@@ -221,7 +221,7 @@ export default function ListingDetail({ listing, otherListings }: { listing: Lis
               </div>
 
               {/* Team agent card */}
-              <div className="glass p-6 sm:p-8">
+              <div className="bg-cream border border-soft-gray p-6 sm:p-8">
                 <div className="flex items-center gap-4 mb-4">
                   <Image 
                     src="/images/team/dayma.png" 
@@ -257,7 +257,7 @@ export default function ListingDetail({ listing, otherListings }: { listing: Lis
             <h2 className="font-serif text-2xl sm:text-3xl text-navy mb-10 sm:mb-12">Other Current Offerings</h2>
             <div className="grid sm:grid-cols-2 gap-8">
               {otherListings.map(l => (
-                <Link key={l.id} href={`/listings/${l.id}/`} className="group block glass p-6 hover-lift">
+                <Link key={l.id} href={`/listings/${l.id}/`} className="group block bg-white border border-soft-gray p-6 hover-lift">
                   <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                     <div className="relative aspect-[4/3] sm:aspect-[3/2] sm:w-32 overflow-hidden flex-shrink-0">
                       {l.image ? (

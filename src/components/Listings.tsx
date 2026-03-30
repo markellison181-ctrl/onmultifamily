@@ -29,7 +29,7 @@ export default function Listings() {
         <div className="flex items-center gap-3 mb-4 sm:mb-6">
           <div className="w-10 sm:w-14 h-[2px] bg-gradient-to-r from-gold to-gold-light" />
           <span className="text-[11px] sm:text-[12px] tracking-[0.2em] uppercase text-gold-light font-medium">
-            Current Offerings
+            Investment Sales
           </span>
         </div>
 
@@ -40,7 +40,7 @@ export default function Listings() {
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filtered.map(listing => (
-            <Link key={listing.id} href={`/listings/${listing.id}/`} className="group block hover-lift">
+            <Link key={listing.id} href={`/listings/${listing.id}/`} className="group block hover-lift border border-transparent hover:border-gold/30 transition-colors duration-500 p-0.5">
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden mb-5 sm:mb-6">
                 {listing.image ? (

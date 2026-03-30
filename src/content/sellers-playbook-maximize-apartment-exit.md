@@ -4,7 +4,7 @@ After three decades of building wealth through multifamily real estate, many Ont
 
 Having guided over $1.12B in multifamily transactions, our team has identified the strategies that consistently deliver premium valuations versus those that leave money on the table. This playbook distills those lessons into actionable guidance.
 
-## Chapter 1: Market Timing – The 80% Factor
+## Chapter 1: Market Timing - The 80% Factor
 
 Market timing accounts for approximately 80% of exit value optimization. Even perfect execution cannot overcome poor timing, while adequate execution in strong markets can deliver exceptional results.
 
@@ -111,7 +111,7 @@ Premium valuations result from systematic preparation, not last-minute efforts. 
    - Additional parking creation
 
 ### Timing Strategy
-Complete high-ROI improvements 6-12 months before sale to demonstrate stabilized returns. Avoid major construction during marketing period – buyers discount disruption risks.
+Complete high-ROI improvements 6-12 months before sale to demonstrate stabilized returns. Avoid major construction during marketing period - buyers discount disruption risks.
 
 ## Chapter 4: The Institutional Marketing Advantage
 
@@ -255,7 +255,7 @@ For investors seeking continued real estate exposure:
 
 Multifamily property sales represent significant wealth events requiring professional expertise across multiple disciplines. The difference between good and exceptional outcomes lies in preparation quality, marketing sophistication, and execution excellence.
 
-Our team's track record – $1.12B+ in completed sales with 81% closing percentage – reflects systematic application of these principles across diverse market conditions and property types.
+Our team's track record - $1.12B+ in completed sales with 81% closing percentage - reflects systematic application of these principles across diverse market conditions and property types.
 
 The Ontario multifamily market rewards preparation and punishes improvisation. Sellers who invest in professional guidance and systematic preparation consistently achieve superior outcomes versus those who approach exits casually.
 

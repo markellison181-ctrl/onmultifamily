@@ -38,7 +38,7 @@ export default function Hero() {
         <div className={`flex items-center gap-3 mb-8 sm:mb-12 opacity-0 ${loaded ? 'animate-fade-in-up' : ''}`}>
           <div className="w-10 sm:w-16 h-px bg-gradient-to-r from-gold to-gold-light" />
           <span className="text-[11px] sm:text-[13px] font-medium tracking-[0.2em] uppercase text-gold-light">
-            Colliers Multifamily — Ontario
+            Colliers Multifamily | Ontario
           </span>
         </div>
 

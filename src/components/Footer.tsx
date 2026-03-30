@@ -1,9 +1,29 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 
 export default function Footer() {
+  const [form, setForm] = useState({ name: '', email: '', phone: '', address: '', message: '' })
+  const [sent, setSent] = useState(false)
+  const [newsletterEmail, setNewsletterEmail] = useState('')
+  const [newsletterSent, setNewsletterSent] = useState(false)
+
+  const handleContact = (e: React.FormEvent) => {
+    e.preventDefault()
+    const subject = encodeURIComponent('Inquiry from OnMultifamily.com')
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone || 'N/A'}\nProperty: ${form.address || 'N/A'}\n\n${form.message}`
+    )
+    window.open(`mailto:dayma.itamunoala@colliers.com?subject=${subject}&body=${body}`)
+    setSent(true)
+  }
+
+  const handleNewsletter = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (newsletterEmail) setNewsletterSent(true)
+  }
+
   return (
     <footer id="contact" className="relative bg-navy-deep overflow-hidden noise">
       {/* Top gold line */}
@@ -27,7 +47,7 @@ export default function Footer() {
                 Get in touch
               </h2>
               <p className="text-white/35 text-[15px] sm:text-[16px] leading-relaxed mb-10">
-                Whether you&apos;re buying, selling, or want to understand your options — 
+                Whether you&apos;re buying, selling, or want to understand your options,
                 we&apos;re here for a confidential conversation.
               </p>
 
@@ -51,58 +71,104 @@ export default function Footer() {
 
             {/* Contact Form */}
             <div>
-              <form className="space-y-6" onSubmit={e => e.preventDefault()}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {sent ? (
+                <div className="flex items-start gap-4 py-8">
+                  <div className="w-8 h-8 rounded-full bg-gold/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-4 h-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-white/80 text-[15px] font-medium mb-1">Message sent</p>
+                    <p className="text-white/35 text-[14px]">Your email client should open with a pre-filled message. We will follow up within 24 hours.</p>
+                  </div>
+                </div>
+              ) : (
+                <form className="space-y-6" onSubmit={handleContact}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      required
+                      value={form.name}
+                      onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                      className="bg-transparent border-b border-white/15 text-white placeholder:text-white/20 pb-3 text-[14px] sm:text-[15px] focus:border-gold/50 transition-colors duration-500 outline-none"
+                    />
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      required
+                      value={form.email}
+                      onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                      className="bg-transparent border-b border-white/15 text-white placeholder:text-white/20 pb-3 text-[14px] sm:text-[15px] focus:border-gold/50 transition-colors duration-500 outline-none"
+                    />
+                  </div>
+                  <input
+                    type="tel"
+                    placeholder="Phone (optional)"
+                    value={form.phone}
+                    onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
+                    className="w-full bg-transparent border-b border-white/15 text-white placeholder:text-white/20 pb-3 text-[14px] sm:text-[15px] focus:border-gold/50 transition-colors duration-500 outline-none"
+                  />
                   <input
                     type="text"
-                    placeholder="Name"
-                    className="bg-transparent border-b border-white/15 text-white placeholder:text-white/20 pb-3 text-[14px] sm:text-[15px] focus:border-gold/50 transition-colors duration-500"
+                    placeholder="Property address (optional)"
+                    value={form.address}
+                    onChange={e => setForm(f => ({ ...f, address: e.target.value }))}
+                    className="w-full bg-transparent border-b border-white/15 text-white placeholder:text-white/20 pb-3 text-[14px] sm:text-[15px] focus:border-gold/50 transition-colors duration-500 outline-none"
                   />
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    className="bg-transparent border-b border-white/15 text-white placeholder:text-white/20 pb-3 text-[14px] sm:text-[15px] focus:border-gold/50 transition-colors duration-500"
+                  <textarea
+                    placeholder="How can we help?"
+                    rows={3}
+                    value={form.message}
+                    onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
+                    className="w-full bg-transparent border-b border-white/15 text-white placeholder:text-white/20 pb-3 text-[14px] sm:text-[15px] focus:border-gold/50 transition-colors duration-500 resize-none outline-none"
                   />
-                </div>
-                <input
-                  type="tel"
-                  placeholder="Phone (optional)"
-                  className="w-full bg-transparent border-b border-white/15 text-white placeholder:text-white/20 pb-3 text-[14px] sm:text-[15px] focus:border-gold/50 transition-colors duration-500"
-                />
-                <input
-                  type="text"
-                  placeholder="Property address (optional)"
-                  className="w-full bg-transparent border-b border-white/15 text-white placeholder:text-white/20 pb-3 text-[14px] sm:text-[15px] focus:border-gold/50 transition-colors duration-500"
-                />
-                <textarea
-                  placeholder="How can we help?"
-                  rows={3}
-                  className="w-full bg-transparent border-b border-white/15 text-white placeholder:text-white/20 pb-3 text-[14px] sm:text-[15px] focus:border-gold/50 transition-colors duration-500 resize-none"
-                />
-                <button
-                  type="submit"
-                  className="bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] tracking-[0.15em] uppercase font-bold px-10 py-4 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] transition-all duration-500 w-full sm:w-auto mt-2"
-                >
-                  Send Message
-                </button>
-              </form>
+                  <button
+                    type="submit"
+                    className="bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] tracking-[0.15em] uppercase font-bold px-10 py-4 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] transition-all duration-500 w-full sm:w-auto mt-2"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              )}
             </div>
           </div>
 
           {/* Newsletter in Footer */}
           <div className="border-t border-white/8 pt-12 mb-14 sm:mb-16">
             <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
-              <p className="text-white/30 text-[13px] sm:text-[14px]">Subscribe to our weekly market brief</p>
-              <div className="flex gap-3 sm:max-w-md">
-                <input
-                  type="email"
-                  placeholder="you@email.com"
-                  className="flex-1 bg-white/3 border border-white/8 text-white placeholder:text-white/20 px-5 py-3 text-sm focus:border-gold/30 transition-colors duration-500 min-w-0"
-                />
-                <button className="bg-white/5 border border-white/8 text-white/50 text-[11px] tracking-[0.15em] uppercase font-medium px-6 py-3 hover:bg-white/10 hover:text-white transition-all duration-500 whitespace-nowrap flex-shrink-0">
-                  Subscribe
-                </button>
+              <div className="flex-shrink-0">
+                <p className="text-[10px] tracking-[0.2em] uppercase text-white/20 mb-1">Weekly Brief</p>
+                <p className="text-white/50 text-[13px] sm:text-[14px]">14,000+ investors read our weekly insights</p>
               </div>
+              {newsletterSent ? (
+                <div className="flex items-center gap-3 py-1">
+                  <div className="w-5 h-5 rounded-full bg-gold/15 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-3 h-3 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-[13px] text-white/50 tracking-wide">You&apos;re subscribed. Look for the first issue in your inbox.</span>
+                </div>
+              ) : (
+                <form onSubmit={handleNewsletter} className="flex gap-3 sm:max-w-md w-full">
+                  <input
+                    type="email"
+                    placeholder="you@email.com"
+                    required
+                    value={newsletterEmail}
+                    onChange={e => setNewsletterEmail(e.target.value)}
+                    className="flex-1 bg-white/3 border border-white/8 text-white placeholder:text-white/20 px-5 py-3 text-sm focus:border-gold/30 transition-colors duration-500 outline-none min-w-0"
+                  />
+                  <button
+                    type="submit"
+                    className="bg-gradient-to-r from-gold to-gold-light text-navy text-[11px] tracking-[0.15em] uppercase font-bold px-6 py-3 hover:shadow-[0_0_20px_rgba(201,168,76,0.25)] transition-all duration-500 whitespace-nowrap flex-shrink-0"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              )}
             </div>
           </div>
 

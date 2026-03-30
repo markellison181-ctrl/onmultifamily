@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: 'What is CMHC MLI Select?',
-    a: 'MLI Select is CMHC\'s points-based mortgage insurance program that offers enhanced terms — lower interest rates, longer amortization (up to 50 years), and higher LTV (up to 95%) — for projects meeting affordability, accessibility, and energy efficiency criteria.',
+    a: 'MLI Select is CMHC\'s points-based mortgage insurance program that offers enhanced terms - lower interest rates, longer amortization (up to 50 years), and higher LTV (up to 95%) - for projects meeting affordability, accessibility, and energy efficiency criteria.',
   },
   {
     q: 'How long does a typical multifamily sale take?',
@@ -47,7 +47,7 @@ export default function FAQ() {
                 questions
               </h2>
               <p className="text-navy/40 text-[14px] leading-relaxed">
-                Don&apos;t see your question? Reach out — we&apos;re always happy to talk multifamily.
+                Don&apos;t see your question? Reach out. We&apos;re always happy to talk multifamily.
               </p>
             </div>
           </div>

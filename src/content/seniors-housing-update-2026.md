@@ -12,7 +12,7 @@ For the first time since pre-COVID, seniors housing fundamentals are all moving 
 
 ## The Macro Picture
 
-The 75+ population cohort is expected to grow **more than 40%** over the next decade. The number of Canadians over 85 is projected to **double by 2036**, reaching approximately 1.6 million people. This comes at a time when government-funded long-term care home waitlists remain significantly stretched — Ontario alone has more than 50,000 individuals waiting for placement.
+The 75+ population cohort is expected to grow **more than 40%** over the next decade. The number of Canadians over 85 is projected to **double by 2036**, reaching approximately 1.6 million people. This comes at a time when government-funded long-term care home waitlists remain significantly stretched - Ontario alone has more than 50,000 individuals waiting for placement.
 
 Development starts declined sharply through 2023 and 2024 as construction costs and financing conditions stalled new projects. In many Ontario markets, **replacement cost remains well above where existing assets are trading.**
 
@@ -23,7 +23,7 @@ Occupancy across stabilized retirement products has improved. Large operators ha
 1. **Strong operators with stabilized assets are regaining pricing power**, particularly in supply-constrained submarkets
 2. **Heavily levered or underperforming properties** are becoming recapitalization candidates
 3. **Buyers are underwriting operations first** and real estate second
-4. **Expenses are being monitored and controlled** — post-COVID labour shortages are easing. Temporary agency costs have dropped more than 50% over the past year
+4. **Expenses are being monitored and controlled** - post-COVID labour shortages are easing. Temporary agency costs have dropped more than 50% over the past year
 5. **Growing competition** means offering high-quality service and facilities is equally important as location
 
 ---

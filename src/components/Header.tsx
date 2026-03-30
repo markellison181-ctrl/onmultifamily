@@ -95,29 +95,35 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden fixed inset-0 bg-navy-deep z-40 pt-28 px-8">
-          <nav className="flex flex-col gap-6">
-            {links.map(link => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="text-2xl font-serif text-white"
-              >
-                {link.label}
-              </a>
-            ))}
+      <div className={`md:hidden fixed inset-0 bg-navy-deep z-40 pt-28 px-8 transition-all duration-500 ${
+        menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+      }`}>
+        <nav className="flex flex-col gap-6">
+          {links.map((link, i) => (
             <a
-              href="#valuation"
+              key={link.label}
+              href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-[13px] font-bold tracking-[0.15em] uppercase bg-gradient-to-r from-gold to-gold-light text-navy px-6 py-4 text-center mt-6"
+              className={`text-2xl font-serif transition-all duration-500 ${
+                menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              } ${menuOpen ? 'text-white' : 'text-white/0'}`}
+              style={{ transitionDelay: menuOpen ? `${i * 60}ms` : '0ms' }}
             >
-              Free Valuation
+              {link.label}
             </a>
-          </nav>
-        </div>
-      )}
+          ))}
+          <a
+            href="#valuation"
+            onClick={() => setMenuOpen(false)}
+            className={`text-[13px] font-bold tracking-[0.15em] uppercase bg-gradient-to-r from-gold to-gold-light text-navy px-6 py-4 text-center mt-6 transition-all duration-500 ${
+              menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+            style={{ transitionDelay: menuOpen ? `${links.length * 60}ms` : '0ms' }}
+          >
+            Free Valuation
+          </a>
+        </nav>
+      </div>
     </header>
   )
 }

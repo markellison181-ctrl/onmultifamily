@@ -12,7 +12,7 @@ import ratesData from '@/data/rates.json'
   3. User inputs property-specific: taxes, utilities, insurance
   4. Contract rate = CMB 5-year yield + lender spread (no "qualification rate" for multifamily)
   5. Size debt: lesser of DSCR-constrained and LTV-constrained
-  6. Add CMHC insurance premium (updated schedule effective July 14, 2025 — Advice 264)
+  6. Add CMHC insurance premium (updated schedule effective July 14, 2025 - Advice 264)
   7. MLI Select scenarios adjust DSCR, LTV, amortization, and premium discounts
 */
 
@@ -93,7 +93,7 @@ function getAmortMax(mliSelect: boolean, credits: number): number {
   return 40
 }
 
-// Updated CMHC Insurance Premium Schedule — Advice 264, effective July 14, 2025
+// Updated CMHC Insurance Premium Schedule - Advice 264, effective July 14, 2025
 // Standard Rental Housing (purchase & refinance)
 function getInsurancePremiumStandard(ltv: number): number {
   if (ltv <= 0.65) return 0.0260
@@ -249,7 +249,7 @@ export default function CMHCCalculator() {
     const noi = egi - totalExpenses
     const expenseRatio = egi > 0 ? (totalExpenses / egi) * 100 : 0
 
-    // Lending value — purchase uses lesser of price vs appraisal; refinance uses appraisal only
+    // Lending value - purchase uses lesser of price vs appraisal; refinance uses appraisal only
     let lendingValue: number
     if (loanPurpose === 'purchase') {
       lendingValue = appraisedValue > 0 ? Math.min(purchasePrice, appraisedValue) : purchasePrice
@@ -478,7 +478,7 @@ export default function CMHCCalculator() {
                 </div>
               </div>
 
-              {/* Valuation — dynamic based on loan purpose */}
+              {/* Valuation - dynamic based on loan purpose */}
               <div className="bg-white border border-soft-gray p-6 sm:p-8">
                 <h3 className="font-serif text-xl text-navy mb-2">Valuation</h3>
                 <p className="text-navy/30 text-[12px] mb-6">
@@ -907,7 +907,7 @@ export default function CMHCCalculator() {
               <p>
                 <strong className="text-navy/60">MLI Select:</strong> Credits unlock enhanced terms: lower DSCR 
                 minimums (down to 1.00x), higher LTV (up to 95%), longer amortization (up to 50 years), 
-                and premium discounts (10–30%) for projects meeting CMHC&apos;s affordability, accessibility, 
+                and premium discounts (10 to 30%) for projects meeting CMHC&apos;s affordability, accessibility, 
                 and climate compatibility criteria.
               </p>
               <p>

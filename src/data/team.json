@@ -2,7 +2,7 @@
   {
     "id": "dayma-itamunoala",
     "name": "Dayma Itamunoala",
-    "title": "Senior Vice President, Sales Representative",
+    "title": "Senior Vice President",
     "company": "Colliers",
     "bio": "Dayma leads the Colliers Multifamily Team in Toronto. As part of the National Investment Team at Colliers, Dayma is recognized as a leading specialist in the disposition of multifamily property across Ontario. A member of the Federation of Rental-Housing Providers of Ontario (FRPO), he has personally sold over $1 billion worth of multifamily across Ontario, working with all tiers of investors including institutions, international investors, REITs, developers, and private capital.",
     "email": "dayma.itamunoala@colliers.com",
@@ -12,48 +12,36 @@
     "order": 1
   },
   {
-    "id": "aman-rana",
-    "name": "Aman Rana",
-    "title": "Associate Vice President, Seniors Housing",
-    "company": "Colliers",
-    "bio": "With over a decade of experience on the debt side of commercial real estate, Aman has built a thorough understanding of the seniors housing and multifamily asset class through his time at BMO and Timbercreek Capital. His experience underwriting complex transactions across Canada and the U.S. brings a capital markets lens to an asset class where structure matters as much as pricing.",
-    "email": "aman.rana@colliers.com",
-    "phone": "647-971-8384",
-    "linkedin": "#",
-    "image": "/images/team/aman-square.png",
-    "order": 2
-  },
-  {
     "id": "zoe-prachter",
     "name": "Zoe Prachter",
-    "title": "Transaction Manager, Sales Representative",
+    "title": "Transaction Manager",
     "company": "Colliers",
     "bio": "Zoe is the Transaction Manager for the Colliers Multifamily Investment Team in Toronto, where she plays a pivotal role in facilitating the acquisition and disposition of multifamily real estate properties. She oversees marketing initiatives, client engagement strategy, and strengthens brand awareness. A licensed Sales Representative with RECO, Zoe actively participates in property tours and negotiations.",
     "email": "zoe.prachter@colliers.com",
     "linkedin": "#",
     "image": "/images/team/zoe-square.png",
-    "order": 3
+    "order": 2
   },
   {
     "id": "yianni-tsiampas",
     "name": "Yianni Tsiampas",
-    "title": "Sales Representative",
+    "title": "Associate",
     "company": "Colliers",
     "bio": "Yianni works alongside Dayma Itamunoala as a key member of the Colliers Multifamily Team, contributing to the team's continued success in the disposition of multifamily properties across Ontario. He specializes in building strong relationships with a diverse range of purchasers and investors, ensuring each deal is executed with precision and attention to detail.",
     "email": "yianni.tsiampas@colliers.com",
     "linkedin": "#",
     "image": "/images/team/yianni-square.png",
-    "order": 4
+    "order": 3
   },
   {
     "id": "chris-bertucci",
     "name": "Chris Bertucci",
-    "title": "Sales Representative",
+    "title": "Associate",
     "company": "Colliers",
     "bio": "Chris works alongside Dayma Itamunoala as a key member of the Colliers Multifamily Team, contributing to the team's success in the disposition of multifamily properties across Ontario. He excels at cultivating strong relationships with a wide variety of buyers and investors, ensuring every transaction is handled with care and precision.",
     "email": "chris.bertucci@colliers.com",
     "linkedin": "#",
     "image": "/images/team/chris-square.png",
-    "order": 5
+    "order": 4
   }
 ]

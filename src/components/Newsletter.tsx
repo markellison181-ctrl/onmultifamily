@@ -1,11 +1,18 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import articles from '@/data/articles.json'
 
 export default function Newsletter() {
+  const [email, setEmail] = useState('')
+  const [submitted, setSubmitted] = useState(false)
   const featured = articles.filter(a => a.image).slice(0, 3)
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (email) setSubmitted(true)
+  }
 
   return (
     <section id="newsletter" className="relative py-24 sm:py-32 md:py-44 bg-white overflow-hidden">
@@ -42,16 +49,30 @@ export default function Newsletter() {
               <h3 className="font-serif text-2xl sm:text-3xl text-white mb-2">Get the weekly brief</h3>
               <p className="text-white/30 text-[13px] sm:text-[14px]">Free. No spam. Unsubscribe anytime. Join 14,000+ professionals.</p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 flex-1 sm:max-w-lg">
-              <input
-                type="email"
-                placeholder="you@email.com"
-                className="flex-1 bg-white/5 border border-white/10 px-5 py-4 text-sm text-white placeholder:text-white/25 focus:border-gold/50 focus:bg-white/8 transition-all duration-300"
-              />
-              <button className="bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] tracking-[0.15em] uppercase font-bold px-8 py-4 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] transition-all duration-500 whitespace-nowrap">
-                Subscribe
-              </button>
-            </div>
+            {submitted ? (
+              <div className="flex items-center gap-3 flex-1 sm:max-w-lg py-4">
+                <div className="w-5 h-5 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-3 h-3 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="text-[13px] text-white/60 tracking-wide">You&apos;re subscribed. Look for the first issue in your inbox.</span>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 flex-1 sm:max-w-lg">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  placeholder="you@email.com"
+                  required
+                  className="flex-1 bg-white/5 border border-white/10 px-5 py-4 text-sm text-white placeholder:text-white/25 focus:border-gold/50 focus:bg-white/8 transition-all duration-300 outline-none"
+                />
+                <button type="submit" className="bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] tracking-[0.15em] uppercase font-bold px-8 py-4 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] transition-all duration-500 whitespace-nowrap">
+                  Subscribe
+                </button>
+              </form>
+            )}
           </div>
         </div>
 

@@ -1,9 +1,29 @@
 'use client'
 
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import Image from 'next/image'
 
 export default function About() {
+  const imageRef = useRef<HTMLDivElement>(null)
+  const copyRef = useRef<HTMLDivElement>(null)
+  const [imageVisible, setImageVisible] = useState(false)
+  const [copyVisible, setCopyVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.target === imageRef.current && entry.isIntersecting) setImageVisible(true)
+          if (entry.target === copyRef.current && entry.isIntersecting) setCopyVisible(true)
+        })
+      },
+      { threshold: 0.15 }
+    )
+    if (imageRef.current) observer.observe(imageRef.current)
+    if (copyRef.current) observer.observe(copyRef.current)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section className="relative py-24 sm:py-32 md:py-44 bg-white overflow-hidden">
       {/* Decorative background */}
@@ -12,7 +32,10 @@ export default function About() {
       <div className="relative max-w-7xl mx-auto px-5 sm:px-6 md:px-12">
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* Photo with overlapping accent */}
-          <div className="relative">
+          <div
+            ref={imageRef}
+            className={`relative transition-all duration-700 ease-out ${imageVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
             {/* Gold accent block behind image */}
             <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 w-full h-full bg-gradient-to-br from-gold/10 to-gold/5" />
             <div className="relative">
@@ -34,7 +57,10 @@ export default function About() {
           </div>
 
           {/* Copy */}
-          <div>
+          <div
+            ref={copyRef}
+            className={`transition-all duration-700 ease-out delay-200 ${copyVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
             <div className="flex items-center gap-3 mb-8 sm:mb-10">
               <div className="w-10 sm:w-14 h-[2px] bg-gradient-to-r from-gold to-gold-light" />
               <span className="text-[11px] sm:text-[12px] tracking-[0.2em] uppercase text-navy/35 font-medium">
@@ -52,13 +78,14 @@ export default function About() {
 
             <div className="space-y-5 text-navy/55 text-[15px] sm:text-[16px] leading-[1.75]">
               <p>
-                We are a specialist advisory team within Colliers, focused exclusively on 
-                multifamily investment sales across Ontario. Our approach combines institutional 
-                rigour with deep market intelligence developed over hundreds of transactions.
+                Led by Dayma Itamunoala, Senior Vice President at Colliers, we are a specialist
+                advisory team focused exclusively on multifamily investment sales across Ontario.
+                Our approach combines institutional rigour with deep market intelligence built
+                across more than $1.12 billion in completed transactions.
               </p>
               <p>
-                From 11-unit walk-ups to 1,200+ suite portfolios, we advise private owners, 
-                family offices, REITs, and institutional capital on acquisitions, dispositions, 
+                From 11-unit walk-ups to 1,200+ suite portfolios, we advise private owners,
+                family offices, REITs, and institutional capital on acquisitions, dispositions,
                 and portfolio strategy.
               </p>
             </div>
@@ -82,12 +109,12 @@ export default function About() {
                 </div>
                 <div>
                   <p className="text-navy/65 text-[14px] sm:text-[15px] italic leading-relaxed mb-3">
-                    &ldquo;Every building tells a story. Our job is to understand that story and 
+                    &ldquo;Every building tells a story. Our job is to understand that story and
                     position it for the capital markets in a way that maximizes value.&rdquo;
                   </p>
                   <div className="text-[12px] sm:text-[13px]">
                     <span className="font-semibold text-navy">Dayma Itamunoala</span>
-                    <span className="text-navy/35 ml-2">SVP, Head of Multifamily — Colliers</span>
+                    <span className="text-navy/35 ml-2">Senior Vice President, Sales Representative, Colliers</span>
                   </div>
                 </div>
               </div>

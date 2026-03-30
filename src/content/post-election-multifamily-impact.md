@@ -4,9 +4,9 @@ Whether you're elated after the Liberal win or extremely disappointed, one thing
 
 ## What Happened
 
-**Buyers Delayed Acquisitions** — uncertainty surrounding each party's stance on immigration and potential implications for CMHC kept many on the sidelines.
+**Buyers Delayed Acquisitions** - uncertainty surrounding each party's stance on immigration and potential implications for CMHC kept many on the sidelines.
 
-**Sellers Hesitated** — some owners postponed listings to see whether the Conservative tax cuts would materialize.
+**Sellers Hesitated** - some owners postponed listings to see whether the Conservative tax cuts would materialize.
 
 ## What Comes Next
 

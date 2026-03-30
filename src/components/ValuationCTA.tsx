@@ -9,7 +9,7 @@ export default function ValuationCTA() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent('Valuation Request — ' + (form.address || 'New Inquiry'))
+    const subject = encodeURIComponent('Valuation Request: ' + (form.address || 'New Inquiry'))
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nProperty Address: ${form.address}\n\n(Submitted via onmultifamily.com)`
     )
@@ -31,7 +31,7 @@ export default function ValuationCTA() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 md:px-12">
         <div className="grid md:grid-cols-2 gap-16 md:gap-20 items-center">
-          {/* Left — Copy */}
+          {/* Left - Copy */}
           <div>
             <div className="flex items-center gap-4 mb-10 sm:mb-14">
               <div className="w-12 sm:w-20 h-px bg-gradient-to-r from-transparent to-gold/50" />
@@ -48,13 +48,13 @@ export default function ValuationCTA() {
 
             <p className="text-[15px] sm:text-[17px] text-white/40 leading-[1.75] mb-4 sm:mb-5 max-w-lg">
               Whether you&apos;re exploring a sale, refinancing, or simply want to understand 
-              your building&apos;s current market position — we provide confidential, 
+              your building&apos;s current market position - we provide confidential,
               complimentary opinions of value for apartment buildings across Ontario.
             </p>
 
             <p className="text-[13px] sm:text-[15px] text-white/25 max-w-md mb-10">
-              We have closed 81% of every listing we have ever taken on. 
-              When you&apos;re ready, we are the team you want in your corner.
+              We have closed 81% of every listing we have taken on. 
+              When you are ready, we are the team you want in your corner.
             </p>
 
             {/* Dayma headshot + credentials */}
@@ -74,7 +74,7 @@ export default function ValuationCTA() {
             </div>
           </div>
 
-          {/* Right — Form */}
+          {/* Right - Form */}
           <div>
             {submitted ? (
               <div className="bg-white/[0.03] border border-white/[0.06] p-10 sm:p-12 text-center">

@@ -40,7 +40,7 @@ const primaryTools = [
   },
   {
     title: 'Bond Yield Tracker',
-    description: 'Live Government of Canada benchmark yields — the rates that drive every multifamily mortgage in the country. Updated regularly with CMB spreads.',
+    description: 'Live Government of Canada benchmark yields - the rates that drive every multifamily mortgage in the country. Updated regularly with CMB spreads.',
     href: '/resources/bond-yields/',
     tag: 'Live Data',
     Icon: ChartIcon,
@@ -50,7 +50,7 @@ const primaryTools = [
 const secondaryTools = [
   {
     title: 'Cap Rate Map',
-    description: 'Interactive transaction map across Ontario — explore active listings, recent sales, and market-level cap rate benchmarks.',
+    description: 'Interactive transaction map across Ontario - explore active listings, recent sales, and market-level cap rate benchmarks.',
     href: '/map/',
     tag: 'Interactive',
   },
@@ -94,7 +94,7 @@ export default function ResourcesHub() {
             <span className="text-gradient-gold">smarter decisions</span>
           </h1>
           <p className="text-white/40 text-[16px] sm:text-lg max-w-2xl leading-relaxed">
-            Free calculators, live market data, and institutional-grade analysis — 
+            Free calculators, live market data, and institutional-grade analysis
             built for Ontario multifamily owners and investors.
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function ResourcesHub() {
       {/* Primary Tools */}
       <section className="bg-cream py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          {/* Featured tools — large cards */}
+          {/* Featured tools - large cards */}
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
             {primaryTools.map((tool) => (
               <a
@@ -136,7 +136,7 @@ export default function ResourcesHub() {
             ))}
           </div>
 
-          {/* Secondary tools — smaller grid */}
+          {/* Secondary tools - smaller grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mb-16 sm:mb-20">
             {secondaryTools.map((tool) => (
               <a
@@ -176,7 +176,7 @@ export default function ResourcesHub() {
               </span>
             </div>
             <p className="text-navy/40 text-[14px] sm:text-[15px] leading-relaxed mb-8 max-w-2xl">
-              Our quarterly GTA multifamily market reports — authored by Dayma Itamunoala, Kyle Lindsay, Zoe Prachter, and Matthew Bruchkowsky. 
+              Our quarterly GTA multifamily market reports, authored by Dayma Itamunoala, Kyle Lindsay, Zoe Prachter, and Matthew Bruchkowsky.
               Published by Colliers.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">

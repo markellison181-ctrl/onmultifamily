@@ -69,7 +69,7 @@ function formatDate(dateStr: string) {
 
 function ChangeIndicator({ current, prev }: { current: number; prev: number }) {
   const diff = current - prev
-  if (Math.abs(diff) < 0.005) return <span className="text-navy/30 text-sm">&mdash;</span>
+  if (Math.abs(diff) < 0.005) return <span className="text-navy/30 text-sm">0.00%</span>
   const sign = diff > 0 ? '+' : ''
   const text = `${sign}${diff.toFixed(2)}%`
   return (

@@ -29,21 +29,21 @@ export default function Team() {
           sales and advisory across Ontario.
         </p>
 
-        {/* Team Grid — All Same Size */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 sm:gap-8">
+        {/* Team Grid - All Same Size */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-4xl">
           {teamData.map(member => (
-            <div key={member.id} className="group text-center">
-              <div className="relative w-full aspect-square overflow-hidden rounded-sm mb-4 sm:mb-5 bg-navy/5">
+            <div key={member.id} className="group text-center transition-transform duration-300 hover:-translate-y-1">
+              <div className="relative w-full aspect-square overflow-hidden rounded-sm mb-4 sm:mb-5 bg-navy/5 shadow-sm group-hover:shadow-md transition-shadow duration-300">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700"
+                  className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
                 {/* Consistent navy overlay for cohesion */}
                 <div className="absolute inset-0 bg-navy/10 mix-blend-multiply group-hover:bg-transparent transition-all duration-700" />
               </div>
-              <h3 className="font-medium text-navy text-[14px] sm:text-[15px] mb-0.5">{member.name}</h3>
+              <h3 className="font-medium text-navy text-[14px] sm:text-[15px] mb-0.5 transition-colors duration-300 group-hover:text-gold">{member.name}</h3>
               <p className="text-[11px] sm:text-[12px] text-navy/35 tracking-wide leading-snug">{member.title}</p>
             </div>
           ))}

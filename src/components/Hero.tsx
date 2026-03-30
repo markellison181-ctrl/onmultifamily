@@ -1,15 +1,88 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
+
+interface StatDef {
+  prefix: string
+  target: number
+  suffix: string
+  label: string
+  decimals: number
+  useLocale: boolean
+}
+
+function formatCount(n: number, decimals: number, useLocale: boolean): string {
+  if (decimals > 0) return n.toFixed(decimals)
+  if (useLocale) return Math.round(n).toLocaleString('en-CA')
+  return Math.round(n).toString()
+}
+
+function StatCounter({ stat }: { stat: StatDef }) {
+  const [count, setCount] = useState(0)
+  const ref = useRef<HTMLDivElement>(null)
+  const animated = useRef(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !animated.current) {
+          animated.current = true
+          const duration = 1800
+          const startTime = performance.now()
+
+          const tick = (now: number) => {
+            const elapsed = now - startTime
+            const progress = Math.min(elapsed / duration, 1)
+            const eased = 1 - Math.pow(1 - progress, 3)
+            setCount(eased * stat.target)
+            if (progress < 1) requestAnimationFrame(tick)
+          }
+
+          requestAnimationFrame(tick)
+        }
+      },
+      { threshold: 0.3 }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [stat.target])
+
+  return (
+    <div ref={ref} className="group">
+      <div className="font-serif text-3xl sm:text-4xl md:text-[2.75rem] text-white mb-2 number-display group-hover:text-gradient-gold transition-all duration-500">
+        {stat.prefix}{formatCount(count, stat.decimals, stat.useLocale)}{stat.suffix}
+      </div>
+      <div className="text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-white/30 font-medium">{stat.label}</div>
+    </div>
+  )
+}
+
+const stats: StatDef[] = [
+  { prefix: '$', target: 1.12, suffix: 'B+', label: 'Transactions', decimals: 2, useLocale: false },
+  { prefix: '',  target: 81,   suffix: '%',  label: 'Close Rate',   decimals: 0, useLocale: false },
+  { prefix: '',  target: 3000, suffix: '+',  label: 'Units Sold',   decimals: 0, useLocale: true },
+  { prefix: '',  target: 14000,suffix: '+',  label: 'Subscribers',  decimals: 0, useLocale: true },
+]
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false)
+  const [email, setEmail] = useState('')
+  const [submitted, setSubmitted] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 100)
     return () => clearTimeout(timer)
   }, [])
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (email) setSubmitted(true)
+  }
 
   return (
     <section className="relative min-h-[100svh] flex items-end bg-navy-deep overflow-hidden noise">
@@ -38,7 +111,7 @@ export default function Hero() {
         <div className={`flex items-center gap-3 mb-8 sm:mb-12 opacity-0 ${loaded ? 'animate-fade-in-up' : ''}`}>
           <div className="w-10 sm:w-16 h-px bg-gradient-to-r from-gold to-gold-light" />
           <span className="text-[11px] sm:text-[13px] font-medium tracking-[0.2em] uppercase text-gold-light">
-            Colliers Multifamily — Ontario
+            Colliers Multifamily, Ontario
           </span>
         </div>
 
@@ -53,7 +126,7 @@ export default function Hero() {
 
         {/* Subheadline */}
         <p className={`text-base sm:text-lg md:text-xl text-white/50 max-w-2xl mb-12 sm:mb-16 leading-relaxed opacity-0 ${loaded ? 'animate-fade-in-up stagger-2' : ''}`}>
-          We advise apartment building owners and investors across Ontario on acquisitions, 
+          We advise apartment building owners and investors across Ontario on acquisitions,
           dispositions, and portfolio strategy. Over $1.12 billion in completed transactions.
         </p>
 
@@ -74,19 +147,33 @@ export default function Hero() {
           <p className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-white/30 font-medium mb-3">
             Join 14,000+ apartment investors. Free weekly brief.
           </p>
-          <form className="flex flex-col sm:flex-row gap-3 max-w-xl">
-            <input
-              type="email"
-              placeholder="you@email.com"
-              className="flex-1 bg-white/5 border border-white/15 px-5 py-4 text-sm text-white placeholder:text-white/25 focus:border-gold/50 focus:bg-white/8 transition-all duration-300 outline-none"
-            />
-            <button
-              type="submit"
-              className="bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] font-semibold tracking-[0.15em] uppercase px-8 sm:px-10 py-4 transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] whitespace-nowrap"
-            >
-              Subscribe Free
-            </button>
-          </form>
+          {submitted ? (
+            <div className="flex items-center gap-3 max-w-xl py-4">
+              <div className="w-5 h-5 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                <svg className="w-3 h-3 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-[13px] text-white/60 tracking-wide">You&apos;re subscribed. Look for the first issue in your inbox.</span>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl">
+              <input
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                placeholder="you@email.com"
+                required
+                className="flex-1 bg-white/5 border border-white/15 px-5 py-4 text-sm text-white placeholder:text-white/25 focus:border-gold/50 focus:bg-white/8 transition-all duration-300 outline-none"
+              />
+              <button
+                type="submit"
+                className="bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] font-semibold tracking-[0.15em] uppercase px-8 sm:px-10 py-4 transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] whitespace-nowrap"
+              >
+                Subscribe Free
+              </button>
+            </form>
+          )}
         </div>
 
         {/* Secondary CTA */}
@@ -98,18 +185,8 @@ export default function Hero() {
 
         {/* Stats */}
         <div className={`border-t border-white/10 pt-10 sm:pt-12 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 opacity-0 ${loaded ? 'animate-fade-in-up stagger-4' : ''}`}>
-          {[
-            { number: '$1.12B+', label: 'Transactions' },
-            { number: '81%', label: 'Close Rate' },
-            { number: '3,000+', label: 'Units Sold' },
-            { number: '14,000+', label: 'Subscribers' },
-          ].map(stat => (
-            <div key={stat.label} className="group">
-              <div className="font-serif text-3xl sm:text-4xl md:text-[2.75rem] text-white mb-2 number-display group-hover:text-gradient-gold transition-all duration-500">
-                {stat.number}
-              </div>
-              <div className="text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-white/30 font-medium">{stat.label}</div>
-            </div>
+          {stats.map(stat => (
+            <StatCounter key={stat.label} stat={stat} />
           ))}
         </div>
       </div>

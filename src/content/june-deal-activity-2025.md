@@ -1,10 +1,10 @@
 Our team has been busy.
 
-In total — we have **$397M under contract** and an additional **$347M listed or coming to market**.
+In total - we have **$397M under contract** and an additional **$347M listed or coming to market**.
 
 While I can't share our off-market pipeline, we have a ton of amazing on-market opportunities below.
 
-**Important deal context:** my team is averaging just **14 days** between the first e-blast (property launch) and an accepted offer. If you see something you like — call us before it's gone.
+**Important deal context:** my team is averaging just **14 days** between the first e-blast (property launch) and an accepted offer. If you see something you like - call us before it's gone.
 
 ![3905 Riverside Drive East, Windsor](/images/articles/june-deal-activity.jpeg)
 

@@ -4,7 +4,7 @@ The 2025 multifamily data has been tallied. But more importantly, we now have a 
 
 ## Momentum in Q4
 
-Multifamily activity accelerated in Q4. Across the GTA, we saw roughly **$990M in multifamily deal volume** — nearly three times the activity in Q3. Notably, there was a huge increase in buyer diversity with **29 distinct purchasers across 39 deals.**
+Multifamily activity accelerated in Q4. Across the GTA, we saw roughly **$990M in multifamily deal volume** - nearly three times the activity in Q3. Notably, there was a huge increase in buyer diversity with **29 distinct purchasers across 39 deals.**
 
 ![Q4 2025 Activity](/images/articles/2026-predictions-chart.png)
 
@@ -20,7 +20,7 @@ Buyer demand remains strong with purchasers competing vigorously for deals, but 
 
 Financing is the backbone of Canadian multifamily. Confidence in execution improved materially in Q4, particularly around bond market stability and CMHC timelines.
 
-In Q4 alone, our team closed four unrelated transactions where buyers had **10-day conditional periods** and waived with confidence — including one firm deal with no conditions.
+In Q4 alone, our team closed four unrelated transactions where buyers had **10-day conditional periods** and waived with confidence - including one firm deal with no conditions.
 
 ### 3. Management Frustration
 
