@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-15",
+  "lastUpdated": "2026-04-16",
   "source": "Bank of Canada / Peakhill Capital",
   "rates": {
-    "goc5y": 3.01,
-    "goc10y": 3.43,
-    "cmb5y": 3.25,
+    "goc5y": 3.08,
+    "goc10y": 3.47,
+    "cmb5y": 3.29,
     "cmb10y": 3.80,
     "bankRate": 2.25,
-    "usTreasury5y": 3.9,
-    "usTreasury10y": 4.28
+    "usTreasury5y": 3.89,
+    "usTreasury10y": 4.27
   },
   "history": {
     "goc5y": {
@@ -18,19 +18,19 @@
       "yearAgo": 2.63
     },
     "goc10y": {
-      "prevClose": 3.47,
+      "prevClose": 3.46,
       "weekAgo": 3.49,
       "monthAgo": 3.1,
       "yearAgo": 2.85
     },
     "cmb5y": {
-      "prevClose": 3.32,
+      "prevClose": 3.29,
       "weekAgo": 3.45,
       "monthAgo": 3.13,
       "yearAgo": 2.77
     },
     "cmb10y": {
-      "prevClose": 3.84,
+      "prevClose": 3.79,
       "weekAgo": 3.96,
       "monthAgo": 3.59,
       "yearAgo": 3.34
@@ -42,13 +42,13 @@
       "yearAgo": 2.75
     },
     "usTreasury5y": {
-      "prevClose": 3.9,
+      "prevClose": 3.89,
       "weekAgo": 3.96,
       "monthAgo": 3.82,
       "yearAgo": 3.82
     },
     "usTreasury10y": {
-      "prevClose": 4.28,
+      "prevClose": 4.27,
       "weekAgo": 4.33,
       "monthAgo": 4.24,
       "yearAgo": 4.24
