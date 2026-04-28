@@ -1,36 +1,36 @@
 {
-  "lastUpdated": "2026-04-27",
-  "source": "Bank of Canada / onMultifamily.com",
+  "lastUpdated": "2026-04-28",
+  "source": "Bank of Canada / LendCity",
   "rates": {
-    "goc5y": 3.07,
-    "goc10y": 3.46,
-    "cmb5y": 3.29,
-    "cmb10y": 3.80,
+    "goc5y": 3.11,
+    "goc10y": 3.5,
+    "cmb5y": 3.26,
+    "cmb10y": 3.79,
     "bankRate": 2.25,
-    "usTreasury5y": 3.92,
-    "usTreasury10y": 4.29
+    "usTreasury5y": 3.95,
+    "usTreasury10y": 4.33
   },
   "history": {
     "goc5y": {
-      "prevClose": 3.08,
+      "prevClose": 3.11,
       "weekAgo": 3.04,
       "monthAgo": 2.89,
       "yearAgo": 2.63
     },
     "goc10y": {
-      "prevClose": 3.45,
+      "prevClose": 3.50,
       "weekAgo": 3.43,
       "monthAgo": 3.1,
       "yearAgo": 2.85
     },
     "cmb5y": {
-      "prevClose": 3.30,
+      "prevClose": 3.31,
       "weekAgo": 3.25,
       "monthAgo": 3.13,
       "yearAgo": 2.77
     },
     "cmb10y": {
-      "prevClose": 3.79,
+      "prevClose": 3.81,
       "weekAgo": 3.75,
       "monthAgo": 3.59,
       "yearAgo": 3.34
