@@ -3,7 +3,6 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { useMailchimp } from '@/lib/mailchimp'
-import { useMailchimp } from '@/lib/mailchimp'
 
 export default function Footer() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', address: '', message: '' })

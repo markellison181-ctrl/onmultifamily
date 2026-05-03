@@ -231,16 +231,34 @@ export default function ResourcesHub() {
                   Cap rates, policy changes, deal flow, and analysis.
                 </p>
               </div>
-              <div className="flex gap-3 lg:min-w-[380px]">
-                <input
-                  type="email"
-                  placeholder="you@email.com"
-                  className="flex-1 bg-white/5 border border-white/10 text-white placeholder:text-white/25 px-5 py-4 text-sm focus:border-gold/50 transition-colors"
-                />
-                <button className="bg-gradient-to-r from-gold to-gold-light text-navy text-[11px] tracking-[0.15em] uppercase font-bold px-7 py-4 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] transition-all duration-500 whitespace-nowrap">
-                  Subscribe
-                </button>
-              </div>
+              {mcStatus === 'success' ? (
+                <div className="flex items-center gap-3 lg:min-w-[380px] py-4">
+                  <div className="w-5 h-5 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-3 h-3 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-[13px] text-white/60 tracking-wide">{mcMessage}</span>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="flex gap-3 lg:min-w-[380px]">
+                  <input
+                    type="email"
+                    placeholder="you@email.com"
+                    required
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    className="flex-1 bg-white/5 border border-white/10 text-white placeholder:text-white/25 px-5 py-4 text-sm focus:border-gold/50 transition-colors"
+                  />
+                  <button
+                    type="submit"
+                    disabled={mcStatus === 'loading'}
+                    className="bg-gradient-to-r from-gold to-gold-light text-navy text-[11px] tracking-[0.15em] uppercase font-bold px-7 py-4 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] transition-all duration-500 whitespace-nowrap disabled:opacity-50"
+                  >
+                    {mcStatus === 'loading' ? 'Subscribing...' : 'Subscribe'}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>
