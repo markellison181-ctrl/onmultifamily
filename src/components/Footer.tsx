@@ -2,26 +2,42 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
+import { useMailchimp } from '@/lib/mailchimp'
+import { useMailchimp } from '@/lib/mailchimp'
 
 export default function Footer() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', address: '', message: '' })
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sendError, setSendError] = useState('')
   const [newsletterEmail, setNewsletterEmail] = useState('')
-  const [newsletterSent, setNewsletterSent] = useState(false)
+  const { status: nlStatus, message: nlMessage, subscribe: nlSubscribe } = useMailchimp()
 
-  const handleContact = (e: React.FormEvent) => {
+  const handleContact = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent('Inquiry from OnMultifamily.com')
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone || 'N/A'}\nProperty: ${form.address || 'N/A'}\n\n${form.message}`
-    )
-    window.open(`mailto:dayma.itamunoala@colliers.com?subject=${subject}&body=${body}`)
-    setSent(true)
+    setSending(true)
+    setSendError('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, type: 'contact' }),
+      })
+      if (res.ok) {
+        setSent(true)
+      } else {
+        setSendError('Failed to send. Please email dayma.itamunoala@colliers.com directly.')
+      }
+    } catch {
+      setSendError('Network error. Please email dayma.itamunoala@colliers.com directly.')
+    } finally {
+      setSending(false)
+    }
   }
 
-  const handleNewsletter = (e: React.FormEvent) => {
+  const handleNewsletter = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (newsletterEmail) setNewsletterSent(true)
+    if (newsletterEmail) await nlSubscribe(newsletterEmail)
   }
 
   return (
@@ -80,7 +96,7 @@ export default function Footer() {
                   </div>
                   <div>
                     <p className="text-white/80 text-[15px] font-medium mb-1">Message sent</p>
-                    <p className="text-white/35 text-[14px]">Your email client should open with a pre-filled message. We will follow up within 24 hours.</p>
+                    <p className="text-white/35 text-[14px]">Thank you. A member of our team will follow up within 24 hours.</p>
                   </div>
                 </div>
               ) : (
@@ -126,10 +142,12 @@ export default function Footer() {
                   />
                   <button
                     type="submit"
-                    className="bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] tracking-[0.15em] uppercase font-bold px-10 py-4 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] transition-all duration-500 w-full sm:w-auto mt-2"
+                    disabled={sending}
+                    className="bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] tracking-[0.15em] uppercase font-bold px-10 py-4 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] transition-all duration-500 w-full sm:w-auto mt-2 disabled:opacity-50"
                   >
-                    Send Message
+                    {sending ? 'Sending...' : 'Send Message'}
                   </button>
+                  {sendError && <p className="text-red-400 text-[13px] mt-3">{sendError}</p>}
                 </form>
               )}
             </div>
@@ -142,14 +160,14 @@ export default function Footer() {
                 <p className="text-[10px] tracking-[0.2em] uppercase text-white/20 mb-1">Weekly Brief</p>
                 <p className="text-white/50 text-[13px] sm:text-[14px]">14,000+ investors read our weekly insights</p>
               </div>
-              {newsletterSent ? (
+              {nlStatus === 'success' ? (
                 <div className="flex items-center gap-3 py-1">
                   <div className="w-5 h-5 rounded-full bg-gold/15 flex items-center justify-center flex-shrink-0">
                     <svg className="w-3 h-3 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-[13px] text-white/50 tracking-wide">You&apos;re subscribed. Look for the first issue in your inbox.</span>
+                  <span className="text-[13px] text-white/50 tracking-wide">{nlMessage}</span>
                 </div>
               ) : (
                 <form onSubmit={handleNewsletter} className="flex gap-3 sm:max-w-md w-full">
@@ -163,9 +181,10 @@ export default function Footer() {
                   />
                   <button
                     type="submit"
-                    className="bg-gradient-to-r from-gold to-gold-light text-navy text-[11px] tracking-[0.15em] uppercase font-bold px-6 py-3 hover:shadow-[0_0_20px_rgba(201,168,76,0.25)] transition-all duration-500 whitespace-nowrap flex-shrink-0"
+                    disabled={nlStatus === 'loading'}
+                    className="bg-gradient-to-r from-gold to-gold-light text-navy text-[11px] tracking-[0.15em] uppercase font-bold px-6 py-3 hover:shadow-[0_0_20px_rgba(201,168,76,0.25)] transition-all duration-500 whitespace-nowrap flex-shrink-0 disabled:opacity-50"
                   >
-                    Subscribe
+                    {nlStatus === 'loading' ? '...' : 'Subscribe'}
                   </button>
                 </form>
               )}

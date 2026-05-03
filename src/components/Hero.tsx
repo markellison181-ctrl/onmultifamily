@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
+import { useMailchimp } from '@/lib/mailchimp'
 
 interface StatDef {
   prefix: string
@@ -62,16 +63,16 @@ const stats: StatDef[] = [
 export default function Hero() {
   const [loaded, setLoaded] = useState(false)
   const [email, setEmail] = useState('')
-  const [submitted, setSubmitted] = useState(false)
+  const { status: mcStatus, message: mcMessage, subscribe } = useMailchimp()
 
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 100)
     return () => clearTimeout(timer)
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (email) setSubmitted(true)
+    if (email) await subscribe(email)
   }
 
   return (
@@ -137,14 +138,14 @@ export default function Hero() {
           <p className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-white/30 font-medium mb-3">
             Join 14,000+ apartment investors. Free weekly brief.
           </p>
-          {submitted ? (
+          {mcStatus === 'success' ? (
             <div className="flex items-center gap-3 max-w-xl py-4">
               <div className="w-5 h-5 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
                 <svg className="w-3 h-3 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span className="text-[13px] text-white/60 tracking-wide">You&apos;re subscribed. Look for the first issue in your inbox.</span>
+              <span className="text-[13px] text-white/60 tracking-wide">{mcMessage}</span>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl">
@@ -158,10 +159,14 @@ export default function Hero() {
               />
               <button
                 type="submit"
-                className="bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] font-semibold tracking-[0.15em] uppercase px-8 sm:px-10 py-4 transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] whitespace-nowrap"
+                disabled={mcStatus === 'loading'}
+                className="bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] font-semibold tracking-[0.15em] uppercase px-8 sm:px-10 py-4 transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] whitespace-nowrap disabled:opacity-50"
               >
-                Subscribe Free
+                {mcStatus === 'loading' ? 'Subscribing...' : 'Subscribe Free'}
               </button>
+              {mcStatus === 'error' && (
+                <p className="text-red-400 text-[12px] mt-1 sm:mt-0 sm:self-center">{mcMessage}</p>
+              )}
             </form>
           )}
         </div>

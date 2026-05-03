@@ -6,15 +6,29 @@ import Image from 'next/image'
 export default function ValuationCTA() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', address: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent('Valuation Request: ' + (form.address || 'New Inquiry'))
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nProperty Address: ${form.address}\n\n(Submitted via onmultifamily.com)`
-    )
-    window.location.href = `mailto:dayma.itamunoala@colliers.com?subject=${subject}&body=${body}`
-    setSubmitted(true)
+    setSending(true)
+    setError('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, type: 'valuation' }),
+      })
+      if (res.ok) {
+        setSubmitted(true)
+      } else {
+        setError('Failed to send. Please email dayma.itamunoala@colliers.com directly.')
+      }
+    } catch {
+      setError('Network error. Please email dayma.itamunoala@colliers.com directly.')
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -85,7 +99,7 @@ export default function ValuationCTA() {
                 </div>
                 <h3 className="font-serif text-2xl text-white mb-3">Thank you</h3>
                 <p className="text-white/40 text-[15px]">
-                  Your email client should open with a pre-filled message. 
+                  Your request has been received.
                   A member of our team will follow up within 24 hours.
                 </p>
               </div>
@@ -131,13 +145,18 @@ export default function ValuationCTA() {
 
                 <button
                   type="submit"
-                  className="group w-full mt-10 inline-flex items-center justify-center gap-3 bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] tracking-[0.15em] uppercase font-bold px-12 py-5 hover:shadow-[0_0_50px_rgba(201,168,76,0.3)] transition-all duration-500"
+                  disabled={sending}
+                  className="group w-full mt-10 inline-flex items-center justify-center gap-3 bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] tracking-[0.15em] uppercase font-bold px-12 py-5 hover:shadow-[0_0_50px_rgba(201,168,76,0.3)] transition-all duration-500 disabled:opacity-50"
                 >
-                  Request a Valuation
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                  {sending ? 'Sending...' : 'Request a Valuation'}
+                  {!sending && (
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  )}
                 </button>
+
+                {error && <p className="text-red-400 text-[12px] mt-3 text-center">{error}</p>}
 
                 <p className="text-white/15 text-[11px] mt-5 text-center">
                   Your information is kept strictly confidential.

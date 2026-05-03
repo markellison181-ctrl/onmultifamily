@@ -1,6 +1,7 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
+import { useMailchimp } from '@/lib/mailchimp'
 
 const CalculatorIcon = () => (
   <svg className="w-10 h-10 text-navy/25 group-hover:text-gold transition-colors duration-500" fill="none" viewBox="0 0 40 40" stroke="currentColor" strokeWidth={1.2}>
@@ -63,6 +64,14 @@ const secondaryTools = [
 ]
 
 export default function ResourcesHub() {
+  const [email, setEmail] = useState('')
+  const { status: mcStatus, message: mcMessage, subscribe } = useMailchimp()
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (email) await subscribe(email)
+  }
+
   return (
     <>
       {/* Hero */}
