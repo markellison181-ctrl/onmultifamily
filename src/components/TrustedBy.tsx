@@ -6,7 +6,7 @@ import Image from 'next/image'
 const clients = [
   { name: 'Hazelview', src: '/images/credibility/hazelview.jpg' },
   { name: 'Horizons', src: '/images/credibility/horizons.jpg' },
-  { name: 'Lankin', src: '/images/credibility/lanking.jpg' },
+  { name: 'Lankin', src: '/images/credibility/lankin.jpg' },
   { name: 'Peakhill', src: '/images/credibility/peakhill.jpg' },
 ]
 
