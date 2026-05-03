@@ -30,7 +30,7 @@ export default function Team() {
         </p>
 
         {/* Team Grid - All Same Size */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-4xl">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 sm:gap-8">
           {teamData.map(member => (
             <div key={member.id} className="group text-center transition-transform duration-300 hover:-translate-y-1">
               <div className="relative w-full aspect-square overflow-hidden rounded-sm mb-4 sm:mb-5 bg-navy/5 shadow-sm group-hover:shadow-md transition-shadow duration-300">

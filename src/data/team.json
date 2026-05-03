@@ -43,5 +43,16 @@
     "linkedin": "#",
     "image": "/images/team/chris-square.png",
     "order": 4
+  },
+  {
+    "id": "aman-rana",
+    "name": "Aman Rana",
+    "title": "Seniors Housing Advisor",
+    "company": "Colliers",
+    "bio": "Aman specializes in seniors housing investment sales, working with operators, developers, and institutional investors across Ontario. He brings deep sector expertise to an asset class experiencing significant tailwinds from demographic shifts and supply constraints.",
+    "email": "aman.rana@colliers.com",
+    "linkedin": "#",
+    "image": "/images/team/aman-square.png",
+    "order": 5
   }
 ]
