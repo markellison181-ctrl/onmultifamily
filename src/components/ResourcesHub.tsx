@@ -60,18 +60,6 @@ const secondaryTools = [
     href: '/insights/',
     tag: 'Newsletter',
   },
-  {
-    title: 'Rent Increase Calculator',
-    description: 'Ontario 2026 rent guideline increase calculator. Know exactly what you can raise rents by under the Residential Tenancies Act.',
-    href: '/resources/rent-increase/',
-    tag: 'Coming Soon',
-  },
-  {
-    title: 'NOI Benchmarking',
-    description: 'Compare your property\'s expense ratio, $/suite metrics, and NOI against Ontario multifamily benchmarks by market and building class.',
-    href: '/resources/noi-benchmark/',
-    tag: 'Coming Soon',
-  },
 ]
 
 export default function ResourcesHub() {
