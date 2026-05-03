@@ -17,7 +17,7 @@ export function useMailchimp() {
       return new Promise<void>((resolve) => {
         // Create JSONP callback
         const callbackName = '__mcCallback'
-        ;(window as unknown as Record<string, unknown>)[callbackName] = (data: { result: string; msg: string }) => {
+        ;(window as any)[callbackName] = (data: { result: string; msg: string }) => {
           if (data.result === 'success') {
             setStatus('success')
             setMessage("You're subscribed. Look for the first issue in your inbox.")
@@ -33,7 +33,7 @@ export function useMailchimp() {
             }
           }
           // Cleanup
-          delete (window as unknown as Record<string, unknown>)[callbackName]
+          delete (window as any)[callbackName]
           document.getElementById('mc-jsonp')?.remove()
           resolve()
         }
@@ -45,7 +45,7 @@ export function useMailchimp() {
         script.onerror = () => {
           setStatus('error')
           setMessage('Network error. Please try again.')
-          delete (window as unknown as Record<string, unknown>)[callbackName]
+          delete (window as any)[callbackName]
           script.remove()
           resolve()
         }
