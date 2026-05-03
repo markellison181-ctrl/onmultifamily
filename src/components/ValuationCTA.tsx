@@ -53,7 +53,7 @@ export default function ValuationCTA() {
             </p>
 
             <p className="text-[13px] sm:text-[15px] text-white/25 max-w-md mb-10">
-              We have closed 81% of every listing we have taken on. 
+              We have closed 81% of the listings we have taken on. 
               When you are ready, we are the team you want in your corner.
             </p>
 

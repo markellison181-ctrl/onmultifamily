@@ -25,7 +25,7 @@ export default function About() {
   }, [])
 
   return (
-    <section className="relative py-24 sm:py-32 md:py-44 bg-white overflow-hidden">
+    <section className="relative py-20 sm:py-28 md:py-36 bg-white overflow-hidden">
       {/* Decorative background */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-cream to-transparent" />
       
@@ -109,8 +109,8 @@ export default function About() {
                 </div>
                 <div>
                   <p className="text-navy/65 text-[14px] sm:text-[15px] italic leading-relaxed mb-3">
-                    &ldquo;Every building tells a story. Our job is to understand that story and
-                    position it for the capital markets in a way that maximizes value.&rdquo;
+                    &ldquo;We don&apos;t just list buildings. We position assets for the capital markets
+                    in a way that creates competitive tension and maximizes value for our clients.&rdquo;
                   </p>
                   <div className="text-[12px] sm:text-[13px]">
                     <span className="font-semibold text-navy">Dayma Itamunoala</span>

@@ -20,40 +20,33 @@ function formatCount(n: number, decimals: number, useLocale: boolean): string {
 
 function StatCounter({ stat }: { stat: StatDef }) {
   const [count, setCount] = useState(0)
-  const ref = useRef<HTMLDivElement>(null)
+  const [started, setStarted] = useState(false)
   const animated = useRef(false)
 
   useEffect(() => {
-    const el = ref.current
-    if (!el) return
+    if (animated.current) return
+    animated.current = true
+    // Small delay so page renders first
+    const delay = setTimeout(() => {
+      setStarted(true)
+      const duration = 1800
+      const startTime = performance.now()
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !animated.current) {
-          animated.current = true
-          const duration = 1800
-          const startTime = performance.now()
+      const tick = (now: number) => {
+        const elapsed = now - startTime
+        const progress = Math.min(elapsed / duration, 1)
+        const eased = 1 - Math.pow(1 - progress, 3)
+        setCount(eased * stat.target)
+        if (progress < 1) requestAnimationFrame(tick)
+      }
 
-          const tick = (now: number) => {
-            const elapsed = now - startTime
-            const progress = Math.min(elapsed / duration, 1)
-            const eased = 1 - Math.pow(1 - progress, 3)
-            setCount(eased * stat.target)
-            if (progress < 1) requestAnimationFrame(tick)
-          }
-
-          requestAnimationFrame(tick)
-        }
-      },
-      { threshold: 0.3 }
-    )
-
-    observer.observe(el)
-    return () => observer.disconnect()
+      requestAnimationFrame(tick)
+    }, 400)
+    return () => clearTimeout(delay)
   }, [stat.target])
 
   return (
-    <div ref={ref} className="group">
+    <div className={`group transition-opacity duration-500 ${started ? 'opacity-100' : 'opacity-0'}`}>
       <div className="font-serif text-3xl sm:text-4xl md:text-[2.75rem] text-white mb-2 number-display group-hover:text-gradient-gold transition-all duration-500">
         {stat.prefix}{formatCount(count, stat.decimals, stat.useLocale)}{stat.suffix}
       </div>
@@ -127,7 +120,7 @@ export default function Hero() {
         {/* Subheadline */}
         <p className={`text-base sm:text-lg md:text-xl text-white/50 max-w-2xl mb-12 sm:mb-16 leading-relaxed opacity-0 ${loaded ? 'animate-fade-in-up stagger-2' : ''}`}>
           We advise apartment building owners and investors across Ontario on acquisitions,
-          dispositions, and portfolio strategy. Over $1.12 billion in completed transactions.
+          dispositions, and portfolio strategy.
         </p>
 
         {/* Sector Tags */}
