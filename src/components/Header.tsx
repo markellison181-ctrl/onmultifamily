@@ -15,7 +15,7 @@ export default function Header() {
 
   const links = [
     { label: 'Listings', href: '#listings' },
-    { label: 'Map', href: '/map/' },
+    // { label: 'Map', href: '/map/' }, // Hidden until map is ready
     { label: 'Insights', href: '/insights/' },
     { label: 'Resources', href: '/resources/' },
     { label: 'Team', href: '#team' },

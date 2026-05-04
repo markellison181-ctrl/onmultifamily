@@ -212,7 +212,7 @@ export default function Footer() {
               <a href="/insights/" className="hover:text-white/40 transition-colors">Insights</a>
               <a href="/resources/" className="hover:text-white/40 transition-colors">Resources</a>
               <a href="#listings" className="hover:text-white/40 transition-colors">Listings</a>
-              <a href="/map/" className="hover:text-white/40 transition-colors">Map</a>
+              {/* Map link hidden until ready */}
               <a href="#team" className="hover:text-white/40 transition-colors">Team</a>
             </div>
             <span className="text-white/10 text-[10px] sm:text-[11px]">© {new Date().getFullYear()} OnMultifamily</span>

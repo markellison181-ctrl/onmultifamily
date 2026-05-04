@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import TransactionMap from '@/components/TransactionMap'
 import transactions from '@/data/transactions.json'
 
+// noindex via parent layout metadata
 export default function MapPage() {
   return (
     <main>
