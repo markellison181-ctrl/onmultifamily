@@ -246,7 +246,7 @@ export default function ListingDetail({ listing, otherListings }: { listing: Lis
                   </div>
                 </div>
                 <p className="text-navy/60 text-[13px] sm:text-[14px] mb-4">
-                  Specializing in multifamily investment sales across Ontario with over $1B+ in completed transactions.
+                  Specializing in multifamily investment sales across Ontario with over $1.2B+ in completed transactions.
                 </p>
                 <a 
                   href="mailto:dayma.itamunoala@colliers.com" 
@@ -295,7 +295,7 @@ export default function ListingDetail({ listing, otherListings }: { listing: Lis
                       </h3>
                       <p className="text-navy/40 text-sm mb-3">{l.location}</p>
                       <div className="flex items-center gap-4 text-[13px] text-navy/60">
-                        <span>{l.units} units</span>
+                        <span>{l.units ? `${l.units} units` : l.type}</span>
                         <span className="w-1 h-1 rounded-full bg-navy/20" />
                         <span>{l.price ? fmt(l.price) : 'Price Upon Request'}</span>
                       </div>

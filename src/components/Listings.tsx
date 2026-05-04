@@ -37,9 +37,85 @@ export default function Listings() {
           Current<br />Offerings
         </h2>
 
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filtered.map(listing => (
+        {/* Featured U of T Student Housing */}
+        {filtered.filter(l => l.type === 'Student Housing').length > 0 && (
+          <>
+            <div className="mb-12 sm:mb-16">
+              <h3 className="font-serif text-xl sm:text-2xl text-white mb-6 sm:mb-8">Featured: University of Toronto</h3>
+              <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+                {filtered
+                  .filter(listing => listing.type === 'Student Housing')
+                  .map(listing => (
+                    <Link key={listing.id} href={`/listings/${listing.id}/`} className="group block hover-lift border border-transparent hover:border-gold/30 transition-colors duration-500 p-0.5">
+                      {/* Image */}
+                      <div className="relative aspect-[4/3] overflow-hidden mb-5 sm:mb-6">
+                        {listing.image ? (
+                          <Image
+                            src={listing.image}
+                            alt={listing.title}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-[1.2s] ease-out"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-navy-deep to-navy/80 flex items-center justify-center">
+                            <div className="text-center">
+                              <div className="text-gold text-2xl font-serif mb-2">{listing.type}</div>
+                              <div className="text-white/30 text-sm">{listing.units ? listing.units + " Units" : listing.type}</div>
+                            </div>
+                          </div>
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 via-transparent to-transparent" />
+                        {listing.status !== 'For Sale' && (
+                          <div className="absolute top-4 left-4 bg-gold text-navy text-[10px] sm:text-[11px] tracking-[0.15em] uppercase font-bold px-3 py-1.5">
+                            {listing.status}
+                          </div>
+                        )}
+                        {/* Price overlay */}
+                        <div className="absolute bottom-4 left-4">
+                          {listing.price ? (
+                            <p className="font-serif text-2xl text-white drop-shadow-lg">{fmt(listing.price)}</p>
+                          ) : (
+                            <p className="font-serif text-lg text-white drop-shadow-lg">Price Upon Request</p>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Info */}
+                      <h3 className="text-white font-medium text-[15px] sm:text-lg mb-1.5 group-hover:text-gold transition-colors duration-500">
+                        {listing.title}
+                      </h3>
+                      <p className="text-white/30 text-[13px] mb-3">{listing.location}</p>
+                      
+                      <div className="flex items-center gap-4 text-[13px] text-white/45">
+                        <span>{listing.units ? listing.units + " units" : listing.type}</span>
+                        <span className="w-1 h-1 rounded-full bg-white/20" />
+                        <span>
+                          {listing.pricePerUnit ? fmtPerUnit(listing.pricePerUnit) : 'Contact for pricing'}
+                        </span>
+                      </div>
+
+                      {/* View Details button */}
+                      <div className="mt-4 pt-4 border-t border-white/8">
+                        <span className="text-gold text-[12px] tracking-[0.15em] uppercase font-medium group-hover:text-gold-light transition-colors duration-300">
+                          View Details
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
+              </div>
+            </div>
+          </>
+        )}
+
+        {/* Other Investment Opportunities */}
+        {filtered.filter(l => l.type !== 'Student Housing').length > 0 && (
+          <>
+            <div className="mb-8 sm:mb-12">
+              <h3 className="font-serif text-xl sm:text-2xl text-white mb-6 sm:mb-8">Investment Opportunities</h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                {filtered
+                  .filter(listing => listing.type !== 'Student Housing')
+                  .map(listing => (
             <Link key={listing.id} href={`/listings/${listing.id}/`} className="group block hover-lift border border-transparent hover:border-gold/30 transition-colors duration-500 p-0.5">
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden mb-5 sm:mb-6">
@@ -95,8 +171,11 @@ export default function Listings() {
                 </span>
               </div>
             </Link>
-          ))}
-        </div>
+                  ))}
+              </div>
+            </div>
+          </>
+        )}
 
         {/* CTA */}
         <div className="mt-16 sm:mt-24 pt-10 sm:pt-12 border-t border-white/8">
