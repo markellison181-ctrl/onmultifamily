@@ -139,14 +139,16 @@ export default function ListingDetail({ listing, otherListings }: { listing: Lis
 
               {/* Action buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mb-12 sm:mb-16">
-                <a 
-                  href={listing.brochure} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="group bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] font-semibold tracking-[0.15em] uppercase px-8 py-4 hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] transition-all duration-500 text-center"
-                >
-                  Download Brochure
-                </a>
+                {listing.brochure && (
+                  <a 
+                    href={listing.brochure} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] font-semibold tracking-[0.15em] uppercase px-8 py-4 hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] transition-all duration-500 text-center"
+                  >
+                    Download Brochure
+                  </a>
+                )}
                 {listing.ndaLink && (
                   <a 
                     href={listing.ndaLink} 
@@ -154,7 +156,15 @@ export default function ListingDetail({ listing, otherListings }: { listing: Lis
                     rel="noopener noreferrer"
                     className="border border-navy/20 text-navy text-[12px] sm:text-[13px] font-medium tracking-[0.15em] uppercase px-8 py-4 hover:bg-navy/5 hover:border-navy/30 transition-all duration-500 text-center"
                   >
-                    Access Data Room
+                    Request Information
+                  </a>
+                )}
+                {!listing.brochure && !listing.ndaLink && (
+                  <a 
+                    href="mailto:dayma.itamunoala@colliers.com?subject=Inquiry: ${listing.title}"
+                    className="group bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] font-semibold tracking-[0.15em] uppercase px-8 py-4 hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] transition-all duration-500 text-center"
+                  >
+                    Contact Us
                   </a>
                 )}
               </div>
