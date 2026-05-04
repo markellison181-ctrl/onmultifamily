@@ -82,7 +82,7 @@ export default function Header() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden relative z-10 w-8 h-8 flex flex-col justify-center gap-1.5"
+            className="md:hidden relative z-50 w-8 h-8 flex flex-col justify-center gap-1.5"
           >
             <span className={`block h-px w-full transition-all duration-300 ${
               menuOpen ? 'rotate-45 translate-y-[3px] bg-white' : (scrolled ? 'bg-navy' : 'bg-white')
