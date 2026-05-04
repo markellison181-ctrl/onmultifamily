@@ -1,5 +1,24 @@
 [
   {
+    "id": "gta-multifamily-q1-2026-report",
+    "title": "GTA Multifamily Q1 2026 Report",
+    "date": "2026-04-29",
+    "excerpt": "Transaction volume showing meaningful strength. Rate environment constructive. Institutional capital returning. Our Q1 2026 market analysis.",
+    "author": "Dayma Itamunoala",
+    "readTime": "4 min read",
+    "category": "Market Report",
+    "tags": [
+      "Q1 2026",
+      "market report",
+      "transaction volume",
+      "cap rates",
+      "interest rates"
+    ],
+    "image": "/images/articles/cap-rate-report.png",
+    "featured": true,
+    "mailchimpUrl": "https://mailchi.mp/colliers/onmultifamily"
+  },
+  {
     "id": "how-buyers-underwrite-apartment-buildings",
     "title": "How Buyers (Actually) Underwrite Apartment Buildings",
     "date": "2026-03-14",
@@ -7,7 +26,13 @@
     "author": "Dayma Itamunoala",
     "readTime": "6 min read",
     "category": "Investment Strategy",
-    "tags": ["underwriting", "valuation", "cap rates", "due diligence", "buyers"],
+    "tags": [
+      "underwriting",
+      "valuation",
+      "cap rates",
+      "due diligence",
+      "buyers"
+    ],
     "image": "/images/articles/how-buyers-underwrite.png",
     "featured": true,
     "mailchimpUrl": "https://mailchi.mp/colliers/howbuyersunderwrite"
@@ -20,7 +45,14 @@
     "author": "Dayma Itamunoala",
     "readTime": "5 min read",
     "category": "Market Analysis",
-    "tags": ["cap rates", "market analysis", "toronto", "hamilton", "ottawa", "london"],
+    "tags": [
+      "cap rates",
+      "market analysis",
+      "toronto",
+      "hamilton",
+      "ottawa",
+      "london"
+    ],
     "image": "/images/articles/cap-rate-report.png",
     "featured": true
   },
@@ -32,7 +64,12 @@
     "author": "Dayma Itamunoala",
     "readTime": "3 min read",
     "category": "Seniors Housing",
-    "tags": ["seniors housing", "demographics", "occupancy", "team announcement"],
+    "tags": [
+      "seniors housing",
+      "demographics",
+      "occupancy",
+      "team announcement"
+    ],
     "image": "/images/articles/seniors-housing.png",
     "featured": true
   },
@@ -44,7 +81,12 @@
     "author": "Dayma Itamunoala",
     "readTime": "8 min read",
     "category": "Financing",
-    "tags": ["CMHC", "financing", "MLI Select", "government programs"],
+    "tags": [
+      "CMHC",
+      "financing",
+      "MLI Select",
+      "government programs"
+    ],
     "image": "/images/articles/cmhc-mli-select.png",
     "featured": true
   },
@@ -56,7 +98,13 @@
     "author": "Dayma Itamunoala",
     "readTime": "2 min read",
     "category": "Market Report",
-    "tags": ["year in review", "GTA", "transaction volume", "cap rates", "market data"],
+    "tags": [
+      "year in review",
+      "GTA",
+      "transaction volume",
+      "cap rates",
+      "market data"
+    ],
     "image": "/images/articles/2025-year-end.png",
     "featured": false
   },
@@ -68,7 +116,12 @@
     "author": "Dayma Itamunoala",
     "readTime": "6 min read",
     "category": "Investment Strategy",
-    "tags": ["small towns", "secondary markets", "investment strategy", "rent growth"],
+    "tags": [
+      "small towns",
+      "secondary markets",
+      "investment strategy",
+      "rent growth"
+    ],
     "image": "/images/articles/small-town-ontario.png",
     "featured": true
   },
@@ -80,7 +133,13 @@
     "author": "Dayma Itamunoala",
     "readTime": "4 min read",
     "category": "Market Outlook",
-    "tags": ["predictions", "2026", "transaction volume", "cap rates", "institutional capital"],
+    "tags": [
+      "predictions",
+      "2026",
+      "transaction volume",
+      "cap rates",
+      "institutional capital"
+    ],
     "image": "/images/articles/2026-predictions.png",
     "featured": false
   },
@@ -92,7 +151,12 @@
     "author": "Dayma Itamunoala",
     "readTime": "7 min read",
     "category": "Selling Strategy",
-    "tags": ["selling", "market timing", "valuation", "exit strategy"],
+    "tags": [
+      "selling",
+      "market timing",
+      "valuation",
+      "exit strategy"
+    ],
     "image": "/images/articles/sellers-playbook.png",
     "featured": false
   },
@@ -104,7 +168,13 @@
     "author": "Dayma Itamunoala",
     "readTime": "3 min read",
     "category": "Interest Rates",
-    "tags": ["bank of canada", "interest rates", "CMHC", "financing", "GoC yields"],
+    "tags": [
+      "bank of canada",
+      "interest rates",
+      "CMHC",
+      "financing",
+      "GoC yields"
+    ],
     "image": "/images/articles/rate-cut-sept.png",
     "featured": false
   },
@@ -116,7 +186,12 @@
     "author": "Dayma Itamunoala",
     "readTime": "2 min read",
     "category": "Policy Update",
-    "tags": ["CMHC", "premiums", "deal activity", "closings"],
+    "tags": [
+      "CMHC",
+      "premiums",
+      "deal activity",
+      "closings"
+    ],
     "image": "/images/articles/cmhc-premiums.png",
     "featured": false
   },
@@ -128,7 +203,12 @@
     "author": "Dayma Itamunoala",
     "readTime": "2 min read",
     "category": "Deal Update",
-    "tags": ["deal activity", "pipeline", "listings", "closings"],
+    "tags": [
+      "deal activity",
+      "pipeline",
+      "listings",
+      "closings"
+    ],
     "image": "/images/articles/june-deal-activity.png",
     "featured": false
   },
@@ -140,7 +220,12 @@
     "author": "Dayma Itamunoala",
     "readTime": "1 min read",
     "category": "Market Outlook",
-    "tags": ["election", "market outlook", "transaction volume", "policy"],
+    "tags": [
+      "election",
+      "market outlook",
+      "transaction volume",
+      "policy"
+    ],
     "image": "/images/articles/post-election.png",
     "featured": false
   }

@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
     : 'Price Upon Request'
 
   return {
-    title: `${listing.title} | ${priceDisplay} | ${listing.units} Units | OnMultifamily`,
+    title: `${listing.title} | ${priceDisplay}${listing.units ? ` | ${listing.units} Units` : ''} | OnMultifamily`,
     description: `${listing.headline} Located in ${listing.location}. ${listing.description.substring(0, 150)}...`,
     openGraph: {
       title: `${listing.title} | ${priceDisplay}`,

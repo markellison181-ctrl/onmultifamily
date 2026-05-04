@@ -24,30 +24,6 @@
     "status": "Active"
   },
   {
-    "id": "75-emma-street",
-    "name": "75 Emma Street",
-    "address": "75 Emma Street, Oshawa, ON",
-    "city": "Oshawa",
-    "lat": 43.8971,
-    "lng": -78.8658,
-    "price": 0,
-    "suites": 21,
-    "capRate": null,
-    "status": "Active"
-  },
-  {
-    "id": "1165-kingston-road",
-    "name": "1165 Kingston Road",
-    "address": "1165 Kingston Road, Toronto, ON",
-    "city": "Toronto",
-    "lat": 43.6876,
-    "lng": -79.2813,
-    "price": 6750000,
-    "suites": 21,
-    "capRate": null,
-    "status": "Active"
-  },
-  {
     "id": "17-19-collier-street",
     "name": "17-19 Collier Street",
     "address": "17-19 Collier Street, St. Catharines, ON",
@@ -334,5 +310,89 @@
     "suites": 174,
     "capRate": null,
     "status": "Sold"
+  },
+  {
+    "id": "700-spadina-avenue",
+    "name": "Oak House (700 Spadina Avenue)",
+    "address": "700 Spadina Avenue, Toronto, ON",
+    "city": "Toronto",
+    "lat": 43.6607,
+    "lng": -79.4042,
+    "price": 0,
+    "suites": 0,
+    "capRate": null,
+    "status": "Active"
+  },
+  {
+    "id": "89-chestnut-street",
+    "name": "Chestnut Residence (89 Chestnut Street)",
+    "address": "89 Chestnut Street, Toronto, ON",
+    "city": "Toronto",
+    "lat": 43.6533,
+    "lng": -79.3874,
+    "price": 0,
+    "suites": 0,
+    "capRate": null,
+    "status": "Active"
+  },
+  {
+    "id": "231-vaughan-road",
+    "name": "231 Vaughan Road",
+    "address": "231 Vaughan Road, Toronto, ON",
+    "city": "Toronto",
+    "lat": 43.6838,
+    "lng": -79.4251,
+    "price": 0,
+    "suites": 46,
+    "capRate": null,
+    "status": "Active"
+  },
+  {
+    "id": "149-cosburn-avenue",
+    "name": "149 Cosburn Avenue",
+    "address": "149 Cosburn Avenue, Toronto, ON",
+    "city": "Toronto",
+    "lat": 43.6887,
+    "lng": -79.3475,
+    "price": 0,
+    "suites": 35,
+    "capRate": null,
+    "status": "Active"
+  },
+  {
+    "id": "116-spencer-avenue",
+    "name": "116 Spencer Avenue",
+    "address": "116 Spencer Avenue, Toronto, ON",
+    "city": "Toronto",
+    "lat": 43.6376,
+    "lng": -79.4294,
+    "price": 0,
+    "suites": 35,
+    "capRate": null,
+    "status": "Active"
+  },
+  {
+    "id": "165-colborne-avenue",
+    "name": "165 Colborne Avenue",
+    "address": "165 Colborne Avenue, Richmond Hill, ON",
+    "city": "Richmond Hill",
+    "lat": 43.8649,
+    "lng": -79.4384,
+    "price": 0,
+    "suites": 0,
+    "capRate": null,
+    "status": "Active"
+  },
+  {
+    "id": "1083-main-street-east",
+    "name": "1083 Main Street East",
+    "address": "1083 Main Street East, Hamilton, ON",
+    "city": "Hamilton",
+    "lat": 43.242,
+    "lng": -79.8188,
+    "price": 0,
+    "suites": 0,
+    "capRate": null,
+    "status": "Active"
   }
 ]

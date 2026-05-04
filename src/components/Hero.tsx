@@ -54,7 +54,7 @@ function StatCounter({ stat }: { stat: StatDef }) {
 }
 
 const stats: StatDef[] = [
-  { prefix: '$', target: 1.12, suffix: 'B+', label: 'Transactions', decimals: 2, useLocale: false },
+  { prefix: '$', target: 1.2, suffix: 'B+', label: 'Transactions', decimals: 1, useLocale: false },
   { prefix: '',  target: 81,   suffix: '%',  label: 'Close Rate',   decimals: 0, useLocale: false },
   { prefix: '',  target: 3000, suffix: '+',  label: 'Units Sold',   decimals: 0, useLocale: true },
   { prefix: '',  target: 14000,suffix: '+',  label: 'Subscribers',  decimals: 0, useLocale: true },

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: 'Ontario Multifamily Brokerage | Colliers | Dayma Itamunoala',
     template: '%s | OnMultifamily | Colliers',
   },
-  description: 'Ontario multifamily brokerage led by Dayma Itamunoala, SVP at Colliers. Over $1.12B in apartment building sales across Ontario. 81% closing rate. Expert advisory for owners and investors.',
+  description: 'Ontario multifamily brokerage led by Dayma Itamunoala, SVP at Colliers. Over $1.2B in apartment building sales across Ontario. 81% closing rate. Expert advisory for owners and investors.',
   keywords: [
     'Ontario multifamily brokerage',
     'apartment building broker Ontario',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Ontario Multifamily Brokerage | OnMultifamily | Colliers',
-    description: 'Over $1.12B in completed multifamily sales across Ontario. 81% closing rate. Led by Dayma Itamunoala, SVP at Colliers.',
+    description: 'Over $1.2B in completed multifamily sales across Ontario. 81% closing rate. Led by Dayma Itamunoala, SVP at Colliers.',
     url: 'https://onmultifamily.com',
     siteName: 'OnMultifamily',
     locale: 'en_CA',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Ontario Multifamily Brokerage | OnMultifamily | Colliers',
-    description: 'Over $1.12B in completed multifamily sales across Ontario. 81% closing rate. Led by Dayma Itamunoala, SVP at Colliers.',
+    description: 'Over $1.2B in completed multifamily sales across Ontario. 81% closing rate. Led by Dayma Itamunoala, SVP at Colliers.',
     images: ['/images/hero-img.png'],
   },
   robots: { index: true, follow: true },

@@ -54,7 +54,7 @@ export default function Listings() {
                   <div className="w-full h-full bg-gradient-to-br from-navy-deep to-navy/80 flex items-center justify-center">
                     <div className="text-center">
                       <div className="text-gold text-2xl font-serif mb-2">{listing.type}</div>
-                      <div className="text-white/30 text-sm">{listing.units} Units</div>
+                      <div className="text-white/30 text-sm">{listing.units ? listing.units + " Units" : listing.type}</div>
                     </div>
                   </div>
                 )}
@@ -81,7 +81,7 @@ export default function Listings() {
               <p className="text-white/30 text-[13px] mb-3">{listing.location}</p>
               
               <div className="flex items-center gap-4 text-[13px] text-white/45">
-                <span>{listing.units} units</span>
+                <span>{listing.units ? listing.units + " units" : listing.type}</span>
                 <span className="w-1 h-1 rounded-full bg-white/20" />
                 <span>
                   {listing.pricePerUnit ? fmtPerUnit(listing.pricePerUnit) : 'Contact for pricing'}

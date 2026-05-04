@@ -8,7 +8,7 @@ const StructuredData = () => {
     "alternateName": "Ontario's Premier Multifamily Advisory Team",
     "url": "https://onmultifamily.com",
     "logo": "https://onmultifamily.com/images/onmultifamily-logo.png",
-    "description": "Led by Dayma Itamunoala, SVP at Colliers, Ontario's most active multifamily investment sales team. Over $1.12 billion in completed transactions since 2018.",
+    "description": "Led by Dayma Itamunoala, SVP at Colliers, Ontario's most active multifamily investment sales team. Over $1.2 billion in completed transactions since 2018.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Toronto",
@@ -220,7 +220,7 @@ const StructuredData = () => {
     "name": "OnMultifamily",
     "alternateName": "Ontario's Premier Multifamily Advisory Team",
     "url": "https://onmultifamily.com",
-    "description": "Ontario's most active multifamily investment sales team. Over $1.12 billion in transactions. Market intelligence, property valuations, and expert advisory services.",
+    "description": "Ontario's most active multifamily investment sales team. Over $1.2 billion in transactions. Market intelligence, property valuations, and expert advisory services.",
     "publisher": {
       "@type": "Organization",
       "name": "OnMultifamily Team"

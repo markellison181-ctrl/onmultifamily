@@ -51,7 +51,7 @@ export default function About() {
             </div>
             {/* Floating stat card */}
             <div className="absolute -bottom-6 -left-4 sm:bottom-8 sm:-left-8 z-20 bg-navy p-5 sm:p-6 shadow-2xl">
-              <p className="font-serif text-3xl sm:text-4xl text-white number-display">$1.12B+</p>
+              <p className="font-serif text-3xl sm:text-4xl text-white number-display">$1.2B+</p>
               <p className="text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-gold mt-1">In Transactions</p>
             </div>
           </div>
@@ -81,10 +81,10 @@ export default function About() {
                 Led by Dayma Itamunoala, Senior Vice President at Colliers, we are a specialist
                 advisory team focused exclusively on multifamily investment sales across Ontario.
                 Our approach combines institutional rigour with deep market intelligence built
-                across more than $1.12 billion in completed transactions.
+                across more than $1.2 billion in completed transactions.
               </p>
               <p>
-                From 11-unit walk-ups to 1,200+ suite portfolios, we advise private owners,
+                From boutique walk-ups to large-scale portfolios, we advise private owners,
                 family offices, REITs, and institutional capital on acquisitions, dispositions,
                 and portfolio strategy.
               </p>

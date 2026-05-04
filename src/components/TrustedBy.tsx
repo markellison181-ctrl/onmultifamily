@@ -4,6 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 
 const clients = [
+  { name: 'University of Toronto', src: '/images/credibility/uoft.svg' },
   { name: 'Hazelview', src: '/images/credibility/hazelview.jpg' },
   { name: 'Horizons', src: '/images/credibility/horizons.jpg' },
   { name: 'Lankin', src: '/images/credibility/lankin.jpg' },
