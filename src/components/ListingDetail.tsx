@@ -89,16 +89,16 @@ export default function ListingDetail({ listing, otherListings }: { listing: Lis
         <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12 py-8 sm:py-12">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8">
             {[
-              { label: 'Units', value: listing.units ? listing.units.toString() : 'Contact Us' },
+              { label: 'Units', value: listing.units ? listing.units.toString() : 'u2014' },
               { 
                 label: 'Price', 
                 value: listing.price ? fmt(listing.price) : 'Price Upon Request' 
               },
               { 
                 label: 'Price/Unit', 
-                value: listing.pricePerUnit ? fmt(listing.pricePerUnit) : 'Contact Us' 
+                value: listing.pricePerUnit ? fmt(listing.pricePerUnit) : 'u2014' 
               },
-              { label: 'Lot Size', value: listing.lotSize || 'Contact Us' },
+              { label: 'Lot Size', value: listing.lotSize || 'u2014' },
               { label: 'Type', value: listing.type },
             ].map(m => (
               <div key={m.label}>
