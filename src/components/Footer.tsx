@@ -211,9 +211,9 @@ export default function Footer() {
             <div className="flex gap-5 sm:gap-6 text-[10px] sm:text-[11px] text-white/20 tracking-wide">
               <a href="/insights/" className="hover:text-white/40 transition-colors">Insights</a>
               <a href="/resources/" className="hover:text-white/40 transition-colors">Resources</a>
-              <a href="#listings" className="hover:text-white/40 transition-colors">Listings</a>
+              <a href="/#listings" className="hover:text-white/40 transition-colors">Listings</a>
               {/* Map link hidden until ready */}
-              <a href="#team" className="hover:text-white/40 transition-colors">Team</a>
+              <a href="/#team" className="hover:text-white/40 transition-colors">Team</a>
             </div>
             <span className="text-white/10 text-[10px] sm:text-[11px]">© {new Date().getFullYear()} OnMultifamily</span>
           </div>

@@ -49,12 +49,13 @@ const primaryTools = [
 ]
 
 const secondaryTools = [
-  {
-    title: 'Cap Rate Map',
-    description: 'Interactive transaction map across Ontario - explore active listings, recent sales, and market-level cap rate benchmarks.',
-    href: '/map/',
-    tag: 'Interactive',
-  },
+  // Cap Rate Map hidden until ready
+  // {
+  //   title: 'Cap Rate Map',
+  //   description: 'Interactive transaction map across Ontario - explore active listings, recent sales, and market-level cap rate benchmarks.',
+  //   href: '/map/',
+  //   tag: 'Interactive',
+  // },
   {
     title: 'Market Insights',
     description: 'Weekly analysis on cap rates, CMHC policy, interest rate trends, and Ontario multifamily market conditions.',

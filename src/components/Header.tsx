@@ -14,12 +14,12 @@ export default function Header() {
   }, [])
 
   const links = [
-    { label: 'Listings', href: '#listings' },
+    { label: 'Listings', href: '/#listings' },
     // { label: 'Map', href: '/map/' }, // Hidden until map is ready
     { label: 'Insights', href: '/insights/' },
     { label: 'Resources', href: '/resources/' },
-    { label: 'Team', href: '#team' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Team', href: '/#team' },
+    { label: 'Contact', href: '/#contact' },
   ]
 
   return (
@@ -68,7 +68,7 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="#valuation"
+              href="/#valuation"
               className={`text-[11px] font-semibold tracking-[0.15em] uppercase px-6 py-2.5 transition-all duration-500 ${
                 scrolled
                   ? 'bg-gradient-to-r from-gold to-gold-light text-navy hover:shadow-[0_0_20px_rgba(201,168,76,0.2)]'
@@ -113,7 +113,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#valuation"
+            href="/#valuation"
             onClick={() => setMenuOpen(false)}
             className={`text-[13px] font-bold tracking-[0.15em] uppercase bg-gradient-to-r from-gold to-gold-light text-navy px-6 py-4 text-center mt-6 transition-all duration-500 ${
               menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
