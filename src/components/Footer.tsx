@@ -6,31 +6,23 @@ import { useMailchimp } from '@/lib/mailchimp'
 export default function Footer() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', address: '', message: '' })
   const [sent, setSent] = useState(false)
-  const [sending, setSending] = useState(false)
-  const [sendError, setSendError] = useState('')
   const [newsletterEmail, setNewsletterEmail] = useState('')
   const { status: nlStatus, message: nlMessage, subscribe: nlSubscribe } = useMailchimp()
 
-  const handleContact = async (e: React.FormEvent) => {
+  const handleContact = (e: React.FormEvent) => {
     e.preventDefault()
-    setSending(true)
-    setSendError('')
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, type: 'contact' }),
-      })
-      if (res.ok) {
-        setSent(true)
-      } else {
-        setSendError('Failed to send. Please email dayma.itamunoala@colliers.com directly.')
-      }
-    } catch {
-      setSendError('Network error. Please email dayma.itamunoala@colliers.com directly.')
-    } finally {
-      setSending(false)
-    }
+    const subject = encodeURIComponent(`OnMultifamily Inquiry from ${form.name}`)
+    const body = encodeURIComponent(
+      [
+        form.name ? `Name: ${form.name}` : '',
+        form.email ? `Email: ${form.email}` : '',
+        form.phone ? `Phone: ${form.phone}` : '',
+        form.address ? `Property: ${form.address}` : '',
+        form.message ? `\n${form.message}` : '',
+      ].filter(Boolean).join('\n')
+    )
+    window.location.href = `mailto:dayma.itamunoala@colliers.com?cc=d.itamuno@gmail.com&subject=${subject}&body=${body}`
+    setSent(true)
   }
 
   const handleNewsletter = async (e: React.FormEvent) => {
@@ -140,12 +132,10 @@ export default function Footer() {
                   />
                   <button
                     type="submit"
-                    disabled={sending}
-                    className="bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] tracking-[0.15em] uppercase font-bold px-10 py-4 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] transition-all duration-500 w-full sm:w-auto mt-2 disabled:opacity-50"
+                    className="bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] tracking-[0.15em] uppercase font-bold px-10 py-4 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] transition-all duration-500 w-full sm:w-auto mt-2"
                   >
-                    {sending ? 'Sending...' : 'Send Message'}
+                    Send Message
                   </button>
-                  {sendError && <p className="text-red-400 text-[13px] mt-3">{sendError}</p>}
                 </form>
               )}
             </div>
