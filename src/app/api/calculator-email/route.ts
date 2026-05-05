@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const RESEND_API_KEY = process.env.RESEND_API_KEY
+const resend = RESEND_API_KEY && !RESEND_API_KEY.includes('PLACEHOLDER') ? new Resend(RESEND_API_KEY) : null
 
 const TEAM_EMAIL = 'dayma.itamunoala@colliers.com'
 const CC_EMAIL = 'd.itamuno@gmail.com'
@@ -188,6 +189,10 @@ export async function POST(request: NextRequest) {
     // Basic email validation
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact.email)) {
       return NextResponse.json({ error: 'Invalid email address' }, { status: 400 })
+    }
+
+    if (!resend) {
+      return NextResponse.json({ error: 'Email service is currently unavailable. Please contact us directly.' }, { status: 503 })
     }
 
     // Send to user
