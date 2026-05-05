@@ -154,14 +154,15 @@ export default function ListingDetail({ listing, otherListings }: { listing: Lis
                     href={listing.ndaLink} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="border border-navy/20 text-navy text-[12px] sm:text-[13px] font-medium tracking-[0.15em] uppercase px-8 py-4 hover:bg-navy/5 hover:border-navy/30 transition-all duration-500 text-center"
+                    className="border border-navy/20 text-navy hover:bg-navy/5 hover:border-navy/30 transition-all duration-500 text-center px-8 py-3"
                   >
-                    Request Information
+                    <span className="block text-[12px] sm:text-[13px] font-medium tracking-[0.15em] uppercase">Request Information</span>
+                    <span className="block text-[10px] sm:text-[11px] text-navy/40 mt-0.5 normal-case tracking-normal">Confidentiality agreement required</span>
                   </a>
                 )}
                 {!listing.brochure && !listing.ndaLink && (
                   <a 
-                    href="mailto:dayma.itamunoala@colliers.com?subject=Inquiry: ${listing.title}"
+                    href={`mailto:dayma.itamunoala@colliers.com?subject=Inquiry: ${listing.title}`}
                     className="group bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] font-semibold tracking-[0.15em] uppercase px-8 py-4 hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] transition-all duration-500 text-center"
                   >
                     Contact Us
