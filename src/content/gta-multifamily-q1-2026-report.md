@@ -34,4 +34,3 @@ For sellers, the current market offers an opportunity to achieve pricing that re
 
 ---
 
-*For the full report with detailed transaction data, market charts, and regional analysis, [subscribe to our newsletter](https://mailchi.mp/colliers/onmultifamily) or contact our team directly.*
