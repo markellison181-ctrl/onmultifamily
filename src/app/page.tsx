@@ -8,12 +8,13 @@ import ValuationCTA from '@/components/ValuationCTA'
 import Team from '@/components/Team'
 import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
-import StructuredData from '@/components/StructuredData'
+import { OrganizationSchema, WebSiteSchema } from '@/components/StructuredData'
 
 export default function Home() {
   return (
     <main>
-      <StructuredData />
+      <OrganizationSchema />
+      <WebSiteSchema />
       <Header />
       <Hero />
       <TrustedBy />

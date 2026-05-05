@@ -5,6 +5,16 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import articlesData from '@/data/articles.json'
 
+export const metadata = {
+  title: 'Insights & Market Analysis | Ontario Multifamily',
+  description: 'Weekly analysis on Ontario multifamily markets from Colliers. Cap rates, CMHC policy updates, deal flow reports, rental growth data, and actionable guidance for apartment building owners and investors.',
+  openGraph: {
+    title: 'Insights & Market Analysis | OnMultifamily | Colliers',
+    description: 'Weekly multifamily market intelligence for Ontario apartment building owners and investors.',
+    type: 'website',
+  },
+}
+
 export default function InsightsPage() {
   const featured = articlesData.filter(a => a.featured)
   const recent = articlesData.filter(a => !a.featured)

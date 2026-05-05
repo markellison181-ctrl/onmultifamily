@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CMHCCalculator from '@/components/CMHCCalculator'
+import { ToolSchema } from '@/components/StructuredData'
 
 export const metadata = {
   title: 'CMHC Debt Underwriting Calculator | OnMultifamily',
@@ -10,6 +11,7 @@ export const metadata = {
 export default function CMHCCalculatorPage() {
   return (
     <main>
+      <ToolSchema />
       <Header />
       <CMHCCalculator />
       <Footer />

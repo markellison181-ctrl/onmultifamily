@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import articlesData from '@/data/articles.json'
+import { ArticleSchema } from '@/components/StructuredData'
 import { readFileSync } from 'fs'
 import { join } from 'path'
 
@@ -28,6 +29,30 @@ export async function generateStaticParams() {
   return articlesData.map(a => ({ slug: a.id }))
 }
 
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const article = articlesData.find(a => a.id === params.slug)
+  if (!article) return { title: 'Article Not Found' }
+  
+  return {
+    title: `${article.title} | OnMultifamily`,
+    description: article.excerpt || article.title,
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      type: 'article',
+      publishedTime: article.date,
+      authors: ['Dayma Itamunoala'],
+      images: article.image ? [{ url: article.image, alt: article.title }] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.excerpt,
+      images: article.image ? [article.image] : [],
+    },
+  }
+}
+
 export default function ArticlePage({ params }: { params: { slug: string } }) {
   const article = articlesData.find(a => a.id === params.slug)
   if (!article) notFound()
@@ -44,6 +69,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
   return (
     <main>
+      <ArticleSchema article={article} />
       <Header />
 
       {/* Article Header */}

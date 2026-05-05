@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://onmultifamily.com'),
+  metadataBase: new URL('https://www.onmultifamily.com'),
   title: {
     default: 'Ontario Multifamily Brokerage | Colliers | Dayma Itamunoala',
     template: '%s | OnMultifamily | Colliers',
@@ -27,12 +27,12 @@ export const metadata: Metadata = {
   authors: [{ name: 'Dayma Itamunoala' }],
   icons: { icon: '/favicon.png' },
   alternates: {
-    canonical: 'https://onmultifamily.com',
+    canonical: 'https://www.onmultifamily.com',
   },
   openGraph: {
     title: 'Ontario Multifamily Brokerage | OnMultifamily | Colliers',
     description: 'Over $1.2B in completed multifamily sales across Ontario. 81% closing rate. Led by Dayma Itamunoala, SVP at Colliers.',
-    url: 'https://onmultifamily.com',
+    url: 'https://www.onmultifamily.com',
     siteName: 'OnMultifamily',
     locale: 'en_CA',
     type: 'website',
@@ -57,6 +57,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
+      <head>
+        <link rel="canonical" href="https://www.onmultifamily.com" />
+      </head>
       <body className="font-sans antialiased">{children}</body>
     </html>
   )
