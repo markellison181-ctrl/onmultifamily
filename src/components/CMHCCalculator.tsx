@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useRef } from 'react'
 import ratesData from '@/data/rates.json'
 
 /*
@@ -214,9 +214,37 @@ function ToggleGroup({ label, options, value, onChange }: {
 
 export default function CMHCCalculator() {
   const [inputs, setInputs] = useState<Inputs>(defaultInputs)
+  const [showEmailForm, setShowEmailForm] = useState(false)
+  const [emailSending, setEmailSending] = useState(false)
+  const [emailSent, setEmailSent] = useState(false)
+  const [emailError, setEmailError] = useState('')
+  const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '' })
+  const emailFormRef = useRef<HTMLDivElement>(null)
 
   const update = (field: keyof Inputs, value: number | boolean | string) => {
     setInputs(prev => ({ ...prev, [field]: value }))
+  }
+
+  const handleEmailSubmit = async () => {
+    if (!contactForm.name || !contactForm.email) return
+    setEmailSending(true)
+    setEmailError('')
+    try {
+      const res = await fetch('/api/calculator-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ contact: contactForm, inputs, results }),
+      })
+      if (!res.ok) {
+        const data = await res.json()
+        throw new Error(data.error || 'Failed to send')
+      }
+      setEmailSent(true)
+    } catch (err: any) {
+      setEmailError(err.message || 'Something went wrong. Please try again.')
+    } finally {
+      setEmailSending(false)
+    }
   }
 
   const maintenancePerUnit = CMHC_CONSTANTS.maintenancePerUnit[inputs.constructionType]
@@ -396,7 +424,7 @@ export default function CMHCCalculator() {
                     min={1}
                   />
                   <InputField
-                    label="Avg. Monthly Rent / Unit"
+                    label="Avg. Rent / Unit / Mo."
                     value={inputs.avgMonthlyRentPerUnit}
                     onChange={v => update('avgMonthlyRentPerUnit', v)}
                     prefix="$"
@@ -854,15 +882,107 @@ export default function CMHCCalculator() {
                   </p>
                 </div>
 
+                {/* Email This Analysis */}
+                <div ref={emailFormRef} className="bg-warm-gray border border-soft-gray p-6 sm:p-8">
+                  {!showEmailForm && !emailSent && (
+                    <div className="text-center">
+                      <p className="font-serif text-lg text-navy mb-2">Save this analysis</p>
+                      <p className="text-navy/40 text-[14px] mb-5">
+                        Get a clean summary emailed to you with all the numbers from this sizing.
+                      </p>
+                      <button
+                        onClick={() => {
+                          setShowEmailForm(true)
+                          setTimeout(() => emailFormRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100)
+                        }}
+                        className="w-full bg-navy text-white text-[12px] tracking-wide-custom uppercase font-medium px-8 py-3.5 hover:bg-navy-light transition-colors"
+                      >
+                        Email Me This Analysis
+                      </button>
+                    </div>
+                  )}
+                  {showEmailForm && !emailSent && (
+                    <div>
+                      <p className="font-serif text-lg text-navy mb-5">Your details</p>
+                      <div className="space-y-4">
+                        <div>
+                          <label className="text-[12px] tracking-wide-custom uppercase text-navy/40 block mb-2">Name *</label>
+                          <input
+                            type="text"
+                            value={contactForm.name}
+                            onChange={e => setContactForm(prev => ({ ...prev, name: e.target.value }))}
+                            placeholder="Your name"
+                            className="w-full border border-soft-gray bg-white text-navy py-3 px-4 text-[15px] focus:border-navy/30 focus:outline-none transition-colors"
+                          />
+                        </div>
+                        <div>
+                          <label className="text-[12px] tracking-wide-custom uppercase text-navy/40 block mb-2">Email *</label>
+                          <input
+                            type="email"
+                            value={contactForm.email}
+                            onChange={e => setContactForm(prev => ({ ...prev, email: e.target.value }))}
+                            placeholder="your@email.com"
+                            className="w-full border border-soft-gray bg-white text-navy py-3 px-4 text-[15px] focus:border-navy/30 focus:outline-none transition-colors"
+                          />
+                        </div>
+                        <div>
+                          <label className="text-[12px] tracking-wide-custom uppercase text-navy/40 block mb-2">Phone <span className="normal-case tracking-normal">(optional)</span></label>
+                          <input
+                            type="tel"
+                            value={contactForm.phone}
+                            onChange={e => setContactForm(prev => ({ ...prev, phone: e.target.value }))}
+                            placeholder="(416) 555-0000"
+                            className="w-full border border-soft-gray bg-white text-navy py-3 px-4 text-[15px] focus:border-navy/30 focus:outline-none transition-colors"
+                          />
+                        </div>
+                        {emailError && (
+                          <p className="text-red-500 text-[13px]">{emailError}</p>
+                        )}
+                        <button
+                          onClick={handleEmailSubmit}
+                          disabled={emailSending || !contactForm.name || !contactForm.email}
+                          className="w-full bg-navy text-white text-[12px] tracking-wide-custom uppercase font-medium px-8 py-3.5 hover:bg-navy-light transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                        >
+                          {emailSending ? 'Sending...' : 'Send My Analysis'}
+                        </button>
+                        <button
+                          onClick={() => setShowEmailForm(false)}
+                          className="w-full text-navy/30 text-[12px] tracking-wide-custom uppercase py-2 hover:text-navy/50 transition-colors"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  {emailSent && (
+                    <div className="text-center">
+                      <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-green-50 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <p className="font-serif text-lg text-navy mb-2">Check your inbox</p>
+                      <p className="text-navy/40 text-[14px] mb-5">
+                        Your CMHC debt sizing analysis has been sent to {contactForm.email}
+                      </p>
+                      <button
+                        onClick={() => { setEmailSent(false); setShowEmailForm(false); setContactForm({ name: '', email: '', phone: '' }) }}
+                        className="text-navy/30 text-[12px] tracking-wide-custom uppercase hover:text-navy/50 transition-colors"
+                      >
+                        Run Another Analysis
+                      </button>
+                    </div>
+                  )}
+                </div>
+
                 {/* CTA */}
-                <div className="bg-warm-gray border border-soft-gray p-6 sm:p-8 text-center">
+                <div className="bg-white border border-soft-gray p-6 sm:p-8 text-center">
                   <p className="font-serif text-lg text-navy mb-2">Need a lender-ready underwriting?</p>
                   <p className="text-navy/40 text-[14px] mb-5">
-                    This tool provides sizing estimates based on standard CMHC assumptions. 
                     Our team can run a full underwriting with market-specific adjustments for your property.
                   </p>
                   <a
-                    href="#contact"
+                    href="/#contact"
                     className="inline-block bg-navy text-white text-[12px] tracking-wide-custom uppercase font-medium px-8 py-3.5 hover:bg-navy-light transition-colors"
                   >
                     Request Underwriting
@@ -920,6 +1040,19 @@ export default function CMHCCalculator() {
                 for educational purposes. Contact our team for lender-ready underwriting.
               </p>
             </div>
+          </div>
+
+          {/* Disclaimer */}
+          <div className="mt-12 pt-8 border-t border-soft-gray max-w-3xl">
+            <p className="text-navy/25 text-[11px] leading-relaxed font-sans">
+              <strong className="text-navy/35">Disclaimer:</strong> This calculator is provided for informational and educational purposes only. 
+              It does not constitute a loan commitment, pre-approval, mortgage offer, or financial, legal, or investment advice. 
+              Results are estimates based on standard CMHC underwriting assumptions and publicly available rate data; actual loan 
+              terms, insurance premiums, and eligibility are determined by your lender and CMHC based on property-specific 
+              underwriting. Rate data is updated periodically and may not reflect real-time market conditions. Consult a licensed 
+              mortgage professional before making financing decisions. Colliers International and its affiliates accept no liability 
+              for decisions made based on the output of this tool.
+            </p>
           </div>
         </div>
       </section>
