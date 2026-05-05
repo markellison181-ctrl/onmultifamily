@@ -34,15 +34,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-20 sm:h-24">
           {/* Logo */}
-          <a href="/" className="relative z-10 flex items-center gap-3 sm:gap-5">
+          <a href="/" className="relative z-[70] flex items-center gap-3 sm:gap-5">
             <Image
-              src={scrolled ? '/images/logos/logo-dark.svg' : '/images/logos/logo.svg'}
+              src={scrolled && !menuOpen ? '/images/logos/logo-dark.svg' : '/images/logos/logo.svg'}
               alt="OnMultifamily"
               width={180}
               height={40}
               className="h-7 sm:h-8 w-auto"
             />
-            <div className={`w-px h-6 sm:h-7 ${scrolled ? 'bg-navy/15' : 'bg-white/20'}`} />
+            <div className={`w-px h-6 sm:h-7 ${scrolled && !menuOpen ? 'bg-navy/15' : 'bg-white/20'}`} />
             <Image
               src="/images/logos/colliers.png"
               alt="Colliers"
@@ -82,7 +82,7 @@ export default function Header() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden relative z-50 w-8 h-8 flex flex-col justify-center gap-1.5"
+            className="md:hidden relative z-[70] w-8 h-8 flex flex-col justify-center gap-1.5"
           >
             <span className={`block h-px w-full transition-all duration-300 ${
               menuOpen ? 'rotate-45 translate-y-[3px] bg-white' : (scrolled ? 'bg-navy' : 'bg-white')
@@ -94,8 +94,16 @@ export default function Header() {
         </div>
       </div>
 
+      {/* Mobile Menu Overlay */}
+      {menuOpen && (
+        <div
+          className="md:hidden fixed inset-0 bg-navy-deep/50 z-40"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
+
       {/* Mobile Menu */}
-      <div className={`md:hidden fixed inset-0 bg-navy-deep z-40 pt-28 px-8 transition-all duration-500 ${
+      <div className={`md:hidden fixed inset-0 bg-navy-deep z-[60] pt-28 px-8 transition-all duration-500 ${
         menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`}>
         <nav className="flex flex-col gap-6">
@@ -104,9 +112,9 @@ export default function Header() {
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className={`text-2xl font-serif transition-all duration-500 ${
+              className={`text-2xl font-serif text-white border-b border-white/10 pb-4 transition-all duration-500 ${
                 menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              } ${menuOpen ? 'text-white' : 'text-white/0'}`}
+              }`}
               style={{ transitionDelay: menuOpen ? `${i * 60}ms` : '0ms' }}
             >
               {link.label}
