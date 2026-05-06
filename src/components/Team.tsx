@@ -104,13 +104,13 @@ function TeamModal({ member, onClose }: { member: TeamMember; onClose: () => voi
                 </div>
                 <div>
                   <div className="text-[10px] tracking-[0.15em] uppercase text-navy/25">
-                    {member.directPhone ? 'Direct' : 'Mobile'}
+                    Mobile
                   </div>
                   <div className="text-[14px] text-navy group-hover:text-gold transition-colors">
-                    {member.directPhone || member.phone}
+                    {member.phone}
                   </div>
-                  {member.directPhone && member.phone && (
-                    <div className="text-[12px] text-navy/35 mt-0.5">Mobile: {member.phone}</div>
+                  {member.directPhone && (
+                    <div className="text-[12px] text-navy/35 mt-0.5">Direct: {member.directPhone}</div>
                   )}
                 </div>
               </a>
