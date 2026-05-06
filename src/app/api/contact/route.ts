@@ -4,7 +4,7 @@ import { Resend } from 'resend'
 const resend = new Resend(process.env.RESEND_API_KEY)
 const FROM_EMAIL = 'OnMultifamily <info@onmultifamily.com>'
 const TO_EMAIL = 'dayma.itamunoala@colliers.com'
-const CC_EMAIL = 'd.itamuno@gmail.com'
+const CC_EMAILS = ['d.itamuno@gmail.com', 'zoe.prachter@colliers.com']
 
 export async function POST(req: NextRequest) {
   try {
@@ -84,7 +84,7 @@ export async function POST(req: NextRequest) {
       resend.emails.send({
         from: FROM_EMAIL,
         to: [TO_EMAIL],
-        cc: [CC_EMAIL],
+        cc: CC_EMAILS,
         replyTo: email,
         subject,
         html: teamHtml,
