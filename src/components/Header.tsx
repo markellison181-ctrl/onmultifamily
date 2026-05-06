@@ -13,11 +13,18 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const [resourcesOpen, setResourcesOpen] = useState(false)
+  const resourcesTimeout = React.useRef<NodeJS.Timeout | null>(null)
+
   const links = [
     { label: 'Listings', href: '/#listings' },
     // { label: 'Map', href: '/map/' }, // Hidden until map is ready
     { label: 'Insights', href: '/insights/' },
-    { label: 'Resources', href: '/resources/' },
+    { label: 'Resources', href: '/resources/', dropdown: [
+      { label: 'CMHC Debt Calculator', href: '/resources/cmhc-calculator/', desc: 'Size your insured mortgage instantly' },
+      { label: 'Bond Yield Tracker', href: '/resources/bond-yields/', desc: 'Live GoC yields and CMB spreads' },
+      { label: 'Market Insights', href: '/insights/', desc: 'Weekly multifamily analysis' },
+    ]},
     { label: 'Team', href: '/#team' },
     { label: 'Contact', href: '/#contact' },
   ]
@@ -59,7 +66,60 @@ export default function Header() {
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-8 lg:gap-10">
-              {links.map(link => (
+              {links.map(link => 
+                link.dropdown ? (
+                  <div
+                    key={link.label}
+                    className="relative"
+                    onMouseEnter={() => {
+                      if (resourcesTimeout.current) clearTimeout(resourcesTimeout.current)
+                      setResourcesOpen(true)
+                    }}
+                    onMouseLeave={() => {
+                      resourcesTimeout.current = setTimeout(() => setResourcesOpen(false), 150)
+                    }}
+                  >
+                    <a
+                      href={link.href}
+                      className={`text-[11px] font-medium tracking-[0.15em] uppercase transition-colors duration-500 flex items-center gap-1 ${
+                        scrolled ? 'text-navy/45 hover:text-navy' : 'text-white/50 hover:text-white'
+                      }`}
+                    >
+                      {link.label}
+                      <svg className={`w-3 h-3 transition-transform duration-300 ${resourcesOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </a>
+                    <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-300 ${
+                      resourcesOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
+                    }`}>
+                      <div className="bg-white rounded shadow-[0_8px_40px_rgba(0,0,0,0.12)] border border-navy/5 py-2 min-w-[280px]">
+                        {link.dropdown.map(item => (
+                          <a
+                            key={item.label}
+                            href={item.href}
+                            className="block px-5 py-3 hover:bg-navy/[0.03] transition-colors duration-200 group"
+                          >
+                            <div className="text-[12px] font-semibold tracking-[0.05em] text-navy group-hover:text-gold transition-colors duration-200">
+                              {item.label}
+                            </div>
+                            <div className="text-[11px] text-navy/40 mt-0.5">
+                              {item.desc}
+                            </div>
+                          </a>
+                        ))}
+                        <div className="border-t border-navy/5 mt-1 pt-1">
+                          <a
+                            href={link.href}
+                            className="block px-5 py-2.5 text-[11px] tracking-[0.1em] uppercase font-medium text-navy/30 hover:text-gold transition-colors duration-200"
+                          >
+                            All Resources
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
                 <a
                   key={link.label}
                   href={link.href}
@@ -69,7 +129,8 @@ export default function Header() {
                 >
                   {link.label}
                 </a>
-              ))}
+                )
+              )}
               <a
                 href="/#valuation"
                 className={`text-[11px] font-semibold tracking-[0.15em] uppercase px-6 py-2.5 transition-all duration-500 ${
@@ -113,17 +174,34 @@ export default function Header() {
           </button>
 
           {links.map((link, i) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className={`text-2xl font-serif text-white border-b border-white/10 pb-4 transition-all duration-500 ${
-                menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
-              style={{ transitionDelay: menuOpen ? `${i * 60}ms` : '0ms' }}
-            >
-              {link.label}
-            </a>
+            <div key={link.label}>
+              <a
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className={`text-2xl font-serif text-white border-b border-white/10 pb-4 block transition-all duration-500 ${
+                  menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
+                style={{ transitionDelay: menuOpen ? `${i * 60}ms` : '0ms' }}
+              >
+                {link.label}
+              </a>
+              {link.dropdown && (
+                <div className={`pl-4 pb-2 space-y-2 transition-all duration-500 ${
+                  menuOpen ? 'opacity-100' : 'opacity-0'
+                }`} style={{ transitionDelay: menuOpen ? `${i * 60 + 30}ms` : '0ms' }}>
+                  {link.dropdown.map(item => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="block text-[14px] text-white/40 hover:text-gold py-1.5 transition-colors"
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
           <a
             href="/#valuation"
