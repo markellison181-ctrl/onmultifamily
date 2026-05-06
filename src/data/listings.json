@@ -1,5 +1,32 @@
 [
   {
+    "id": "30-springhurst-avenue",
+    "title": "30 Springhurst Avenue",
+    "location": "Toronto, Ontario",
+    "address": "30 Springhurst Avenue, Toronto, Ontario M6K 1B3",
+    "type": "Multifamily",
+    "units": 122,
+    "price": null,
+    "pricePerUnit": null,
+    "lotSize": "0.98 ac",
+    "status": "For Sale",
+    "image": "/images/listings/30-springhurst.jpeg",
+    "brochure": "/images/brochures/30-springhurst-avenue.pdf",
+    "ndaLink": "https://apps.colliers.com/DigitalDocs/Accept/ae313c1c-37e7-4ce0-b31d-5b3a352baad2",
+    "headline": "12-Storey High-Rise Apartment Building Steps from Toronto's Waterfront",
+    "description": "30 Springhurst Avenue presents the opportunity to acquire a well-located 12-storey high-rise apartment building in one of Toronto's most desirable west end rental nodes.",
+    "fullDescription": "Situated on a 0.98-acre site just steps from the lakefront, BMO Field, Exhibition Place, and an array of neighbourhood amenities, the property combines strong in-place cash flow with compelling value-add potential through rental growth, ancillary revenue enhancement, and further optimization of underutilized interior space. The building contains 122 suites and offers an attractive suite mix of 22 bachelor units, 77 one-bedroom units, and 23 two-bedroom units.",
+    "features": [
+      "Strong rental upside with approximately 34.5% potential rent increase",
+      "Significant value-creation potential through conversion of large storage areas",
+      "Meaningful recent capital improvements including garage, boiler, electrical, and sprinkler",
+      "Diversified ancillary income from parking, lockers, coin laundry, telecom, and hydro",
+      "Suites separately metered for hydro with water submetering underway",
+      "Prime Toronto west-end location near the waterfront, BMO Field, and Exhibition Place"
+    ],
+    "unitMix": "22 bachelor, 77 one-bedroom, 23 two-bedroom"
+  },
+  {
     "id": "700-spadina-avenue",
     "title": "Oak House (700 Spadina Avenue)",
     "location": "Downtown Toronto, Ontario",

@@ -1,5 +1,17 @@
 [
   {
+    "id": "30-springhurst-avenue",
+    "name": "30 Springhurst Avenue",
+    "address": "30 Springhurst Avenue, Toronto, ON",
+    "city": "Toronto",
+    "lat": 43.6366,
+    "lng": -79.4215,
+    "price": 0,
+    "suites": 122,
+    "capRate": null,
+    "status": "Active"
+  },
+  {
     "id": "56-south-forster-park-drive",
     "name": "56 South Forster Park Drive",
     "address": "56 South Forster Park Drive, Oakville, ON",
