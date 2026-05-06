@@ -24,7 +24,9 @@
       "Suites separately metered for hydro with water submetering underway",
       "Prime Toronto west-end location near the waterfront, BMO Field, and Exhibition Place"
     ],
-    "unitMix": "22 bachelor, 77 one-bedroom, 23 two-bedroom"
+    "unitMix": "22 bachelor, 77 one-bedroom, 23 two-bedroom",
+    "lat": 43.6366,
+    "lng": -79.4215
   },
   {
     "id": "700-spadina-avenue",
@@ -49,7 +51,9 @@
       "Prime downtown Toronto location on Spadina Avenue",
       "Strong institutional-grade income profile",
       "Proximity to U of T's St. George campus"
-    ]
+    ],
+    "lat": 43.6607,
+    "lng": -79.4042
   },
   {
     "id": "89-chestnut-street",
@@ -74,7 +78,9 @@
       "Prime downtown Toronto location near Eaton Centre",
       "Consistent institutional demand with built-in occupancy",
       "Full-service residence with meal plan and amenities"
-    ]
+    ],
+    "lat": 43.6533,
+    "lng": -79.3874
   },
   {
     "id": "231-vaughan-road",
@@ -98,7 +104,9 @@
       "Established Oakwood-Vaughan neighbourhood",
       "Available individually or as part of 122-unit portfolio",
       "Strong rental demand in supply-constrained submarket"
-    ]
+    ],
+    "lat": 43.6838,
+    "lng": -79.4251
   },
   {
     "id": "149-cosburn-avenue",
@@ -122,7 +130,9 @@
       "Desirable neighbourhood with excellent transit access",
       "Available individually or as part of 122-unit portfolio",
       "Proximity to Danforth Village amenities"
-    ]
+    ],
+    "lat": 43.6887,
+    "lng": -79.3475
   },
   {
     "id": "116-spencer-avenue",
@@ -146,7 +156,9 @@
       "Predominantly bachelor suites",
       "Available individually or as part of 122-unit portfolio",
       "Steps from the lakefront and downtown Toronto"
-    ]
+    ],
+    "lat": 43.6376,
+    "lng": -79.4294
   },
   {
     "id": "165-colborne-avenue",
@@ -170,7 +182,9 @@
       "Strong York Region rental market fundamentals",
       "Excellent transit connectivity",
       "Supply-constrained submarket"
-    ]
+    ],
+    "lat": 43.8649,
+    "lng": -79.4384
   },
   {
     "id": "1083-main-street-east",
@@ -194,7 +208,9 @@
       "Strong Hamilton rental market fundamentals",
       "Growing population base and limited new supply",
       "Active investor market with strong transaction volume"
-    ]
+    ],
+    "lat": 43.242,
+    "lng": -79.8188
   },
   {
     "id": "56-south-forster-park-drive",
@@ -225,7 +241,9 @@
     "noi": 170877,
     "yearBuilt": 1954,
     "unitMix": "15 two-bedroom suites",
-    "zoning": "RM4"
+    "zoning": "RM4",
+    "lat": 43.4396,
+    "lng": -79.6843
   },
   {
     "id": "49-st-marys-river-drive",
@@ -252,7 +270,9 @@
       "Recent capital improvements - brand new hot water tanks, exterior renovation and more",
       "In-suite energy controls installed to improve energy efficiency"
     ],
-    "unitMix": "101 one-bedroom, 1 two-bedroom"
+    "unitMix": "101 one-bedroom, 1 two-bedroom",
+    "lat": 46.5136,
+    "lng": -84.3358
   },
   {
     "id": "17-19-collier-street",
@@ -281,6 +301,8 @@
     "noi": 481606,
     "yearBuilt": 1951,
     "yearRenovated": "2022-2023",
-    "unitMix": "15 one-bedroom, 17 two-bedroom"
+    "unitMix": "15 one-bedroom, 17 two-bedroom",
+    "lat": 43.1594,
+    "lng": -79.2469
   }
 ]
