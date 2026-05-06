@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 const faqs = [
   {
     q: 'What is the average cap rate for Ontario multifamily?',
-    a: 'Cap rates for stabilized apartment buildings in Ontario currently range from 4.25% to 5.75%, depending on market, building condition, and suite count. Greater Toronto Area properties typically trade at the lower end, while secondary markets offer higher yields.',
+    a: 'Cap rates for stabilized apartment buildings in Ontario currently range from 4.25% to 5.75%, but we see a wide range depending on the specific asset. Location, building age, suite mix, occupancy, capital condition, and financing structure all play a role. A turnkey midrise in midtown Toronto will trade very differently than a value-add lowrise in a secondary market. Greater Toronto Area properties typically trade at the lower end, while smaller markets offer higher yields.',
   },
   {
     q: 'What is CMHC MLI Select?',
