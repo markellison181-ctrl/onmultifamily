@@ -353,10 +353,10 @@ export default function CMHCCalculator() {
       {/* Calculator */}
       <section className="bg-cream py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid lg:grid-cols-5 gap-8 sm:gap-12">
+          <div className="grid xl:grid-cols-5 gap-8 xl:gap-12">
             
             {/* Inputs: 3 columns */}
-            <div className="lg:col-span-3 space-y-8">
+            <div className="xl:col-span-3 space-y-8">
 
               {/* Construction Type & Loan Purpose */}
               <div className="bg-white border border-soft-gray p-6 sm:p-8">
@@ -647,8 +647,8 @@ export default function CMHCCalculator() {
             </div>
 
             {/* Results: 2 columns (sticky) */}
-            <div className="lg:col-span-2">
-              <div className="lg:sticky lg:top-28 space-y-6">
+            <div className="xl:col-span-2">
+              <div className="xl:sticky xl:top-28 space-y-6">
                 
                 {/* Primary Result */}
                 <div className="bg-navy p-6 sm:p-8">
