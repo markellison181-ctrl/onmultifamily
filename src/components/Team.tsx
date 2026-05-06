@@ -124,15 +124,21 @@ function TeamModal({ member, onClose }: { member: TeamMember; onClose: () => voi
 
           {/* CTA */}
           <div className="mt-8 pt-6 border-t border-navy/8">
-            <a
-              href={`mailto:${member.email}?subject=Inquiry via OnMultifamily`}
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] tracking-[0.15em] uppercase font-bold px-8 py-4 hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] transition-all duration-500"
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                onClose()
+                setTimeout(() => {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+                }, 100)
+              }}
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] tracking-[0.15em] uppercase font-bold px-8 py-4 hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] transition-all duration-500 cursor-pointer"
             >
               Get in Touch
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
+            </button>
           </div>
         </div>
       </div>
