@@ -83,7 +83,9 @@ export default function Newsletter() {
           {featured.map((article, i) => (
             <a
               key={article.id}
-              href={`/insights/${article.id}/`}
+              href={article.mailchimpUrl || `/insights/${article.id}/`}
+              target={article.mailchimpUrl ? '_blank' : undefined}
+              rel={article.mailchimpUrl ? 'noopener noreferrer' : undefined}
               className="group block hover-lift"
             >
               {article.image && (

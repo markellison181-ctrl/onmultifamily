@@ -71,7 +71,7 @@ export default function InsightsPage() {
       {lead && (
         <section className="bg-white py-16 md:py-24">
           <div className="max-w-6xl mx-auto px-6 md:px-12">
-            <Link href={`/insights/${lead.id}/`} className="group block">
+            <Link href={lead.mailchimpUrl || `/insights/${lead.id}/`} target={lead.mailchimpUrl ? '_blank' : undefined} rel={lead.mailchimpUrl ? 'noopener noreferrer' : undefined} className="group block">
               <div className="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
                 {lead.image && (
                   <div className="relative aspect-[16/10] overflow-hidden bg-navy/5">
@@ -98,14 +98,12 @@ export default function InsightsPage() {
                   <p className="text-navy/45 text-[16px] leading-[1.8] mb-6">
                     {lead.excerpt}
                   </p>
-                  <div className="flex items-center gap-4">
-                    <span className="text-[12px] tracking-[0.1em] uppercase font-semibold text-navy/25 group-hover:text-gold transition-colors duration-300">
-                      Read Full Analysis
-                    </span>
-                    <svg className="w-5 h-5 text-navy/20 group-hover:text-gold group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <span className="inline-flex items-center gap-3 bg-gradient-to-r from-gold to-gold-light text-navy text-[11px] tracking-[0.15em] uppercase font-bold px-7 py-3.5 group-hover:shadow-[0_0_30px_rgba(201,168,76,0.2)] transition-all duration-500">
+                    Read Full Report
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </div>
+                  </span>
                 </div>
               </div>
             </Link>
@@ -125,7 +123,9 @@ export default function InsightsPage() {
             {rest.map((article, i) => (
               <Link
                 key={article.id}
-                href={`/insights/${article.id}/`}
+                href={article.mailchimpUrl || `/insights/${article.id}/`}
+                target={article.mailchimpUrl ? '_blank' : undefined}
+                rel={article.mailchimpUrl ? 'noopener noreferrer' : undefined}
                 className="group block border-b border-navy/8 first:border-t"
               >
                 <div className="grid md:grid-cols-12 gap-6 md:gap-10 py-8 md:py-10 items-center">
