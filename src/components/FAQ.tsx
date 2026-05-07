@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: 'What information do I need for a valuation?',
-    a: 'At minimum, we need the property address, unit count, current rent roll, and a summary of operating expenses. Ideally, we\'d also review the last 2-3 years of financial statements, capital expenditure history, and any lease abstracts for commercial units.',
+    a: 'At minimum, we need the property address, unit count, current rent roll, and a summary of operating expenses. Ideally, we\'d also review the last 2-3 years of financial statements and capital expenditure history.',
   },
   {
     q: 'Do you work with buyers as well?',
