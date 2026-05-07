@@ -15,167 +15,189 @@ export const metadata = {
   },
 }
 
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })
+}
+
+function formatShortDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('en-CA', { month: 'short', day: 'numeric', year: 'numeric' })
+}
+
 export default function InsightsPage() {
-  const featured = articlesData.filter(a => a.featured)
-  const recent = articlesData.filter(a => !a.featured)
+  // Sort all articles by date descending
+  const sorted = [...articlesData].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const lead = sorted[0]
+  const rest = sorted.slice(1)
 
   return (
     <main>
       <Header />
       
       {/* Hero */}
-      <section className="bg-navy pt-36 pb-20 md:pt-44 md:pb-28">
-        <div className="max-w-3xl mx-auto px-6 md:px-12 text-center">
-          <div className="flex items-center justify-center gap-4 mb-8">
+      <section className="bg-navy-deep pt-36 pb-16 md:pt-44 md:pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 noise opacity-50" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-[120px]" />
+        <div className="relative max-w-6xl mx-auto px-6 md:px-12">
+          <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-px bg-gold" />
-            <span className="text-[12px] tracking-wide-custom uppercase text-gold font-medium">
+            <span className="text-[12px] tracking-[0.2em] uppercase text-gold font-medium">
               Market Intelligence
             </span>
-            <div className="w-12 h-px bg-gold" />
           </div>
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-5">
             Insights & Analysis
           </h1>
-          <p className="text-lg text-white/50 leading-relaxed max-w-xl mx-auto">
+          <p className="text-[17px] text-white/40 leading-relaxed max-w-xl mb-10">
             Weekly analysis on Ontario multifamily markets. Cap rates, deal flow, 
-            CMHC updates, and actionable guidance.
+            CMHC updates, and actionable guidance for apartment building owners and investors.
           </p>
-        </div>
-      </section>
 
-      {/* Subscribe Bar */}
-      <section className="bg-cream py-10">
-        <div className="max-w-2xl mx-auto px-6 md:px-12">
-          <div className="flex flex-col sm:flex-row items-center gap-4">
-            <p className="text-navy/50 text-sm whitespace-nowrap">
-              Join 14,000+ professionals
-            </p>
-            <div className="flex gap-3 flex-1 w-full sm:w-auto">
-              <input
-                type="email"
-                placeholder="you@email.com"
-                className="flex-1 bg-white border border-soft-gray px-5 py-3 text-sm text-navy placeholder:text-navy/30 focus:border-navy transition-colors"
-              />
-              <button className="bg-navy text-white text-[12px] tracking-wide-custom uppercase font-medium px-6 py-3 hover:bg-navy-light transition-colors whitespace-nowrap">
-                Subscribe
-              </button>
-            </div>
+          {/* Subscribe inline */}
+          <div className="flex flex-col sm:flex-row gap-3 max-w-lg">
+            <input
+              type="email"
+              placeholder="you@email.com"
+              className="flex-1 bg-white/5 border border-white/10 px-5 py-3.5 text-sm text-white placeholder:text-white/25 focus:border-gold/50 transition-all duration-300 outline-none"
+            />
+            <button className="bg-gradient-to-r from-gold to-gold-light text-navy text-[11px] tracking-[0.15em] uppercase font-bold px-7 py-3.5 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] transition-all duration-500 whitespace-nowrap">
+              Subscribe Free
+            </button>
           </div>
+          <p className="text-white/20 text-[12px] mt-3">Join 14,000+ multifamily professionals. Free. No spam.</p>
         </div>
       </section>
 
-      {/* Featured Articles - with images */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
-          {/* Lead article - full width with image */}
-          {featured[0] && (
-            <Link
-              href={`/insights/${featured[0].id}/`}
-              className="group block mb-20"
-            >
-              <div className="grid md:grid-cols-2 gap-10 items-center">
-                {featured[0].image && (
-                  <div className="relative aspect-[16/9] overflow-hidden">
+      {/* Lead Article - Full Impact */}
+      {lead && (
+        <section className="bg-white py-16 md:py-24">
+          <div className="max-w-6xl mx-auto px-6 md:px-12">
+            <Link href={`/insights/${lead.id}/`} className="group block">
+              <div className="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
+                {lead.image && (
+                  <div className="relative aspect-[16/10] overflow-hidden bg-navy/5">
                     <Image
-                      src={featured[0].image}
-                      alt={featured[0].title}
+                      src={lead.image}
+                      alt={lead.title}
                       fill
                       className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
                     />
                   </div>
                 )}
                 <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-[11px] tracking-wide-custom uppercase font-semibold text-blue">
-                      {featured[0].category}
+                  <div className="flex items-center gap-3 mb-5">
+                    <span className="text-[11px] tracking-[0.15em] uppercase font-bold text-gold bg-gold/10 px-3 py-1">
+                      {lead.category}
                     </span>
-                    <span className="text-navy/20">·</span>
-                    <span className="text-[12px] text-navy/40">
-                      {new Date(featured[0].date).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })}
+                    <span className="text-[13px] text-navy/35">
+                      {formatDate(lead.date)}
                     </span>
                   </div>
-                  <h2 className="font-serif text-3xl md:text-4xl text-navy leading-snug mb-4 group-hover:text-blue transition-colors duration-300">
-                    {featured[0].title}
+                  <h2 className="font-serif text-3xl md:text-4xl text-navy leading-[1.15] mb-5 group-hover:text-gold-dark transition-colors duration-300">
+                    {lead.title}
                   </h2>
-                  <p className="text-navy/50 text-[16px] leading-relaxed mb-6">
-                    {featured[0].excerpt}
+                  <p className="text-navy/45 text-[16px] leading-[1.8] mb-6">
+                    {lead.excerpt}
                   </p>
-                  <span className="text-[13px] tracking-wide-custom uppercase font-medium text-navy/30 group-hover:text-navy transition-colors duration-300">
-                    Read Full Analysis →
-                  </span>
+                  <div className="flex items-center gap-4">
+                    <span className="text-[12px] tracking-[0.1em] uppercase font-semibold text-navy/25 group-hover:text-gold transition-colors duration-300">
+                      Read Full Analysis
+                    </span>
+                    <svg className="w-5 h-5 text-navy/20 group-hover:text-gold group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </Link>
-          )}
+          </div>
+        </section>
+      )}
 
-          {/* Rest of featured - grid with images */}
-          <div className="grid md:grid-cols-3 gap-10">
-            {featured.slice(1).map(article => (
+      {/* All Articles - Timeline Style */}
+      <section className="bg-cream py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          <div className="flex items-center justify-between mb-12 md:mb-16">
+            <h2 className="font-serif text-2xl md:text-3xl text-navy">All Articles</h2>
+            <span className="text-[12px] text-navy/30 tracking-wide">{articlesData.length} articles</span>
+          </div>
+
+          <div className="space-y-0">
+            {rest.map((article, i) => (
               <Link
                 key={article.id}
                 href={`/insights/${article.id}/`}
-                className="group block"
+                className="group block border-b border-navy/8 first:border-t"
               >
-                {article.image && (
-                  <div className="relative aspect-[16/9] overflow-hidden mb-5">
-                    <Image
-                      src={article.image}
-                      alt={article.title}
-                      fill
-                      className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                    />
+                <div className="grid md:grid-cols-12 gap-6 md:gap-10 py-8 md:py-10 items-center">
+                  {/* Date column */}
+                  <div className="md:col-span-2">
+                    <div className="text-[13px] text-navy/30 font-medium">
+                      {formatShortDate(article.date)}
+                    </div>
                   </div>
-                )}
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-[11px] tracking-wide-custom uppercase font-semibold text-blue">
-                    {article.category}
-                  </span>
-                  <span className="text-navy/20">·</span>
-                  <span className="text-[12px] text-navy/40">{article.readTime}</span>
+
+                  {/* Image */}
+                  {article.image && (
+                    <div className="md:col-span-3">
+                      <div className="relative aspect-[16/10] overflow-hidden bg-navy/5">
+                        <Image
+                          src={article.image}
+                          alt={article.title}
+                          fill
+                          className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Content */}
+                  <div className={article.image ? 'md:col-span-7' : 'md:col-span-10'}>
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-[10px] tracking-[0.15em] uppercase font-bold text-gold">
+                        {article.category}
+                      </span>
+                      <span className="w-1 h-1 rounded-full bg-navy/15" />
+                      <span className="text-[11px] text-navy/25">{article.readTime}</span>
+                    </div>
+                    <h3 className="font-serif text-xl md:text-2xl text-navy leading-snug mb-3 group-hover:text-gold-dark transition-colors duration-300">
+                      {article.title}
+                    </h3>
+                    <p className="text-navy/40 text-[14px] leading-relaxed line-clamp-2 max-w-xl">
+                      {article.excerpt}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-serif text-xl text-navy leading-snug mb-3 group-hover:text-blue transition-colors duration-300">
-                  {article.title}
-                </h3>
-                <p className="text-navy/40 text-[14px] leading-relaxed">
-                  {article.excerpt}
-                </p>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Recent */}
-      {recent.length > 0 && (
-        <section className="py-20 md:py-28 bg-warm-gray">
-          <div className="max-w-5xl mx-auto px-6 md:px-12">
-            <h2 className="font-serif text-3xl text-navy mb-12">Recent Insights</h2>
-            <div className="grid md:grid-cols-2 gap-12">
-              {recent.map(article => (
-                <Link
-                  key={article.id}
-                  href={`/insights/${article.id}/`}
-                  className="group block"
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-[11px] tracking-wide-custom uppercase font-semibold text-blue">
-                      {article.category}
-                    </span>
-                    <span className="text-navy/20">·</span>
-                    <span className="text-[12px] text-navy/40">{article.readTime}</span>
-                  </div>
-                  <h3 className="font-serif text-xl text-navy leading-snug mb-3 group-hover:text-blue transition-colors duration-300">
-                    {article.title}
-                  </h3>
-                  <p className="text-navy/40 text-[14px] leading-relaxed">
-                    {article.excerpt}
-                  </p>
-                </Link>
-              ))}
-            </div>
+      {/* Bottom CTA */}
+      <section className="bg-navy-deep py-20 md:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 noise opacity-50" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gold/5 rounded-full blur-[100px]" />
+        <div className="relative max-w-2xl mx-auto px-6 md:px-12 text-center">
+          <h2 className="font-serif text-3xl md:text-4xl text-white leading-tight mb-5">
+            Never miss an update
+          </h2>
+          <p className="text-white/35 text-[16px] leading-relaxed mb-10">
+            14,000+ apartment building owners, investors, and operators across Ontario read our weekly brief. 
+            Market data, deal announcements, and actionable analysis delivered to your inbox.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="you@email.com"
+              className="flex-1 bg-white/5 border border-white/10 px-5 py-4 text-sm text-white placeholder:text-white/25 focus:border-gold/50 transition-all duration-300 outline-none"
+            />
+            <button className="bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] tracking-[0.15em] uppercase font-bold px-8 py-4 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] transition-all duration-500 whitespace-nowrap">
+              Subscribe
+            </button>
           </div>
-        </section>
-      )}
+          <p className="text-white/15 text-[12px] mt-4">Free. Unsubscribe anytime.</p>
+        </div>
+      </section>
 
       <Footer />
     </main>
