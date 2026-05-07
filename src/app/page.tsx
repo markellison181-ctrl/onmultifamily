@@ -8,13 +8,14 @@ import ValuationCTA from '@/components/ValuationCTA'
 import Team from '@/components/Team'
 import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
-import { OrganizationSchema, WebSiteSchema } from '@/components/StructuredData'
+import { OrganizationSchema, WebSiteSchema, FAQPageSchema } from '@/components/StructuredData'
 
 export default function Home() {
   return (
     <main>
       <OrganizationSchema />
       <WebSiteSchema />
+      <FAQPageSchema />
       <Header />
       <Hero />
       <TrustedBy />

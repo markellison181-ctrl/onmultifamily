@@ -21,20 +21,37 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
     ? `$${(listing.price / 1000000).toFixed(1)}M` 
     : 'Price Upon Request'
 
+  const city = listing.location?.split(',')[0]?.trim() || 'Ontario'
+  const unitText = listing.units ? `${listing.units}-unit ` : ''
+  const typeText = listing.type === 'Student Housing' ? 'student housing' : listing.type === 'Seniors Housing' ? 'seniors housing' : 'apartment building'
+
   return {
-    title: `${listing.title} | ${priceDisplay}${listing.units ? ` | ${listing.units} Units` : ''} | OnMultifamily`,
-    description: `${listing.headline} Located in ${listing.location}. ${listing.description.substring(0, 150)}...`,
+    title: `${listing.title} | ${unitText}${typeText} for sale in ${city} | OnMultifamily`,
+    description: `${unitText}${typeText} for sale in ${city}, Ontario. ${listing.headline || listing.description.substring(0, 150)} Listed by Dayma Itamunoala, Colliers.`,
+    keywords: [
+      `apartment building for sale ${city}`,
+      `multifamily for sale ${city}`,
+      `${unitText}apartment building ${city}`,
+      `investment property ${city} Ontario`,
+      `${typeText} for sale Ontario`,
+      'Colliers multifamily',
+      'Dayma Itamunoala',
+    ],
     openGraph: {
-      title: `${listing.title} | ${priceDisplay}`,
-      description: listing.headline,
-      images: listing.image ? [listing.image] : [],
+      title: `${listing.title} | ${priceDisplay} | ${city}`,
+      description: `${unitText}${typeText} for sale in ${city}. ${listing.headline || listing.description.substring(0, 120)}`,
+      images: listing.image ? [{ url: listing.image, width: 1200, height: 630, alt: `${listing.title} - ${typeText} for sale in ${city}` }] : [],
       type: 'website',
+      locale: 'en_CA',
     },
     twitter: {
       card: 'summary_large_image',
       title: `${listing.title} | ${priceDisplay}`,
-      description: listing.headline,
+      description: `${unitText}${typeText} for sale in ${city}, Ontario.`,
       images: listing.image ? [listing.image] : [],
+    },
+    alternates: {
+      canonical: `https://www.onmultifamily.com/listings/${listing.id}`,
     },
   }
 }

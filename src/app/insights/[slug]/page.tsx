@@ -35,8 +35,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   if (!article) return { title: 'Article Not Found' }
   
   return {
-    title: `${article.title} | OnMultifamily`,
-    description: article.excerpt || article.title,
+    title: `${article.title} | Ontario Multifamily Market | OnMultifamily`,
+    description: `${article.excerpt || article.title} By Dayma Itamunoala, SVP at Colliers. Ontario multifamily market intelligence.`,
+    keywords: article.tags || [],
     openGraph: {
       title: article.title,
       description: article.excerpt,
@@ -44,12 +45,17 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       publishedTime: article.date,
       authors: ['Dayma Itamunoala'],
       images: article.image ? [{ url: article.image, alt: article.title }] : [],
+      locale: 'en_CA',
+      siteName: 'OnMultifamily',
     },
     twitter: {
       card: 'summary_large_image',
       title: article.title,
       description: article.excerpt,
       images: article.image ? [article.image] : [],
+    },
+    alternates: {
+      canonical: `https://www.onmultifamily.com/insights/${article.id}`,
     },
   }
 }
