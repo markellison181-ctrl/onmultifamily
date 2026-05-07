@@ -21,6 +21,7 @@ function markdownToHtml(md: string): string {
     .replace(/^(\d+)\. (.+$)/gm, '<li class="text-navy/60 leading-relaxed mb-1.5 ml-5 list-decimal"><strong class="text-navy">$2</strong></li>')
     .replace(/^---$/gm, '<hr class="border-t border-soft-gray my-10" />')
     .replace(/^> (.+$)/gm, '<blockquote class="border-l-2 border-gold pl-6 my-8 text-navy/50 italic text-lg leading-relaxed">$1</blockquote>')
+    .replace(/class="report-download"/g, 'class="inline-flex items-center gap-3 bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] tracking-[0.15em] uppercase font-bold px-8 py-4 my-6 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] transition-all duration-500 no-underline"')
     .replace(/^(?!<[hluoitfb])(?!$)(.+)$/gm, '<p class="text-navy/60 text-[17px] leading-[1.8] mb-5">$1</p>')
     .replace(/\n{2,}/g, '\n')
 }

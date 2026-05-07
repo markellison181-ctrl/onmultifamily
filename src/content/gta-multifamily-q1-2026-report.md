@@ -1,36 +1,19 @@
 # GTA Multifamily Q1 2026 Report
 
-## Market Overview
+Today we're releasing our Q1 2026 Report for the GTA multifamily market.
 
-The first quarter of 2026 continued the recovery trajectory that began in late 2024. Transaction volume across the GTA multifamily market showed meaningful strength, with buyer confidence supported by a more accommodative rate environment and improving rental fundamentals.
+<a href="https://mcusercontent.com/87232bcc93f1dd394870ffcbd/files/06516a16-bbee-2266-5643-a253d298df2a/GTA_Multifamily_Q126_Report_2_.pdf" target="_blank" rel="noopener noreferrer" class="report-download">Download Full Report (PDF)</a>
 
-## Key Highlights
+## Report Highlights
 
-- **Bank of Canada maintained the overnight rate at 2.25%**, providing stability after the aggressive cutting cycle of 2024-2025
-- **5-Year GoC yields trading at 3.18%**, down from the 4%+ levels seen in late 2023
-- **CMB 5-Year spreads stable at ~15 bps**, supporting attractive CMHC financing terms
-- **Cap rate compression resumed** in primary markets, particularly for stabilized assets in the 30-100 unit range
-- **Institutional capital returning to the market**, with several large portfolio mandates in circulation
+**1.** Transaction volume reached **$569M across 20 deals**, up 228.7% year-over-year and the busiest Q1 we've seen in several years. A total of **1,934 suites traded**, up 248.5%, with stronger participation from both private and institutional capital.
 
-## Transaction Activity
+**2.** Average price per suite held steady at **$289,047**, essentially flat year-over-year (+0.4%). Values have stabilized after 12-18 months of repricing. Average cap rates came in at **4.95%**, up 50 bps year-over-year and 32 bps from Q4 2025. While broader capital market conditions played a role, the increase largely reflects a higher concentration of stabilized portfolio sales in the quarter, where limited rent upside relative to vintage value-add assets naturally implies a higher going-in cap rate.
 
-Q1 2026 saw a notable increase in both the number and quality of transactions closing across Ontario. Private capital continued to dominate the sub-$20M segment, while institutional buyers showed renewed interest in larger portfolios.
+**3.** Investors continue to focus on in-place income durability and long-term rent growth potential. A slowdown in new development is expected to reduce future housing supply, supporting long-term fundamentals for purpose-built rental assets.
 
-The competitive tension we are seeing in marketed processes has increased meaningfully compared to the same period last year, reflecting improved buyer conviction around the rate outlook and rental growth trajectory.
+<a href="https://mcusercontent.com/87232bcc93f1dd394870ffcbd/files/06516a16-bbee-2266-5643-a253d298df2a/GTA_Multifamily_Q126_Report_2_.pdf" target="_blank" rel="noopener noreferrer" class="report-download">Download Full Report (PDF)</a>
 
-## Rate Environment
-
-The current rate environment remains constructive for multifamily investors:
-
-- **Conventional financing**: 5-Year fixed rates in the 4.25-4.75% range
-- **CMHC insured**: 5-Year CMB at 3.33%, representing significant savings over conventional
-- **Floating rate**: Prime at 4.45%, still elevated but expected to compress further if BoC continues easing
-
-## Outlook
-
-We expect Q2 and Q3 2026 to be the most active trading periods in the past three years. The combination of lower financing costs, resilient rental growth, and pent-up supply of capital seeking deployment creates a favourable environment for both buyers and sellers.
-
-For sellers, the current market offers an opportunity to achieve pricing that reflects the improving fundamentals rather than the distressed conditions of 2023-2024. For buyers, the window to acquire before cap rates fully compress is narrowing.
+Report Authors: Dayma Itamunoala, Kyle Lindsay, Zoe Prachter, and Matthew Bruchkowsky.
 
 ---
-

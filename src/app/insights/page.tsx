@@ -71,7 +71,7 @@ export default function InsightsPage() {
       {lead && (
         <section className="bg-white py-16 md:py-24">
           <div className="max-w-6xl mx-auto px-6 md:px-12">
-            <Link href={lead.mailchimpUrl || `/insights/${lead.id}/`} target={lead.mailchimpUrl ? '_blank' : undefined} rel={lead.mailchimpUrl ? 'noopener noreferrer' : undefined} className="group block">
+            <Link href={`/insights/${lead.id}/`} className="group block">
               <div className="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
                 {lead.image && (
                   <div className="relative aspect-[16/10] overflow-hidden bg-navy/5">
@@ -123,9 +123,7 @@ export default function InsightsPage() {
             {rest.map((article, i) => (
               <Link
                 key={article.id}
-                href={article.mailchimpUrl || `/insights/${article.id}/`}
-                target={article.mailchimpUrl ? '_blank' : undefined}
-                rel={article.mailchimpUrl ? 'noopener noreferrer' : undefined}
+                href={`/insights/${article.id}/`}
                 className="group block border-b border-navy/8 first:border-t"
               >
                 <div className="grid md:grid-cols-12 gap-6 md:gap-10 py-8 md:py-10 items-center">
