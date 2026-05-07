@@ -1,33 +1,24 @@
-## Time-Sensitive: CMHC Premium Increase
+# CMHC Premiums Go Up July 14th + Deal Announcements
 
-CMHC just announced that there will be a **significant increase in CMHC premiums effective July 14th**. Applications submitted prior to July 14th will benefit from the old premiums.
+Time sensitive information you should be aware of:
 
-In short - **fast track your financing applications if you can.**
+CMHC just announced that there will be a significant increase in CMHC premiums effective July 14th. Applications submitted prior to July 14th will benefit from the old premiums.
 
-*Thank you to our friends at Peakhill for keeping us in the loop.*
+In short: fast track your financing applications if you can.
 
----
+## We've Been Busy
 
-## We've Been Busy (Deal Announcements)
-
-Not a lot of brokers are closing deals today. False starts, extension requests, deals dropping - it's a tough market. **Our team gets deals done.**
+Not a lot of brokers are closing deals today. False starts, extension requests, deals dropping. Our team gets deals done.
 
 Here's a sample of what we accomplished in June (6 unrelated deals):
 
-![June 2025 Closed Deals](/images/articles/cmhc-premiums-deals.jpg)
+- **3905 Riverside Dr E & 3900 Wyandotte St E, Windsor** - 126 Units
+- **182 Jameson Ave, Toronto** - 82 Units
+- **Stone Tree Apartments, Owen Sound** - 76 Units
+- **49 Wellington St, Port Hope** - 50 Units
+- **1240 Ilona Park Rd, Pickering** - 18 Units
+- **72 Westmount St, Oshawa** - 9 Units
 
-Congratulations to our happy clients:
-
-- **3905 Riverside Dr E & 3900 Wyandotte St E**, Windsor - 126 Units
-- **182 Jameson Ave**, Toronto - 82 Units
-- **Stone Tree Apartments**, Owen Sound - 76 Units
-- **49 Wellington St**, Port Hope - 50 Units
-- **1240 Ilona Park Rd**, Pickering - 18 Units
-- **72 Westmount St**, Oshawa - 9 Units
-
----
-
-*We'll be sharing our Q2 multifamily takeaways next week. Stay tuned.*
-
+Congratulations to our happy clients.
 
 ---

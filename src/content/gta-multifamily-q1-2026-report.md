@@ -14,6 +14,4 @@ Today we're releasing our Q1 2026 Report for the GTA multifamily market.
 
 <a href="https://mcusercontent.com/87232bcc93f1dd394870ffcbd/files/06516a16-bbee-2266-5643-a253d298df2a/GTA_Multifamily_Q126_Report_2_.pdf" target="_blank" rel="noopener noreferrer" class="report-download">Download Full Report (PDF)</a>
 
-Report Authors: Dayma Itamunoala, Kyle Lindsay, Zoe Prachter, and Matthew Bruchkowsky.
-
 ---
