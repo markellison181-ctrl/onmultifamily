@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -109,7 +111,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="canonical" href="https://www.onmultifamily.com" />
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+          {children}
+          <Analytics />
+          <SpeedInsights />
+        </body>
     </html>
   )
 }
