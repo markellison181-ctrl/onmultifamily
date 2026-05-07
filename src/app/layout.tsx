@@ -8,7 +8,7 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfa
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.onmultifamily.com'),
   title: {
-    default: 'Ontario Multifamily Brokerage | Colliers | Dayma Itamunoala',
+    default: 'Colliers Multifamily Ontario | Dayma Itamunoala | Apartment Building Sales',
     template: '%s | OnMultifamily | Colliers',
   },
   description: 'Colliers Ontario Multifamily Team led by Dayma Itamunoala, SVP. Over $1.2B in apartment building sales across Ontario. 81% closing rate. Expert advisory for multifamily owners and investors.',
@@ -79,8 +79,8 @@ export const metadata: Metadata = {
     canonical: 'https://www.onmultifamily.com',
   },
   openGraph: {
-    title: 'Ontario Multifamily Brokerage | OnMultifamily | Colliers',
-    description: 'Over $1.2B in completed multifamily sales across Ontario. 81% closing rate. Led by Dayma Itamunoala, SVP at Colliers.',
+    title: 'Colliers Multifamily Ontario | OnMultifamily | Dayma Itamunoala',
+    description: 'Colliers Ontario Multifamily Team led by Dayma Itamunoala, SVP. Over $1.2B in apartment building sales. 81% closing rate. Apartments, seniors housing, student housing.',
     url: 'https://www.onmultifamily.com',
     siteName: 'OnMultifamily',
     locale: 'en_CA',
@@ -90,14 +90,14 @@ export const metadata: Metadata = {
         url: '/images/hero-img.png',
         width: 1200,
         height: 630,
-        alt: 'OnMultifamily | Ontario Multifamily Brokerage | Colliers',
+        alt: 'Colliers Multifamily Ontario | OnMultifamily',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ontario Multifamily Brokerage | OnMultifamily | Colliers',
-    description: 'Over $1.2B in completed multifamily sales across Ontario. 81% closing rate. Led by Dayma Itamunoala, SVP at Colliers.',
+    title: 'Colliers Multifamily Ontario | OnMultifamily | Dayma Itamunoala',
+    description: 'Colliers Ontario Multifamily Team led by Dayma Itamunoala, SVP. Over $1.2B in apartment building sales. 81% closing rate.',
     images: ['/images/hero-img.png'],
   },
   robots: { index: true, follow: true },
