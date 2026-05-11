@@ -6,6 +6,32 @@ const FROM_EMAIL = 'OnMultifamily <info@onmultifamily.com>'
 const TO_EMAIL = 'dayma.itamunoala@colliers.com'
 const CC_EMAILS = ['d.itamuno@gmail.com', 'zoe.prachter@colliers.com']
 
+// Spam detection: reject gibberish submissions before sending any emails
+function isSpam(fields: Record<string, string | undefined>): boolean {
+  const values = Object.values(fields).filter(Boolean) as string[]
+  for (const val of values) {
+    // Random mixed-case strings with no spaces (e.g. "UQnEKMluwsxXmAaeFueeeZBZ")
+    if (val.length > 8 && !/\s/.test(val) && /[A-Z].*[a-z].*[A-Z]|[a-z].*[A-Z].*[a-z]/.test(val) && !/^https?:\/\//.test(val) && !val.includes('@') && !val.includes('.')) {
+      return true
+    }
+    // Consonant ratio check: real words have vowels
+    const letters = val.replace(/[^a-zA-Z]/g, '')
+    if (letters.length > 10) {
+      const vowels = (letters.match(/[aeiouAEIOU]/g) || []).length
+      if (vowels / letters.length < 0.15) return true
+    }
+  }
+  // Email pattern: random dots/numbers in local part (e.g. p.aulhorridg.e69@gmail.com)
+  const email = fields.email || ''
+  const local = email.split('@')[0] || ''
+  if ((local.match(/\./g) || []).length >= 2 && /\d/.test(local) && local.length > 12) {
+    // Combined with a gibberish name, very likely spam
+    const name = fields.name || ''
+    if (name.length > 15 && !/\s/.test(name)) return true
+  }
+  return false
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
@@ -13,6 +39,12 @@ export async function POST(req: NextRequest) {
 
     if (!name || !email) {
       return NextResponse.json({ error: 'Name and email are required' }, { status: 400 })
+    }
+
+    // Silently reject spam (return success so bots don't retry)
+    if (isSpam({ name, email, phone, address, message })) {
+      console.log('Spam submission blocked:', { name, email })
+      return NextResponse.json({ success: true })
     }
 
     const isValuation = type === 'valuation'
