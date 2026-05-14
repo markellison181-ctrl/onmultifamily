@@ -19,6 +19,7 @@ interface Listing {
   status: string
   image: string | null
   brochure: string
+  brochureFr?: string
   ndaLink: string | null
   headline: string
   description: string
@@ -224,6 +225,16 @@ export default function ListingDetail({ listing, otherListings }: { listing: Lis
                     className="group bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] font-semibold tracking-[0.15em] uppercase px-8 py-4 hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] transition-all duration-500 text-center"
                   >
                     Download Brochure
+                  </a>
+                )}
+                {listing.brochureFr && (
+                  <a
+                    href={listing.brochureFr}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] sm:text-[13px] font-semibold tracking-[0.15em] uppercase px-8 py-4 hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] transition-all duration-500 text-center"
+                  >
+                    Télécharger la Brochure
                   </a>
                 )}
                 {listing.ndaLink && (
