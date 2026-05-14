@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
+        allow: ['/', '/services/', '/listings/', '/insights/', '/resources/'],
         disallow: ['/api/', '/map'],
       },
       // Explicitly allow AI crawlers

@@ -38,6 +38,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 0.85,
     },
+    // Service pages (SEO landing pages)
+    {
+      url: `${baseUrl}/services/apartment-buildings`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/seniors-housing`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/student-housing`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
   ]
 
   // All active listings

@@ -238,19 +238,27 @@ export function FAQPageSchema() {
 }
 
 export function ListingSchema({ listing }: { listing: any }) {
+  const city = listing.location?.split(',')[0]?.trim() || 'Ontario'
+  const typeText = listing.type === 'Student Housing' ? 'student housing' : listing.type === 'Seniors Housing' ? 'seniors housing' : 'apartment building'
+  const unitText = listing.units ? `${listing.units}-unit ` : ''
+
+  // Rich description for AI search engines
+  const richDescription = `${unitText}${typeText} for sale in ${city}, Ontario. ${listing.fullDescription || listing.description} Listed exclusively by Dayma Itamunoala, SVP at Colliers International. Ontario's most active multifamily investment sales team with $1.2B+ in completed transactions and an 81% closing rate. Contact for a confidential information package.`
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'RealEstateListing',
-    name: listing.title,
-    description: listing.description,
+    name: `${listing.title} - ${unitText}${typeText} for sale in ${city}`,
+    description: richDescription,
     url: `https://www.onmultifamily.com/listings/${listing.id}`,
     image: listing.image ? `https://www.onmultifamily.com${listing.image}` : undefined,
     datePosted: new Date().toISOString().split('T')[0],
     address: {
       '@type': 'PostalAddress',
       streetAddress: listing.address?.split(',')[0],
-      addressLocality: listing.location?.split(',')[0]?.trim(),
+      addressLocality: city,
       addressRegion: 'ON',
+      postalCode: listing.address?.match(/[A-Z]\d[A-Z]\s?\d[A-Z]\d/)?.[0] || undefined,
       addressCountry: 'CA',
     },
     ...(listing.lat && listing.lng && {
@@ -271,11 +279,23 @@ export function ListingSchema({ listing }: { listing: any }) {
     ...(listing.units && {
       numberOfRooms: listing.units,
     }),
+    additionalProperty: [
+      { '@type': 'PropertyValue', name: 'Property Type', value: listing.type || 'Multifamily' },
+      ...(listing.units ? [{ '@type': 'PropertyValue', name: 'Total Units', value: listing.units }] : []),
+      ...(listing.unitMix ? [{ '@type': 'PropertyValue', name: 'Unit Mix', value: listing.unitMix }] : []),
+      ...(listing.pricePerUnit ? [{ '@type': 'PropertyValue', name: 'Price Per Unit', value: `$${listing.pricePerUnit.toLocaleString()}` }] : []),
+      ...(listing.lotSize ? [{ '@type': 'PropertyValue', name: 'Lot Size', value: listing.lotSize }] : []),
+      { '@type': 'PropertyValue', name: 'Status', value: listing.status },
+      { '@type': 'PropertyValue', name: 'Market', value: `${city}, Ontario, Canada` },
+      { '@type': 'PropertyValue', name: 'Listing Broker', value: 'Dayma Itamunoala, SVP, Colliers International' },
+    ].filter(Boolean),
     broker: {
       '@type': 'RealEstateAgent',
       name: 'OnMultifamily | Colliers',
       telephone: '+1-647-915-3193',
+      email: 'dayma.itamunoala@colliers.com',
       url: 'https://www.onmultifamily.com',
+      areaServed: { '@type': 'State', name: 'Ontario', containedInPlace: { '@type': 'Country', name: 'Canada' } },
     },
   }
 
