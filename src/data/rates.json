@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-05-18",
+  "lastUpdated": "2026-05-19",
   "source": "Bank of Canada / Market Data",
   "rates": {
-    "goc2y": 2.96,
-    "goc5y": 3.22,
-    "goc10y": 3.56,
-    "cmb5y": 3.40,
-    "cmb10y": 3.87,
+    "goc2y": 3.07,
+    "goc5y": 3.36,
+    "goc10y": 3.70,
+    "cmb5y": 3.52,
+    "cmb10y": 3.99,
     "bankRate": 2.25,
     "usTreasury5y": 3.94,
     "usTreasury10y": 4.35
