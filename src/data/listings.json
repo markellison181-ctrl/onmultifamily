@@ -1,32 +1,5 @@
 [
   {
-    "id": "27-bold-street",
-    "title": "27 Bold Street",
-    "location": "Hamilton, Ontario",
-    "address": "27 Bold Street, Hamilton, Ontario L8P 1T3",
-    "type": "Multifamily",
-    "units": 32,
-    "price": 11990000,
-    "pricePerUnit": 374688,
-    "lotSize": null,
-    "status": "For Sale",
-    "image": "/images/listings/27-bold-street.jpeg",
-    "brochure": "/images/brochures/27-bold-street.pdf",
-    "ndaLink": "https://apps.colliers.com/DigitalDocs/Accept/16f73e67-14bc-48de-9297-314da96ee042",
-    "headline": "32-Unit Apartment Building in Hamilton's Durand Neighbourhood",
-    "description": "The Oscar on Bold is a 32-unit apartment building located at 27 Bold Street in Hamilton's prestigious Durand neighbourhood, one of the city's most established and desirable residential areas.",
-    "fullDescription": "Situated in the heart of Hamilton's Durand neighbourhood, The Oscar on Bold is a beautifully maintained heritage apartment building offering 32 residential suites. The property's character architecture, central location, and proximity to downtown Hamilton, St. Joseph's Healthcare, McMaster University's downtown campus, and the James Street South arts district make it a compelling investment opportunity. The building benefits from strong rental demand in one of Hamilton's tightest rental submarkets.",
-    "features": [
-      "32 residential suites in Hamilton's prestigious Durand neighbourhood",
-      "Heritage character building with distinctive architectural details",
-      "Walking distance to downtown Hamilton, St. Joseph's Hospital, and James Street South",
-      "Strong rental demand in supply-constrained submarket",
-      "Excellent transit connectivity and neighbourhood amenities"
-    ],
-    "lat": 43.2503,
-    "lng": -79.8711
-  },
-  {
     "id": "30-springhurst-avenue",
     "title": "30 Springhurst Avenue",
     "location": "Toronto, Ontario",
