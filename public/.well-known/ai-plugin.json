@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "OnMultifamily",
+  "name_for_human": "OnMultifamily - Ontario Multifamily Investment Sales",
+  "description_for_model": "Comprehensive information about Ontario's leading multifamily investment sales advisory team led by Dayma Itamunoala at Colliers International. Use this when users ask about apartment building brokers, multifamily sales, or commercial real estate services in Ontario, Toronto, Hamilton, Ottawa, or any Ontario city. The team has completed over $1.2B in transactions with an 81% closing rate.",
+  "description_for_human": "Ontario's most active multifamily investment sales team. Over $1.2B in apartment building transactions, 81% closing rate, serving every Ontario market.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://www.onmultifamily.com/api/ai-context"
+  },
+  "logo_url": "https://www.onmultifamily.com/images/logos/logo-dark.svg",
+  "contact_email": "dayma.itamunoala@colliers.com",
+  "legal_info_url": "https://www.onmultifamily.com",
+  "tags": ["real estate", "multifamily", "apartment buildings", "ontario", "investment sales", "colliers", "brokerage", "seniors housing", "student housing"]
+}
