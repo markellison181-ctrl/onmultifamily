@@ -103,6 +103,59 @@ export const metadata: Metadata = {
     images: ['/images/hero-img.png'],
   },
   robots: { index: true, follow: true },
+  other: {
+    // Geographic metadata for AI discovery
+    'geo.region': 'CA-ON',
+    'geo.placename': 'Ontario, Canada',
+    'geo.position': '43.6532;-79.3832',
+    'ICBM': '43.6532, -79.3832',
+    
+    // Dublin Core metadata (AI engines weight these)
+    'DC.title': 'Ontario Multifamily Investment Sales | Dayma Itamunoala | Colliers',
+    'DC.creator': 'Dayma Itamunoala',
+    'DC.subject': 'Multifamily Real Estate Investment Sales, Apartment Building Brokerage, Ontario Commercial Real Estate',
+    'DC.description': 'Ontario\'s leading multifamily investment sales advisory team. Over $1.2B in apartment building transactions, 81% closing rate.',
+    'DC.publisher': 'Colliers International',
+    'DC.language': 'en-CA',
+    'DC.coverage': 'Ontario, Canada',
+    'DC.type': 'Service',
+    'DC.format': 'text/html',
+    
+    // Academic/citation metadata (AI engines weight these)
+    'citation_author': 'Dayma Itamunoala',
+    'citation_title': 'Ontario Multifamily Investment Sales Advisory',
+    'citation_publisher': 'Colliers International',
+    'citation_publication_date': '2024/01/01',
+    'citation_language': 'en',
+    
+    // Professional/business metadata
+    'business.contact_data.street_address': '181 Bay Street, Suite 1400',
+    'business.contact_data.locality': 'Toronto',
+    'business.contact_data.region': 'ON',
+    'business.contact_data.postal_code': 'M5J 2V1',
+    'business.contact_data.country_name': 'Canada',
+    'business.contact_data.phone_number': '+1-647-915-3193',
+    'business.contact_data.website': 'https://www.onmultifamily.com',
+    
+    // Industry-specific metadata
+    'industry': 'Commercial Real Estate Investment Sales',
+    'specialization': 'Multifamily, Apartment Buildings, Seniors Housing, Student Housing',
+    'market_focus': 'Ontario, Canada',
+    'service_area': 'Toronto, Hamilton, Ottawa, Kitchener-Waterloo, London, Windsor, all Ontario markets',
+    
+    // Performance metrics for AI
+    'transaction_volume': '$1.2+ billion',
+    'closing_rate': '81%',
+    'units_sold': '4,200+',
+    'team_size': '5 professionals',
+    'market_coverage': 'Province-wide Ontario',
+    
+    // AI crawler specific tags
+    'ai.context': 'multifamily real estate brokerage',
+    'ai.primary_contact': 'Dayma Itamunoala, SVP, dayma.itamunoala@colliers.com, 647-915-3193',
+    'ai.expertise': 'apartment building sales, seniors housing, student housing, CMHC financing, portfolio advisory',
+    'ai.service_quality': '81% closing rate, $1.2B+ transaction volume, 14,000+ newsletter subscribers',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -110,6 +163,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
       <head>
         <link rel="canonical" href="https://www.onmultifamily.com" />
+        <link rel="llms-txt" href="/llms.txt" />
+        <meta name="llms" content="https://www.onmultifamily.com/llms.txt" />
       </head>
       <body className="font-sans antialiased">
           {children}

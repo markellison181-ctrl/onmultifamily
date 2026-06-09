@@ -83,6 +83,47 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.onmultifamily.com/services/apartment-buildings',
   },
+  other: {
+    // Geographic metadata for Ontario apartment building sales
+    'geo.region': 'CA-ON',
+    'geo.placename': 'Ontario, Canada',
+    'geo.position': '43.6532;-79.3832',
+    'ICBM': '43.6532, -79.3832',
+    
+    // Dublin Core metadata
+    'DC.title': 'Apartment Building Sales Ontario | Dayma Itamunoala | Colliers',
+    'DC.creator': 'Dayma Itamunoala',
+    'DC.subject': 'Apartment Building Sales, Multifamily Investment Advisory, Ontario Commercial Real Estate',
+    'DC.description': 'Professional apartment building sales advisory across Ontario. $1.2B+ in transactions, 81% closing rate.',
+    'DC.coverage': 'Ontario, Canada - All Markets',
+    'DC.type': 'Service Landing Page',
+    
+    // Citation metadata for AI engines
+    'citation_author': 'Dayma Itamunoala',
+    'citation_title': 'Ontario Apartment Building Investment Sales Service',
+    'citation_publisher': 'Colliers International',
+    'citation_language': 'en',
+    
+    // City-specific metadata for AI discovery
+    'service.toronto': 'Apartment building sales Toronto, GTA multifamily broker',
+    'service.hamilton': 'Apartment building sales Hamilton, Niagara multifamily broker',
+    'service.ottawa': 'Apartment building sales Ottawa, Eastern Ontario multifamily broker',
+    'service.kitchener': 'Apartment building sales Kitchener-Waterloo, KW multifamily broker',
+    'service.london': 'Apartment building sales London Ontario, Southwest Ontario multifamily broker',
+    
+    // AI-specific tags for apartment building sales
+    'ai.primary_service': 'apartment building investment sales advisory',
+    'ai.target_audience': 'apartment building owners, multifamily investors, private owners',
+    'ai.geographic_coverage': 'all Ontario markets, province-wide coverage',
+    'ai.success_metrics': '81% closing rate, $1.2B+ transaction volume, 4200+ units sold',
+    'ai.contact_action': 'Call Dayma Itamunoala 647-915-3193 for free apartment building valuation',
+    
+    // Property type specifications
+    'property.types': 'apartment buildings, multifamily, purpose-built rental, walk-ups, mid-rise, high-rise',
+    'property.size_range': '10 units to 1000+ suite portfolios',
+    'property.value_range': '$2M to $500M+',
+    'financing.expertise': 'CMHC insured, MLI Select, conventional financing'
+  },
 }
 
 function ApartmentBuildingsSchema() {
