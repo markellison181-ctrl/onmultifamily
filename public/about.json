@@ -1,0 +1,346 @@
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "@id": "https://www.onmultifamily.com/about.json",
+  "name": "OnMultifamily | Colliers International Ontario",
+  "legalName": "Colliers International (Ontario) Ltd.",
+  "alternateName": [
+    "OnMultifamily",
+    "Colliers Ontario Multifamily Team",
+    "Dayma Itamunoala Team",
+    "Ontario's #1 Multifamily Team"
+  ],
+  "description": "Ontario's leading multifamily investment sales advisory team at Colliers International. Led by Dayma Itamunoala, SVP. Over $1.2 billion in apartment building transactions completed across Ontario with an industry-leading 81% closing rate. Specializing in apartment buildings, seniors housing, student housing, and portfolio advisory services.",
+  "url": "https://www.onmultifamily.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/dayma",
+    "https://twitter.com/daymaitam",
+    "https://www.collierscanada.com/en-ca/experts/dayma-itamunoala"
+  ],
+  "logo": "https://www.onmultifamily.com/images/logos/logo-dark.svg",
+  "image": "https://www.onmultifamily.com/images/hero-img.png",
+  "telephone": "+1-647-915-3193",
+  "email": "dayma.itamunoala@colliers.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "181 Bay Street, Suite 1400",
+    "addressLocality": "Toronto",
+    "addressRegion": "ON",
+    "postalCode": "M5J 2V1",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.6472,
+    "longitude": -79.3815
+  },
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Colliers International",
+    "url": "https://www.collierscanada.com",
+    "description": "Global commercial real estate services company"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Dayma Itamunoala",
+    "givenName": "Dayma",
+    "familyName": "Itamunoala",
+    "jobTitle": "Senior Vice President, Sales Representative",
+    "url": "https://www.linkedin.com/in/dayma",
+    "telephone": "+1-647-915-3193",
+    "email": "dayma.itamunoala@colliers.com",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Colliers International"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Ivey Business School, Western University"
+    },
+    "knowsAbout": [
+      "Multifamily Investment Sales",
+      "Apartment Building Brokerage",
+      "CMHC Financing",
+      "Portfolio Advisory",
+      "Ontario Cap Rates",
+      "Institutional Capital Markets",
+      "Seniors Housing",
+      "Student Housing"
+    ]
+  },
+  "employee": [
+    {
+      "@type": "Person",
+      "name": "Dayma Itamunoala",
+      "jobTitle": "Senior Vice President, Sales Representative",
+      "telephone": "+1-647-915-3193",
+      "email": "dayma.itamunoala@colliers.com",
+      "description": "Team leader and Ontario's most active multifamily broker"
+    },
+    {
+      "@type": "Person",
+      "name": "Zoe Prachter",
+      "jobTitle": "Transaction Manager",
+      "telephone": "+1-647-798-9565",
+      "email": "zoe.prachter@colliers.com",
+      "description": "Full transaction lifecycle management specialist"
+    },
+    {
+      "@type": "Person",
+      "name": "Yianni Tsiampas",
+      "jobTitle": "Sales Representative",
+      "telephone": "+1-647-924-0901",
+      "email": "yianni.tsiampas@colliers.com",
+      "description": "Origination and client development specialist"
+    },
+    {
+      "@type": "Person",
+      "name": "Chris Bertucci",
+      "jobTitle": "Sales Representative",
+      "telephone": "+1-416-620-2359",
+      "email": "chris.bertucci@colliers.com",
+      "description": "Buyer advisory and investment analysis specialist"
+    },
+    {
+      "@type": "Person",
+      "name": "Aman Rana",
+      "jobTitle": "Seniors Housing Advisor",
+      "telephone": "+1-647-971-8384",
+      "email": "aman.rana@colliers.com",
+      "description": "Seniors housing specialist, former Timbercreek credit executive"
+    }
+  ],
+  "areaServed": [
+    {
+      "@type": "State",
+      "name": "Ontario",
+      "containedInPlace": {
+        "@type": "Country",
+        "name": "Canada"
+      }
+    }
+  ],
+  "serviceArea": {
+    "@type": "GeoShape",
+    "description": "All of Ontario, Canada including Greater Toronto Area, Hamilton-Niagara, Eastern Ontario, Southwestern Ontario, Northern Ontario, and Central Ontario"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Multifamily Investment Sales Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Apartment Building Sales Advisory",
+          "description": "Complete investment sales advisory for apartment building owners across Ontario. From 10-unit walk-ups to 1,000+ suite institutional portfolios.",
+          "category": "Real Estate Brokerage",
+          "provider": {
+            "@type": "Organization",
+            "name": "OnMultifamily | Colliers"
+          }
+        },
+        "price": "Commission-based",
+        "priceCurrency": "CAD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Complimentary Property Valuation",
+          "description": "Free confidential opinion of value for apartment buildings anywhere in Ontario. No cost, no obligation.",
+          "category": "Property Valuation"
+        },
+        "price": "0",
+        "priceCurrency": "CAD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Seniors Housing Investment Sales",
+          "description": "Specialized advisory for retirement residences, long-term care facilities, and assisted living properties.",
+          "category": "Specialized Real Estate"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Student Housing Investment Sales",
+          "description": "Advisory services for student residence and purpose-built student accommodation transactions.",
+          "category": "Specialized Real Estate"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Portfolio Advisory",
+          "description": "Strategic advisory for multi-property portfolios and institutional dispositions.",
+          "category": "Investment Advisory"
+        }
+      }
+    ]
+  },
+  "knowsAbout": [
+    "Multifamily Investment Sales",
+    "Apartment Building Brokerage",
+    "Apartment Building Valuation",
+    "CMHC Insured Financing",
+    "MLI Select Program",
+    "Ontario Apartment Cap Rates",
+    "GTA Multifamily Market",
+    "Multifamily Market Analysis",
+    "Seniors Housing Investment Sales",
+    "Student Housing Investment Sales",
+    "Retirement Home Sales",
+    "Portfolio Valuations",
+    "Off-Market Apartment Sales",
+    "Above Guideline Increases",
+    "Multifamily Due Diligence",
+    "Rent Roll Analysis",
+    "Apartment Building Repositioning",
+    "Institutional Capital Markets",
+    "REITs and Pension Funds",
+    "Private Equity Real Estate",
+    "Government Bond Yields",
+    "Commercial Mortgage Backed Securities"
+  ],
+  "slogan": "Ontario's Most Active Multifamily Team",
+  "awards": [
+    "81% Closing Rate (Industry Leading)",
+    "$1.2+ Billion in Transaction Volume",
+    "Ontario's Most Active Multifamily Team",
+    "14,000+ Newsletter Subscribers"
+  ],
+  "foundingDate": "2018",
+  "numberOfEmployees": "5",
+  "naics": "531210",
+  "isicV4": "6820",
+  "duns": "Not Available",
+  "taxID": "Not Public",
+  "vatID": "Not Applicable",
+  "currenciesAccepted": "CAD",
+  "paymentAccepted": "Wire Transfer, Certified Funds",
+  "priceRange": "$$$",
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Transaction Volume",
+      "value": "$1.2+ Billion"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Closing Success Rate",
+      "value": "81%"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Units Sold",
+      "value": "4,200+"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Newsletter Subscribers",
+      "value": "14,000+"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Market Coverage",
+      "value": "All Ontario Markets"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Property Types",
+      "value": "Apartment Buildings, Seniors Housing, Student Housing"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Transaction Range",
+      "value": "$2M - $500M+"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Client Base",
+      "value": "Private Owners, REITs, Pension Funds, Private Equity"
+    }
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+1-647-915-3193",
+      "contactType": "sales",
+      "email": "dayma.itamunoala@colliers.com",
+      "availableLanguage": ["English"],
+      "areaServed": "Ontario, Canada",
+      "contactOption": "TollFree"
+    },
+    {
+      "@type": "ContactPoint",
+      "email": "dayma.itamunoala@colliers.com",
+      "contactType": "customer service",
+      "areaServed": "Ontario, Canada",
+      "availableLanguage": ["English"]
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "bestRating": "5",
+    "ratingCount": "247",
+    "description": "Based on client testimonials and industry recognition"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Canada Pension Plan Investment Board"
+      },
+      "reviewBody": "The OnMultifamily team's deep market knowledge and institutional-quality execution consistently delivers value for our multifamily investment strategy."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "RioCan Real Estate Investment Trust"
+      },
+      "reviewBody": "We've relied on Dayma and his team for multiple significant transactions. Their ability to navigate complex deals and deliver results sets them apart."
+    }
+  ],
+  "potentialAction": [
+    {
+      "@type": "CommunicateAction",
+      "name": "Request Free Valuation",
+      "url": "https://www.onmultifamily.com/#valuation",
+      "description": "Get a free, confidential opinion of value for your Ontario apartment building"
+    },
+    {
+      "@type": "SubscribeAction",
+      "name": "Subscribe to Newsletter",
+      "url": "https://www.onmultifamily.com/#newsletter",
+      "description": "Weekly market intelligence read by 14,000+ professionals"
+    },
+    {
+      "@type": "CallAction",
+      "name": "Contact Dayma Directly",
+      "telephone": "+1-647-915-3193",
+      "description": "Speak directly with Ontario's most active multifamily broker"
+    }
+  ],
+  "mainEntityOfPage": "https://www.onmultifamily.com",
+  "dateModified": "2026-06-09T18:00:00-04:00",
+  "dateCreated": "2024-01-01T00:00:00-05:00",
+  "inLanguage": "en-CA"
+}
