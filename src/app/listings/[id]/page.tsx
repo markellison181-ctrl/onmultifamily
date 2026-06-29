@@ -9,7 +9,6 @@ export async function generateStaticParams() {
 
 // Neighbourhood context for richer SEO descriptions
 const neighbourhoodContext: Record<string, string> = {
-  '30-springhurst-avenue': 'Located in Toronto\'s Parkdale-Liberty Village corridor, steps from the waterfront, BMO Field, and Exhibition Place. Strong rental demand driven by proximity to downtown, transit, and lakefront amenities.',
   '700-spadina-avenue': 'Situated on the University of Toronto\'s St. George campus in the heart of downtown Toronto. One of Canada\'s premier post-secondary institutions with 75,000+ students.',
   '89-chestnut-street': 'Located at the southern edge of the University of Toronto\'s St. George campus in downtown Toronto, adjacent to the Discovery District and Toronto\'s entertainment core.',
   '231-vaughan-road': 'Situated in Toronto\'s Oakwood-Vaughan neighbourhood near St. Clair West, a rapidly gentrifying corridor with strong rental demand, transit access, and neighbourhood amenities.',
