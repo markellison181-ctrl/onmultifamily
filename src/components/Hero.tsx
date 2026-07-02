@@ -20,15 +20,14 @@ function formatCount(n: number, decimals: number, useLocale: boolean): string {
 }
 
 function StatCounter({ stat }: { stat: StatDef }) {
-  const [count, setCount] = useState(0)
-  const [started, setStarted] = useState(false)
+  // Initialize at target so static HTML (crawlers, AI answer engines, no-JS)
+  // contains the real numbers. The animation runs client-side on mount.
+  const [count, setCount] = useState(stat.target)
   const animated = useRef(false)
 
   useEffect(() => {
     if (animated.current) return
     animated.current = true
-    // Start immediately since hero is above the fold
-    setStarted(true)
     const duration = 1800
     const startTime = performance.now()
 
@@ -44,7 +43,7 @@ function StatCounter({ stat }: { stat: StatDef }) {
   }, [stat.target])
 
   return (
-    <div className={`group transition-opacity duration-500 ${started ? 'opacity-100' : 'opacity-0'}`}>
+    <div className="group">
       <div className="font-serif text-3xl sm:text-4xl md:text-[2.75rem] text-white mb-2 number-display group-hover:text-gradient-gold transition-all duration-500">
         {stat.prefix}{formatCount(count, stat.decimals, stat.useLocale)}{stat.suffix}
       </div>
