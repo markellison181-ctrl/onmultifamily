@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-07-01",
+  "lastUpdated": "2026-07-02",
   "source": "Bank of Canada / Market Data",
   "rates": {
-    "goc2y": 2.73,
-    "goc5y": 3.00,
-    "goc10y": 3.37,
-    "cmb5y": 3.19,
-    "cmb10y": 3.64,
+    "goc2y": 2.74,
+    "goc5y": 3.01,
+    "goc10y": 3.38,
+    "cmb5y": 3.20,
+    "cmb10y": 3.65,
     "bankRate": 2.25,
     "usTreasury5y": 4.14,
     "usTreasury10y": 4.38
@@ -14,31 +14,31 @@
   "history": {
     "goc2y": {
       "prevClose": 2.73,
-      "weekAgo": 2.73,
+      "weekAgo": 2.75,
       "monthAgo": 2.94,
       "yearAgo": 2.45
     },
     "goc5y": {
       "prevClose": 3.00,
-      "weekAgo": 2.99,
+      "weekAgo": 3.02,
       "monthAgo": 3.18,
       "yearAgo": 2.63
     },
     "goc10y": {
       "prevClose": 3.37,
-      "weekAgo": 3.36,
+      "weekAgo": 3.39,
       "monthAgo": 3.53,
       "yearAgo": 2.85
     },
     "cmb5y": {
       "prevClose": 3.19,
-      "weekAgo": 3.28,
+      "weekAgo": 3.21,
       "monthAgo": 3.33,
       "yearAgo": 2.77
     },
     "cmb10y": {
       "prevClose": 3.64,
-      "weekAgo": 3.70,
+      "weekAgo": 3.66,
       "monthAgo": 3.82,
       "yearAgo": 3.34
     },
