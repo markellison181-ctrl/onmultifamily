@@ -1,5 +1,34 @@
 [
   {
+    "id": "27-bold-street",
+    "title": "The Oscar on Bold (27 Bold Street)",
+    "location": "Hamilton, Ontario",
+    "address": "27 Bold Street, Hamilton, Ontario L8P 1T3",
+    "type": "Multifamily",
+    "units": 32,
+    "price": null,
+    "pricePerUnit": null,
+    "lotSize": null,
+    "status": "For Sale",
+    "image": "/images/listings/27-bold-street.jpeg",
+    "brochure": "/images/brochures/27-bold-street.pdf",
+    "ndaLink": "https://apps.colliers.com/DigitalDocs/Accept/b422adcc-03dd-4807-8d79-fc0b57d23c4a",
+    "collierLink": "https://www.collierscanada.com/en-ca/properties/the-oscar-on-bold-32-unit-multifamily-apartment-building-for-sale-in-hamilton/can-27-bold-street-hamilton-ontario-l8p-1t3/can2020444",
+    "headline": "32-Unit Apartment Building in Hamilton's Durand Neighbourhood",
+    "description": "The Oscar on Bold is a 32-unit apartment building located at 27 Bold Street in Hamilton's prestigious Durand neighbourhood, one of the city's most established and desirable residential areas.",
+    "fullDescription": "Situated in the heart of Hamilton's Durand neighbourhood, The Oscar on Bold is a beautifully restored heritage apartment building offering 32 residential suites. Extensively renovated in 2019-2020 with modern mechanical systems and updated suite finishes, the property combines character architecture with contemporary interiors. Its central location offers walking-distance proximity to downtown Hamilton, St. Joseph's Healthcare, McMaster University's downtown campus, and the James Street South arts district, supported by strong rental demand in one of Hamilton's tightest rental submarkets.",
+    "features": [
+      "32 residential suites in Hamilton's prestigious Durand neighbourhood",
+      "Heritage character building extensively restored in 2019-2020",
+      "Modern suite finishes including quartz counters and in-suite laundry connections",
+      "Walking distance to downtown Hamilton, St. Joseph's Hospital, and James Street South",
+      "Strong rental demand in supply-constrained submarket",
+      "Excellent transit connectivity and neighbourhood amenities"
+    ],
+    "lat": 43.2503,
+    "lng": -79.8711
+  },
+  {
     "id": "2422-queen-street-east",
     "title": "2422 Queen Street East",
     "location": "Toronto, Ontario",
