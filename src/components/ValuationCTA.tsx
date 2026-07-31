@@ -1,10 +1,16 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 export default function ValuationCTA() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', address: '' })
+  const [honeypot, setHoneypot] = useState('')
+  const [fts, setFts] = useState(0)
+
+  useEffect(() => {
+    setFts(Date.now())
+  }, [])
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
@@ -17,7 +23,7 @@ export default function ValuationCTA() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, type: 'valuation' }),
+        body: JSON.stringify({ ...form, type: 'valuation', website: honeypot, fts }),
       })
       if (res.ok) {
         setSubmitted(true)
@@ -109,6 +115,20 @@ export default function ValuationCTA() {
                 <p className="text-white/30 text-[13px] mb-8">
                   A member of our team will reach out within 24 hours to schedule a confidential conversation.
                 </p>
+
+                {/* Honeypot: invisible to humans, bots auto-fill it */}
+                <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px', overflow: 'hidden' }}>
+                  <label htmlFor="website-field">Website</label>
+                  <input
+                    id="website-field"
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={e => setHoneypot(e.target.value)}
+                  />
+                </div>
 
                 <div className="space-y-5">
                   <input

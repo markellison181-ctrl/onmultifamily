@@ -6,44 +6,89 @@ const FROM_EMAIL = 'OnMultifamily <info@onmultifamily.com>'
 const TO_EMAIL = 'dayma.itamunoala@colliers.com'
 const CC_EMAILS = ['d.itamuno@gmail.com', 'zoe.prachter@colliers.com']
 
-// Spam detection: reject gibberish submissions before sending any emails
-function isSpam(fields: Record<string, string | undefined>): boolean {
-  const values = Object.values(fields).filter(Boolean) as string[]
-  for (const val of values) {
-    // Random mixed-case strings with no spaces (e.g. "UQnEKMluwsxXmAaeFueeeZBZ")
-    if (val.length > 8 && !/\s/.test(val) && /[A-Z].*[a-z].*[A-Z]|[a-z].*[A-Z].*[a-z]/.test(val) && !/^https?:\/\//.test(val) && !val.includes('@') && !val.includes('.')) {
-      return true
-    }
-    // Consonant ratio check: real words have vowels
-    const letters = val.replace(/[^a-zA-Z]/g, '')
-    if (letters.length > 10) {
-      const vowels = (letters.match(/[aeiouAEIOU]/g) || []).length
-      if (vowels / letters.length < 0.15) return true
-    }
-  }
-  // Email pattern: random dots/numbers in local part (e.g. p.aulhorridg.e69@gmail.com)
-  const email = fields.email || ''
-  const local = email.split('@')[0] || ''
-  if ((local.match(/\./g) || []).length >= 2 && /\d/.test(local) && local.length > 12) {
-    // Combined with a gibberish name, very likely spam
-    const name = fields.name || ''
-    if (name.length > 15 && !/\s/.test(name)) return true
-  }
+// ---------- Spam defenses ----------
+// Layer 1: honeypot field (hidden input bots auto-fill)
+// Layer 2: timing token (fts = form render timestamp; humans take > 4s, and
+//          direct-to-API bots never send it at all)
+// Layer 3: gibberish scoring (backup heuristics)
+
+const MIN_FILL_MS = 4000
+const MAX_FILL_MS = 24 * 60 * 60 * 1000
+
+// Words that look like random keyboard output: long consonant runs / few vowels.
+// y counts as a vowel to protect real names (Krystyna, Yianni).
+function isGibberishWord(word: string): boolean {
+  const letters = word.replace(/[^a-zA-Z]/g, '')
+  if (letters.length < 5) return false
+  const vowels = (letters.match(/[aeiouyAEIOUY]/g) || []).length
+  if (vowels / letters.length < 0.2) return true
+  if (/[bcdfghjklmnpqrstvwxz]{4,}/i.test(letters)) return true
   return false
+}
+
+function isSpam(fields: Record<string, string | undefined>): boolean {
+  let score = 0
+  const name = fields.name || ''
+  const address = fields.address || ''
+  const email = fields.email || ''
+  const message = fields.message || ''
+
+  // Gibberish words in name or property address (e.g. "Mzgui Rhygwhx", "Dkzinxtriw")
+  const nameWords = name.split(/\s+/).filter(Boolean)
+  const addrWords = address.split(/\s+/).filter(Boolean)
+  if (nameWords.some(isGibberishWord)) score += 2
+  if (addrWords.some(isGibberishWord)) score += 2
+
+  // Valuation "address" with no digits and no known street/location words is suspicious
+  if (address && !/\d/.test(address) && !/\b(st|street|ave|avenue|rd|road|dr|drive|blvd|boulevard|lane|ln|court|crt|ct|cres|crescent|way|circle|cir|pkwy|parkway|place|pl|toronto|ontario|hamilton|ottawa|london|kitchener|mississauga|brampton|unit|suite|portfolio|building|apartment)\b/i.test(address)) {
+    score += 1
+  }
+
+  // Random mixed-case token with no spaces (e.g. "UQnEKMluwsxXmAaeFueeeZBZ")
+  for (const val of [name, address, message]) {
+    if (val.length > 8 && !/\s/.test(val) && /[a-z][A-Z].*[a-z][A-Z]|[A-Z][a-z]+[A-Z][a-z]+[A-Z]/.test(val) && !val.includes('@')) {
+      score += 2
+    }
+  }
+
+  // Spam-tool email pattern: dotted/numbered local part (e.g. ja.ym.e.s.k.in.g@gmail.com)
+  const local = email.split('@')[0] || ''
+  const dots = (local.match(/\./g) || []).length
+  if (dots >= 3) score += 2
+  else if (dots >= 2 && /\d/.test(local)) score += 1
+
+  // Links in message = classic spam
+  if (/https?:\/\//i.test(message)) score += 1
+
+  return score >= 3
 }
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { name, email, phone, address, message, type } = body
+    const { name, email, phone, address, message, type, website, fts } = body
 
     if (!name || !email) {
       return NextResponse.json({ error: 'Name and email are required' }, { status: 400 })
     }
 
-    // Silently reject spam (return success so bots don't retry)
+    // Layer 1: honeypot - hidden field only bots fill in
+    if (website) {
+      console.log('Spam blocked (honeypot):', { name, email })
+      return NextResponse.json({ success: true })
+    }
+
+    // Layer 2: timing token - our forms always send fts (render timestamp).
+    // Missing/invalid token means the API was hit directly; instant fills are bots.
+    const elapsed = Date.now() - Number(fts)
+    if (!fts || Number.isNaN(elapsed) || elapsed < MIN_FILL_MS || elapsed > MAX_FILL_MS) {
+      console.log('Spam blocked (timing):', { name, email, fts, elapsed })
+      return NextResponse.json({ success: true })
+    }
+
+    // Layer 3: gibberish scoring (silent reject so bots don't retry)
     if (isSpam({ name, email, phone, address, message })) {
-      console.log('Spam submission blocked:', { name, email })
+      console.log('Spam blocked (heuristics):', { name, email })
       return NextResponse.json({ success: true })
     }
 

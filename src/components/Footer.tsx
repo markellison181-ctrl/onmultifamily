@@ -1,10 +1,16 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useMailchimp } from '@/lib/mailchimp'
 export default function Footer() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', address: '', message: '' })
+  const [honeypot, setHoneypot] = useState('')
+  const [fts, setFts] = useState(0)
+
+  useEffect(() => {
+    setFts(Date.now())
+  }, [])
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
   const [contactError, setContactError] = useState('')
@@ -19,7 +25,7 @@ export default function Footer() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, type: 'contact' }),
+        body: JSON.stringify({ ...form, type: 'contact', website: honeypot, fts }),
       })
       if (res.ok) {
         setSent(true)
@@ -99,6 +105,19 @@ export default function Footer() {
                 </div>
               ) : (
                 <form className="space-y-6" onSubmit={handleContact}>
+                  {/* Honeypot: invisible to humans, bots auto-fill it */}
+                  <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px', overflow: 'hidden' }}>
+                    <label htmlFor="footer-website-field">Website</label>
+                    <input
+                      id="footer-website-field"
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={honeypot}
+                      onChange={e => setHoneypot(e.target.value)}
+                    />
+                  </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <input
                       type="text"
