@@ -1,44 +1,44 @@
 {
-  "lastUpdated": "2026-08-04",
+  "lastUpdated": "2026-08-05",
   "source": "Bank of Canada / Market Data",
   "rates": {
-    "goc2y": 2.91,
-    "goc5y": 3.27,
-    "goc10y": 3.65,
-    "cmb5y": 3.45,
-    "cmb10y": 3.88,
+    "goc2y": 2.83,
+    "goc5y": 3.17,
+    "goc10y": 3.55,
+    "cmb5y": 3.35,
+    "cmb10y": 3.78,
     "bankRate": 2.25,
-    "usTreasury5y": 4.45,
-    "usTreasury10y": 4.75
+    "usTreasury5y": 4.35,
+    "usTreasury10y": 4.63
   },
   "history": {
     "goc2y": {
-      "prevClose": 2.85,
-      "weekAgo": 2.90,
+      "prevClose": 2.91,
+      "weekAgo": 2.85,
       "monthAgo": 2.94,
       "yearAgo": 2.45
     },
     "goc5y": {
-      "prevClose": 3.19,
-      "weekAgo": 3.22,
+      "prevClose": 3.27,
+      "weekAgo": 3.19,
       "monthAgo": 3.18,
       "yearAgo": 2.63
     },
     "goc10y": {
-      "prevClose": 3.59,
-      "weekAgo": 3.60,
+      "prevClose": 3.65,
+      "weekAgo": 3.58,
       "monthAgo": 3.53,
       "yearAgo": 2.85
     },
     "cmb5y": {
-      "prevClose": 3.37,
-      "weekAgo": 3.40,
+      "prevClose": 3.45,
+      "weekAgo": 3.37,
       "monthAgo": 3.36,
       "yearAgo": 2.77
     },
     "cmb10y": {
-      "prevClose": 3.82,
-      "weekAgo": 3.83,
+      "prevClose": 3.88,
+      "weekAgo": 3.81,
       "monthAgo": 3.76,
       "yearAgo": 3.34
     },
@@ -49,13 +49,13 @@
       "yearAgo": 2.75
     },
     "usTreasury5y": {
-      "prevClose": 4.44,
+      "prevClose": 4.45,
       "weekAgo": 4.22,
       "monthAgo": 3.96,
       "yearAgo": 3.82
     },
     "usTreasury10y": {
-      "prevClose": 4.69,
+      "prevClose": 4.75,
       "weekAgo": 4.43,
       "monthAgo": 4.33,
       "yearAgo": 4.24
