@@ -1,5 +1,17 @@
 [
   {
+    "id": "391-major-mackenzie-drive-east",
+    "name": "391 Major Mackenzie Drive East",
+    "address": "391 Major Mackenzie Drive East, Richmond Hill, ON",
+    "city": "Richmond Hill",
+    "lat": 43.8736,
+    "lng": -79.4247,
+    "price": 12900000,
+    "suites": 44,
+    "capRate": null,
+    "status": "Active"
+  },
+  {
     "id": "56-south-forster-park-drive",
     "name": "56 South Forster Park Drive",
     "address": "56 South Forster Park Drive, Oakville, ON",
@@ -9,7 +21,7 @@
     "price": 0,
     "suites": 15,
     "capRate": null,
-    "status": "Under Contract"
+    "status": "Sold"
   },
   {
     "id": "49-st-marys-river-drive",
@@ -21,7 +33,7 @@
     "price": 0,
     "suites": 102,
     "capRate": null,
-    "status": "Active"
+    "status": "Sold"
   },
   {
     "id": "17-19-collier-street",
@@ -393,6 +405,6 @@
     "price": 0,
     "suites": 0,
     "capRate": null,
-    "status": "Active"
+    "status": "Under Contract"
   }
 ]
