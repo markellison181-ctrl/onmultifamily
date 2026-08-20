@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   const typeTextCap = listing.type === 'Student Housing' ? 'Student Housing' : listing.type === 'Seniors Housing' ? 'Seniors Housing' : 'Apartment Building'
   
   const neighbourhood = neighbourhoodContext[listing.id] || ''
-  const statusText = listing.status === 'Under Contract' ? ' (Under Contract)' : ''
+  const statusText = listing.status === 'Under Contract' ? ' (Under Contract)' : listing.status === 'Sold' ? ' (Sold)' : ''
   const priceLine = listing.price ? ` Offered at ${priceDisplay}${pricePerUnitDisplay ? ` (${pricePerUnitDisplay})` : ''}.` : ''
 
   // Rich description combining property details + neighbourhood + team credibility

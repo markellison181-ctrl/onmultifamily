@@ -535,7 +535,7 @@ export function ListingSchema({ listing }: { listing: any }) {
         '@type': 'Offer',
         price: listing.price,
         priceCurrency: 'CAD',
-        availability: listing.status === 'Under Contract' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
+        availability: listing.status === 'Under Contract' || listing.status === 'Sold' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
       },
     }),
     ...(listing.units && {
