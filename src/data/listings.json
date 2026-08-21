@@ -1,37 +1,5 @@
 [
   {
-    "id": "6-milepost-place",
-    "title": "Essex House (6 Milepost Place)",
-    "location": "Toronto (Thorncliffe Park / Leaside), Ontario",
-    "address": "6 Milepost Place, Toronto, ON M4H 1C9",
-    "type": "Multifamily",
-    "units": 82,
-    "price": 23500000,
-    "pricePerUnit": 286585,
-    "lotSize": "1.23 ac",
-    "status": "For Sale",
-    "image": "/images/listings/6-milepost-place.jpg",
-    "brochure": "",
-    "ndaLink": null,
-    "headline": "Essex House — 82-Suite Mid-Rise Apartment Building in Thorncliffe Park / Leaside",
-    "description": "Essex House is an 82-suite, six-storey apartment building situated on a 1.23-acre site in Toronto's highly desirable Thorncliffe Park / Leaside neighbourhood. The property is 100% leased with an estimated Year 1 NOI of $922,473 and approximately 57% rental upside to market.",
-    "fullDescription": "Essex House is an 82-suite, six-storey mid-rise apartment building situated on a 1.23-acre site in Toronto's highly desirable Thorncliffe Park / Leaside neighbourhood. The property is 100% leased with an estimated Year 1 NOI of $922,473 and approximately 57% rental upside to market. Ownership has completed significant capital improvements over the past decade, positioning the asset for continued stable performance. With approximately 100 parking spaces and a well-balanced suite mix, the property is positioned for broad tenant demand. Essex House is further supported by excellent access to retail, schools, community services, parks, and future rapid transit infrastructure, including the Ontario Line's planned Thorncliffe Park station.",
-    "features": [
-      "82-suite mid-rise apartment building on a 1.23-acre site",
-      "Estimated Year 1 NOI of $922,473 with approximately 57% rental upside to market",
-      "100% leased",
-      "Significant capital improvements completed over the past decade",
-      "Approximately 100 parking spaces",
-      "Well-balanced suite mix positioned for broad tenant demand",
-      "Excellent access to retail, schools, parks, and community services",
-      "Steps to future rapid transit (Ontario Line — Thorncliffe Park)"
-    ],
-    "noi": 922473,
-    "yearBuilt": 1960,
-    "lat": 43.7022,
-    "lng": -79.3479
-  },
-  {
     "id": "391-major-mackenzie-drive-east",
     "title": "391 Major Mackenzie Drive East",
     "location": "Richmond Hill, Ontario",
