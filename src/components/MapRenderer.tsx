@@ -58,13 +58,13 @@ export default function MapRenderer({
     })
 
     // Clean, minimal tile layer
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 19,
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 16,
     }).addTo(map)
 
     // Attribution (small)
     L.control.attribution({ position: 'bottomright', prefix: false })
-      .addAttribution('© OpenStreetMap · CARTO')
+      .addAttribution('© Esri · OpenStreetMap contributors')
       .addTo(map)
 
     mapInstance.current = map

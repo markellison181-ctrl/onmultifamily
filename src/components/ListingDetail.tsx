@@ -65,12 +65,12 @@ function LocationMap({ lat, lng, title }: { lat: number; lng: number; title: str
         scrollWheelZoom: false,
       })
 
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        maxZoom: 19,
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 16,
       }).addTo(map)
 
       L.control.attribution({ position: 'bottomright', prefix: false })
-        .addAttribution('&copy; OpenStreetMap &middot; CARTO')
+        .addAttribution('&copy; Esri &middot; OpenStreetMap contributors')
         .addTo(map)
 
       const icon = L.divIcon({
