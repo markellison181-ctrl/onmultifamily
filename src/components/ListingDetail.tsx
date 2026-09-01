@@ -335,7 +335,7 @@ export default function ListingDetail({ listing, otherListings }: { listing: Lis
                   </div>
                 </div>
                 <p className="text-navy/60 text-[13px] sm:text-[14px] mb-4">
-                  Specializing in multifamily investment sales across Ontario with over $1.2B+ in completed transactions.
+                  Specializing in multifamily investment sales across Ontario with over $1.59B+ in completed transactions.
                 </p>
                 <a
                   href="mailto:dayma.itamunoala@colliers.com"

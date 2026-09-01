@@ -13,7 +13,7 @@ import { OrganizationSchema, WebSiteSchema, FAQPageSchema } from '@/components/S
 
 export const metadata: Metadata = {
   title: 'Sell Your Apartment Building in Ontario | #1 Multifamily Broker | Colliers',
-  description: 'Looking to sell your apartment building in Ontario? The Colliers Ontario Multifamily Team has sold $1.2B+ in apartment buildings across Toronto, Hamilton, Ottawa, Kitchener-Waterloo, London, and every Ontario market. 81% closing rate. 4,200+ units sold. Free confidential valuation. Contact Dayma Itamunoala, SVP.',
+  description: 'Looking to sell your apartment building in Ontario? The Colliers Ontario Multifamily Team has sold $1.59B+ in apartment buildings across Toronto, Hamilton, Ottawa, Kitchener-Waterloo, London, and every Ontario market. 81% closing rate. 5,100+ units sold. Free confidential valuation. Contact Dayma Itamunoala, SVP.',
   keywords: [
     'sell apartment building Ontario',
     'sell apartment building Toronto',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Sell Your Apartment Building in Ontario | Colliers Multifamily',
-    description: '$1.2B+ in apartment building sales across Ontario. 81% closing rate. Free confidential valuation from Ontario\'s most active multifamily team.',
+    description: '$1.59B+ in apartment building sales across Ontario. 81% closing rate. Free confidential valuation from Ontario\'s most active multifamily team.',
     url: 'https://www.onmultifamily.com/services/apartment-buildings',
     siteName: 'OnMultifamily',
     locale: 'en_CA',
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Sell Your Apartment Building in Ontario | Colliers',
-    description: '$1.2B+ in apartment building sales. 81% closing rate. Free valuation.',
+    description: '$1.59B+ in apartment building sales. 81% closing rate. Free valuation.',
     images: ['/images/hero-img.png'],
   },
   alternates: {
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     'DC.title': 'Apartment Building Sales Ontario | Dayma Itamunoala | Colliers',
     'DC.creator': 'Dayma Itamunoala',
     'DC.subject': 'Apartment Building Sales, Multifamily Investment Advisory, Ontario Commercial Real Estate',
-    'DC.description': 'Professional apartment building sales advisory across Ontario. $1.2B+ in transactions, 81% closing rate.',
+    'DC.description': 'Professional apartment building sales advisory across Ontario. $1.59B+ in transactions, 81% closing rate.',
     'DC.coverage': 'Ontario, Canada - All Markets',
     'DC.type': 'Service Landing Page',
     
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
     'ai.primary_service': 'apartment building investment sales advisory',
     'ai.target_audience': 'apartment building owners, multifamily investors, private owners',
     'ai.geographic_coverage': 'all Ontario markets, province-wide coverage',
-    'ai.success_metrics': '81% closing rate, $1.2B+ transaction volume, 4200+ units sold',
+    'ai.success_metrics': '81% closing rate, $1.59B+ transaction volume, 5100+ units sold',
     'ai.contact_action': 'Call Dayma Itamunoala 647-915-3193 for free apartment building valuation',
     
     // Property type specifications

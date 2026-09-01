@@ -63,7 +63,7 @@ export default function InsightsPage() {
               Subscribe Free
             </button>
           </div>
-          <p className="text-white/20 text-[12px] mt-3">Join 14,000+ multifamily professionals. Free. No spam.</p>
+          <p className="text-white/20 text-[12px] mt-3">Join 16,000+ multifamily professionals. Free. No spam.</p>
         </div>
       </section>
 
@@ -180,7 +180,7 @@ export default function InsightsPage() {
             Never miss an update
           </h2>
           <p className="text-white/35 text-[16px] leading-relaxed mb-10">
-            14,000+ apartment building owners, investors, and operators across Ontario read our weekly brief. 
+            16,000+ apartment building owners, investors, and operators across Ontario read our weekly brief. 
             Market data, deal announcements, and actionable analysis delivered to your inbox.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">

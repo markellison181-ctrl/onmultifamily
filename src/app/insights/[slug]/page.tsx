@@ -149,7 +149,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             Get analysis like this delivered every week.
           </p>
           <p className="text-navy/30 text-sm mb-8">
-            Join 14,000+ multifamily professionals staying ahead of Ontario market trends.
+            Join 16,000+ multifamily professionals staying ahead of Ontario market trends.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input

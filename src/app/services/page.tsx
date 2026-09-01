@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation'
 
 export const metadata: Metadata = {
   title: 'Investment Sales Services | Apartment Buildings, Seniors Housing, Student Housing | OnMultifamily',
-  description: 'Full-service multifamily investment sales advisory across Ontario. Sell your apartment building, seniors housing property, or student residence with Ontario\'s most active team. $1.2B+ in completed transactions. 81% closing rate. Colliers International.',
+  description: 'Full-service multifamily investment sales advisory across Ontario. Sell your apartment building, seniors housing property, or student residence with Ontario\'s most active team. $1.59B+ in completed transactions. 81% closing rate. Colliers International.',
   keywords: [
     'sell apartment building Ontario',
     'sell multifamily Ontario',

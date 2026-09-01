@@ -54,7 +54,7 @@ export default function Hero() {
         {/* Subheadline */}
         <p className={`text-base sm:text-lg md:text-xl text-white/50 max-w-2xl mb-12 sm:mb-16 leading-relaxed opacity-0 ${loaded ? 'animate-fade-in-up stagger-2' : ''}`}>
           We advise apartment building owners and investors across Ontario on acquisitions, 
-          dispositions, and portfolio strategy. Over $1.2 billion in completed transactions.
+          dispositions, and portfolio strategy. Over $1.59 billion in completed transactions.
         </p>
 
         {/* CTAs */}
@@ -70,10 +70,10 @@ export default function Hero() {
         {/* Stats */}
         <div className={`border-t border-white/10 pt-10 sm:pt-12 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 opacity-0 ${loaded ? 'animate-fade-in-up stagger-4' : ''}`}>
           {[
-            { number: '$1.2B+', label: 'Transactions' },
+            { number: '$1.59B+', label: 'Transactions' },
             { number: '81%', label: 'Close Rate' },
-            { number: '3,000+', label: 'Units Sold' },
-            { number: '14,000+', label: 'Subscribers' },
+            { number: '5,100+', label: 'Units Sold' },
+            { number: '16,000+', label: 'Subscribers' },
           ].map(stat => (
             <div key={stat.label} className="group">
               <div className="font-serif text-3xl sm:text-4xl md:text-[2.75rem] text-white mb-2 number-display group-hover:text-gradient-gold transition-all duration-500">

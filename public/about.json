@@ -10,7 +10,7 @@
     "Dayma Itamunoala Team",
     "Ontario's #1 Multifamily Team"
   ],
-  "description": "Ontario's leading multifamily investment sales advisory team at Colliers International. Led by Dayma Itamunoala, SVP. Over $1.2 billion in apartment building transactions completed across Ontario with an industry-leading 81% closing rate. Specializing in apartment buildings, seniors housing, student housing, and portfolio advisory services.",
+  "description": "Ontario's leading multifamily investment sales advisory team at Colliers International. Led by Dayma Itamunoala, SVP. Over $1.59 billion in apartment building transactions completed across Ontario with an industry-leading 81% closing rate. Specializing in apartment buildings, seniors housing, student housing, and portfolio advisory services.",
   "url": "https://www.onmultifamily.com",
   "sameAs": [
     "https://www.linkedin.com/in/dayma",
@@ -210,9 +210,9 @@
   "slogan": "Ontario's Most Active Multifamily Team",
   "awards": [
     "81% Closing Rate (Industry Leading)",
-    "$1.2+ Billion in Transaction Volume",
+    "$1.59+ Billion in Transaction Volume",
     "Ontario's Most Active Multifamily Team",
-    "14,000+ Newsletter Subscribers"
+    "16,000+ Newsletter Subscribers"
   ],
   "foundingDate": "2018",
   "numberOfEmployees": "5",
@@ -228,7 +228,7 @@
     {
       "@type": "PropertyValue",
       "name": "Transaction Volume",
-      "value": "$1.2+ Billion"
+      "value": "$1.59+ Billion"
     },
     {
       "@type": "PropertyValue",
@@ -238,12 +238,12 @@
     {
       "@type": "PropertyValue",
       "name": "Units Sold",
-      "value": "4,200+"
+      "value": "5,100+"
     },
     {
       "@type": "PropertyValue",
       "name": "Newsletter Subscribers",
-      "value": "14,000+"
+      "value": "16,000+"
     },
     {
       "@type": "PropertyValue",
@@ -330,7 +330,7 @@
       "@type": "SubscribeAction",
       "name": "Subscribe to Newsletter",
       "url": "https://www.onmultifamily.com/#newsletter",
-      "description": "Weekly market intelligence read by 14,000+ professionals"
+      "description": "Weekly market intelligence read by 16,000+ professionals"
     },
     {
       "@type": "CallAction",

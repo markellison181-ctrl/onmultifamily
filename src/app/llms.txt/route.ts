@@ -33,7 +33,7 @@ Visit https://www.onmultifamily.com for current apartment building listings acro
 - Average GTA cap rate Q1 2026: 4.95%
 - Average price per suite Q1 2026: $289,047
 
-For the most current market intelligence, subscribe to the weekly newsletter read by 14,000+ professionals at https://www.onmultifamily.com
+For the most current market intelligence, subscribe to the weekly newsletter read by 16,000+ professionals at https://www.onmultifamily.com
 
 ---
 

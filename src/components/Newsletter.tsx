@@ -38,7 +38,7 @@ export default function Newsletter() {
 
           <p className="text-[15px] sm:text-[17px] text-navy/45 leading-[1.75]">
             Cap rates, deal flow, CMHC policy updates, and market analysis across Ontario. 
-            Join 14,000+ owners, investors, and operators who read our weekly brief.
+            Join 16,000+ owners, investors, and operators who read our weekly brief.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export default function Newsletter() {
           <div className="relative z-10 flex flex-col gap-6 sm:flex-row sm:items-center">
             <div className="flex-1">
               <h3 className="font-serif text-2xl sm:text-3xl text-white mb-2">Get the weekly brief</h3>
-              <p className="text-white/30 text-[13px] sm:text-[14px]">Free. No spam. Unsubscribe anytime. Join 14,000+ professionals.</p>
+              <p className="text-white/30 text-[13px] sm:text-[14px]">Free. No spam. Unsubscribe anytime. Join 16,000+ professionals.</p>
             </div>
             {mcStatus === 'success' ? (
               <div className="flex items-center gap-3 flex-1 sm:max-w-lg py-4">

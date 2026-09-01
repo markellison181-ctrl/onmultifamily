@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   const priceLine = listing.price ? ` Offered at ${priceDisplay}${pricePerUnitDisplay ? ` (${pricePerUnitDisplay})` : ''}.` : ''
 
   // Rich description combining property details + neighbourhood + team credibility
-  const richDescription = `${unitText}${typeText} for sale in ${city}, Ontario${statusText}.${priceLine} ${listing.headline || listing.description.substring(0, 120)} ${neighbourhood} Listed by Dayma Itamunoala, SVP at Colliers. $1.2B+ in Ontario multifamily sales. Request a confidential information package.`.trim()
+  const richDescription = `${unitText}${typeText} for sale in ${city}, Ontario${statusText}.${priceLine} ${listing.headline || listing.description.substring(0, 120)} ${neighbourhood} Listed by Dayma Itamunoala, SVP at Colliers. $1.59B+ in Ontario multifamily sales. Request a confidential information package.`.trim()
 
   // Property-type specific keywords
   const typeKeywords = listing.type === 'Student Housing' ? [

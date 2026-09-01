@@ -228,7 +228,7 @@ export default function ResourcesHub() {
                   Get the weekly brief
                 </h3>
                 <p className="text-white/30 text-[14px] max-w-lg">
-                  Join 14,000+ multifamily professionals receiving our market intelligence every week. 
+                  Join 16,000+ multifamily professionals receiving our market intelligence every week. 
                   Cap rates, policy changes, deal flow, and analysis.
                 </p>
               </div>

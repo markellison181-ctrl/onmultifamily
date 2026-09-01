@@ -53,10 +53,10 @@ function StatCounter({ stat }: { stat: StatDef }) {
 }
 
 const stats: StatDef[] = [
-  { prefix: '$', target: 1.2, suffix: 'B+', label: 'Transactions', decimals: 1, useLocale: false },
+  { prefix: '$', target: 1.59, suffix: 'B+', label: 'Transactions', decimals: 2, useLocale: false },
   { prefix: '',  target: 81,   suffix: '%',  label: 'Close Rate',   decimals: 0, useLocale: false },
-  { prefix: '',  target: 4200, suffix: '+',  label: 'Units Sold',   decimals: 0, useLocale: true },
-  { prefix: '',  target: 14000,suffix: '+',  label: 'Subscribers',  decimals: 0, useLocale: true },
+  { prefix: '',  target: 5100, suffix: '+',  label: 'Units Sold',   decimals: 0, useLocale: true },
+  { prefix: '',  target: 16000,suffix: '+',  label: 'Subscribers',  decimals: 0, useLocale: true },
 ]
 
 export default function Hero() {
@@ -135,7 +135,7 @@ export default function Hero() {
         {/* Newsletter Signup - Primary CTA */}
         <div className={`mb-8 sm:mb-12 opacity-0 ${loaded ? 'animate-fade-in-up stagger-3' : ''}`}>
           <p className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-white/30 font-medium mb-3">
-            Join 14,000+ apartment investors. Free weekly brief.
+            Join 16,000+ apartment investors. Free weekly brief.
           </p>
           {mcStatus === 'success' ? (
             <div className="flex items-center gap-3 max-w-xl py-4">

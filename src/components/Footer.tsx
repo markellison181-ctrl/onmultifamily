@@ -177,7 +177,7 @@ export default function Footer() {
             <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
               <div className="flex-shrink-0">
                 <p className="text-[10px] tracking-[0.2em] uppercase text-white/20 mb-1">Weekly Brief</p>
-                <p className="text-white/50 text-[13px] sm:text-[14px]">14,000+ investors read our weekly insights</p>
+                <p className="text-white/50 text-[13px] sm:text-[14px]">16,000+ investors read our weekly insights</p>
               </div>
               {nlStatus === 'success' ? (
                 <div className="flex items-center gap-3 py-1">

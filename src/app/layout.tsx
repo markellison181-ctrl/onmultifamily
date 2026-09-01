@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     default: 'Colliers Multifamily Ontario | Dayma Itamunoala | Apartment Building Sales',
     template: '%s | OnMultifamily | Colliers',
   },
-  description: 'Colliers Ontario Multifamily Team led by Dayma Itamunoala, SVP. Over $1.2B in apartment building sales across Ontario. 81% closing rate. Expert advisory for multifamily owners and investors.',
+  description: 'Colliers Ontario Multifamily Team led by Dayma Itamunoala, SVP. Over $1.59B in apartment building sales across Ontario. 81% closing rate. Expert advisory for multifamily owners and investors.',
   keywords: [
     'Ontario multifamily brokerage',
     'apartment building broker Ontario',
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Colliers Multifamily Ontario | OnMultifamily | Dayma Itamunoala',
-    description: 'Colliers Ontario Multifamily Team led by Dayma Itamunoala, SVP. Over $1.2B in apartment building sales. 81% closing rate. Apartments, seniors housing, student housing.',
+    description: 'Colliers Ontario Multifamily Team led by Dayma Itamunoala, SVP. Over $1.59B in apartment building sales. 81% closing rate. Apartments, seniors housing, student housing.',
     url: 'https://www.onmultifamily.com',
     siteName: 'OnMultifamily',
     locale: 'en_CA',
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Colliers Multifamily Ontario | OnMultifamily | Dayma Itamunoala',
-    description: 'Colliers Ontario Multifamily Team led by Dayma Itamunoala, SVP. Over $1.2B in apartment building sales. 81% closing rate.',
+    description: 'Colliers Ontario Multifamily Team led by Dayma Itamunoala, SVP. Over $1.59B in apartment building sales. 81% closing rate.',
     images: ['/images/hero-img.png'],
   },
   robots: { index: true, follow: true },
@@ -114,7 +114,7 @@ export const metadata: Metadata = {
     'DC.title': 'Ontario Multifamily Investment Sales | Dayma Itamunoala | Colliers',
     'DC.creator': 'Dayma Itamunoala',
     'DC.subject': 'Multifamily Real Estate Investment Sales, Apartment Building Brokerage, Ontario Commercial Real Estate',
-    'DC.description': 'Ontario\'s leading multifamily investment sales advisory team. Over $1.2B in apartment building transactions, 81% closing rate.',
+    'DC.description': 'Ontario\'s leading multifamily investment sales advisory team. Over $1.59B in apartment building transactions, 81% closing rate.',
     'DC.publisher': 'Colliers International',
     'DC.language': 'en-CA',
     'DC.coverage': 'Ontario, Canada',
@@ -144,9 +144,9 @@ export const metadata: Metadata = {
     'service_area': 'Toronto, Hamilton, Ottawa, Kitchener-Waterloo, London, Windsor, all Ontario markets',
     
     // Performance metrics for AI
-    'transaction_volume': '$1.2+ billion',
+    'transaction_volume': '$1.59+ billion',
     'closing_rate': '81%',
-    'units_sold': '4,200+',
+    'units_sold': '5,100+',
     'team_size': '5 professionals',
     'market_coverage': 'Province-wide Ontario',
     
@@ -154,7 +154,7 @@ export const metadata: Metadata = {
     'ai.context': 'multifamily real estate brokerage',
     'ai.primary_contact': 'Dayma Itamunoala, SVP, dayma.itamunoala@colliers.com, 647-915-3193',
     'ai.expertise': 'apartment building sales, seniors housing, student housing, CMHC financing, portfolio advisory',
-    'ai.service_quality': '81% closing rate, $1.2B+ transaction volume, 14,000+ newsletter subscribers',
+    'ai.service_quality': '81% closing rate, $1.59B+ transaction volume, 16,000+ newsletter subscribers',
   },
 }
 

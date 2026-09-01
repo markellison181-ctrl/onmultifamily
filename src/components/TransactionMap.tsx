@@ -63,7 +63,7 @@ export default function TransactionMap({ transactions }: { transactions: Transac
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-8">
               <div>
-                <div className="font-serif text-2xl text-white">$1.2B+</div>
+                <div className="font-serif text-2xl text-white">$1.59B+</div>
                 <div className="text-[11px] tracking-wide-custom uppercase text-white/40">Total Transactions</div>
               </div>
               <div>
