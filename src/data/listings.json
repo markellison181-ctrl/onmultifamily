@@ -115,23 +115,24 @@
     "location": "Toronto, Ontario",
     "address": "1969 Eglinton Avenue West, Toronto, Ontario M6E 2K1",
     "type": "Multifamily",
-    "units": null,
+    "units": 36,
     "price": null,
     "pricePerUnit": null,
     "lotSize": null,
     "status": "For Sale",
-    "image": null,
-    "brochure": "",
+    "image": "/images/listings/1969-eglinton-avenue-west.jpeg",
+    "brochure": "/images/brochures/1969-eglinton-avenue-west.pdf",
     "ndaLink": null,
-    "headline": "Multifamily Investment Opportunity on Toronto's Eglinton West Corridor",
-    "description": "1969 Eglinton Avenue West offers investors a multifamily opportunity on one of Toronto's key transit corridors, steps from the Eglinton Crosstown LRT.",
-    "fullDescription": "1969 Eglinton Avenue West presents a multifamily investment opportunity in Toronto's Fairbank neighbourhood, positioned directly on the Eglinton Crosstown LRT corridor. The property benefits from strong rental demand, improving transit connectivity, and the long-term intensification underway along Eglinton Avenue West. The asset offers value-add potential, with opportunities to improve operating efficiency, including potential CMHC MLI Select financing pathways through energy-efficiency improvements. Contact the listing team to execute a confidentiality agreement and access the data room.",
+    "headline": "36-Suite Multifamily Investment on the Eglinton Crosstown LRT Corridor",
+    "description": "1969 Eglinton Avenue West offers investors a well-maintained 36-unit multifamily building in one of Toronto's most dynamic growth corridors, steps from the Eglinton Crosstown LRT.",
+    "fullDescription": "1969 Eglinton Avenue West presents an exceptional opportunity to acquire a well-maintained 36-unit multifamily building in one of Toronto's most dynamic growth corridors. The four-storey property offers a highly desirable unit mix of 15 one-bedroom and 21 two-bedroom suites, many of which are generously sized, with additional revenue from laundry. The location benefits from proximity to the new Eglinton Crosstown LRT, excellent transit connectivity, and a wide range of nearby amenities in Toronto's evolving Fairbank neighbourhood. The asset offers value-add potential, with opportunities to improve operating efficiency, including potential CMHC MLI Select financing pathways through energy-efficiency improvements. Contact the listing team to execute a confidentiality agreement and access the data room.",
     "features": [
-      "Directly on the Eglinton Crosstown LRT corridor",
-      "Value-add operational upside",
-      "Potential CMHC MLI Select pathway via energy efficiency",
-      "Strong Eglinton West rental demand"
-    ]
+      "36 suites: 15 one-bedroom, 21 two-bedroom",
+      "4-storey building with generously sized suites",
+      "Steps from the Eglinton Crosstown LRT",
+      "Value-add upside with potential MLI Select pathway"
+    ],
+    "unitMix": "15 one-bedroom, 21 two-bedroom"
   },
   {
     "id": "6-milepost-place",
@@ -144,8 +145,8 @@
     "pricePerUnit": null,
     "lotSize": "1.23 ac",
     "status": "For Sale",
-    "image": null,
-    "brochure": "",
+    "image": "/images/listings/6-milepost-place.jpeg",
+    "brochure": "/images/brochures/6-milepost-place.pdf",
     "ndaLink": null,
     "headline": "82-Suite Multifamily Investment in Thorncliffe Park / Leaside",
     "description": "6 Milepost Place is an 82-suite apartment building situated on a 1.23-acre site in Toronto's highly desirable Thorncliffe Park / Leaside neighbourhood.",
@@ -328,31 +329,5 @@
     "unitMix": "15 one-bedroom, 17 two-bedroom",
     "lat": 43.1594,
     "lng": -79.2469
-  },
-  {
-    "id": "165-colborne-avenue",
-    "title": "165 Colborne Avenue",
-    "location": "Richmond Hill, Ontario",
-    "address": "165 Colborne Avenue, Richmond Hill, Ontario L4C 2K2",
-    "type": "Multifamily",
-    "units": 40,
-    "price": 12400000,
-    "pricePerUnit": 310000,
-    "lotSize": "0.83 ac",
-    "status": "Sold",
-    "image": "/images/listings/165-colborne.jpeg",
-    "brochure": "",
-    "ndaLink": "https://apps.colliers.com/DigitalDocs/Accept/865a2fb0-7713-45e4-ab40-aed682e5001e",
-    "headline": "40-Suite Multifamily Asset in Richmond Hill's Harding Neighbourhood",
-    "description": "165 Colborne Avenue is a 40-suite multifamily investment opportunity nestled in the heart of Richmond Hill's charming Harding neighbourhood, one of York Region's most desirable submarkets.",
-    "fullDescription": "This property offers investors exposure to one of the GTA's strongest suburban rental markets, with excellent transit connectivity and proximity to major employment centres. Richmond Hill continues to benefit from population growth and limited new rental supply.",
-    "features": [
-      "Established Richmond Hill location",
-      "Strong York Region rental market fundamentals",
-      "Excellent transit connectivity",
-      "Supply-constrained submarket"
-    ],
-    "lat": 43.8649,
-    "lng": -79.4384
   }
 ]
