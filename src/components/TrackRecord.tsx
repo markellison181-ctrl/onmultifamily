@@ -107,9 +107,10 @@ export default function TrackRecord() {
   const filteredVolume = filtered.reduce((s, r) => s + r.price, 0)
   const filteredUnits = filtered.reduce((s, r) => s + r.units, 0)
 
-  // Map data (only geocoded records)
+  // Map data (only geocoded records; keep the map focused on Ontario —
+  // out-of-province portfolios stay in the table but off the map)
   const mapTransactions = filtered
-    .filter(r => r.lat && r.lng)
+    .filter(r => r.lat && r.lng && r.lng > -85 && r.lng < -74 && r.lat > 41.5 && r.lat < 48)
     .map((r, i) => ({
       id: `sold-${i}-${r.address}`,
       name: r.address.split(',')[0],
