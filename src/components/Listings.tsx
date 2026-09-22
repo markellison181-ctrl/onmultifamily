@@ -5,8 +5,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import listingsData from '@/data/listings.json'
 
+const STATUS_ORDER: Record<string, number> = {
+  'Coming Soon': 0,
+  'For Sale': 1,
+  'Under Contract': 2,
+  'Sold': 3,
+}
+
 export default function Listings() {
-  const filtered = listingsData
+  const filtered = [...listingsData].sort(
+    (a, b) => (STATUS_ORDER[a.status] ?? 1) - (STATUS_ORDER[b.status] ?? 1)
+  )
 
   const fmt = (n: number | null) => {
     if (!n) return null

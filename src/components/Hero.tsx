@@ -186,7 +186,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className={`absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 ${loaded ? 'animate-fade-in stagger-5' : ''}`}>
+      <div className={`absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 opacity-0 ${loaded ? 'animate-fade-in stagger-5' : ''}`}>
         <span className="text-[10px] tracking-[0.3em] uppercase text-white/20">Scroll</span>
         <div className="w-px h-8 bg-gradient-to-b from-white/20 to-transparent" />
       </div>
