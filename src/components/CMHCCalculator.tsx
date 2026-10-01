@@ -71,25 +71,23 @@ const defaultInputs: Inputs = {
 
 // ─── CMHC Underwriting Functions ────────────────────────────────────
 
-function getDSCRMin(mliSelect: boolean, credits: number): number {
-  if (!mliSelect) return 1.10
-  if (credits >= 100) return 1.00
-  if (credits >= 75) return 1.02
-  if (credits >= 50) return 1.05
+// MLI Select — existing properties, standard rental housing.
+// DSCR relief under MLI Select applies to new construction only;
+// for existing-property purchase/refinance the minimum DCR stays 1.10x.
+function getDSCRMin(_mliSelect: boolean, _credits: number): number {
   return 1.10
 }
 
 function getLTVMax(mliSelect: boolean, credits: number): number {
   if (!mliSelect) return 0.85
-  if (credits >= 100) return 0.95
-  if (credits >= 75) return 0.92
-  if (credits >= 50) return 0.90
+  if (credits >= 70) return 0.95
   return 0.85
 }
 
 function getAmortMax(mliSelect: boolean, credits: number): number {
   if (!mliSelect) return 40
-  if (credits >= 50) return 50
+  if (credits >= 100) return 50
+  if (credits >= 70) return 45
   return 40
 }
 
@@ -105,13 +103,19 @@ function getInsurancePremiumStandard(ltv: number): number {
   return 0.0615
 }
 
-// MLI Select discount on premiums
+// MLI Select discount on premiums (applies to base premium + surcharges)
 function getMliPremiumDiscount(mliSelect: boolean, credits: number): number {
   if (!mliSelect) return 0
   if (credits >= 100) return 0.30
   if (credits >= 70) return 0.20
   if (credits >= 50) return 0.10
   return 0
+}
+
+// Amortization surcharge: +0.25% per 5-year increment (or part thereof) beyond 25 years
+function getAmortSurcharge(amortYears: number): number {
+  if (amortYears <= 25) return 0
+  return 0.0025 * Math.ceil((amortYears - 25) / 5)
 }
 
 function calcMortgagePayment(principal: number, annualRate: number, years: number): number {
@@ -144,7 +148,7 @@ function InputField({ label, value, onChange, prefix, suffix, step, min, max, hi
 }) {
   return (
     <div>
-      <label className="text-[12px] tracking-wide-custom uppercase text-navy/40 block mb-2">{label}</label>
+      <label className="text-[12px] tracking-wide-custom uppercase text-navy/40 mb-2 flex items-end min-h-[32px] leading-[16px]">{label}</label>
       <div className="relative">
         {prefix && <span className="absolute left-4 top-1/2 -translate-y-1/2 text-navy/30 text-sm">{prefix}</span>}
         <input
@@ -190,7 +194,7 @@ function ToggleGroup({ label, options, value, onChange }: {
 }) {
   return (
     <div>
-      <label className="text-[12px] tracking-wide-custom uppercase text-navy/40 block mb-2">{label}</label>
+      <label className="text-[12px] tracking-wide-custom uppercase text-navy/40 mb-2 flex items-end min-h-[32px] leading-[16px]">{label}</label>
       <div className="flex">
         {options.map((opt, i) => (
           <button
@@ -265,17 +269,32 @@ export default function CMHCCalculator() {
     const amortMax = getAmortMax(mliSelect, mliCredits)
     const effectiveAmort = Math.min(amortizationYears, amortMax)
 
-    // DSCR-constrained debt
+    // Premium rate builder: base (by LTV) + surcharges, less MLI Select discount.
+    // Per Advice 264, the MLI Select discount applies to base premium plus surcharges.
+    const mliDiscount = getMliPremiumDiscount(mliSelect, mliCredits)
+    const amortSurchargeRate = getAmortSurcharge(effectiveAmort)
+    const egiSurchargeRate = egiSurcharge ? 0.0025 : 0
+    const effectivePremiumRate = (ltv: number) =>
+      (getInsurancePremiumStandard(ltv) + amortSurchargeRate + egiSurchargeRate) * (1 - mliDiscount)
+
+    // DSCR-constrained debt — CMHC tests coverage on the total insured loan,
+    // so the capitalized premium must fit inside the DSCR-sized gross amount.
     const maxAnnualDS = noi / dscrMin
     const monthlyRate = contractRate / 100 / 12
     const nPayments = effectiveAmort * 12
-    let dscrMaxLoan = 0
+    let dscrGrossLoan = 0
     if (monthlyRate > 0 && maxAnnualDS > 0) {
       const maxMonthlyDS = maxAnnualDS / 12
-      dscrMaxLoan = maxMonthlyDS * (Math.pow(1 + monthlyRate, nPayments) - 1) / (monthlyRate * Math.pow(1 + monthlyRate, nPayments))
+      dscrGrossLoan = maxMonthlyDS * (Math.pow(1 + monthlyRate, nPayments) - 1) / (monthlyRate * Math.pow(1 + monthlyRate, nPayments))
+    }
+    // Back out the net loan from the gross; premium rate depends on net LTV, so iterate.
+    let dscrMaxLoan = dscrGrossLoan
+    for (let i = 0; i < 4; i++) {
+      const ltv = lendingValue > 0 ? dscrMaxLoan / lendingValue : 0
+      dscrMaxLoan = dscrGrossLoan / (1 + effectivePremiumRate(ltv))
     }
 
-    // LTV-constrained debt
+    // LTV-constrained debt (LTV limit applies to the loan before capitalized premium)
     const ltvMaxLoan = lendingValue * ltvMax
 
     // Binding constraint
@@ -285,12 +304,9 @@ export default function CMHCCalculator() {
 
     // Insurance premium (Advice 264 schedule)
     const basePremiumRate = getInsurancePremiumStandard(actualLTV)
-    const mliDiscount = getMliPremiumDiscount(mliSelect, mliCredits)
-    const premiumRate = basePremiumRate * (1 - mliDiscount)
-    const insurancePremium = maxLoan * premiumRate
-
-    // EGI surcharge: 0.25% of net loan if toggled
-    const egiSurchargeAmount = egiSurcharge ? maxLoan * 0.0025 : 0
+    const premiumRate = (basePremiumRate + amortSurchargeRate + egiSurchargeRate) * (1 - mliDiscount)
+    const insurancePremium = maxLoan * (basePremiumRate + amortSurchargeRate) * (1 - mliDiscount)
+    const egiSurchargeAmount = maxLoan * egiSurchargeRate * (1 - mliDiscount)
 
     const totalInsuredLoan = maxLoan + insurancePremium + egiSurchargeAmount
 
@@ -315,7 +331,7 @@ export default function CMHCCalculator() {
       expenseRatio, capRate, pricePerUnit,
       dscrMin, ltvMax, amortMax, effectiveAmort,
       dscrMaxLoan, ltvMaxLoan, maxLoan, bindingConstraint, actualLTV,
-      basePremiumRate, mliDiscount, premiumRate, insurancePremium,
+      basePremiumRate, amortSurchargeRate, mliDiscount, premiumRate, insurancePremium,
       egiSurchargeAmount, totalInsuredLoan,
       annualDS, actualDSCR,
       equityRequired, equityExtraction,
@@ -548,7 +564,7 @@ export default function CMHCCalculator() {
                     hint="Typical: 50-65 bps"
                   />
                   <div>
-                    <label className="text-[12px] tracking-wide-custom uppercase text-navy/40 block mb-2">All-In Rate</label>
+                    <label className="text-[12px] tracking-wide-custom uppercase text-navy/40 mb-2 flex items-end min-h-[32px] leading-[16px]">All-In Rate</label>
                     <div className="w-full border border-navy/15 bg-navy/[0.03] text-navy py-3 px-4 text-[15px] font-medium">
                       {formatPercent(results.contractRate)}
                     </div>
@@ -567,7 +583,7 @@ export default function CMHCCalculator() {
                   step={5}
                   min={15}
                   max={50}
-                  hint={`Standard max: 40 years${inputs.mliSelect && inputs.mliCredits >= 50 ? ' · MLI Select: up to 50 years' : ''}`}
+                  hint={`Standard max: 40 years${inputs.mliSelect && inputs.mliCredits >= 70 ? ` · MLI Select: up to ${getAmortMax(true, inputs.mliCredits)} years` : ''} · Premium surcharge: +0.25% per 5 yrs beyond 25`}
                 />
               </div>
 
@@ -594,10 +610,10 @@ export default function CMHCCalculator() {
                       step={5}
                       min={0}
                       max={100}
-                      hint="50pts: 90% LTV, 50yr amort, 10% premium discount | 70pts: 20% discount | 100pts: 95% LTV, 1.00x DSCR, 30% discount"
+                      hint="50pts: 10% premium discount | 70pts: 95% LTV, 45yr amort, 20% discount | 100pts: 95% LTV, 50yr amort, 30% discount"
                     />
                     <div className="mt-4 grid grid-cols-3 gap-3">
-                      {[50, 75, 100].map(pts => (
+                      {[50, 70, 100].map(pts => (
                         <button
                           key={pts}
                           onClick={() => update('mliCredits', pts)}
@@ -615,7 +631,9 @@ export default function CMHCCalculator() {
                 )}
                 <p className="text-navy/25 text-[13px] mt-4 leading-relaxed">
                   CMHC&apos;s MLI Select program provides enhanced loan terms for projects 
-                  meeting affordability, accessibility, and energy efficiency criteria.
+                  meeting affordability, accessibility, and energy efficiency criteria. 
+                  For existing properties, higher tiers unlock up to 95% LTV and longer 
+                  amortization; the 1.10x minimum DSCR still applies.
                   {inputs.mliSelect && inputs.mliCredits >= 50 && (
                     <span className="block mt-1 text-navy/40">
                       Premium discount: {formatPercent(getMliPremiumDiscount(true, inputs.mliCredits) * 100, 0)} off base premium
@@ -672,6 +690,7 @@ export default function CMHCCalculator() {
                     <div className="flex justify-between text-[14px]">
                       <span className="text-white/40">
                         CMHC Premium ({formatPercent(results.basePremiumRate * 100)}
+                        {results.amortSurchargeRate > 0 && ` + ${formatPercent(results.amortSurchargeRate * 100)} amort`}
                         {results.mliDiscount > 0 && ` − ${formatPercent(results.mliDiscount * 100, 0)} MLI`})
                       </span>
                       <span className="text-white">{formatCurrency(results.insurancePremium)}</span>
@@ -849,7 +868,9 @@ export default function CMHCCalculator() {
                     ))}
                   </div>
                   <p className="text-navy/25 text-[11px] mt-3">
-                    Standard rental housing. MLI Select discounts: 50pts → 10%, 70pts → 20%, 100pts → 30% off premium.
+                    Standard rental housing, purchase &amp; refinance. Surcharge: +0.25% per 5 years of 
+                    amortization beyond 25. MLI Select discounts: 50pts → 10%, 70pts → 20%, 100pts → 30% 
+                    off premium plus surcharges.
                   </p>
                 </div>
 
@@ -898,19 +919,24 @@ export default function CMHCCalculator() {
                 lending value is based on the appraised value only.
               </p>
               <p>
-                <strong className="text-navy/60">DSCR sizing:</strong> The maximum loan whose annual debt service 
-                at the contract rate equals NOI divided by the minimum DSCR requirement (1.10x standard, 
-                as low as 1.00x with MLI Select credits).
+                <strong className="text-navy/60">DSCR sizing:</strong> The loan is sized so that total debt 
+                service on the full insured amount, including the capitalized CMHC premium, meets the minimum 
+                1.10x DSCR at the contract rate. The capitalized premium is solved iteratively since the 
+                premium rate depends on the resulting LTV.
               </p>
               <p>
-                <strong className="text-navy/60">MLI Select:</strong> Credits unlock enhanced terms: lower DSCR 
-                minimums (down to 1.00x), higher LTV (up to 95%), longer amortization (up to 50 years), 
-                and premium discounts (10 to 30%) for projects meeting CMHC&apos;s affordability, accessibility, 
-                and climate compatibility criteria.
+                <strong className="text-navy/60">MLI Select (existing properties):</strong> 50 points earns a 10% 
+                premium discount; 70 points unlocks up to 95% LTV, 45-year amortization, and a 20% discount; 
+                100 points unlocks 50-year amortization and a 30% discount. The 1.10x minimum DSCR applies at 
+                all tiers for existing standard rental properties (DSCR relief under MLI Select applies to new 
+                construction only). Points are earned through affordability, accessibility, and energy 
+                efficiency commitments.
               </p>
               <p>
-                <strong className="text-navy/60">EGI surcharge:</strong> An additional 0.25% of the net loan 
-                amount is charged if the Effective Gross Income target is not met at first advance.
+                <strong className="text-navy/60">Premium surcharges:</strong> Amortization beyond 25 years adds 
+                0.25% to the premium per 5-year increment. An additional 0.25% applies if the Effective Gross 
+                Income target is not met at first advance. MLI Select discounts apply to the base premium plus 
+                surcharges.
               </p>
               <p>
                 Insurance premiums are estimated based on CMHC&apos;s published Advice 264 schedule and added to the base 
