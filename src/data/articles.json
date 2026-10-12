@@ -1,5 +1,31 @@
 [
   {
+    "id": "apartment-update-cmbs-closings-fall-market",
+    "title": "The Apartment Update: CMBs, Closings and the Fall Market",
+    "date": "2026-09-22",
+    "excerpt": "Five-year CMBs at 3.70%, key RTA changes, three major transactions and the deals you may have missed. Plus our recent closings and where the market stands heading into fall.",
+    "author": "Dayma Itamunoala",
+    "readTime": "4 min read",
+    "category": "The Apartment Update",
+    "tags": ["CMB yields", "RTA changes", "LTB", "transactions", "closings", "fall market", "bond yields"],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": true,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=430dee2068"
+  },
+  {
+    "id": "gta-multifamily-q2-2026-report",
+    "title": "GTA Multifamily Q2 2026 Report",
+    "date": "2026-07-23",
+    "excerpt": "19 transactions, 1,239 suites traded, $418M in volume. Cap rates stable at 4.64%. Download our full Q2 2026 market analysis.",
+    "author": "Dayma Itamunoala",
+    "readTime": "2 min read",
+    "category": "Market Report",
+    "tags": ["Q2 2026", "market report", "transaction volume", "cap rates", "pricing"],
+    "image": "/images/articles/cap-rate-report.png",
+    "featured": true,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=f6c31706f1"
+  },
+  {
     "id": "gta-multifamily-q1-2026-report",
     "title": "GTA Multifamily Q1 2026 Report",
     "date": "2026-04-29",
