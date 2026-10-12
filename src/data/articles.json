@@ -7,7 +7,15 @@
     "author": "Dayma Itamunoala",
     "readTime": "4 min read",
     "category": "The Apartment Update",
-    "tags": ["CMB yields", "RTA changes", "LTB", "transactions", "closings", "fall market", "bond yields"],
+    "tags": [
+      "CMB yields",
+      "RTA changes",
+      "LTB",
+      "transactions",
+      "closings",
+      "fall market",
+      "bond yields"
+    ],
     "image": "/images/articles/newsletter-header.png",
     "featured": true,
     "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=430dee2068"
@@ -20,7 +28,13 @@
     "author": "Dayma Itamunoala",
     "readTime": "2 min read",
     "category": "Market Report",
-    "tags": ["Q2 2026", "market report", "transaction volume", "cap rates", "pricing"],
+    "tags": [
+      "Q2 2026",
+      "market report",
+      "transaction volume",
+      "cap rates",
+      "pricing"
+    ],
     "image": "/images/articles/cap-rate-report.png",
     "featured": true,
     "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=f6c31706f1"
@@ -33,7 +47,13 @@
     "author": "Dayma Itamunoala",
     "readTime": "4 min read",
     "category": "Market Report",
-    "tags": ["Q1 2026", "market report", "transaction volume", "cap rates", "interest rates"],
+    "tags": [
+      "Q1 2026",
+      "market report",
+      "transaction volume",
+      "cap rates",
+      "interest rates"
+    ],
     "image": "/images/articles/cap-rate-report.png",
     "featured": true,
     "mailchimpUrl": "https://mailchi.mp/colliers/2026q1gtareport"
@@ -46,7 +66,13 @@
     "author": "Dayma Itamunoala",
     "readTime": "6 min read",
     "category": "Investment Strategy",
-    "tags": ["underwriting", "valuation", "cap rates", "due diligence", "buyers"],
+    "tags": [
+      "underwriting",
+      "valuation",
+      "cap rates",
+      "due diligence",
+      "buyers"
+    ],
     "image": "/images/articles/how-buyers-underwrite.png",
     "featured": true,
     "mailchimpUrl": "https://mailchi.mp/colliers/howbuyersunderwrite"
@@ -59,7 +85,12 @@
     "author": "Dayma Itamunoala",
     "readTime": "3 min read",
     "category": "Seniors Housing",
-    "tags": ["seniors housing", "demographics", "occupancy", "team announcement"],
+    "tags": [
+      "seniors housing",
+      "demographics",
+      "occupancy",
+      "team announcement"
+    ],
     "image": "/images/articles/seniors-housing.png",
     "featured": true,
     "mailchimpUrl": "https://mailchi.mp/colliers/seniorshousingupdate"
@@ -72,7 +103,13 @@
     "author": "Dayma Itamunoala",
     "readTime": "2 min read",
     "category": "Market Report",
-    "tags": ["year in review", "GTA", "transaction volume", "cap rates", "market data"],
+    "tags": [
+      "year in review",
+      "GTA",
+      "transaction volume",
+      "cap rates",
+      "market data"
+    ],
     "image": "/images/articles/2025-year-end.png",
     "featured": false,
     "mailchimpUrl": "https://mailchi.mp/colliers/2025yearinreview"
@@ -85,7 +122,13 @@
     "author": "Dayma Itamunoala",
     "readTime": "4 min read",
     "category": "Market Outlook",
-    "tags": ["predictions", "2026", "transaction volume", "cap rates", "institutional capital"],
+    "tags": [
+      "predictions",
+      "2026",
+      "transaction volume",
+      "cap rates",
+      "institutional capital"
+    ],
     "image": "/images/articles/2026-predictions.png",
     "featured": false,
     "mailchimpUrl": "https://mailchi.mp/colliers/2026predictions"
@@ -98,7 +141,13 @@
     "author": "Dayma Itamunoala",
     "readTime": "3 min read",
     "category": "Interest Rates",
-    "tags": ["bank of canada", "interest rates", "CMHC", "financing", "GoC yields"],
+    "tags": [
+      "bank of canada",
+      "interest rates",
+      "CMHC",
+      "financing",
+      "GoC yields"
+    ],
     "image": "/images/articles/rate-cut-sept.png",
     "featured": false,
     "mailchimpUrl": "https://mailchi.mp/colliers/postelection-17022659"
@@ -111,7 +160,12 @@
     "author": "Dayma Itamunoala",
     "readTime": "2 min read",
     "category": "Policy Update",
-    "tags": ["CMHC", "premiums", "deal activity", "closings"],
+    "tags": [
+      "CMHC",
+      "premiums",
+      "deal activity",
+      "closings"
+    ],
     "image": "/images/articles/cmhc-premiums.png",
     "featured": false,
     "mailchimpUrl": "https://mailchi.mp/colliers/postelection-17022478"
@@ -124,9 +178,497 @@
     "author": "Dayma Itamunoala",
     "readTime": "2 min read",
     "category": "Deal Update",
-    "tags": ["deal activity", "pipeline", "listings", "closings"],
+    "tags": [
+      "deal activity",
+      "pipeline",
+      "listings",
+      "closings"
+    ],
     "image": "/images/articles/june-deal-activity.png",
     "featured": false,
     "mailchimpUrl": "https://mailchi.mp/colliers/postelection-17022398"
+  },
+  {
+    "id": "post-election-what-this-means-for-multifamily-owners",
+    "title": "Post-Election: What This Means For Multifamily Owners",
+    "date": "2025-04-29",
+    "excerpt": "Our quick thoughts on how the Liberal win will impact our multifamily market. April 29, 2025 Read Time: 1 minute Election night is in the books",
+    "author": "Dayma Itamunoala",
+    "readTime": "1 min read",
+    "category": "Policy Update",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "CMHC",
+      "multifamily",
+      "election"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=7f73265055"
+  },
+  {
+    "id": "pierre-s-canadian-1031-exchange",
+    "title": "Pierre's Canadian 1031 Exchange",
+    "date": "2025-04-25",
+    "excerpt": "With the election just 3 days away, we thought we'd cover the most impactful policy proposal. This would send shockwaves through our industry",
+    "author": "Dayma Itamunoala",
+    "readTime": "2 min read",
+    "category": "Policy Update",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "election",
+      "1031 exchange"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=55e9f52fcf"
+  },
+  {
+    "id": "market-sentiment-buyers-that-need-to-place-capital",
+    "title": "Market Sentiment & Buyers That Need To Place Capital",
+    "date": "2025-03-21",
+    "excerpt": "A quick pulse check on the multifamily market and information on a new source of capital for non-profits",
+    "author": "Dayma Itamunoala",
+    "readTime": "3 min read",
+    "category": "Investment Strategy",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "multifamily",
+      "rental market"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=2f21bc0a54"
+  },
+  {
+    "id": "impact-from-trade-war-capital-gains-and-bond-yields",
+    "title": "Impact from Trade War, Capital Gains, and Bond Yields",
+    "date": "2025-02-04",
+    "excerpt": "How the last 72 hours of policy news affects multifamily owners. Let's dive in! February 4, 2025 Read Time: 4 minutes In the last 4 days, the capital gains increase was deferred, Trump ignited a…",
+    "author": "Dayma Itamunoala",
+    "readTime": "3 min read",
+    "category": "Policy Update",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "bond yields",
+      "trade war",
+      "capital gains",
+      "multifamily"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=a0537b5420"
+  },
+  {
+    "id": "value-add-vs-new-build",
+    "title": "Value Add Vs. New Build",
+    "date": "2025-01-14",
+    "excerpt": "Today we'll compare the pros and cons of two different acquisition strategies. Let's dive in! January 14, 2025 Read Time: 3 minutes New vs",
+    "author": "Dayma Itamunoala",
+    "readTime": "3 min read",
+    "category": "Investment Strategy",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "multifamily",
+      "value add"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=96258b27bc"
+  },
+  {
+    "id": "put-a-ribbon-on-it",
+    "title": "Put A Ribbon On It",
+    "date": "2024-12-19",
+    "excerpt": "What happened this year and where are we headed? Let's dive in. December 19, 2024 Read Time: 3 minutes The news cycle is fast in 2024",
+    "author": "Dayma Itamunoala",
+    "readTime": "3 min read",
+    "category": "The Apartment Update",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "bond yields",
+      "multifamily"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=5c5c8f58ca"
+  },
+  {
+    "id": "trade-war-via-tweet",
+    "title": "Trade War via Tweet",
+    "date": "2024-11-26",
+    "excerpt": "Last night, Trump threatened to impose a 25% tariff on Canadian goods. November 26, 2024 Read Time: 2 minutes Last night, former U.S",
+    "author": "Dayma Itamunoala",
+    "readTime": "2 min read",
+    "category": "Policy Update",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "trade war",
+      "tariffs",
+      "multifamily",
+      "inflation"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=b5b6595748"
+  },
+  {
+    "id": "deals-of-the-week",
+    "title": "Deals of the Week",
+    "date": "2024-10-08",
+    "excerpt": "3 new listings, hot off the press! Learn more inside. October 8, 2024 Read Time: 1 minute Welcome to Q4",
+    "author": "Dayma Itamunoala",
+    "readTime": "1 min read",
+    "category": "Deal Update",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "bond yields"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=0b50364c66"
+  },
+  {
+    "id": "state-of-the-canadian-economy",
+    "title": "State of the Canadian Economy",
+    "date": "2024-09-19",
+    "excerpt": "Inside is a pulse check on the Canadian economy. Check it out! September 19th, 2024 Read Time: 3 minutes CIBC's Senior Economist, Katherine Judge, gave the morning address at the Apartment Conference…",
+    "author": "Dayma Itamunoala",
+    "readTime": "3 min read",
+    "category": "Market Outlook",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "multifamily"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=58a15821ae"
+  },
+  {
+    "id": "bond-yields-drop-80-bps-in-90-days",
+    "title": "Bond Yields Drop 80 Bps in 90 Days",
+    "date": "2024-08-30",
+    "excerpt": "Today we'll take stock of the current lending environment and how it will impact the multifamily market",
+    "author": "Dayma Itamunoala",
+    "readTime": "3 min read",
+    "category": "Interest Rates",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "bond yields",
+      "multifamily"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=010ce33333"
+  },
+  {
+    "id": "insurance-premiums-soften",
+    "title": "Insurance Premiums Soften",
+    "date": "2024-08-15",
+    "excerpt": "Insurance is migrating out of a \"hard\" market. That means lower rates for those who negotiate. August 15th, 2024 Read Time: 2 minutes For years, we faced a \"hard\" insurance market, but the tide has…",
+    "author": "Dayma Itamunoala",
+    "readTime": "2 min read",
+    "category": "Investment Strategy",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "insurance",
+      "multifamily"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=7794764c3d"
+  },
+  {
+    "id": "mid-year-pulse-check-multifamily",
+    "title": "Mid-Year Pulse Check (Multifamily)",
+    "date": "2024-07-24",
+    "excerpt": "Today we'll unpack the Q2 data and our markets driving forces. July 24th, 2024 Read Time: 4 minutes Summer’s flying by, but our market doesn’t take a vacation",
+    "author": "Dayma Itamunoala",
+    "readTime": "3 min read",
+    "category": "Market Outlook",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "capital gains",
+      "multifamily"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=e8088cec82"
+  },
+  {
+    "id": "game-changing-cmhc-updates-rate-cut",
+    "title": "Game-Changing CMHC Updates + Rate Cut",
+    "date": "2024-06-05",
+    "excerpt": "CMHC made several BIG policy announcements on yesterday. June 5, 2024 Read Time: 3 minutes Huge week for multifamily news - and it's mostly positive",
+    "author": "Dayma Itamunoala",
+    "readTime": "2 min read",
+    "category": "Policy Update",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "CMHC",
+      "rate cut",
+      "multifamily"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=32f24a9af8"
+  },
+  {
+    "id": "are-you-excited",
+    "title": "Are You Excited?",
+    "date": "2024-05-24",
+    "excerpt": "Today I'd like to highlight some of the awesome listings we're fired up about. Check them out, and call us to learn more",
+    "author": "Dayma Itamunoala",
+    "readTime": "2 min read",
+    "category": "The Apartment Update",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "multifamily"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=5d89626b32"
+  },
+  {
+    "id": "may-multifamily-listings",
+    "title": "May Multifamily Listings",
+    "date": "2024-05-03",
+    "excerpt": "We're excited to share our May multifamily listings. Check them out inside! May 3, 2024 Read Time: 2 minutes And just like that - it's May",
+    "author": "Dayma Itamunoala",
+    "readTime": "2 min read",
+    "category": "Deal Update",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "multifamily"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=cc861106fb"
+  },
+  {
+    "id": "federal-budget-webinar-save-to-calendar",
+    "title": "Federal Budget Webinar (save to calendar)",
+    "date": "2024-04-25",
+    "excerpt": "On Friday at 11:00 we're hosting a webinar breaking down the proposed budget. Join us! April 25th, 2024 Read Time: 1 minute After last week's budget announcement, our team had questions",
+    "author": "Dayma Itamunoala",
+    "readTime": "1 min read",
+    "category": "Policy Update",
+    "tags": [
+      "apartment update",
+      "newsletter"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=82777d8abf"
+  },
+  {
+    "id": "big-data-in-multifamily",
+    "title": "Big Data in Multifamily",
+    "date": "2024-04-04",
+    "excerpt": "CMHC released their annual rental report. Let's dive in to the major takeaways. April 4th, 2024 Read Time: 4 minutes We're data junkies",
+    "author": "Dayma Itamunoala",
+    "readTime": "3 min read",
+    "category": "Market Outlook",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "CMHC",
+      "multifamily",
+      "rental market"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=be6c5308ac"
+  },
+  {
+    "id": "cmhc-rental-report-breakdown",
+    "title": "CMHC Rental Report Breakdown",
+    "date": "2024-02-16",
+    "excerpt": "CMHC released their annual rental report. Let's dive in to the major takeaways. February 16th, 2024 Read Time: 3 minutes CMHC just released their annual rental report",
+    "author": "Dayma Itamunoala",
+    "readTime": "2 min read",
+    "category": "Market Report",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "CMHC",
+      "rental market"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=cb295af46e"
+  },
+  {
+    "id": "year-end-multifamily-report-available",
+    "title": "Year End Multifamily Report Available",
+    "date": "2024-02-02",
+    "excerpt": "Spoiler alert - interest rates had big impact. That said - fundamentals remain strong. February 2, 2024 Read Time: 2 minutes Today we release our 2023 multifamily report for the GTA",
+    "author": "Dayma Itamunoala",
+    "readTime": "1 min read",
+    "category": "Market Report",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "cap rates",
+      "GTA",
+      "multifamily",
+      "interest rates"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=4f2044b195"
+  },
+  {
+    "id": "back-like-we-never-left",
+    "title": "Back Like We Never Left",
+    "date": "2024-01-16",
+    "excerpt": "Welcome back! This year is going to be big. Can you feel it? Let's dive in. January 16th, 2024 Read Time: 3 minutes Can you feel it? The optimism percolating? The palpable energy brought on by…",
+    "author": "Dayma Itamunoala",
+    "readTime": "2 min read",
+    "category": "The Apartment Update",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "interest rates"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=1a274793d5"
+  },
+  {
+    "id": "list-of-2024-market-outlooks",
+    "title": "List of 2024 Market Outlooks",
+    "date": "2023-12-07",
+    "excerpt": "Here's a comprehensive list of market outlooks from the largest financial and real estate firms. December 7th, 2023 Read Time: 2 minutes It's business planning season",
+    "author": "Dayma Itamunoala",
+    "readTime": "1 min read",
+    "category": "Market Outlook",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "market report"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=8204ad39dd"
+  },
+  {
+    "id": "black-friday-and-the-capital-gains-inclusion-rate",
+    "title": "Black Friday and the Capital Gains Inclusion Rate",
+    "date": "2023-11-24",
+    "excerpt": "We're experimenting with something fun - Black Friday fees. We'll also share a deep dive into Canada's capital gains inclusion rate over time",
+    "author": "Dayma Itamunoala",
+    "readTime": "2 min read",
+    "category": "Policy Update",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "capital gains"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=16f322b28f"
+  },
+  {
+    "id": "capreit-s-earnings-call",
+    "title": "CAPREIT's Earnings Call",
+    "date": "2023-11-10",
+    "excerpt": "CAPREIT held its Q3 earnings call yesterday. Today we will share the highlights, and much more. November 10th, 2023 Read Time: 3 minutes CAPREIT held their Q3 earnings call yesterday",
+    "author": "Dayma Itamunoala",
+    "readTime": "3 min read",
+    "category": "Market Report",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "CAPREIT"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=532f30f360"
+  },
+  {
+    "id": "no-bridge-to-cmhc",
+    "title": "No Bridge to CMHC",
+    "date": "2023-10-20",
+    "excerpt": "Today we'll breakdown CMHCs recent policy change. Big Implications. October 20th, 2023 Read Time: 3 minutes Here's how it typically works: CMHC makes a bold proclamation without much guidance",
+    "author": "Dayma Itamunoala",
+    "readTime": "2 min read",
+    "category": "Policy Update",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "CMHC"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=3bfee7f9ab"
+  },
+  {
+    "id": "gta-apartment-report-now-available",
+    "title": "GTA Apartment Report Now Available",
+    "date": "2023-10-13",
+    "excerpt": "Our Q3 apartment report is now live. Download the report inside. October 13th, 2023 Read Time: 2 minutes Spooky stats to share this Friday the 13th",
+    "author": "Dayma Itamunoala",
+    "readTime": "1 min read",
+    "category": "Market Report",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "GTA",
+      "multifamily",
+      "interest rates"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=7fc3c97d17"
+  },
+  {
+    "id": "don-t-ask-questions",
+    "title": "Don't Ask Questions",
+    "date": "2023-10-06",
+    "excerpt": "Today I'll share one of my favourite techniques for negotiating better deals. October 6th, 2023 Read Time: 2 minutes How much money could you make if you could read minds? Imagine",
+    "author": "Dayma Itamunoala",
+    "readTime": "2 min read",
+    "category": "The Apartment Update",
+    "tags": [
+      "apartment update",
+      "newsletter"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=42d3e008ed"
+  },
+  {
+    "id": "gst-waiver-explained",
+    "title": "GST Waiver Explained",
+    "date": "2023-09-27",
+    "excerpt": "Today we'll discuss the Feds September 14th announcement. Is this a game changer, or another policy flop? Let's dive in",
+    "author": "Dayma Itamunoala",
+    "readTime": "1 min read",
+    "category": "The Apartment Update",
+    "tags": [
+      "apartment update",
+      "newsletter",
+      "GST",
+      "rental market"
+    ],
+    "image": "/images/articles/newsletter-header.png",
+    "featured": false,
+    "mailchimpUrl": "https://us20.campaign-archive.com/?u=87232bcc93f1dd394870ffcbd&id=5ece2b9509"
   }
 ]
