@@ -21,6 +21,7 @@ const neighbourhoodContext: Record<string, string> = {
   '100-bronte-street-south': 'Located in Milton, one of the GTA\'s fastest-growing municipalities, with strong household incomes, rapid population growth, and constrained rental supply.',
   '6-milepost-place': 'Located in Thorncliffe Park / Leaside, one of Toronto\'s tightest rental submarkets, near the future Ontario Line Thorncliffe Park station and the Don Valley greenspace network.',
   '17-19-collier-street': 'Located in St. Catharines, the Niagara Region\'s largest city with growing rental demand driven by Brock University, healthcare, and population growth.',
+  '30-dickson-street': 'Located in downtown Cambridge within the Region of Waterloo, steps from the Gaslight District and Grand River, in a historic core benefiting from ongoing revitalization and the planned ION Stage 2 LRT extension.',
 }
 
 export async function generateMetadata({ params }: { params: { id: string } }) {

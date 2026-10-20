@@ -102,6 +102,32 @@
     ]
   },
   {
+    "id": "30-dickson-street",
+    "title": "30 Dickson Street & 38 Ainslie Street North",
+    "location": "Cambridge, Ontario",
+    "address": "30 Dickson Street & 38 Ainslie Street North, Cambridge, Ontario N1R 1T4",
+    "type": "Mixed-Use",
+    "units": 19,
+    "price": 3800000,
+    "pricePerUnit": null,
+    "lotSize": "0.14 ac",
+    "status": "For Sale",
+    "image": "/images/listings/30-dickson-street.jpg",
+    "brochure": "/images/brochures/30-dickson-street.pdf",
+    "ndaLink": "https://apps.colliers.com/DigitalDocs/Accept/64b91158-75aa-4289-bf42-e4280e836010",
+    "headline": "Mixed-Use Residential & Retail Asset on Corner Lot in Downtown Cambridge",
+    "description": "30 Dickson Street & 38 Ainslie Street North is a three-storey mixed-use property on a prominent corner in downtown Cambridge, combining 19 residential units with three retail spaces totalling approximately 4,813 square feet.",
+    "fullDescription": "Colliers is pleased to present the opportunity to acquire 30 Dickson Street and 38 Ainslie Street North, a mixed-use investment property occupying a prominent corner in Cambridge's historic downtown neighbourhood. Situated on a single 0.14-acre parcel with frontage on both streets, the three-storey building combines 19 residential rental units with three retail spaces totalling approximately 4,813 square feet. Originally constructed in 1923, the property has benefited from approximately $795,000 in ownership-reported capital expenditures, including residential renovations, shared kitchen and bathroom improvements, roofing work, window replacements, common-area upgrades, and fire and security systems. The residential component comprises nine self-contained apartments and 10 rooming-house-style units with shared kitchens and bathrooms. An attractive existing mortgage carries a 4.00% interest rate with a June 1, 2033 maturity, representing approximately 90.2% of the purchase price at asking, meaning a purchaser approved to assume the loan requires only approximately $372,000 in purchase-price equity.",
+    "features": [
+      "Prominent downtown corner with frontage on both Dickson Street and Ainslie Street North",
+      "19 residential units plus three retail spaces totalling ~4,813 SF",
+      "Approximately $795,000 in ownership-reported capital expenditures",
+      "Assumable 4.00% mortgage maturing June 1, 2033 \u2014 ~90.2% of purchase price at asking",
+      "Only ~$372,000 in purchase-price equity required at asking",
+      "On-site laundry and partial hydro cost recovery from tenants"
+    ]
+  },
+  {
     "id": "391-major-mackenzie-drive-east",
     "title": "391 Major Mackenzie Drive East",
     "location": "Richmond Hill, Ontario",
