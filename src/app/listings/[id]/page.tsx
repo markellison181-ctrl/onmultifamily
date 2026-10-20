@@ -19,7 +19,6 @@ const neighbourhoodContext: Record<string, string> = {
   '56-south-forster-park-drive': 'Located in Oakville, one of the GTA\'s most affluent suburbs with extremely limited rental supply and strong demographics.',
   '49-st-marys-river-drive': 'Situated in Sault Ste. Marie, a Northern Ontario market with stable rental demand, affordable entry points, and CMHC-insurable assets.',
   '100-bronte-street-south': 'Located in Milton, one of the GTA\'s fastest-growing municipalities, with strong household incomes, rapid population growth, and constrained rental supply.',
-  '1969-eglinton-avenue-west': 'Situated in Toronto\'s Fairbank neighbourhood directly on the Eglinton Crosstown LRT corridor, an area undergoing significant transit-driven intensification.',
   '6-milepost-place': 'Located in Thorncliffe Park / Leaside, one of Toronto\'s tightest rental submarkets, near the future Ontario Line Thorncliffe Park station and the Don Valley greenspace network.',
   '17-19-collier-street': 'Located in St. Catharines, the Niagara Region\'s largest city with growing rental demand driven by Brock University, healthcare, and population growth.',
 }
