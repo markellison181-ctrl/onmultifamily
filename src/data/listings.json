@@ -1,5 +1,36 @@
 [
   {
+    "id": "45-driftwood-avenue",
+    "title": "45 Driftwood Avenue",
+    "location": "North York, Ontario",
+    "address": "45 Driftwood Avenue, North York, Ontario M3N 2M4",
+    "type": "Multifamily",
+    "units": 137,
+    "price": 32000000,
+    "pricePerUnit": 233577,
+    "lotSize": "2.16 ac",
+    "status": "For Sale",
+    "image": "/images/listings/45-driftwood.jpeg",
+    "brochure": "",
+    "ndaLink": "https://apps.colliers.com/DigitalDocs/Accept/bdf9d0ec-db58-4145-b3de-7b6034a45e45",
+    "collierLink": "https://www.collierscanada.com/en-ca/properties/137-unit-multifamily-building-for-sale-in-north-york/can-45-driftwood-avenue-north-york-ontario-m3n2m4/can2021795",
+    "headline": "137-Suite Toronto Multifamily Opportunity on 2.16 Acres",
+    "description": "45 Driftwood Avenue is a substantial Toronto multifamily opportunity: 137 residential suites on a 2.16-acre site in North York, with spacious family-oriented layouts, ongoing capital reinvestment and potential for future development, subject to feasibility and municipal approvals.",
+    "fullDescription": "45 Driftwood Avenue presents the opportunity to acquire 137 residential suites on a 2.16-acre site in North York, Toronto. Approximately 67% of the building comprises two- and three-bedroom suites, offering spacious rental accommodations for families and households seeking more living space. Over 40 suites have been renovated since 2020, complemented by lobby upgrades, new hallway flooring and fresh paint in the common areas. The property benefits from an established record of capital investment, including boiler replacements, heating automation, electrical panel upgrades and major plumbing repairs, with elevator replacement currently underway. Projected Year 1 NOI of $1,435,267 is supported by residential rental revenue plus income from laundry, parking, Metergy remittances and Rogers rooftop agreements. Excess ground-floor space offers potential for an additional rental suite, and excess land on the south side of the 2.16-acre property offers potential for future development and long-term upside, subject to feasibility and municipal approvals.",
+    "features": [
+      "137 residential suites on a 2.16-acre site",
+      "Projected Year 1 NOI of $1,435,267",
+      "Approximately 67% two- and three-bedroom suites, built for larger households",
+      "Over 40 suites renovated since 2020, plus lobby and common-area upgrades",
+      "Established capital investment record: boilers, heating automation, electrical panels, plumbing; elevator replacement underway",
+      "Ancillary income from laundry, parking, Metergy remittances and Rogers rooftop agreements",
+      "Potential additional ground-floor suite and excess land for future development (subject to approvals)"
+    ],
+    "noi": 1435267,
+    "lat": 43.7511,
+    "lng": -79.5115
+  },
+  {
     "id": "100-bronte-street-south",
     "title": "100 Bronte Street South",
     "location": "Milton, Ontario",
