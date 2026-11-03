@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import SubscribeCTA from '@/components/SubscribeCTA'
 import articlesData from '@/data/articles.json'
 import { ArticleSchema } from '@/components/StructuredData'
 import { readFileSync } from 'fs'
@@ -151,16 +152,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           <p className="text-navy/30 text-sm mb-8">
             Join 16,000+ multifamily professionals staying ahead of Ontario market trends.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="you@email.com"
-              className="flex-1 bg-white border border-soft-gray px-5 py-3.5 text-sm text-navy placeholder:text-navy/30 focus:border-navy transition-colors"
-            />
-            <button className="bg-navy text-white text-[12px] tracking-wide-custom uppercase font-medium px-8 py-3.5 hover:bg-navy-light transition-colors whitespace-nowrap">
-              Subscribe
-            </button>
-          </div>
+          <SubscribeCTA variant="light" />
         </div>
       </section>
 

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import SubscribeCTA from '@/components/SubscribeCTA'
 import articlesData from '@/data/articles.json'
 
 export const metadata = {
@@ -183,16 +184,7 @@ export default function InsightsPage() {
             16,000+ apartment building owners, investors, and operators across Ontario read our weekly brief. 
             Market data, deal announcements, and actionable analysis delivered to your inbox.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="you@email.com"
-              className="flex-1 bg-white/5 border border-white/10 px-5 py-4 text-sm text-white placeholder:text-white/25 focus:border-gold/50 transition-all duration-300 outline-none"
-            />
-            <button className="bg-gradient-to-r from-gold to-gold-light text-navy text-[12px] tracking-[0.15em] uppercase font-bold px-8 py-4 hover:shadow-[0_0_30px_rgba(201,168,76,0.3)] transition-all duration-500 whitespace-nowrap">
-              Subscribe
-            </button>
-          </div>
+          <SubscribeCTA variant="dark" />
           <p className="text-white/15 text-[12px] mt-4">Free. Unsubscribe anytime.</p>
         </div>
       </section>
