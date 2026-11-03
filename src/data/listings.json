@@ -153,10 +153,42 @@
       "Prominent downtown corner with frontage on both Dickson Street and Ainslie Street North",
       "19 residential units plus three retail spaces totalling ~4,813 SF",
       "Approximately $795,000 in ownership-reported capital expenditures",
-      "Assumable 4.00% mortgage maturing June 1, 2033 \u2014 ~90.2% of purchase price at asking",
+      "Assumable 4.00% mortgage maturing June 1, 2033 — ~90.2% of purchase price at asking",
       "Only ~$372,000 in purchase-price equity required at asking",
       "On-site laundry and partial hydro cost recovery from tenants"
     ]
+  },
+  {
+    "id": "136-james-street",
+    "title": "136 James Street",
+    "location": "St. Catharines, Ontario",
+    "address": "136 James Street, St. Catharines, Ontario",
+    "type": "Student Housing",
+    "units": 53,
+    "beds": 210,
+    "price": null,
+    "pricePerUnit": null,
+    "lotSize": "0.76 ac",
+    "yearBuilt": 2016,
+    "status": "For Sale",
+    "image": "/images/listings/136-james.jpeg",
+    "brochure": "/images/brochures/136-james-street.pdf",
+    "ndaLink": "",
+    "headline": "210-Bed Purpose-Built Student Residence in Downtown St. Catharines",
+    "description": "136 James Street is a seven-storey, purpose-built student residence completed in 2016, offering 53 suites and 210 beds in the heart of downtown St. Catharines. The property provides meaningful scale within a single asset, with established amenity infrastructure and proximity to Brock University and Niagara College.",
+    "fullDescription": "136 James Street presents the opportunity to acquire a seven-storey, purpose-built off-campus student residence at the corner of James Street and Raymond Street in downtown St. Catharines, the Niagara Region's largest urban centre. Completed in 2016, the building comprises 53 residential suites and 210 beds across approximately 73,860 square feet on a 0.76-acre site, with 32 surface parking spaces. Suites are offered in two- to five-bedroom formats, with furnished bedrooms and shared kitchen, living and bathroom facilities, in-suite stackable laundry and an inclusive utility and internet offering. Building amenities include a fitness centre, lounge and common rooms, supported by electronic key fob access, individually locking bedrooms and security surveillance. The downtown location offers immediate access to transit, shopping, dining and services, with the St. Catharines Bus Terminal two minutes away, the GO/VIA station five minutes away, and both Brock University and Niagara College's Daniel J. Patterson Campus within a ten-minute drive.",
+    "unitMix": "1 two-bedroom, 6 three-bedroom, 40 four-bedroom, 6 five-bedroom (53 suites / 210 beds)",
+    "features": [
+      "Purpose-built student residence completed in 2016",
+      "53 suites and 210 beds across seven storeys (approx. 73,860 SF)",
+      "Meaningful scale within a single property, with centralized leasing and management",
+      "Furnished bedrooms with shared kitchen and living areas, in-suite laundry",
+      "Fitness centre, lounge and common rooms with key fob access and security surveillance",
+      "0.76-acre site with 32 surface parking spaces, zoned M2-93 medium/high density mixed use",
+      "Downtown core location minutes from transit, Brock University and Niagara College"
+    ],
+    "lat": 43.1619,
+    "lng": -79.2453
   },
   {
     "id": "391-major-mackenzie-drive-east",
