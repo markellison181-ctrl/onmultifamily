@@ -47,13 +47,13 @@ export default function Listings() {
         </h2>
 
         {/* Featured U of T Student Housing */}
-        {filtered.filter(l => l.type === 'Student Housing').length > 0 && (
+        {filtered.filter(l => l.featuredGroup === 'uoft').length > 0 && (
           <>
             <div className="mb-12 sm:mb-16">
               <h3 className="font-serif text-xl sm:text-2xl text-white mb-6 sm:mb-8">Featured: University of Toronto</h3>
               <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
                 {filtered
-                  .filter(listing => listing.type === 'Student Housing')
+                  .filter(listing => listing.featuredGroup === 'uoft')
                   .map(listing => (
                     <Link key={listing.id} href={`/listings/${listing.id}/`} className="group block hover-lift border border-transparent hover:border-gold/30 transition-colors duration-500 p-0.5">
                       {/* Image */}
@@ -117,13 +117,13 @@ export default function Listings() {
         )}
 
         {/* Other Investment Opportunities */}
-        {filtered.filter(l => l.type !== 'Student Housing').length > 0 && (
+        {filtered.filter(l => l.featuredGroup !== 'uoft').length > 0 && (
           <>
             <div className="mb-8 sm:mb-12">
               <h3 className="font-serif text-xl sm:text-2xl text-white mb-6 sm:mb-8">Investment Opportunities</h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 {filtered
-                  .filter(listing => listing.type !== 'Student Housing')
+                  .filter(listing => listing.featuredGroup !== 'uoft')
                   .map(listing => (
             <Link key={listing.id} href={`/listings/${listing.id}/`} className="group block hover-lift border border-transparent hover:border-gold/30 transition-colors duration-500 p-0.5">
               {/* Image */}

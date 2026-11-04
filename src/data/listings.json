@@ -28,7 +28,8 @@
     ],
     "noi": 1435267,
     "lat": 43.7511,
-    "lng": -79.5115
+    "lng": -79.5115,
+    "featuredGroup": null
   },
   {
     "id": "100-bronte-street-south",
@@ -52,7 +53,8 @@
       "Units slated for residential conversion",
       "High-growth GTA West municipality",
       "Offering details available upon execution of NDA"
-    ]
+    ],
+    "featuredGroup": null
   },
   {
     "id": "700-spadina-avenue",
@@ -79,7 +81,8 @@
       "Proximity to U of T's St. George campus"
     ],
     "lat": 43.6607,
-    "lng": -79.4042
+    "lng": -79.4042,
+    "featuredGroup": "uoft"
   },
   {
     "id": "89-chestnut-street",
@@ -106,7 +109,8 @@
       "Full-service residence with meal plan and amenities"
     ],
     "lat": 43.6533,
-    "lng": -79.3874
+    "lng": -79.3874,
+    "featuredGroup": "uoft"
   },
   {
     "id": "6-milepost-place",
@@ -130,7 +134,8 @@
       "Quiet cul-de-sac surrounded by greenspace",
       "Near future Ontario Line Thorncliffe Park station",
       "Tight rental submarket with limited new supply"
-    ]
+    ],
+    "featuredGroup": null
   },
   {
     "id": "30-dickson-street",
@@ -156,7 +161,8 @@
       "Assumable 4.00% mortgage maturing June 1, 2033 — ~90.2% of purchase price at asking",
       "Only ~$372,000 in purchase-price equity required at asking",
       "On-site laundry and partial hydro cost recovery from tenants"
-    ]
+    ],
+    "featuredGroup": null
   },
   {
     "id": "136-james-street",
@@ -188,7 +194,8 @@
       "Downtown core location minutes from transit, Brock University and Niagara College"
     ],
     "lat": 43.1619,
-    "lng": -79.2453
+    "lng": -79.2453,
+    "featuredGroup": null
   },
   {
     "id": "391-major-mackenzie-drive-east",
@@ -219,7 +226,8 @@
       "Offered free and clear of existing financing"
     ],
     "lat": 43.8736,
-    "lng": -79.4247
+    "lng": -79.4247,
+    "featuredGroup": null
   },
   {
     "id": "231-vaughan-road",
@@ -245,7 +253,8 @@
       "Strong rental demand in supply-constrained submarket"
     ],
     "lat": 43.6838,
-    "lng": -79.4251
+    "lng": -79.4251,
+    "featuredGroup": null
   },
   {
     "id": "149-cosburn-avenue",
@@ -271,7 +280,8 @@
       "Proximity to Danforth Village amenities"
     ],
     "lat": 43.6887,
-    "lng": -79.3475
+    "lng": -79.3475,
+    "featuredGroup": null
   },
   {
     "id": "116-spencer-avenue",
@@ -297,7 +307,8 @@
       "Steps from the lakefront and downtown Toronto"
     ],
     "lat": 43.6376,
-    "lng": -79.4294
+    "lng": -79.4294,
+    "featuredGroup": null
   },
   {
     "id": "1083-main-street-east",
@@ -329,7 +340,8 @@
     "lat": 43.242,
     "lng": -79.8188,
     "brochureFr": "/images/brochures/1083-main-street-east-fr.pdf",
-    "unitMix": "9 bachelor, 25 one-bedroom, 25 two-bedroom, 3 three-bedroom, 1 four-bedroom"
+    "unitMix": "9 bachelor, 25 one-bedroom, 25 two-bedroom, 3 three-bedroom, 1 four-bedroom",
+    "featuredGroup": null
   },
   {
     "id": "17-19-collier-street",
@@ -360,6 +372,7 @@
     "yearRenovated": "2022-2023",
     "unitMix": "15 one-bedroom, 17 two-bedroom",
     "lat": 43.1594,
-    "lng": -79.2469
+    "lng": -79.2469,
+    "featuredGroup": null
   }
 ]
